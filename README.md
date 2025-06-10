@@ -6,7 +6,7 @@
 |--------------------|-------------------------------------------|
 | Framework          | **Next.js with TypeScript**               |
 | Styling            | Tailwind CSS                              |
-| Auth               | Supabase                                  |
+| Auth/Storage       | Supabase                                  |
 | CMS                | ?                                         |
 | Hosting            | Vercel                                    |
 | Payments           | Stripe                                    |
