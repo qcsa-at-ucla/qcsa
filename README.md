@@ -1,14 +1,11 @@
-# qcsa
+# Welcome to the official documentation repository for the Quantum Computing Student Association (QCSA).
 
-## Tech Stack Overview
+## Overview
 
-| **Layer**          | **Tool**                                  |
-|--------------------|-------------------------------------------|
-| Framework          | **Next.js with TypeScript**               |
-| Styling            | Tailwind CSS                              |
-| Auth/Storage       | Supabase                                  |
-| CMS                | ?                                         |
-| Hosting            | Vercel                                    |
-| Payments           | Stripe                                    |
-| Automation         | Email automation → Mailchimp              |
-| Email + Calendar   | Google Workspace                          |
+## Features
+
+## Project Structure
+
+## Recent Updates
+
+## Contributors
