@@ -8,10 +8,10 @@
 
 To connect the registration form to your Google Form, you need to set up environment variables:
 
-1. Copy `.env.example` to `.env.local`:
+1. Copy `.env.example` to `.env`:
 
    ```bash
-   cp .env.example .env.local
+   cp .env.example .env
    ```
 
 2. Create a Google Form with the following fields:
