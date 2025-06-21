@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/Components/InfiniteCarousel.tsx.js", "src/app/Components/InfiniteCarousel.tsx.js"],
   "exclude": ["node_modules"]
 }
