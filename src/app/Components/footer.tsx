@@ -28,7 +28,7 @@ const Footer = () => {  return (
           </p>
             <div className="mt-6 pt-4 border-t border-gray-300">
             <p className="text-sm text-gray-600">
-              © {new Date().getFullYear()} QCSA. All rights reserved.
+              © {new Date().getFullYear()} QCSA. All rights reserved
             </p>
           </div>
         </div>
