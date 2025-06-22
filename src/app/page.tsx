@@ -9,5 +9,10 @@ export default function Home() {
           <TestimonialsAndStats></TestimonialsAndStats>
     </div>
 
+import ThankYouPage from "./Components/thank-you-page";
+
+export default function Home() {
+  return (
+    <ThankYouPage />
   );
 }
