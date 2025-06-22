@@ -13,8 +13,7 @@ const Footer = () => {  return (
             </div>           
              <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent flex-1 max-w-xs"></div>
           </div>
-          
-          <p className="text-lg md:text-xl font-medium text-gray-800 leading-relaxed">
+            <p className="text-base font-medium text-gray-800 leading-relaxed">
             Made with{' '}
             <span className="font-semibold" style={{ color: '#E91E63' }}>love</span>{' '}
             by{' '}
