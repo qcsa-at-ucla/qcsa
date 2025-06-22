@@ -13,14 +13,13 @@ const Footer = () => {  return (
             </div>           
              <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent flex-1 max-w-xs"></div>
           </div>
-          
-          <p className="text-lg md:text-xl font-medium text-gray-800 leading-relaxed">
+            <p className="text-base font-medium text-gray-800 leading-relaxed">
             Made with{' '}
             <span className="font-semibold" style={{ color: '#E91E63' }}>love</span>{' '}
             by{' '}
             <span className="text-gray-800 font-semibold">Clyde Villacrusis</span>,{' '}
-            <span className="text-gray-800 font-semibold">Harshita Kukreja</span>, and{' '}
-            <span className="text-gray-800 font-semibold">Emma Zhang</span>;
+            <span className="text-gray-800 font-semibold">Emma Zhang</span>, and{' '}
+            <span className="text-gray-800 font-semibold">Harshita Kukreja</span>;
             <br className="hidden sm:block" />
             <span className="sm:inline block mt-1">
               along with the{' '}
