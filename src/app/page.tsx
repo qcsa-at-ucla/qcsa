@@ -1,5 +1,9 @@
+
 import Image from "next/image";
 import InfiniteCarousel from './Components/InfiniteCarousel'
+import TestimonialsAndStats from "./Components/TestimonialsAndStats";
+import PageHead from "./Components/PageHead";
+
 
 
 export default function Home() {
@@ -103,6 +107,16 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
+
+    <div>
+          <PageHead></PageHead>
+          <TestimonialsAndStats></TestimonialsAndStats>
     </div>
+
+import ThankYouPage from "./Components/thank-you-page";
+
+export default function Home() {
+  return (
+    <ThankYouPage />
   );
 }
