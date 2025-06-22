@@ -1,9 +1,9 @@
 export default function PageHead(){
-    return (
-        <section className='text-center'>
+    return (        
+    <section className='text-center'>
             <div className='text-3xl font-semibold m-16'>
                 <h2>Quantum Computing Student</h2>
-                <h2>Assocation @UCLA</h2>
+                <h2>Association @UCLA</h2>
             </div>
 
             <div className='text-8xl m-8'>
