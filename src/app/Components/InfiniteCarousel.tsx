@@ -79,7 +79,7 @@ const InfiniteCarousel = () => {
         }
       `}</style>
       
-      <section className="w-full py-8 bg-gray-50" aria-label="Sponsor carousel" >
+      <section className="w-full py-8 bg-white" aria-label="Sponsor carousel" >
         <div className="max-w-7xl mx-auto px-4">
           {/* Control buttons for accessibility */}
           <div className="flex justify-center items-center mb-8">
@@ -99,8 +99,8 @@ const InfiniteCarousel = () => {
             aria-live="polite"
           >
             {/* Gradient overlays - hidden from screen readers */}
-            <div className="absolute left-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
-            <div className="absolute right-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
+            <div className="absolute left-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
+            <div className="absolute right-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
             
             {/* Scrolling container */}
             <div 
@@ -115,7 +115,7 @@ const InfiniteCarousel = () => {
                   href={sponsor.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 flex items-center justify-center h-20 w-32 sm:h-24 sm:w-36 md:h-28 md:w-44 lg:h-40 lg:w-60 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 flex items-center justify-center h-20 w-32 sm:h-24 sm:w-36 md:h-28 md:w-44 lg:h-40 lg:w-60 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                   onKeyDown={(e) => handleKeyDown(e, sponsor)}
                   aria-label={`Visit ${sponsor.name} website`}
                   tabIndex={0}
@@ -136,7 +136,7 @@ const InfiniteCarousel = () => {
                   href={sponsor.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 flex items-center justify-center h-20 w-32 sm:h-24 sm:w-36 md:h-28 md:w-44 lg:h-40 lg:w-60 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer hover:scale-105"
+                  className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 flex items-center justify-center h-20 w-32 sm:h-24 sm:w-36 md:h-28 md:w-44 lg:h-40 lg:w-60 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer hover:scale-105"
                   aria-hidden="true"
                   tabIndex={-1}
                 >
