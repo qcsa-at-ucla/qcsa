@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 const InfiniteCarousel = () => {
   const [isPaused, setIsPaused] = useState(false);
@@ -79,13 +78,14 @@ const InfiniteCarousel = () => {
           border: 0;
         }
       `}</style>
-        <section className="w-full py-8 sm:py-12 md:py-16 bg-gray-50" aria-label="Sponsor carousel">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+      
+      <section className="w-full py-16 bg-gray-50" aria-label="Sponsor carousel">
+        <div className="max-w-7xl mx-auto px-4">
           {/* Control buttons for accessibility */}
-          <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
+          <div className="flex justify-center items-center mb-8">
             <button
               onClick={togglePause}
-              className="px-3 py-2 sm:px-4 sm:py-2 text-sm sm:text-base bg-blue-800 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 bg-blue-800 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors text-sm sm:text-base flex-shrink-0"
               aria-label={isPaused ? 'Resume sponsor carousel animation' : 'Pause sponsor carousel animation'}
             >
               {isPaused ? 'Resume' : 'Pause'} Animation
@@ -97,8 +97,8 @@ const InfiniteCarousel = () => {
             role="region"
             aria-label="Scrolling sponsor logos"
             aria-live="polite"
-          >            
-          {/* Gradient overlays - hidden from screen readers */}
+          >
+            {/* Gradient overlays - hidden from screen readers */}
             <div className="absolute left-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
             <div className="absolute right-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
             
@@ -108,46 +108,42 @@ const InfiniteCarousel = () => {
               onMouseEnter={() => !reducedMotion && setIsPaused(true)}
               onMouseLeave={() => !reducedMotion && setIsPaused(false)}
             >
-              {/* First set of logos */}             
-               {sponsors.map((sponsor, index) => (
+              {/* First set of logos */}
+              {sponsors.map((sponsor, index) => (
                 <a
                   key={`first-${index}`}
                   href={sponsor.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 mx-2 sm:mx-4 md:mx-6 lg:mx-8 flex items-center justify-center h-16 w-20 sm:h-20 sm:w-24 md:h-24 md:w-32 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 flex items-center justify-center h-20 w-32 sm:h-24 sm:w-36 md:h-28 md:w-44 lg:h-40 lg:w-60 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                   onKeyDown={(e) => handleKeyDown(e, sponsor)}
                   aria-label={`Visit ${sponsor.name} website`}
                   tabIndex={0}
                 >
-                  <Image
+                  <img
                     src={sponsor.logo}
                     alt={`${sponsor.name} logo`}
-                    width={128}
-                    height={96}
-                    className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 focus:grayscale-0 transition-all duration-300 p-1 sm:p-2"
+                    className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 focus:grayscale-0 transition-all duration-300"
                     loading="lazy"
                   />
                 </a>
               ))}
               
-              {/* Duplicate set for seamless loop - hidden from screen readers and keyboard navigation */}              
+              {/* Duplicate set for seamless loop - hidden from screen readers and keyboard navigation */}
               {sponsors.map((sponsor, index) => (
                 <a
                   key={`second-${index}`}
                   href={sponsor.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 mx-2 sm:mx-4 md:mx-6 lg:mx-8 flex items-center justify-center h-16 w-20 sm:h-20 sm:w-24 md:h-24 md:w-32 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer hover:scale-105"
+                  className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 flex items-center justify-center h-20 w-32 sm:h-24 sm:w-36 md:h-28 md:w-44 lg:h-40 lg:w-60 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer hover:scale-105"
                   aria-hidden="true"
                   tabIndex={-1}
                 >
-                  <Image
+                  <img
                     src={sponsor.logo}
                     alt=""
-                    width={128}
-                    height={96}
-                    className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300 p-1 sm:p-2"
+                    className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
                     loading="lazy"
                   />
                 </a>
