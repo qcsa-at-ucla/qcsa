@@ -24,7 +24,7 @@ const stats = [
 export default function TestimonialsAndStats(){
     return (
         <section className='flex flex-col items-center text-center w-full p-12'>
-            <h2 className='text-3xl font-semibold m-16'>
+            <h2 className='text-3xl font-semibold m-16 text-[#0078d4]'>
                 What Our Participants Tell Us 
             </h2>
 
@@ -45,7 +45,7 @@ export default function TestimonialsAndStats(){
                 ))}
             </div>
 
-            <h2 className='text-3xl font-semibold m-16'>
+            <h2 className='text-3xl font-semibold m-16 text-[#0078d4]'>
                 See you at QDW2026!!
             </h2>
         </section>
