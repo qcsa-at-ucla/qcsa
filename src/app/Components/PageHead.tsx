@@ -5,7 +5,7 @@ export default function PageHead(){
                 <h2>Quantum Computing Student</h2>
                 <h2>Association @UCLA</h2>
             </div>            
-            <div className='text-4xl sm:text-6xl md:text-7xl lg:text-8xl m-4 sm:m-6 md:m-8'>
+            <div className='text-4xl sm:text-6xl md:text-8xl lg:text-9xl m-4 sm:m-6 md:m-8'>
                 <h1 className='text-[#0078d4] font-bold'>QDW2026</h1>
                 <h1 className='text-[#ffc845] font-bold'>Coming Soon!</h1>
             </div>
