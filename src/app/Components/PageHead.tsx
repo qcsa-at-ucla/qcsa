@@ -8,10 +8,14 @@ export default function PageHead(){
             <div className='text-4xl sm:text-6xl md:text-8xl lg:text-9xl m-4 sm:m-6 md:m-8'>
                 <h1 className='text-[#0078d4] font-bold'>QDW2026</h1>
                 <h1 className='text-[#ffc845] font-bold'>Coming Soon!</h1>
-            </div>
-
-            <div className='m-4 sm:m-6 md:m-8 flex justify-center'>
-                <p className='text-2xl text-center'>Thank you for the amazing inaugural to our Quantum Device Workshop initiative this year!</p>
+            </div>              
+            <div className='m-4 sm:m-6 md:m-8 flex flex-col items-center space-y-4'>
+                <p className='text-2xl text-center'>
+                    Thank you for the amazing inaugural to our Quantum Device Workshop initiative this year!
+                </p>
+                <p className='text-2xl text-center'>
+                    We&apos;re currently working on organising next year&apos;s edition of the Quantum Device Workshop.
+                </p>
             </div>
 
         </section>
