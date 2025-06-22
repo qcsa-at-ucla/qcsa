@@ -24,28 +24,28 @@ const stats = [
 export default function TestimonialsAndStats(){
     return (
         <section className='flex flex-col items-center text-center w-full p-12'>
-            <h2 className='text-3xl font-semibold m-16 text-[#0078d4]'>
+            <h2 className='text-4xl font-semibold m-16 text-[#0078d4]'>
                 What Our Participants Tell Us 
             </h2>
 
-            <div className='grid gap-6 sm:grid-cols-3 text-center justify-items-center w-full m-6'>
+            <div className='grid gap-2 sm:grid-cols-3 text-center justify-items-center w-full m-6'>
                 {testimonials.map((quote, ind) => (
-                    <blockquote key = {ind} className='max-w-sm w-full text-lg p-4'>
+                    <blockquote key = {ind} className='max-w-sm w-full text-2xl p-2'>
                         &ldquo;{quote}&rdquo;
                     </blockquote>
                 ))}
             </div>
 
-            <div className='grid gap-6 sm:grid-cols-3 justify-items-center w-full m-6'>
+            <div className='grid gap-2 sm:grid-cols-3 justify-items-center w-full m-6'>
                 {stats.map((stat, ind) => (
                     <div key={ind} className='max-w-sm w-full p-4'>
-                       <div className='text-7xl font-bold'>{stat.value}</div>
-                       <div className='text-center'>{stat.label}</div>
+                       <div className='text-8xl font-bold'>{stat.value}</div>
+                       <div className='text-2xl text-center'>{stat.label}</div>
                     </div>
                 ))}
             </div>
 
-            <h2 className='text-3xl font-semibold m-16 text-[#0078d4]'>
+            <h2 className='text-4xl font-semibold m-16 text-[#0078d4]'>
                 See you at QDW2026!!
             </h2>
         </section>

@@ -11,7 +11,7 @@ export default function PageHead(){
             </div>
 
             <div className='m-4 sm:m-6 md:m-8 flex justify-center'>
-                <p className='text-sm sm:text-base md:text-lg max-w-4xl text-center'>Thank you for the amazing inaugural to our Quantum Device Workshop initiative this year!</p>
+                <p className='text-2xl text-center'>Thank you for the amazing inaugural to our Quantum Device Workshop initiative this year!</p>
             </div>
 
         </section>
