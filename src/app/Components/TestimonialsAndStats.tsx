@@ -45,7 +45,7 @@ export default function TestimonialsAndStats(){
                 ))}
             </div>
 
-            <h2 className='text-4xl font-semibold m-16 text-[#0078d4]'>
+            <h2 className='text-6xl font-semibold m-16 text-[#0078d4] pt-24'>
                 See you at QDW2026!!
             </h2>
         </section>

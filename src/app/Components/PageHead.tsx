@@ -5,11 +5,11 @@ export default function PageHead(){
                 <h2>Quantum Computing Student</h2>
                 <h2>Association @UCLA</h2>
             </div>            
-            <div className='text-4xl sm:text-6xl md:text-8xl lg:text-9xl m-4 sm:m-6 md:m-8'>
-                <h1 className='text-[#0078d4] font-bold'>QDW2026</h1>
+            <div className='text-4xl sm:text-6xl md:text-8xl lg:text-9xl p-16'>
+                <h1 className='text-[#0078d4] font-bold text-'>QDW2026</h1>
                 <h1 className='text-[#ffc845] font-bold'>Coming Soon!</h1>
             </div>              
-            <div className='m-4 sm:m-6 md:m-8 flex flex-col items-center space-y-4'>
+            <div className='m-16 flex flex-col items-center space-y-4' >
                 <p className='text-2xl text-center'>
                     Thank you for the amazing inaugural to our Quantum Device Workshop initiative this year!
                 </p>
