@@ -79,7 +79,7 @@ const InfiniteCarousel = () => {
         }
       `}</style>
       
-      <section className="w-full py-8 bg-gray-50" aria-label="Sponsor carousel">
+      <section className="w-full py-8 bg-gray-50" aria-label="Sponsor carousel" >
         <div className="max-w-7xl mx-auto px-4">
           {/* Control buttons for accessibility */}
           <div className="flex justify-center items-center mb-8">
@@ -104,7 +104,7 @@ const InfiniteCarousel = () => {
             
             {/* Scrolling container */}
             <div 
-              className={`flex ${!reducedMotion ? 'animate-scroll' : ''} ${isPaused ? 'paused' : ''}`}
+              className={`flex  ${!reducedMotion ? 'animate-scroll' : ''} ${isPaused ? 'paused' : ''}`}
               onMouseEnter={() => !reducedMotion && setIsPaused(true)}
               onMouseLeave={() => !reducedMotion && setIsPaused(false)}
             >
