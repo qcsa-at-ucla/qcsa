@@ -56,13 +56,10 @@ export default function ThankYouPage() {
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
-        {/* Header */}
+        {/* Header */}        
         <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-normal text-blue-600 mb-2">
-            Join to become one of them.
-          </h1>
-          <h2 className="text-3xl md:text-4xl font-normal text-blue-600">
-            See you at QDW2026!!
+          <h2 className="text-2xl md:text-1xl font-normal text-black-600">
+            You may <strong>pre-register</strong> below to indicate your interest and receive an email notifying you when registration opens.
           </h2>
         </div>
 
