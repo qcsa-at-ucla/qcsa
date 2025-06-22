@@ -28,17 +28,17 @@ export default function TestimonialsAndStats(){
                 What Our Participants Tell Us 
             </h2>
 
-            <div className='grid gap-2 sm:grid-cols-3 text-center justify-items-center w-full m-6'>
+            <div className='grid gap-8 sm:grid-cols-3 text-center justify-items-center w-full m-6'>
                 {testimonials.map((quote, ind) => (
-                    <blockquote key = {ind} className='max-w-sm w-full text-2xl p-2'>
+                    <blockquote key = {ind} className='max-w-xl w-full text-2xl p-2'>
                         &ldquo;{quote}&rdquo;
                     </blockquote>
                 ))}
             </div>
 
-            <div className='grid gap-2 sm:grid-cols-3 justify-items-center w-full m-6'>
+            <div className='grid gap-8 sm:grid-cols-3 justify-items-center w-full m-6'>
                 {stats.map((stat, ind) => (
-                    <div key={ind} className='max-w-sm w-full p-4'>
+                    <div key={ind} className='max-w-xl w-full p-4'>
                        <div className='text-8xl font-bold'>{stat.value}</div>
                        <div className='text-2xl text-center'>{stat.label}</div>
                     </div>
