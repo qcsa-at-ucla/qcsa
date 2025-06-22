@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <div>
       <PageHead />
-      <TestimonialsAndStats />
       <BetweenPage />
       <ThankYouPage />
+      <TestimonialsAndStats />
     </div>
   );
 }
