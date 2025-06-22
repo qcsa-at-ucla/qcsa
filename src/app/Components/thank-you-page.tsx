@@ -56,8 +56,11 @@ export default function ThankYouPage() {
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
-        {/* Header */}        
+        {/* Header */}     
         <div className="text-center mb-8">
+            <h2 className='text-4xl font-semibold m-16 text-[#0078d4]'>
+                QWC 2026 Pre-registration
+            </h2>   
           <h2 className="text-2xl md:text-1xl font-normal text-black-600">
             You may <strong>pre-register</strong> below to indicate your interest and receive an email notifying you when registration opens.
           </h2>
