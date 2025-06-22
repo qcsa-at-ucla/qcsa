@@ -4,14 +4,14 @@ export default function PageHead(){
             <div className='text-xl sm:text-2xl md:text-3xl font-semibold m-8 sm:m-12 md:m-16'>
                 <h2>Quantum Computing Student</h2>
                 <h2>Association @UCLA</h2>
-            </div>
-
-            <div className='text-4xl sm:text-6xl md:text-7xl lg:text-8xl m-4 sm:m-6 md:m-8'>
+            </div>            <div className='text-4xl sm:text-6xl md:text-7xl lg:text-8xl m-4 sm:m-6 md:m-8'>
                 <h1>QDW2026</h1>
                 <h1>Coming Soon!</h1>
             </div>
 
-            <p className='m-4 sm:m-6 md:m-8 text-sm sm:text-base md:text-lg max-w-4xl mx-auto'>Thank you for the amazing inaugural to our Quantum Device Workshop initiative this year!</p>
+            <div className='m-4 sm:m-6 md:m-8 flex justify-center'>
+                <p className='text-sm sm:text-base md:text-lg max-w-4xl text-center'>Thank you for the amazing inaugural to our Quantum Device Workshop initiative this year!</p>
+            </div>
 
         </section>
     );
