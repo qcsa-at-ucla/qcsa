@@ -18,8 +18,8 @@ const Footer = () => {  return (
             <span className="font-semibold" style={{ color: '#E91E63' }}>love</span>{' '}
             by{' '}
             <span className="text-gray-800 font-semibold">Clyde Villacrusis</span>,{' '}
-            <span className="text-gray-800 font-semibold">Harshita Kukreja</span>, and{' '}
-            <span className="text-gray-800 font-semibold">Emma Zhang</span>;
+            <span className="text-gray-800 font-semibold">Emma Zhang</span>, and{' '}
+            <span className="text-gray-800 font-semibold">Harshita Kukreja</span>;
             <br className="hidden sm:block" />
             <span className="sm:inline block mt-1">
               along with the{' '}
