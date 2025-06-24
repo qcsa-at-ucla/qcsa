@@ -9,6 +9,34 @@ interface FormData {
   institutionName: string;
 }
 
+async function triggerMailchimpSync(formData: FormData): Promise<void> {
+  try {
+    console.log('Triggering automatic Mailchimp sync for:', formData.email);
+    
+    // Wait 2 seconds for Google Sheets to update with the new form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    // Call the sync API endpoint
+    const response = await fetch('/api/sync-to-mailchimp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    if (response.ok) {
+      const result = await response.json();
+      console.log('Mailchimp sync completed:', result);
+    } else {
+      console.error('Mailchimp sync failed:', response.status, response.statusText);
+    }
+  } catch (error) {
+    console.error('Error triggering Mailchimp sync:', error);
+    // Don't throw error here - we don't want to fail the form submission
+    // if the Mailchimp sync fails
+  }
+}
+
 export async function submitToGoogleForm(formData: FormData): Promise<boolean> {
   const GOOGLE_FORM_URL = process.env.NEXT_PUBLIC_GOOGLE_FORM_URL;
   
@@ -93,9 +121,12 @@ export async function submitToGoogleForm(formData: FormData): Promise<boolean> {
         method: 'POST',
         mode: 'no-cors',
         body: formDataToSubmit
-      });
-      
+      });      
       console.log('Form submitted successfully via fetch');
+      
+      // Automatically sync to Mailchimp after successful form submission
+      await triggerMailchimpSync(formData);
+      
       return true;
     } catch (fetchError) {
       console.log('Fetch method failed, trying image method:', fetchError);
@@ -103,17 +134,23 @@ export async function submitToGoogleForm(formData: FormData): Promise<boolean> {
       // Method 2: Use image tag approach (works around CORS)
       return new Promise((resolve) => {
         const img = new Image();
-        
-        img.onload = () => {
+          img.onload = () => {
           console.log('Form submitted successfully via image method');
-          resolve(true);
+          
+          // Automatically sync to Mailchimp after successful form submission
+          triggerMailchimpSync(formData).finally(() => {
+            resolve(true);
+          });
         };
-        
-        img.onerror = () => {
+          img.onerror = () => {
           console.log('Image method completed (this is expected for form submission)');
           // Even if the image "fails" to load, the form submission likely succeeded
           // because Google Forms returns a response that can't be displayed as an image
-          resolve(true);
+          
+          // Automatically sync to Mailchimp after successful form submission
+          triggerMailchimpSync(formData).finally(() => {
+            resolve(true);
+          });
         };
         
         // Set the src to trigger the request
