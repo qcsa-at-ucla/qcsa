@@ -1,18 +1,13 @@
 
-import TestimonialsAndStats from "./Components/TestimonialsAndStats";
-import PageHead from "./Components/PageHead";
-import ThankYouPage from "./Components/thank-you-page";
-import BetweenPage from "./Components/between-page";
-import Footer from "./Components/footer";
+import AboutUs from "./Components/AboutUs";
+import MainWebsiteFooter from "./Components/mainWebsiteFooter";
 
 export default function Home() {
   return (
     <div>
-      <PageHead />
-      <BetweenPage />
-      <ThankYouPage />
-      <TestimonialsAndStats />
-      <Footer />
+      <AboutUs />
+      <MainWebsiteFooter />
+      {/* Add other components or content here as needed */}
     </div>
   );
 }
