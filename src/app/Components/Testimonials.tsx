@@ -7,8 +7,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F3F8FF] flex-grow">
-
-      <h2 className="text-4xl font-bold text-[#234285] text-left mb-12">
+      <h2 className="text-4xl md:text-5xl font-bold text-[#234285] mb-12">
         Testimonials
       </h2>
 
@@ -36,7 +35,7 @@ export default function Testimonials() {
 
             {/* Testimonial Box */}
             <div className="relative z-10 p-20">
-              <blockquote className="text-black font-medium">
+              <blockquote className="text-black">
                 <p className="mb-6 font-bold">
                   <strong>“</strong>{quote}<strong>”</strong>
                 </p>
