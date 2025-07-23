@@ -11,38 +11,26 @@ export default function Testimonials() {
         Testimonials
       </h2>
 
-      <div className="grid gap-12 sm:grid-cols-3 justify-items-center">
+      <div className="grid md:grid-cols-3 justify-items-center">
         {testimonials.map((quote, ind) => (
-          <div key={ind} className="relative max-w-xs w-full flex items-center justify-center text-center">
-            {/* Aura Ring */}
-            <div
-              className="absolute inset-0 z-0 rounded-full pointer-events-none"
-              style={{
-                
-                background: `
-                  radial-gradient(
-                    circle,
-                    transparent 50%, 
-                    rgba(173, 200, 239, .8) 55%,
-                    transparent 70% 
-                  )
+          <div key={ind} className="relative lg:w-full flex items-center justify-center text-center">
+              {/* Aura Ring */}
+              <img
+                  src="/images/testimonials-aura.png"
+                  alt="testimonials background"
+                  className="w-full h-full object-contain z-0"
+              />
 
-                `,
-                filter: "blur(15px)", 
-              }}
-
-            ></div>
-
-            {/* Testimonial Box */}
-            <div className="relative z-10 p-20">
-              <blockquote className="text-black">
-                <p className="mb-6 font-bold">
-                  <strong>“</strong>{quote}<strong>”</strong>
-                </p>
-                <p className="not-italic text-sm text-right pr-4">– Jane Doe</p>
-              </blockquote>
+              {/* Testimonial Box */}
+              <div className="absolute">
+                <blockquote className="text-black px-44 lg:px-28" >
+                  <p className="mb-6 font-semibold ">
+                    <strong>“</strong>{quote}<strong>”</strong>
+                  </p>
+                  {/*<p className="not-italic text-sm text-right pr-4">– Jane Doe</p>*/}
+                </blockquote>
+              </div>
             </div>
-          </div>
         ))}
       </div>
     </section>
