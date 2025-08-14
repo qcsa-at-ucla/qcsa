@@ -172,29 +172,22 @@ const boardMembers = [
   {
     id: 19,
     name: "Sadman Ahmed Shanto",
-    role: "Faculty",
+    role: "President of USC QCSA",
     major: "PhD Candidate",
     year: "5th Year",
     bio: "Sadman Ahmed Shanto is a Ph.D. candidate in Physics at the University of Southern California, working in the Levenson-Falk Lab on superconducting quantum hardware. His research focuses on quasiparticle dynamics in superconducting circuits and the automation of quantum device design workflows. To learn more about his work and interests, you can visit https://sadmanahmedshanto.com/",
     image: "/images/shanto.png"
   },
-  {
-    id: 20,
-    name: "",
-    role: "",
-    major: "",
-    year: "",
-    bio: "",
-    image: ""
-  },
+ 
 ];
 
 const facultyLeadership = [
   {
-    id: 1,
-    name: "Dr. Alice Johnson",
+    id: 21,
+    name: "Professor Mark Gyure",
     role: "Faculty Director",
-    image: null
+    bio: "In addition to coordinating the day-to-day activities of the CQSE, Gyure’s research is focused on the theory and simulation of solid-state quantum information processing devices and architectures, specifically electrostatically-defined semiconductor quantum dots. He and collaborators at UCLA and HRL Laboratories, LLC in Malibu have developed a sophisticated device modeling code that employs the full configuration-interaction (FCI) method to solve the multi-electron Schrodinger equation self consistently with the electrostatic potential generated from realistic device geometries, enabling highly accurate calculations of the energy spectrum of coupled quantum dot systems. He came to UCLA recently from HRL Laboratories where he was the Principal Investigator and Chief Scientist for over 15 years on numerous programs in the quantum information science and technology area.",
+    image: "/images/mark.png"
   }
 ];
 
@@ -420,21 +413,117 @@ export default function AboutPage() {
           <h2 className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16 font-[Kantumruy]">
             Faculty Leadership
           </h2>
-          <div className="flex justify-center">
-            {facultyLeadership.map((faculty) => (
-              <div key={faculty.id} className="bg-white rounded-lg overflow-hidden shadow-lg max-w-sm font-[Kantumruy]">
-                <div className="w-60 h-80 bg-gray-200 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-gray-400 rounded-full flex items-center justify-center">
-                    <span className="text-gray-600 text-3xl">📷</span>
+            {facultyLeadership.length === 1 ? (
+              <div className="flex justify-center">
+                {facultyLeadership.map((faculty) => (
+                  <div
+                    key={faculty.id}
+                    className="relative group cursor-pointer w-full max-w-sm"
+                    onMouseEnter={() => setHoveredMember(faculty.id)}
+                    onMouseLeave={() => setHoveredMember(null)}
+                  >
+                    <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105">
+                      <div className="w-full h-64 bg-gray-200 flex items-center justify-center overflow-hidden">
+                        {faculty.image ? (
+                          <Image
+                            src={faculty.image}
+                            alt={faculty.name}
+                            width={256}
+                            height={256}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className="w-20 h-20 bg-gray-400 rounded-full flex items-center justify-center">
+                            <span className="text-gray-600 text-3xl">📷</span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="p-6 text-center font-[Kantumruy]">
+                        <h3 className="font-bold text-lg text-gray-800 mb-1">{faculty.name}</h3>
+                        <p className="text-[#234285] font-medium mb-1">{faculty.role}</p>
+                      </div>
+                    </div>
+
+                    {/* Hover Popup for Faculty */}
+                    {hoveredMember === faculty.id && (
+                      <div className="absolute z-50 top-0 left-0 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-x-2 -translate-y-2 font-[Kantumruy]">
+                        <div className="flex items-start gap-4">
+                          <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
+                            <Image
+                              src={faculty.image || "/images/placeholder-member.jpg"}
+                              alt={faculty.name}
+                              width={64}
+                              height={64}
+                              className="rounded-full object-cover"
+                            />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="font-bold text-lg text-gray-800 mb-1">{faculty.name}</h3>
+                            <p className="text-[#234285] font-medium mb-2">{faculty.role}</p>
+                            <p className="text-gray-700 text-sm leading-relaxed">{faculty.bio}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </div>
-                <div className="p-8 text-center">
-                  <h3 className="font-bold text-xl text-gray-800 mb-2">{faculty.name}</h3>
-                  <p className="text-[#234285] font-medium text-lg">{faculty.role}</p>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 font-[Kantumruy] justify-items-center">
+                {facultyLeadership.map((faculty) => (
+                  <div
+                    key={faculty.id}
+                    className="relative group cursor-pointer w-full max-w-sm"
+                    onMouseEnter={() => setHoveredMember(faculty.id)}
+                    onMouseLeave={() => setHoveredMember(null)}
+                  >
+                    <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105">
+                      <div className="w-full h-64 bg-gray-200 flex items-center justify-center overflow-hidden">
+                        {faculty.image ? (
+                          <Image
+                            src={faculty.image}
+                            alt={faculty.name}
+                            width={256}
+                            height={256}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className="w-20 h-20 bg-gray-400 rounded-full flex items-center justify-center">
+                            <span className="text-gray-600 text-3xl">📷</span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="p-6 text-center font-[Kantumruy]">
+                        <h3 className="font-bold text-lg text-gray-800 mb-1">{faculty.name}</h3>
+                        <p className="text-[#234285] font-medium mb-1">{faculty.role}</p>
+                      </div>
+                    </div>
+
+                    {/* Hover Popup for Faculty */}
+                    {hoveredMember === faculty.id && (
+                      <div className="absolute z-50 top-0 left-0 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-x-2 -translate-y-2 font-[Kantumruy]">
+                        <div className="flex items-start gap-4">
+                          <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
+                            <Image
+                              src={faculty.image || "/images/placeholder-member.jpg"}
+                              alt={faculty.name}
+                              width={64}
+                              height={64}
+                              className="rounded-full object-cover"
+                            />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="font-bold text-lg text-gray-800 mb-1">{faculty.name}</h3>
+                            <p className="text-[#234285] font-medium mb-2">{faculty.role}</p>
+                            <p className="text-gray-700 text-sm leading-relaxed">{faculty.bio}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
         </div>
       </section>
             <MainWebsiteFooter />
