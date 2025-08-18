@@ -337,7 +337,7 @@ export default function AboutPage() {
                 under CQSE, focused on all areas of quantum information science.
               </p>
               <button className="bg-[#234285] text-white px-8 py-3 rounded text-lg font-medium hover:bg-blue-700 transition-colors duration-200 font-[Kantumruy]">
-                Learn More
+                <a href="https://www.cqse.ucla.edu/" target="_blank" rel="noopener noreferrer" className="block w-full h-full">Learn More</a>
               </button>
             </div>
           </div>
