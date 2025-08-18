@@ -205,16 +205,19 @@ export default function AboutPage() {
                 Mission Statement
               </h2>
               <div className="space-y-4 text-lg text-[#234285] font-[Kantumruy]">
-                <p>BLAH blah blah blah text here</p>
-                <p>BLAH blah blah blah text here</p>
-                <p>BLAH blah blah blah text here</p>
+                <p>We want to empower the next generation of students through hands-on learning, collaboration, and prepare them to lead in the field.</p>
               </div>
             </div>
             <div className="lg:w-1/2">
               <div className="w-full h-80 bg-gray-200 rounded-lg flex items-center justify-center">
-                <div className="w-16 h-16 bg-gray-400 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 text-2xl">📷</span>
-                </div>
+                <Image
+                  src={'/images/Final_QCSA_Logo-13.png'}
+                  alt="QCSA Logo"
+                  width={400}
+                  height={200}
+                  className="object-contain"
+                  onError={(e) => { e.currentTarget.src = '/images/placeholder-logo.jpg'; }}
+                />
               </div>
             </div>
           </div>
