@@ -267,7 +267,7 @@ export default function AboutPage() {
               </div>
               <p className="text-gray-700 text-center font-[Kantumruy]">
                 We are committed to making quantum computing accessible to all students. Through workshops, 
-                talks, and hands-on learning, we help break down complex topics and spark curiosity.
+                talks, and hands-on learning experiences, we help break down complex topics and spark curiosity.
               </p>
             </div>
 
