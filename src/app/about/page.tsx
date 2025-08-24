@@ -200,16 +200,28 @@ export default function AboutPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
-              <h2 className="text-4xl md:text-5xl font-bold text-[#234285] mb-8 font-[Kantumruy]">
-                Mission Statement
-              </h2>
-              <div className="space-y-4 text-lg text-[#234285] font-[Kantumruy]">
-                <p>We want to empower the next generation of students through hands-on learning, collaboration, and prepare them to lead in the field.</p>
+            <div 
+              className="lg:w-1/2 relative p-30 rounded-lg"
+              style={{
+                backgroundImage: 'url(/images/aura.png)',
+                backgroundSize: 'contain',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
+            >
+              {/* Optional overlay for better text readability */}
+              <div className="absolute inset-0 bg-opacity-20 rounded-lg"></div>
+              <div className="relative z-10 text-center">
+                <h2 className="text-4xl md:text-4xl text-[#234285] mb-8 font-kantumruy drop-shadow-lg">
+                  Mission Statement
+                </h2>
+                <div className="text-lg md:text-xl text-[#234285] leading-relaxed font-kantumruy space-y-4 drop-shadow-lg">
+                  <p className="text-center">We want to empower the next generation of students through hands-on learning, collaboration, and prepare them to lead in the field.</p>
+                </div>
               </div>
             </div>
             <div className="lg:w-1/2">
-              <div className="w-full h-80 bg-gray-200 rounded-lg flex items-center justify-center">
+              <div className="w-full h-80 bg-white rounded-lg flex items-center justify-center">
                 <Image
                   src={'/images/Final_QCSA_Logo-13.png'}
                   alt="QCSA Logo"
@@ -243,9 +255,9 @@ export default function AboutPage() {
 </svg>
 
                 </div>
-                <h3 className="text-2xl font-bold text-[#234285] mb-4 font-[Kantumruy]">Collaboration</h3>
+                <h3 className="text-2xl font-bold text-[#234285] mb-4 font-kantumruy">Collaboration</h3>
               </div>
-              <p className="text-gray-700 text-center font-[Kantumruy]">
+              <p className=" text-center text-[#234285] font-kantumruy">
                 We believe that progress in quantum computing comes from interdisciplinary teamwork. QCSA 
                 fosters a supportive community that brings together students, researchers, and industry leaders.
               </p>
@@ -263,9 +275,9 @@ export default function AboutPage() {
 </svg>  
 
                 </div>
-                <h3 className="text-2xl font-bold text-[#234285] mb-4 font-[Kantumruy]">Educate</h3>
+                <h3 className="text-2xl font-bold text-[#234285] mb-4 font-kantumruy">Educate</h3>
               </div>
-              <p className="text-gray-700 text-center font-[Kantumruy]">
+              <p className="text-[#234285] text-center font-kantumruy">
                 We are committed to making quantum computing accessible to all students. Through workshops, 
                 talks, and hands-on learning, we help break down complex topics and spark curiosity.
               </p>
@@ -297,10 +309,10 @@ export default function AboutPage() {
 </svg>
 
                 </div>
-                <h3 className="text-2xl font-bold text-[#234285] mb-4 font-[Kantumruy]">Innovation</h3>
+                <h3 className="text-2xl font-bold text-[#234285] mb-4 font-kantumruy">Innovation</h3>
               </div>
-              <p className="text-gray-700 text-center font-[Kantumruy]">
-                QCSA encourages creative problem-solving and forward thinking. We empower students to 
+              <p className="text-[#234285] text-center font-kantumruy">
+                QCSA encourages creative problem-solving and forward thinking. We empower students to
                 explore new ideas, contribute to cutting-edge research, and shape the future.
               </p>
             </div>
@@ -311,7 +323,7 @@ export default function AboutPage() {
       {/* CQSE Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16 font-[Kantumruy]">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16 font-kantumruy">
             CQSE
           </h2>
           <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -330,13 +342,13 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="lg:w-1/2">
-              <h3 className="text-3xl font text-black mb-6 font-[Kantumruy]">Who is CQSE?</h3>
-              <p className="text-lg text-gray-800 mb-8 leading-relaxed font-[Kantumruy]">
+              <h3 className="text-3xl font text-[#234285]  mb-6 font-kantumruy">Who is CQSE?</h3>
+              <p className="text-lg text-[#234285] mb-8 leading-relaxed font-kantumruy">
                 The Center for Quantum Science and Engineering (CQSE) leads UCLA&apos;s research and education in 
                 quantum information science. QCSA is an undergraduate and graduate student organization 
                 under CQSE, focused on all areas of quantum information science.
               </p>
-              <button className="bg-[#234285] text-white px-8 py-3 rounded text-lg font-medium hover:bg-blue-700 transition-colors duration-200 font-[Kantumruy]">
+              <button className="bg-[#234285] text-white px-8 py-3 rounded text-lg font-medium hover:bg-blue-700 transition-colors duration-200 font-kantumruy">
                 <a href="https://www.cqse.ucla.edu/" target="_blank" rel="noopener noreferrer" className="block w-full h-full">Learn More</a>
               </button>
             </div>
@@ -347,10 +359,10 @@ export default function AboutPage() {
       {/* Meet the Team Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16 font-[Kantumruy]">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16 font-kantumruy">
             Meet the Team
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 font-[Kantumruy]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 font-kantumruy">
             {boardMembers.map((member) => (
               <div
                 key={member.id} 
@@ -375,7 +387,7 @@ export default function AboutPage() {
                       </div>
                     )}
                   </div>
-                  <div className="p-6 text-center font-[Kantumruy]">
+                  <div className="p-6 text-center font-kantumruy">
                     <h3 className="font-bold text-lg text-gray-800 mb-1">{member.name}</h3>
                     <p className="text-[#234285] font-medium mb-1">{member.role}</p>
                     <p className="text-gray-600 text-sm">{member.major}, {member.year}</p>
@@ -384,7 +396,7 @@ export default function AboutPage() {
 
                 {/* Hover Popup */}
                 {hoveredMember === member.id && (
-                  <div className="absolute z-50 top-0 left-0 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-x-2 -translate-y-2 font-[Kantumruy]">
+                  <div className="absolute z-50 top-0 left-0 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-x-2 -translate-y-2 font-kantumruy">
                     <div className="flex items-start gap-4">
                       <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
                         <Image
@@ -413,7 +425,7 @@ export default function AboutPage() {
       {/* Faculty Leadership Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16 font-[Kantumruy]">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16 font-kantumruy">
             Faculty Leadership
           </h2>
             {facultyLeadership.length === 1 ? (
@@ -449,7 +461,7 @@ export default function AboutPage() {
 
                     {/* Hover Popup for Faculty */}
                     {hoveredMember === faculty.id && (
-                      <div className="absolute z-50 top-0 left-0 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-x-2 -translate-y-2 font-[Kantumruy]">
+                      <div className="absolute z-50 top-0 left-0 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-x-2 -translate-y-2 font-kantumruy">
                         <div className="flex items-start gap-4">
                           <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
                             <Image
@@ -472,7 +484,7 @@ export default function AboutPage() {
                 ))}
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 font-[Kantumruy] justify-items-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 font-kantumruy justify-items-center">
                 {facultyLeadership.map((faculty) => (
                   <div
                     key={faculty.id}
@@ -504,7 +516,7 @@ export default function AboutPage() {
 
                     {/* Hover Popup for Faculty */}
                     {hoveredMember === faculty.id && (
-                      <div className="absolute z-50 top-0 left-0 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-x-2 -translate-y-2 font-[Kantumruy]">
+                      <div className="absolute z-50 top-0 left-0 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-x-2 -translate-y-2 font-kantumruy">
                         <div className="flex items-start gap-4">
                           <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
                             <Image

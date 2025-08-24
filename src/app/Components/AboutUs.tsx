@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AboutUs() {
   return (
@@ -10,12 +11,12 @@ export default function AboutUs() {
             {/* Text Content Section */}
             <div className="lg:w-6/12 lg:ml-8">
               <div className="space-y-8 text-left">
-                <h2 className="text-4xl md:text-5xl font-bold text-[#234285] mb-6">
+                <h2 className="text-4xl md:text-5xl font-bold font-kantumruy text-[#234285] mb-6">
                   About Us
                 </h2>
                 
                 <div className="space-y-4">
-                  <p className="text-lg md:text-xl text-[#234285] leading-relaxed font-[Kantumruy]">
+                  <p className="text-lg md:text-xl leading-relaxed font-kantumruy text-[#234285]">
                     The premier quantum science and technology organization at UCLA.
                     Host talks by professors, students, and other institutions. Undergrad 
                     and Grad organization under CQSE for everything under the umbrella 
@@ -27,7 +28,7 @@ export default function AboutUs() {
                 {/* Learn More Button */}
                 <div className="pt-6">
                   <div className="flex justify-center">
-                    <button className="bg-[#234285] text-white px-8 py-4 text-lg font-[Kantumruy] hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform">
+                    <button className="bg-[#234285] text-white px-8 py-4 text-lg font-kantumruy hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform">
                       <Link href="../about/">
                         Learn More
                       </Link>
@@ -40,10 +41,14 @@ export default function AboutUs() {
             {/* Image Section */}
             <div className="lg:w-12/12 lg:mr-8">
               <div className="flex justify-end">
-                <div className="w-150 h-120 bg-gray-200 flex items-center justify-center border-2 border-gray-300">
-                  <div className="text-center text-gray-500">
-                    <p className="text-xl font-medium">team photo</p>
-                  </div>
+                <div className="w-150 h-120 flex items-center justify-center">
+                  <Image
+                    src="/images/about-me-photo.png"
+                    alt="QCSA Team Photo"
+                    width={600}
+                    height={480}
+                    className="object-cover rounded-lg"
+                  />
                 </div>
               </div>
             </div>
@@ -55,7 +60,7 @@ export default function AboutUs() {
       <footer className="bg-[#F3F8FF] border-t border-gray-200 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <div className="space-y-4">
-            <p className="text-gray-600 text-lg">
+            <p className="text-[#234285] text-lg font-kantumruy">
               Interested in our Quantum Device Workshop?
             </p>
             <Link 
