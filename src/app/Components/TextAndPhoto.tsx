@@ -13,10 +13,10 @@ export default function TextAndPhoto({
   imageAlt = '',
 }: TextAndPhotoProps) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex flex-col">
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F3F8FF] flex-grow">
-        <div className='mx-auto lg:max-w-4xl xl:max-w-5xl'>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center xl:gap-">
+        <div className='mx-auto lg:max-w-5xl xl:max-w-5xl'>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center xl:gap-16">
             <div className="flex justify-center lg:justify-end">
 
             {/* LEFT: aura + text */}
@@ -30,8 +30,8 @@ export default function TextAndPhoto({
               />
               {/* Text */}
               <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-4 px-4 translate-y-30">
-                <h2 className="relative -top-4 text-[36px] font-bold text-[#234285] lg:-translate-y-4 xl:translate-y-0">{title}</h2>
-                <p className="text-base text-[#234285] leading-relaxed font-[Kantumruy] px-12 -translate-y-2 lg:px-10 xl:px-8 lg:-translate-y-8 xl:-translate-y-2">
+                <h2 className="relative -top-4 text-[36px] font-bold text-[#234285] -translate-y-2">{title}</h2>
+                <p className="text-base text-[#234285] leading-relaxed font-[Kantumruy] px-12 lg:px-8 -translate-y-2 ">
                   {description}
                 </p>
               </div>

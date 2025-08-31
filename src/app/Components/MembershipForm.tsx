@@ -1,11 +1,11 @@
 
 export default function MembershipForm() {
   return (
-  <div className="min-h-screen flex flex-col">
-    <section className=" px-4 sm:px-6 lg:px-8 bg-[#F3F8FF] flex-grow">
-      <h2 className="relative -top-4 text-[36px] font-bold text-[#234285] text-center">Membership</h2>
+  <div className="flex flex-col">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F3F8FF] flex-grow">
+      <h2 className="relative -top-4 text-[36px] font-bold text-[#234285] text-center mb-1.5">Membership</h2>
 
-        <div className="w-full max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-5xl mx-auto">
+        <div className="w-full max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-4xl xl:max-w-5xl mx-auto">
 
           <form className='text-[#234285] text-2xl font-bold'>
               {/*Name */}
@@ -31,7 +31,7 @@ export default function MembershipForm() {
                     name='first-name'
                     className="w-full rounded-sm 
                     border-3 border-[#234285]/40 
-                    bg-[#F8FAFF] px-3 py-2 outline-none
+                    bg-[#F8FAFF] px-3 py-2 outline-none font-normal
                     focus:border-[#234285]/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)]
                     transition"
                   />
@@ -51,7 +51,7 @@ export default function MembershipForm() {
                     name='last-name'
                     className="w-full rounded-sm 
                     border-3 border-[#234285]/40 
-                    bg-[#F8FAFF] px-3 py-2 outline-none
+                    bg-[#F8FAFF] px-3 py-2 outline-none font-normal
                     focus:border-[#234285]/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)]
                     transition"
                   />
@@ -70,7 +70,7 @@ export default function MembershipForm() {
                     name='email'
                     className="w-full rounded-sm 
                     border-3 border-[#234285]/40 
-                    bg-[#F8FAFF] px-3 py-2 outline-none
+                    bg-[#F8FAFF] px-3 py-2 outline-none font-normal
                     focus:border-[#234285]/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)]
                     transition"
                 />
@@ -87,7 +87,7 @@ export default function MembershipForm() {
                     name='education'
                     className="w-full rounded-sm 
                     border-3 border-[#234285]/40 
-                    bg-[#F8FAFF] px-3 py-2 outline-none
+                    bg-[#F8FAFF] px-3 py-2 outline-none font-normal
                     focus:border-[#234285]/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)]
                     transition"
                 />
@@ -104,7 +104,7 @@ export default function MembershipForm() {
                     name='rate'
                     className="w-full rounded-sm 
                     border-3 border-[#234285]/40 
-                    bg-[#F8FAFF] px-3 py-2 outline-none
+                    bg-[#F8FAFF] px-3 py-2 outline-none font-normal
                     focus:border-[#234285]/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)]
                     transition"
                 />
@@ -127,10 +127,16 @@ export default function MembershipForm() {
                   name='institution-name'
                   className="w-full rounded-sm bg-[#F8FAFF]
                             border-3 border-[#234285]/40 
-                            px-3 py-2 outline-none
+                            px-3 py-2 outline-none font-normal
                             focus:border-[#234285]/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)]
                             transition"
                 />
+              </div>
+              <div className='mt-16 flex justify-center' >
+                <button
+                  type = 'submit'
+                  className='rounded-sm px-12 py-3 bg-[#234285] text-white'
+                >Register</button>
               </div>
           </form>
         </div>
