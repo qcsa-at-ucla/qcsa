@@ -13,11 +13,12 @@ export default function MainWebsiteFooter() {
           <div className="flex-shrink-0">
             <div className="w-40 h-24">
               <Image
-                src={'/images/Final_QCSA_Logo-13.png'}
+                // src={'/images/Final_QCSA_Logo-13.png'}
+                src={'/images/QCSA_LOGO.png'}
                 alt="QCSA Logo"
                 width={160}
                 height={48}
-                className="object-contain"
+                className="object-contain max-w-none"
                 onError={(e) => { e.currentTarget.src = '/images/placeholder-logo.jpg'; }}
               />
             </div>
