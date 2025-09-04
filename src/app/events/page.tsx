@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import Image from 'next/image';
+import Link from 'next/link';
 
 const eventsData = [
 	{
@@ -278,7 +279,18 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 											<p className=" mb-4 text-lg font-kantumruy text-[#234285]">{s.sub}</p>
 										</div>
 										<div className="pt-2">
-											<a className="bg-blue-800 text-white px-4 py-2 rounded shadow-sm hover:bg-blue-900" href="/ucla_usc">Learn More</a>
+											<Link
+												className="bg-blue-800 text-white px-4 py-2 rounded shadow-sm hover:bg-blue-900"
+												href={
+													s.img.includes('ucla_caltech.png')
+														? '/ucla_caltech'
+														: s.img.includes('ucla_usc.png')
+														? '/ucla_usc'
+														: '/ucla_acm'
+												}
+											>
+												Learn More
+											</Link>
 										</div>
 									</div>
 								</div>
