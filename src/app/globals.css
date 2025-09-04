@@ -17,6 +17,12 @@
   --color-lighter: #F8FAFF
 }
 
+@layer base{
+  h2 {
+    @apply text-4xl text-main font-bold;
+  }
+}
+
 
 
 body {  
