@@ -329,7 +329,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 								{/* Embed Google Calendar. Using the public embed for quantum.ucla@gmail.com */}
 								<iframe
 									title="QCSA Event Calendar"
-									src="https://calendar.google.com/calendar/embed?src=quantum.ucla%40gmail.com&ctz=America%2FLos_Angeles"
+									src="https://calendar.google.com/calendar/embed?src=70e5c433011f8f8b954b98c30728ec1833d5e56a7fb0602ad097bf39a302f695%40group.calendar.google.com&ctz=Europe%2FBerlin"
 									className="w-full h-[520px] border-0"
 									loading="lazy"
 								/>
