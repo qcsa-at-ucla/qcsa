@@ -28,7 +28,7 @@ export default function NewslettersPage() {
     <main className="mx-auto px-6 py-12 w-full max-w-xs sm:max-w-xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
       <h2 className="mb-16 text-4xl text-center">Past Newsletters</h2>
 
-      <ul className="grid gap-6 xl:gap-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:px-6 items-stretch">
+      <ul className="grid gap-6 xl:gap-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:px-6 items-stretch auto-rows-fr">
         {newsletters.map((n) => (
           <li key={n.edition} className="h-full">
             <NewsletterCard

@@ -7,10 +7,10 @@ type Props = {
 
   export default function NewsletterCard({ edition, title, excerpt, href }: Props) {
     return (
-      <article className="group flex h-full flex-col rounded-md bg-white shadow-[4px_4px_3px_rgba(37,99,235,0.25)] transition hover:-translate-y-0.5">
+      <article className="group flex h-full flex-col rounded-md bg-white shadow-[4px_4px_3px_rgba(37,99,235,0.22)] transition hover:-translate-y-0.5 xl:min-h-[425]">
         {/* Header */}
-        <div className="rounded-t-md bg-[#405C80] px-8 py-10">
-          <h3 className=" text-center text-[30px] lg:text-[35px] xl:text-[40px] font-bold tracking-wide text-white ">
+        <div className="rounded-t-md bg-[#405C80] px-8 py-14">
+          <h3 className=" text-center text-[30px] lg:text-[35px] xl:text-[40px] font-bold tracking-wide text-white [text-shadow:0px_2px_4px_rgba(0,0,0,0.6)] ">
             EDITION #{edition}
           </h3>
         </div>
