@@ -1,4 +1,4 @@
-import MainWebsiteFooter from "../Components/mainWebsiteFooter";
+import MainWebsiteFooter from "../Components/MainWebsiteFooter";
 import MembershipForm from "../Components/MembershipForm";
 import TextAndPhoto from "../Components/TextAndPhoto";
 
