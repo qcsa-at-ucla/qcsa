@@ -121,7 +121,7 @@ const boardMembers = [
     role: "Head of Digital infrastructure",
     major: "Computer Science and Engineering",
     year: "2nd Year",
-    bio: "",
+    bio: "Harshita is a second-year Computer Science and Engineering student at UCLA, minoring in Disability Studies. She is passionate about digital accessibility and inclusive design, and recently launched NextA11y, a web accessibility bootcamp for middle and high school students in India. Outside of coding, Harshita enjoys 3D modeling in SOLIDWORKS, sketching, and exploring campus.",
     image: "/images/harshita.png"
   },
   {
