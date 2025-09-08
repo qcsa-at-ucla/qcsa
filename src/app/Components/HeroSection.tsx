@@ -1,9 +1,20 @@
 "use client";
 import React from 'react';
+import Orb from './Orb';
 
 const HeroSection = () => {
   return (
     <div className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#F3F8FF'}}>
+      {/* Orb Background */}
+      <div className="absolute inset-0 z-0" style={{ width: '100%', height: '100%', position: 'relative' }}>
+        <Orb
+          hoverIntensity={0.5}
+          rotateOnHover={true}
+          hue={220}
+          forceHoverState={false}
+        />
+      
+      
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
         <div className="text-center max-w-4xl mx-auto">
@@ -18,8 +29,7 @@ const HeroSection = () => {
           </p>
         </div>
       </div>
-      
-
+      </div>
     </div>
   );
 };
