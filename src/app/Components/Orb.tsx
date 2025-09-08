@@ -10,7 +10,7 @@ interface OrbProps {
   forceHoverState?: boolean;
 }
 
-export default function Orb({ hue = 0, hoverIntensity = 0.2, rotateOnHover = true, forceHoverState = false }: OrbProps) {
+export default function Orb({ hue = 240, hoverIntensity = 0.2, rotateOnHover = true, forceHoverState = true }: OrbProps) {
   const ctnDom = useRef<HTMLDivElement>(null);
 
   const vert = /* glsl */ `
@@ -116,9 +116,9 @@ export default function Orb({ hue = 0, hoverIntensity = 0.2, rotateOnHover = tru
     }
 
     vec4 draw(vec2 uv) {
-      vec3 color1 = adjustHue(baseColor1, hue);
-      vec3 color2 = adjustHue(baseColor2, hue);
-      vec3 color3 = adjustHue(baseColor3, hue);
+      vec3 color1 = baseColor1;
+      vec3 color2 = baseColor2;
+      vec3 color3 = baseColor3;
       
       float ang = atan(uv.y, uv.x);
       float len = length(uv);
@@ -127,14 +127,14 @@ export default function Orb({ hue = 0, hoverIntensity = 0.2, rotateOnHover = tru
       float n0 = snoise3(vec3(uv * noiseScale, iTime * 0.5)) * 0.5 + 0.5;
       float r0 = mix(mix(innerRadius, 1.0, 0.4), mix(innerRadius, 1.0, 0.6), n0);
       float d0 = distance(uv, (r0 * invLen) * uv);
-      float v0 = light1(1.0, 10.0, d0);
+      float v0 = light1(2.0, 10.0, d0);
       v0 *= smoothstep(r0 * 1.05, r0, len);
       float cl = cos(ang + iTime * 2.0) * 0.5 + 0.5;
       
       float a = iTime * -1.0;
       vec2 pos = vec2(cos(a), sin(a)) * r0;
       float d = distance(uv, pos);
-      float v1 = light2(1.5, 5.0, d);
+      float v1 = light2(3.0, 5.0, d);
       v1 *= light1(1.0, 50.0, d0);
       
       float v2 = smoothstep(1.0, mix(innerRadius, 1.0, n0 * 0.5), len);
