@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
+import MainWebsiteHeader from '../Components/mainWebsiteHeader';
 
 export default function GalleryPage() {
   const images = [
@@ -14,6 +15,7 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      <MainWebsiteHeader/>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
         <h2 className="text-center text-3xl sm:text-4xl font-semibold text-blue-900 mb-8 font-kantumruy text-[#234285]">Gallery</h2>
 

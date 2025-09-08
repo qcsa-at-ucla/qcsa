@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import Image from 'next/image';
+import MainWebsiteHeader from '../Components/mainWebsiteHeader';
 
 const PAST_SPEAKERS = [
     {
@@ -32,6 +33,7 @@ export default function Page() {
     };
     return (
         <main className="py-20 bg-[var(--background)]">
+            <MainWebsiteHeader/>
             <div className="max-w-6xl mx-auto px-6">
                 <section className="flex flex-col md:flex-row items-center gap-12">
                     {/* Left: Image card */}

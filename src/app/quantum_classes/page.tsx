@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
+import MainWebsiteHeader from "../Components/mainWebsiteHeader";
 
 const COURSES = [
 	"Math 33A: Linear Algebra and Applications",
@@ -79,6 +80,7 @@ export default function QuantumClassesPage() {
 
 	return (
 		<div className="min-h-screen bg-[#F8FAFF] flex flex-col font-kantumruy ">
+			<MainWebsiteHeader/>
 			<main className="w-full max-w-6xl mx-auto px-6 py-16">
 				<h1 className="text-center text-3xl sm:text-4xl font-bold text-[#173a73] mb-8 font-kantumruy text-[#234285]">
 					Quantum Classes at UCLA

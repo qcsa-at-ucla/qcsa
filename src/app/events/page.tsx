@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import Image from 'next/image';
 import Link from 'next/link';
+import MainWebsiteHeader from "../Components/mainWebsiteHeader";
 
 const eventsData = [
 	{
@@ -176,6 +177,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 	return (
 		<div className="min-h-screen bg-slate-50">
+			<MainWebsiteHeader/>
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
 				<h2 className="text-center text-3xl sm:text-4xl font-semibold text-blue-900 mb-8">
 					Upcoming Events

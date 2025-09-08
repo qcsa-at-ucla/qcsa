@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
+import MainWebsiteHeader from '../Components/mainWebsiteHeader';
 
 
 // Board member data - you can easily expand this to 12 members or more or less :D
@@ -196,6 +197,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-[#F3F8FF]">
+      <MainWebsiteHeader/>
       {/* Mission Statement Section */}
       <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">

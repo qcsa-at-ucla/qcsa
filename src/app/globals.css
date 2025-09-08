@@ -21,13 +21,15 @@
   --font-mono: var(--font-geist-mono);
   --color-main: #234285;
   --color-shadow: #ADC8EF;
-  --color-lighter: #F8FAFF
+  --color-lighter: #F8FAFF;
+  --font-kantumruy: "Kantumruy"
 }
 
 @layer base{
   h2 {
     @apply text-4xl text-main font-bold;
   }
+
 }
 
 

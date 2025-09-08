@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import Image from 'next/image';
 import Link from 'next/link';
+import MainWebsiteHeader from '../Components/mainWebsiteHeader';
 
 const PAST_SEMINARS = [
     { title: 'Week 1: Introduction and Motivation', href: '#' },
@@ -23,6 +24,7 @@ export default function Page() {
 
     return (
         <main className="py-12 bg-[var(--background)] min-h-screen">
+            <MainWebsiteHeader/>
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-12">
                     <div className="rounded-md overflow-hidden bg-white">

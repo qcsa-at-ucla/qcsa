@@ -3,6 +3,7 @@
 import { useRef, useEffect } from 'react';
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import Image from 'next/image';
+import MainWebsiteHeader from '../Components/mainWebsiteHeader';
 
 const SEMINARS = [
 	{
@@ -42,6 +43,7 @@ export default function UclaUscPage() {
 	};
 	return (
 		<div className="min-h-screen flex flex-col bg-[#F3F8FF]">
+			<MainWebsiteHeader/>
 			<main className="py-20 px-6 sm:px-8 lg:px-16 flex-grow">
 				<div className="max-w-6xl mx-auto">
 					<div className="flex flex-col lg:flex-row items-center gap-12">
