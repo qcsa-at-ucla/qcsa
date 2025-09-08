@@ -57,11 +57,11 @@ const InfiniteCarousel = ({ direction = 'left' }: { direction?: 'left' | 'right'
         }
         
         .animate-scroll-left {
-          animation: scrollLeft 30s linear infinite;
+          animation: scrollLeft 25s linear infinite;
         }
         
         .animate-scroll-right {
-          animation: scrollRight 30s linear infinite;
+          animation: scrollRight 25s linear infinite;
         }
         
         .animate-scroll-left.paused,
