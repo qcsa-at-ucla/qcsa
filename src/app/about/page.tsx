@@ -45,24 +45,6 @@ const boardMembers = [
     image: "/images/Cody Fan.png"
   },
   {
-    id: 5,
-    name: "Mu (Luca) Niu",
-    role: "Website & Outreach",
-    major: "Engineering",
-    year: "4th Year",
-    bio: "Luca, a fourth-year undergraduate student, is pursuing a double major in Physics and Mathematics. Presently, he serves as a research assistant in the group led by Professor Hongwen Jiang. With a keen interest the intersection of condensed matter physics and quantum information science, Luca is particularly fascinated by strongly correlated material and topological materials.",
-    image: "/images/Luca.png"
-  },
-  {
-    id: 6,
-    name: "John Ye",
-    role: "Website & Outreach",
-    major: "Computer Science",
-    year: "PhD Student",
-    bio: "John is a 2nd-year CS PhD student in Prof. Jens Palsberg’s group. Before starting his PhD, he completed his master’s through UCLA’s MQST program. He obtained his bachelor’s in CS from Shanghai Jiaotong University. John is deeply attracted by the idea of building a quantum computer. Designing a new programming language for a fault-tolerant quantum computer is the goal of his research and career.",
-    image: "/images/John Ye.png"
-  },
-  {
     id: 7,
     name: "Drew Downing",
     role: "Compliance",

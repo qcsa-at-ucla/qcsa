@@ -7,7 +7,7 @@ import MainWebsiteHeader from '../Components/mainWebsiteHeader';
 
 export default function ResourcesPage() {
 	return (
-		<main className="min-h-screen bg-[#F3F8FF] py-16">
+		<main className="min-h-screen bg-[#F3F8FF]">
 			<MainWebsiteHeader/>
 			<div className="max-w-6xl mx-auto px-6">
 				<h1 className="text-4xl font-kantumruy font-bold text-[#234285] text-center mb-12">
