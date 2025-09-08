@@ -17,10 +17,10 @@ const InfiniteCarousel = ({ direction = 'left' }: { direction?: 'left' | 'right'
   }, []);
 
   const sponsors = [
-    { name: 'NarangLab', logo: '/images/Narang.png', url: 'https://naranglab.ucla.edu/' },
+    { name: 'Türeci Group | Quantum Engineering', logo: '/Turechi.png', url: 'https://turecigroup.princeton.edu/' },
     { name: 'Engineering Quantum Systems (EQuS)', logo: '/images/Equs.png', url: 'https://equs.mit.edu/' },
     { name: 'Quantum Device Lab', logo: '/images/QuantumDevice.png', url: 'https://qudev.phys.ethz.ch/' },
-    { name: 'Türeci Group | Quantum Engineering', logo: '/Turechi.png', url: 'https://turecigroup.princeton.edu/' },
+    { name: 'NarangLab', logo: '/images/Narang.png', url: 'https://naranglab.ucla.edu/' },
     { name: 'Koch Research Group', logo: '/images/Koch.png', url: 'https://sites.northwestern.edu/koch/' },
     { name: 'Levenson Falk Lab', logo: '/images/LFL.png', url: 'https://dornsife.usc.edu/lfl/' },
     { name: 'Henry Samueli School of Engineering', logo: '/images/UCLA.png', url: 'https://samueli.ucla.edu/' },
