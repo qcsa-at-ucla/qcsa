@@ -10,7 +10,7 @@ export default function ResourcesPage() {
 		<main className="min-h-screen bg-[#F3F8FF]">
 			<MainWebsiteHeader/>
 			<div className="max-w-6xl mx-auto px-6">
-				<h1 className="text-4xl font-kantumruy font-bold text-[#234285] text-center mb-12">
+				<h1 className="text-4xl font-kantumruy font-bold text-[#234285] text-center mb-12 pt-24">
 					Resources
 				</h1>
 

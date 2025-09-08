@@ -1,5 +1,6 @@
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function GetInvolved() {
   return (
@@ -17,14 +18,15 @@ export default function GetInvolved() {
             <div className="relative w-[600px] h-[600px]">
                 <Image
                     src="/images/button-aura.png"
-                    alt="button background"
+                    alt=""
                     layout="fill"
                     objectFit="contain"
                     className="z-0"
+                    role="presentation"
                 />
-                <button className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-[#234285] -translate-y-6 z-30">
+                <Link href="/join-us" className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-[#234285] -translate-y-6 z-30 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg">
                     GET INVOLVED
-                </button>
+                </Link>
             </div>
         </div>
     </section>

@@ -12,11 +12,13 @@ export default function Home() {
   return (
     <div>
       <MainWebsiteHeader />
-      <HeroSection />
-      <AboutUs />
-      <BetweenPage />
-      <Testimonials/>
-      <GetInvolved/>
+      <main id="main-content">
+        <HeroSection />
+        <AboutUs />
+        <BetweenPage />
+        <Testimonials/>
+        <GetInvolved/>
+      </main>
       <MainWebsiteFooter />
       {/* Add other components or content here as needed */}
     </div>
