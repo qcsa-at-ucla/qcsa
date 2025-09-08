@@ -17,13 +17,13 @@ const InfiniteCarousel = ({ direction = 'left' }: { direction?: 'left' | 'right'
   }, []);
 
   const sponsors = [
-    { name: 'Google', logo: '/images/google-logo.png', url: 'https://about.google/' },
-    { name: 'Nvidia', logo: '/images/nvidia-logo.png', url: 'https://nvidia.com' },
-    { name: 'Rigetti', logo: '/images/rigetti-logo.png', url: 'https://rigetti.com' },
-    { name: 'Keysight', logo: '/images/keysight-logo.png', url: 'https://keysight.com' },
-    { name: 'Zurich Instruments', logo: '/images/zurich-logo.png', url: 'https://zhinst.com' },
-    { name: 'Unitary Foundation', logo: '/images/unitary-logo.png', url: 'https://unitary.fund' },
-    { name: 'Quantum Machines', logo: '/images/quantum-machines-logo.png', url: 'https://quantum-machines.co' },
+    { name: 'Türeci Group | Quantum Engineering', logo: '/Turechi.png', url: 'https://turecigroup.princeton.edu/' },
+    { name: 'Engineering Quantum Systems (EQuS)', logo: '/images/Equs.png', url: 'https://equs.mit.edu/' },
+    { name: 'Quantum Device Lab', logo: '/images/QuantumDevice.png', url: 'https://qudev.phys.ethz.ch/' },
+    { name: 'NarangLab', logo: '/images/Narang.png', url: 'https://naranglab.ucla.edu/' },
+    { name: 'Koch Research Group', logo: '/images/Koch.png', url: 'https://sites.northwestern.edu/koch/' },
+    { name: 'Levenson Falk Lab', logo: '/images/LFL.png', url: 'https://dornsife.usc.edu/lfl/' },
+    { name: 'Henry Samueli School of Engineering', logo: '/images/UCLA.png', url: 'https://samueli.ucla.edu/' },
   ];
 
   const handleKeyDown = (e: React.KeyboardEvent, sponsor: { name: string; logo: string; url: string }) => {
@@ -55,11 +55,11 @@ const InfiniteCarousel = ({ direction = 'left' }: { direction?: 'left' | 'right'
         }
         
         .animate-scroll-left {
-          animation: scrollLeft 30s linear infinite;
+          animation: scrollLeft 25s linear infinite;
         }
         
         .animate-scroll-right {
-          animation: scrollRight 30s linear infinite;
+          animation: scrollRight 25s linear infinite;
         }
         
         .animate-scroll-left.paused,
