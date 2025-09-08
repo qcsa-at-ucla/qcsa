@@ -14,7 +14,7 @@ export default function MainWebsiteHeader() {
             <Link href="/" className="flex items-center">
               <div className="w-32 h-20">
                 <Image
-                  src= {'/images/Final_QCSA_Logo-13.png'}
+                  src= {'/images/Final_QCSA_Logo-15.png'}
                   alt="QCSA Logo"
                   width={128}
                   height={40}
