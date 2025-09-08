@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function MainWebsiteHeader() {
   return (
-    <header className="bg-gradient-to-b from-blue-100 to-blue-200 py-4 px-4 sm:px-6 lg:px-8 shadow-sm">
+    <header className="bg-gradient-to-b from-blue-200 to-blue-100 py-4 px-4 sm:px-6 lg:px-8 shadow-sm">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
           
@@ -29,25 +29,25 @@ export default function MainWebsiteHeader() {
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
               href="/events" 
-              className="text-gray-700 hover:text-[#2774AE] font-medium text-lg transition-colors duration-200"
+              className="text-gray-700 hover:text-[#234285] font-medium text-lg transition-colors duration-200"
             >
               Events
             </Link>
             <Link 
               href="/about" 
-              className="text-gray-700 hover:text-[#2774AE] font-medium text-lg transition-colors duration-200"
+              className="text-gray-700 hover:text-[#234285] font-medium text-lg transition-colors duration-200"
             >
               About
             </Link>
             <Link 
               href="/resources" 
-              className="text-gray-700 hover:text-[#2774AE] font-medium text-lg transition-colors duration-200"
+              className="text-gray-700 hover:text-[#234285] font-medium text-lg transition-colors duration-200"
             >
               Resources
             </Link>
             <Link 
               href="/join" 
-              className="bg-[#2774AE] text-white px-6 py-2 rounded-md font-semibold text-lg hover:bg-blue-700 transition-colors duration-200 shadow-md"
+              className="bg-[#234285] text-white px-6 py-2 rounded-md font-semibold text-lg hover:bg-blue-700 transition-colors duration-200 shadow-md"
             >
               Join us
             </Link>
@@ -56,7 +56,7 @@ export default function MainWebsiteHeader() {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button 
-              className="text-gray-700 hover:text-[#2774AE] transition-colors"
+              className="text-gray-700 hover:text-[#234285] transition-colors"
               aria-label="Open menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,25 +72,25 @@ export default function MainWebsiteHeader() {
           <div className="flex flex-col space-y-3">
             <Link 
               href="/events" 
-              className="text-gray-700 hover:text-[#2774AE] font-medium text-lg transition-colors duration-200"
+              className="text-gray-700 hover:text-[#234285] font-medium text-lg transition-colors duration-200"
             >
               Events
             </Link>
             <Link 
               href="/about" 
-              className="text-gray-700 hover:text-[#2774AE] font-medium text-lg transition-colors duration-200"
+              className="text-gray-700 hover:text-[#234285] font-medium text-lg transition-colors duration-200"
             >
               About
             </Link>
             <Link 
               href="/resources" 
-              className="text-gray-700 hover:text-[#2774AE] font-medium text-lg transition-colors duration-200"
+              className="text-gray-700 hover:text-[#234285] font-medium text-lg transition-colors duration-200"
             >
               Resources
             </Link>
             <Link 
               href="/join" 
-              className="bg-[#2774AE] text-white px-6 py-2 rounded-md font-semibold text-lg hover:bg-blue-700 transition-colors duration-200 shadow-md inline-block text-center"
+              className="bg-[#234285] text-white px-6 py-2 rounded-md font-semibold text-lg hover:bg-blue-700 transition-colors duration-200 shadow-md inline-block text-center"
             >
               Join us
             </Link>

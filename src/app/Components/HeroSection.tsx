@@ -9,7 +9,7 @@ const HeroSection = () => {
         <div className="text-center max-w-4xl mx-auto">
           {/* Main heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight" style={{color: '#234285'}}>
-            The Future is Quantum. Start building it at QCSA
+            The Future is Quantum. Start building it at QCSA.
           </h1>
           
           {/* Description */}
