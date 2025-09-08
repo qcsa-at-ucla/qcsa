@@ -26,6 +26,7 @@ const InfiniteCarousel = ({ direction = 'left' }: { direction?: 'left' | 'right'
     { name: 'Quantum Machines', logo: '/images/quantum-machines-logo.png', url: 'https://quantum-machines.co' },
     { name: 'HRL', logo: '/images/hrl.png', url: 'https://www.hrl.com' },
     { name: 'QBraid', logo: '/images/qbraid.png', url: 'https://www.qbraid.com/' },
+    { name: 'Quantum Coalition', logo: '/images/QuantumCo.png', url: 'https://www.quantumcoalition.io/' },
   ];
 
   const handleKeyDown = (e: React.KeyboardEvent, sponsor: { name: string; logo: string; url: string }) => {
