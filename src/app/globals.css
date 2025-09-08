@@ -39,3 +39,14 @@ body {
 
 }
 
+/* QCSA: layered logo aura + soft card shadow used on About page */
+.qcsa-aura {
+  /* deep soft drop + mid shadow + colored outer glow */
+  box-shadow:
+    0 30px 60px rgba(35, 66, 133, 0.12),
+    0 10px 20px rgba(35, 66, 133, 0.08),
+    0 0 80px rgba(190, 232, 255, 0.65);
+  /* ensure the existing rounded corners remain consistent */
+  border-radius: 0.75rem;
+}
+
