@@ -6,10 +6,10 @@ export default function AboutUs() {
     <div className="min-h-screen flex flex-col">
       {/* Main About Us Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F3F8FF] flex-grow">
-        <div className="max-w-full mx-auto px-8">
-          <div className="flex flex-col lg:flex-row justify-between items-start w-full gap-16">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row justify-between items-start w-full gap-8 lg:gap-16">
             {/* Text Content Section */}
-            <div className="lg:w-6/12 lg:ml-8">
+            <div className="lg:w-6/12 lg:ml-8 w-full">
               <div className="space-y-8 text-left">
                 <h2 className="text-4xl md:text-5xl font-bold font-kantumruy text-[#234285] mb-6">
                   About Us
@@ -39,15 +39,15 @@ export default function AboutUs() {
             </div>
             
             {/* Image Section */}
-            <div className="lg:w-12/12 lg:mr-8">
-              <div className="flex justify-end">
-                <div className="w-150 h-120 flex items-center justify-center">
+            <div className="lg:w-6/12 lg:mr-8 w-full">
+              <div className="flex justify-center lg:justify-end">
+                <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl relative">
                   <Image
                     src="/images/about-me-photo.png"
                     alt="QCSA Team Photo"
                     width={600}
                     height={480}
-                    className="object-cover rounded-lg"
+                    className="w-full h-auto object-cover rounded-lg shadow-lg"
                   />
                 </div>
               </div>
