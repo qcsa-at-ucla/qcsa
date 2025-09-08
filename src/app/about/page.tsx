@@ -121,7 +121,7 @@ const boardMembers = [
     role: "Head of Digital infrastructure",
     major: "Computer Science and Engineering",
     year: "2nd Year",
-    bio: "",
+    bio: "Harshita is a second-year Computer Science and Engineering student at UCLA with a minor in Disability Studies. She is passionate about digital accessibility and inclusive design, and recently launched NextA11y, a web accessibility bootcamp for middle and high school students in India. Outside of coding, Harshita enjoys 3D modeling in SOLIDWORKS, sketching, and exploring campus.",
     image: "/images/harshita.png"
   },
   {
@@ -200,34 +200,37 @@ export default function AboutPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div 
-              className="lg:w-1/2 relative p-30 rounded-lg"
-              style={{
-                backgroundImage: 'url(/images/aura.png)',
-                backgroundSize: 'contain',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-              }}
-            >
+            <div className="relative w-[800px] h-[700px]">
+              <Image
+                  src="/images/aura.png"
+                  alt="button background"
+                  layout="fill"
+                  objectFit="contain"
+                  className="z-0 opacity-30"
+              />
+
               {/* Optional overlay for better text readability */}
               <div className="absolute inset-0 bg-opacity-20 rounded-lg"></div>
-              <div className="relative z-10 text-center">
+              <div className="relative z-10 text-center mt-12 md:mt-48">
                 <h2 className="text-4xl md:text-4xl text-[#234285] mb-8 font-kantumruy drop-shadow-lg">
                   Mission Statement
                 </h2>
                 <div className="text-lg md:text-xl text-[#234285] leading-relaxed font-kantumruy space-y-4 drop-shadow-lg">
-                  <p className="text-center">We want to empower the next generation of students through hands-on learning, collaboration, and prepare them to lead in the field.</p>
+                  <p className="text-center">We want to empower the next generation of students through hands-on learning, collaboration, and prepare them to lead in the field of quantum computing.</p>
                 </div>
               </div>
             </div>
             <div className="lg:w-1/2">
-              <div className="w-full h-80 bg-white rounded-lg flex items-center justify-center">
+              <div className="relative w-[450px] h-[450px] bg-white rounded-lg flex items-center justify-center qcsa-aura">
+                {/* light-blue aura behind the logo
+                <div aria-hidden="true" className="absolute -inset-6 rounded-full bg-[#BEE8FF] opacity-60 blur-3xl z-0" /> */}
+
                 <Image
                   src={'/images/Final_QCSA_Logo-13.png'}
                   alt="QCSA Logo"
                   width={400}
                   height={200}
-                  className="object-contain"
+                  className="relative z-10 object-contain"
                   onError={(e) => { e.currentTarget.src = '/images/placeholder-logo.jpg'; }}
                 />
               </div>
