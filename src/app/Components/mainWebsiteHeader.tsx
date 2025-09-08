@@ -12,7 +12,7 @@ export default function MainWebsiteHeader() {
           {/* Left side - QCSA Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <div className="w-32 h-20">
+              <div className="w-32 h-20 flex items-center justify-center">
                 <Image
                   src= {'/images/Final_QCSA_Logo-15.png'}
                   alt="QCSA Logo"
