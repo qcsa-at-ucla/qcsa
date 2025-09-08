@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Kantumruy';
+  src: url('/Kantumruy-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --background: #F3F8FF;

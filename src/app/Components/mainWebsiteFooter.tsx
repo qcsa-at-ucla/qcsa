@@ -1,4 +1,7 @@
+"use client";
+
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function MainWebsiteFooter() {
   return (
@@ -6,10 +9,17 @@ export default function MainWebsiteFooter() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
           
-          {/* Left side - Logo placeholder */}
+          {/* Left side - QCSA Logo */}
           <div className="flex-shrink-0">
-            <div className="bg-[#234285] text-white px-10 py-3 text-lg font-[Kantumruy]">
-              Logo
+            <div className="w-40 h-24">
+              <Image
+                src={'/images/Final_QCSA_Logo-13.png'}
+                alt="QCSA Logo"
+                width={160}
+                height={48}
+                className="object-contain"
+                onError={(e) => { e.currentTarget.src = '/images/placeholder-logo.jpg'; }}
+              />
             </div>
           </div>
 
