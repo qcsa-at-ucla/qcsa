@@ -7,10 +7,10 @@ import MainWebsiteHeader from '../Components/mainWebsiteHeader';
 
 export default function ResourcesPage() {
 	return (
-		<main className="min-h-screen bg-[#F3F8FF]">
+		<div className="min-h-screen bg-[#F3F8FF]">
 			<MainWebsiteHeader/>
-			<div className="max-w-6xl mx-auto px-6">
-				<h1 className="text-4xl font-kantumruy font-bold text-[#234285] text-center mb-12">
+			<main id="main-content" className="max-w-6xl mx-auto px-6">
+				<h1 className="text-4xl font-kantumruy font-bold text-[#234285] text-center mb-12 pt-24">
 					Resources
 				</h1>
 
@@ -101,13 +101,11 @@ export default function ResourcesPage() {
 				</div>
 
                 
-			</div>
-{/* spacer to add extra space before the footer */}
+			</main>
+			{/* spacer to add extra space before the footer */}
 			<div className="mt-48" />
             
-        <MainWebsiteFooter />
-			
-			
-		</main>
+			<MainWebsiteFooter />
+		</div>
 	)
 }

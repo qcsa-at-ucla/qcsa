@@ -98,6 +98,9 @@ export default function QuantumClassesPage() {
 										<button
 											onClick={() => setOpenIndex(open ? null : i)}
 											className="w-full flex items-center justify-between text-left space-x-4"
+											aria-expanded={open}
+											aria-controls={`course-content-${i}`}
+											aria-label={`Toggle ${c} course details`}
 										>
 											<span className="text-lg text-gray-800">{c}</span>
 											<svg
@@ -111,7 +114,7 @@ export default function QuantumClassesPage() {
 										</button>
 
 										{open && (
-											<div className="mt-3 text-sm text-gray-600 pl-2">
+											<div className="mt-3 text-sm text-gray-600 pl-2" id={`course-content-${i}`}>
 												{DESCRIPTIONS[c] || (
 													<>Placeholder information about {c}. You can replace this with instructors, quarter, or notes.</>
 												)}
@@ -148,6 +151,9 @@ export default function QuantumClassesPage() {
 											<button
 												onClick={() => setOpenIndex(open ? null : idx)}
 												className="w-full flex items-center justify-between text-left space-x-4"
+												aria-expanded={open}
+												aria-controls={`course-content-${idx}`}
+												aria-label={`Toggle ${c} course details`}
 											>
 												<span className="text-lg text-gray-800">{c}</span>
 												<svg
@@ -161,7 +167,7 @@ export default function QuantumClassesPage() {
 											</button>
 
 											{open && (
-												<div className="mt-3 text-sm text-gray-600 pl-2">
+												<div className="mt-3 text-sm text-gray-600 pl-2" id={`course-content-${idx}`}>
 													{DESCRIPTIONS[c] || (
 														<>Placeholder information about {c}. You can replace this with instructors, quarter, or notes.</>
 													)}
@@ -198,6 +204,9 @@ export default function QuantumClassesPage() {
 											<button
 												onClick={() => setOpenIndex(open ? null : idx)}
 												className="w-full flex items-center justify-between text-left space-x-4"
+												aria-expanded={open}
+												aria-controls={`course-content-${idx}`}
+												aria-label={`Toggle ${c} course details`}
 											>
 												<span className="text-lg text-gray-800">{c}</span>
 												<svg
@@ -211,7 +220,7 @@ export default function QuantumClassesPage() {
 											</button>
 
 											{open && (
-												<div className="mt-3 text-sm text-gray-600 pl-2">
+												<div className="mt-3 text-sm text-gray-600 pl-2" id={`course-content-${idx}`}>
 													{DESCRIPTIONS[c] || (
 														<>Placeholder information about {c}. You can replace this with instructors, quarter, or notes.</>
 													)}
@@ -248,6 +257,9 @@ export default function QuantumClassesPage() {
 										<button
 											onClick={() => setOpenIndex(open ? null : idx)}
 											className="w-full flex items-center justify-between text-left space-x-4"
+											aria-expanded={open}
+											aria-controls={`course-content-${idx}`}
+											aria-label={`Toggle ${c} course details`}
 										>
 											<span className="text-lg text-gray-800">{c}</span>
 											<svg
@@ -261,7 +273,7 @@ export default function QuantumClassesPage() {
 										</button>
 
 										{open && (
-											<div className="mt-3 text-sm text-gray-600 pl-2">
+											<div className="mt-3 text-sm text-gray-600 pl-2" id={`course-content-${idx}`}>
 												{DESCRIPTIONS[c] || (
 													<>Placeholder information about {c}. You can replace this with instructors, quarter, or notes.</>
 												)}
@@ -298,6 +310,9 @@ export default function QuantumClassesPage() {
 										<button
 											onClick={() => setOpenIndex(open ? null : idx)}
 											className="w-full flex items-center justify-between text-left space-x-4"
+											aria-expanded={open}
+											aria-controls={`course-content-${idx}`}
+											aria-label={`Toggle ${c} course details`}
 										>
 											<span className="text-lg text-gray-800">{c}</span>
 											<svg
@@ -311,7 +326,7 @@ export default function QuantumClassesPage() {
 										</button>
 
 										{open && (
-											<div className="mt-3 text-sm text-gray-600 pl-2">
+											<div className="mt-3 text-sm text-gray-600 pl-2" id={`course-content-${idx}`}>
 												{DESCRIPTIONS[c] || (
 													<>Placeholder information about {c}. You can replace this with instructors, quarter, or notes.</>
 												)}
