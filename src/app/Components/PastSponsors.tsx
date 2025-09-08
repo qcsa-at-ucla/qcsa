@@ -24,6 +24,8 @@ const InfiniteCarousel = ({ direction = 'left' }: { direction?: 'left' | 'right'
     { name: 'Zurich Instruments', logo: '/images/zurich-logo.png', url: 'https://zhinst.com' },
     { name: 'Unitary Foundation', logo: '/images/unitary-logo.png', url: 'https://unitary.fund' },
     { name: 'Quantum Machines', logo: '/images/quantum-machines-logo.png', url: 'https://quantum-machines.co' },
+    { name: 'HRL', logo: '/images/hrl.png', url: 'https://www.hrl.com' },
+    { name: 'QBraid', logo: '/images/qbraid.png', url: 'https://www.qbraid.com/' },
   ];
 
   const handleKeyDown = (e: React.KeyboardEvent, sponsor: { name: string; logo: string; url: string }) => {
