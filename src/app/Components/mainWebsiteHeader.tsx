@@ -115,7 +115,7 @@ export default function MainWebsiteHeader() {
                 Resources
               </Link>
               <Link 
-                href="/join" 
+                href="/join-us" 
                 className="bg-[#234285] text-white px-6 py-3 rounded-md font-semibold text-lg hover:bg-blue-700 transition-colors duration-200 shadow-md inline-block text-center mt-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
