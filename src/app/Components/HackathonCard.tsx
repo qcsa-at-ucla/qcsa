@@ -25,14 +25,14 @@ export default function HackathonCard({imageSrc, title, subtitle, description, h
                 {subtitle && (
                 <p className="text-sm font-bold text-main">{subtitle}</p>
                 )}
-                <p className="text-sm leading-6 text-main">
+                <p className="text-sm leading-6 text-main mb-2">
                 {description}
                 </p>
 
-                <div className="mt-auto pt-2 flex justify-center">
+                <div className="mt-auto pt-2 flex justify-center ">
                 <a
                     href={href}
-                    className="inline-flex items-center justify-center  bg-main px-4 py-2 text-2xl text-lighter
+                    className="inline-flex items-center justify-center rounded-sm  bg-main px-7 py-4 text-2xl text-lighter
                                 shadow-sm transition hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2E4A86]/60"
                 >
                     {cta}
