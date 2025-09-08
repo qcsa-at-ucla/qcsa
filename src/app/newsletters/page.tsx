@@ -1,4 +1,4 @@
-import MainWebsiteFooter from "../Components/MainWebsiteFooter";
+import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import NewsletterCard from "../Components/NewsletterCard";
 
 type Item = {

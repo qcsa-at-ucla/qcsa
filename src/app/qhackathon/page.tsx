@@ -1,5 +1,5 @@
 import JoinHackathon from "../Components/JoinHackathon";
-import MainWebsiteFooter from "../Components/MainWebsiteFooter";
+import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import OurTeam from "../Components/OurTeam";
 
 export default function QHackathon(){

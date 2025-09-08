@@ -23,7 +23,7 @@ export default function ResourcesPage() {
 								Learn more about upcoming hackathons and the QuBruin team.
 							</p>
                                 <div>
-                            <Link href="/resources/qhackathon" className="inline-block bg-[#234285] text-white px-8 py-3 rounded-md text-lg font-kantumruy shadow-md hover:shadow-lg hover:bg-[#1f3f75] transition">
+                            <Link href="/qhackathon" className="inline-block bg-[#234285] text-white px-8 py-3 rounded-md text-lg font-kantumruy shadow-md hover:shadow-lg hover:bg-[#1f3f75] transition">
 									Learn More
 							</Link>
 								</div>
@@ -80,7 +80,7 @@ export default function ResourcesPage() {
 								Stay updated on previous QCSA newsletters.
 							</p>
                                 <div>
-                            <Link href="/resources/qhackathon" className="inline-block bg-[#234285] text-white px-8 py-3 rounded-md text-lg font-kantumruy shadow-md hover:shadow-lg hover:bg-[#1f3f75] transition">
+                            <Link href="/newsletters" className="inline-block bg-[#234285] text-white px-8 py-3 rounded-md text-lg font-kantumruy shadow-md hover:shadow-lg hover:bg-[#1f3f75] transition">
 									Learn More
 							</Link>
 								</div>

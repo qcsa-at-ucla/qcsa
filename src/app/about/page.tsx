@@ -197,10 +197,10 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#F3F8FF]">
       {/* Mission Statement Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="relative w-[800px] h-[700px]">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div className="relative w-full max-w-[800px] h-[400px] sm:h-[500px] lg:h-[700px] lg:w-1/2">
               <Image
                   src="/images/aura.png"
                   alt="button background"
@@ -211,17 +211,17 @@ export default function AboutPage() {
 
               {/* Optional overlay for better text readability */}
               <div className="absolute inset-0 bg-opacity-20 rounded-lg"></div>
-              <div className="relative z-10 text-center mt-12 md:mt-48">
-                <h2 className="text-4xl md:text-4xl text-[#234285] mb-8 font-kantumruy drop-shadow-lg">
+              <div className="relative z-10 text-center flex flex-col justify-center h-full px-4 sm:px-6">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#234285] mb-4 sm:mb-6 lg:mb-8 font-kantumruy drop-shadow-lg">
                   Mission Statement
                 </h2>
-                <div className="text-lg md:text-xl text-[#234285] leading-relaxed font-kantumruy space-y-4 drop-shadow-lg">
-                  <p className="text-center">We want to empower the next generation of students through hands-on learning, collaboration, and prepare them to lead in the field of quantum computing.</p>
+                <div className="text-base sm:text-lg lg:text-xl text-[#234285] leading-relaxed font-kantumruy space-y-4 drop-shadow-lg">
+                  <p className="text-center max-w-2xl mx-auto">We want to empower the next generation of students through hands-on learning, collaboration, and prepare them to lead in the field of quantum computing.</p>
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2">
-              <div className="relative w-[450px] h-[450px] bg-white rounded-lg flex items-center justify-center qcsa-aura">
+            <div className="w-full max-w-[450px] lg:w-1/2">
+              <div className="relative w-full aspect-square max-w-[450px] mx-auto bg-white rounded-lg flex items-center justify-center qcsa-aura">
                 {/* light-blue aura behind the logo
                 <div aria-hidden="true" className="absolute -inset-6 rounded-full bg-[#BEE8FF] opacity-60 blur-3xl z-0" /> */}
 
@@ -230,7 +230,7 @@ export default function AboutPage() {
                   alt="QCSA Logo"
                   width={400}
                   height={200}
-                  className="relative z-10 object-contain"
+                  className="relative z-10 object-contain w-full h-auto max-w-[300px] sm:max-w-[350px] lg:max-w-[400px]"
                   onError={(e) => { e.currentTarget.src = '/images/placeholder-logo.jpg'; }}
                 />
               </div>
