@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 
-const InfiniteCarousel = () => {
-  const [isPaused, setIsPaused] = useState(false);
+const InfiniteCarousel = ({ direction = 'left' }: { direction?: 'left' | 'right' }) => {
   const [reducedMotion, setReducedMotion] = useState(false);
 
   // Check for reduced motion preference
@@ -27,10 +26,6 @@ const InfiniteCarousel = () => {
     { name: 'Quantum Machines', logo: '/images/quantum-machines-logo.png', url: 'https://quantum-machines.co' },
   ];
 
-  const togglePause = () => {
-    setIsPaused(!isPaused);
-  };
-
   const handleKeyDown = (e: React.KeyboardEvent, sponsor: { name: string; logo: string; url: string }) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -41,7 +36,7 @@ const InfiniteCarousel = () => {
   return (
     <>
       <style>{`
-        @keyframes scroll {
+        @keyframes scrollLeft {
           0% {
             transform: translateX(0);
           }
@@ -50,48 +45,53 @@ const InfiniteCarousel = () => {
           }
         }
         
-        .animate-scroll {
-          animation: scroll 30s linear infinite;
+        @keyframes scrollRight {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0);
+          }
         }
         
-        .animate-scroll.paused {
+        .animate-scroll-left {
+          animation: scrollLeft 30s linear infinite;
+        }
+        
+        .animate-scroll-right {
+          animation: scrollRight 30s linear infinite;
+        }
+        
+        .animate-scroll-left.paused,
+        .animate-scroll-right.paused {
           animation-play-state: paused;
         }
         
         /* Respect reduced motion preference */
         @media (prefers-reduced-motion: reduce) {
-          .animate-scroll {
+          .animate-scroll-left,
+          .animate-scroll-right {
             animation: none !important;
           }
         }
         
-        /* Screen reader only content */
-        .sr-only {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0, 0, 0, 0);
-          white-space: nowrap;
-          border: 0;
-        }
+{/* Screen reader friendly list */}
+<div className="sr-only">
+  <h3>Complete list of sponsors:</h3>
+  <ul>
+    {sponsors.map((sponsor, index) => (
+      <li key={index}>
+        <a href={sponsor.url} target="_blank" rel="noopener noreferrer">
+          {sponsor.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
       `}</style>
       
-      <section className="w-full py-8 bg-white" aria-label="Sponsor carousel" >
-        <div className="max-w-7xl mx-auto px-4">
-          {/* Control buttons for accessibility */}
-          <div className="flex justify-center items-center mb-8">
-            <button
-              onClick={togglePause}
-              className="px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 bg-blue-800 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors text-sm sm:text-base flex-shrink-0"
-              aria-label={isPaused ? 'Resume sponsor carousel animation' : 'Pause sponsor carousel animation'}
-            >
-              {isPaused ? 'Resume' : 'Pause'} Animation
-            </button>
-          </div>
-          
+      <section className="w-full py-8" style={{ backgroundColor: '#F3F8FF' }} aria-label="Sponsor carousel" >
+        <div className="w-full px-4">
           <div 
             className="relative overflow-hidden"
             role="region"
@@ -99,14 +99,20 @@ const InfiniteCarousel = () => {
             aria-live="polite"
           >
             {/* Gradient overlays - hidden from screen readers */}
-            <div className="absolute left-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
-            <div className="absolute right-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
+            <div 
+              className="absolute left-0 top-0 w-16 sm:w-24 md:w-32 h-full z-10 pointer-events-none" 
+              style={{ background: 'linear-gradient(to right, #F3F8FF, transparent)' }}
+              aria-hidden="true"
+            ></div>
+            <div 
+              className="absolute right-0 top-0 w-16 sm:w-24 md:w-32 h-full z-10 pointer-events-none" 
+              style={{ background: 'linear-gradient(to left, #F3F8FF, transparent)' }}
+              aria-hidden="true"
+            ></div>
             
             {/* Scrolling container */}
             <div 
-              className={`flex  ${!reducedMotion ? 'animate-scroll' : ''} ${isPaused ? 'paused' : ''}`}
-              onMouseEnter={() => !reducedMotion && setIsPaused(true)}
-              onMouseLeave={() => !reducedMotion && setIsPaused(false)}
+              className={`flex ${!reducedMotion ? (direction === 'left' ? 'animate-scroll-left' : 'animate-scroll-right') : ''}`}
             >
               {/* First set of logos */}
               {sponsors.map((sponsor, index) => (
@@ -115,7 +121,16 @@ const InfiniteCarousel = () => {
                   href={sponsor.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 flex items-center justify-center h-20 w-32 sm:h-24 sm:w-36 md:h-28 md:w-44 lg:h-40 lg:w-60 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 flex items-center justify-center h-20 w-32 sm:h-24 sm:w-36 md:h-28 md:w-44 lg:h-40 lg:w-60 bg-white rounded-lg transition-all duration-300 cursor-pointer hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  style={{
+                    boxShadow: '0 10px 15px -3px rgba(51, 102, 255, 0.1), 0 4px 6px -2px rgba(51, 102, 255, 0.05)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(51, 102, 255, 0.25)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(51, 102, 255, 0.1), 0 4px 6px -2px rgba(51, 102, 255, 0.05)';
+                  }}
                   onKeyDown={(e) => handleKeyDown(e, sponsor)}
                   aria-label={`Visit ${sponsor.name} website`}
                   tabIndex={0}
@@ -136,7 +151,16 @@ const InfiniteCarousel = () => {
                   href={sponsor.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 flex items-center justify-center h-20 w-32 sm:h-24 sm:w-36 md:h-28 md:w-44 lg:h-40 lg:w-60 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer hover:scale-105"
+                  className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 flex items-center justify-center h-20 w-32 sm:h-24 sm:w-36 md:h-28 md:w-44 lg:h-40 lg:w-60 bg-white rounded-lg transition-all duration-300 cursor-pointer hover:scale-105"
+                  style={{
+                    boxShadow: '0 10px 15px -3px rgba(51, 102, 255, 0.1), 0 4px 6px -2px rgba(51, 102, 255, 0.05)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(51, 102, 255, 0.25)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(51, 102, 255, 0.1), 0 4px 6px -2px rgba(51, 102, 255, 0.05)';
+                  }}
                   aria-hidden="true"
                   tabIndex={-1}
                 >
