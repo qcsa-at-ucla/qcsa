@@ -11,7 +11,7 @@ export default function MainWebsiteFooter() {
           
           {/* Left side - QCSA Logo */}
           <div className="flex-shrink-0">
-            <div className="w-40 h-24">
+            <div className="w-40 h-24 flex items-center justify-center">
               <Image
                 // src={'/images/Final_QCSA_Logo-13.png'}
                 src={'/images/QCSA_LOGO.png'}
