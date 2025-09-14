@@ -129,11 +129,28 @@ export default function QuantumClassesPage() {
 					</div>
 
 					{/* Right gradient card with avatar */}
-					<aside className="flex items-center justify-center">
-                        <div className="w-full h-full flex items-start justify-center">
-	                            <div className="-mt-2">
-									<Image src="/images/quantum_atom.png" alt="quantum aura" width={500} height={200} className="object-contain max-w-none" />
-								</div>
+					<aside className="flex items-center justify-center relative">
+                        <div className="w-full h-full flex items-start justify-center relative">
+							{/* Background aura image */}
+							<div className="absolute inset-0 flex items-center justify-center opacity-100">
+								<Image 
+									src="/images/quantum_aura.png" 
+									alt="quantum aura background" 
+									width={600} 
+									height={400} 
+									className="object-contain max-w-none" 
+								/>
+							</div>
+							{/* Foreground atom image */}
+	                        <div className="-mt-2 relative z-10">
+								<Image 
+									src="/images/quantum_atom.png" 
+									alt="quantum atom" 
+									width={400} 
+									height={200} 
+									className="object-contain max-w-none" 
+								/>
+							</div>
 						</div>
 									
 					</aside>
@@ -184,14 +201,31 @@ export default function QuantumClassesPage() {
 						</div>
 
 						{/* Right gradient card with avatar */}
-						<aside className="flex items-center justify-center">
-							<div className="w-full h-full flex items-start justify-center">
-								<div className="-mt-2">
-									<Image src="/images/quantum_aura.png" alt="quantum aura" width={500} height={200} className="object-contain max-w-none" />
-								</div>
+					<aside className="flex items-center justify-center relative">
+                        <div className="w-full h-full flex items-start justify-center relative">
+							{/* Background aura image */}
+							<div className="absolute inset-0 flex items-center justify-center opacity-100">
+								<Image 
+									src="/images/quantum_aura.png" 
+									alt="quantum aura background" 
+									width={600} 
+									height={400} 
+									className="object-contain max-w-none" 
+								/>
 							</div>
-                        
-						</aside>
+							{/* Foreground atom image */}
+	                        <div className="-mt-2 relative z-10">
+								<Image 
+									src="/images/orbital.png" 
+									alt="quantum atom" 
+									width={350} 
+									height={300} 
+									className="object-contain max-w-none" 
+								/>
+							</div>
+						</div>
+									
+					</aside>
 					</section>
 
 					{/* AMO Physics / Quantum Optics */}
@@ -238,15 +272,32 @@ export default function QuantumClassesPage() {
 							</div>
 						</div>
 
-						{/* Right gradient card with avatar */}
-						<aside className="flex items-center justify-center">
-							<div className="w-full h-full flex items-start justify-center">
-								<div className="-mt-2">
-									<Image src="/images/quantum_aura.png" alt="quantum aura" width={500} height={200} className="object-contain max-w-none" />
-								</div>
+							{/* Right gradient card with avatar */}
+					<aside className="flex items-center justify-center relative">
+                        <div className="w-full h-full flex items-start justify-center relative">
+							{/* Background aura image */}
+							<div className="absolute inset-0 flex items-center justify-center opacity-100">
+								<Image 
+									src="/images/quantum_aura.png" 
+									alt="quantum aura background" 
+									width={600} 
+									height={400} 
+									className="object-contain max-w-none" 
+								/>
 							</div>
-                        
-						</aside>
+							{/* Foreground atom image */}
+	                        <div className="-mt-2 relative z-10">
+								<Image 
+									src="/images/random_waves.png" 
+									alt="quantum atom" 
+									width={350} 
+									height={300} 
+									className="object-contain max-w-none" 
+								/>
+							</div>
+						</div>
+									
+					</aside>
 					</section>
 
 				{/* Solid State Physics */}
@@ -293,14 +344,31 @@ export default function QuantumClassesPage() {
 						</div>
 					</div>
 
-					{/* Right gradient card with avatar */}
-					<aside className="flex items-center justify-center">
-						<div className="w-full h-full flex items-start justify-center">
-							<div className="-mt-2">
-								<Image src="/images/quantum_aura.png" alt="quantum aura" width={500} height={200} className="object-contain max-w-none" />
+						{/* Right gradient card with avatar */}
+					<aside className="flex items-center justify-center relative">
+                        <div className="w-full h-full flex items-start justify-center relative">
+							{/* Background aura image */}
+							<div className="absolute inset-0 flex items-center justify-center opacity-100">
+								<Image 
+									src="/images/quantum_aura.png" 
+									alt="quantum aura background" 
+									width={600} 
+									height={400} 
+									className="object-contain max-w-none" 
+								/>
+							</div>
+							{/* Foreground atom image */}
+	                        <div className="-mt-2 relative z-10">
+								<Image 
+									src="/images/crystals.png" 
+									alt="quantum atom" 
+									width={350} 
+									height={300} 
+									className="object-contain max-w-none" 
+								/>
 							</div>
 						</div>
-						
+									
 					</aside>
 				</section>
 
@@ -348,14 +416,31 @@ export default function QuantumClassesPage() {
 						</div>
 					</div>
 
-					{/* Right gradient card with avatar */}
-					<aside className="flex items-center justify-center">
-						<div className="w-full h-full flex items-start justify-center">
-							<div className="-mt-2">
-								<Image src="/images/quantum_aura.png" alt="quantum aura" width={500} height={200} className="object-contain max-w-none" />
+						{/* Right gradient card with avatar */}
+					<aside className="flex items-center justify-center relative">
+                        <div className="w-full h-full flex items-start justify-center relative">
+							{/* Background aura image */}
+							<div className="absolute inset-0 flex items-center justify-center opacity-100">
+								<Image 
+									src="/images/quantum_aura.png" 
+									alt="quantum aura background" 
+									width={600} 
+									height={400} 
+									className="object-contain max-w-none" 
+								/>
+							</div>
+							{/* Foreground atom image */}
+	                        <div className="-mt-2 relative z-10">
+								<Image 
+									src="/images/quantum_chip.png" 
+									alt="quantum atom" 
+									width={350} 
+									height={200} 
+									className="object-contain max-w-none" 
+								/>
 							</div>
 						</div>
-						
+									
 					</aside>
 				</section>
 
