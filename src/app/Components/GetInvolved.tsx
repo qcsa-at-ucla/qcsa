@@ -24,7 +24,7 @@ export default function GetInvolved() {
                     className="z-0"
                     role="presentation"
                 />
-                <Link href="/join-us" className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-[#234285] -translate-y-6 z-30 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg">
+                <Link href="/join-us" className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-[#234285] -translate-y-6 z-30 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg">
                     GET INVOLVED
                 </Link>
             </div>

@@ -16,7 +16,7 @@ export default function AboutUs() {
                 </h2>
                 
                 <div className="space-y-4">
-                  <p className="text-lg md:text-xl leading-relaxed font-kantumruy text-[#234285]">
+                  <p className="text-(1/2)xl leading-relaxed font-kantumruy text-[#234285]">
                     The premier quantum science and technology organization at UCLA.
                     Host talks by professors, students, and other institutions. Undergrad 
                     and Grad organization under CQSE for everything under the umbrella 
@@ -28,7 +28,7 @@ export default function AboutUs() {
                 {/* Learn More Button */}
                 <div className="pt-6">
                   <div className="flex justify-center">
-                    <Link href="../about/" className="bg-[#234285] text-white px-8 py-4 text-lg font-kantumruy hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform inline-block text-center">
+                    <Link href="../about/" className="bg-[#234285] text-white px-8 py-4 text-2xl font-kantumruy hover:bg-blue-700 font-bold transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform inline-block text-center rounded-lg">
                       Learn More
                     </Link>
                   </div>
@@ -58,14 +58,14 @@ export default function AboutUs() {
       <footer className="bg-[#F3F8FF] border-t border-gray-200 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <div className="space-y-4">
-            <p className="text-[#234285] text-lg font-kantumruy">
+            <p className="text-[#234285] text-2xl font-kantumruy">
               Interested in our Quantum Device Workshop?
             </p>
             <Link 
               href="/thank-you-page"
-              className="inline-block bg-[#ffc845] text-gray-900 px-8 py-4 text-lg font-semibold rounded-lg hover:bg-yellow-500 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
+              className="inline-block bg-[#234285] text-gray-100 px-8 py-4 text-2xl font-kantumruy rounded-lg hover:bg-[#234285]-500 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
             >
-              View QDW2026 & Registration
+              View QDW 2026 & Registration
               <span className="ml-2">→</span>
             </Link>
           </div>

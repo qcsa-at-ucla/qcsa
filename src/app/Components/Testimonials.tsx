@@ -17,7 +17,7 @@ export default function Testimonials() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F3F8FF] flex-grow">
       <div className='w-full max-w-xs sm:max-w-sm md:max-w-4xl lg:max-w-5xl xl:max-w-7xl mx-auto'>
-      <h2 className="text-4xl md:text-5xl font-bold text-[#234285] mb-12 text-center">
+      <h2 className="text-4xl font-bold font-kantumruy text-[#234285] mb-12 text-center">
         Testimonials
       </h2>
 

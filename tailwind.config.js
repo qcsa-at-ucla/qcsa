@@ -8,7 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'kantumruy': ['Kantumruy', 'sans-serif'],
+        // make Kantumruy the default sans utility and keep a named utility
+        sans: ['Kantumruy', 'system-ui', '-apple-system', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial'],
+        kantumruy: ['Kantumruy'],
       },
     },
   },
