@@ -1,13 +1,68 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function MembershipForm() {
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const submitted = useRef(false);
 
-  function afterSubmit() {
-    if (!submitted.current) return;           
-    setTimeout(() => setSent(true), 300);     
+  // Reset form after 5 seconds
+  useEffect(() => {
+    if (sent) {
+      const timer = setTimeout(() => {
+        setSent(false);
+        setIsSubmitting(false);
+        submitted.current = false;
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [sent]);
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    
+    if (submitted.current || isSubmitting) return;
+    
+    setIsSubmitting(true);
+    submitted.current = true;
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const membershipData = {
+      firstName: formData.get('firstName') as string,
+      lastName: formData.get('lastName') as string,
+      email: formData.get('email') as string,
+      educationalBackground: formData.get('educationalBackground') as string,
+      reasonToJoin: formData.get('reasonToJoin') as string,
+      institutionName: formData.get('institutionName') as string,
+    };
+
+    try {
+      const response = await fetch('/api/submit-membership', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(membershipData),
+      });
+
+      if (response.ok) {
+        console.log('Form submitted successfully');
+        setTimeout(() => setSent(true), 300);
+      } else {
+        console.error('Form submission failed');
+        setIsSubmitting(false);
+        submitted.current = false;
+        alert('Sorry, there was an error submitting your form. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setIsSubmitting(false);
+      submitted.current = false;
+      alert('Sorry, there was an error submitting your form. Please try again.');
+    }
   }
 
   return (
@@ -22,10 +77,7 @@ export default function MembershipForm() {
             <>
               <form
                 className="text-main text-2xl font-bold"
-                action="https://docs.google.com/forms/d/e/1FAIpQLSetZT79aEjUG-MP1N-y5nWezv3W7tMDlstj4AUcecNrY3FLVw/formResponse"
-                method="POST"
-                target="hidden_iframe"
-                onSubmit={() => (submitted.current = true)}
+                onSubmit={handleSubmit}
               >
                 <label htmlFor="first-name" className="block text-main font-bold mb-1">
                   Name
@@ -39,7 +91,7 @@ export default function MembershipForm() {
                     <input
                       type="text"
                       id="first-name"
-                      name="entry.692119162"
+                      name="firstName"
                       required
                       className="w-full rounded-sm border-3 border-main/40 bg-[#F8FAFF] px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
                     />
@@ -52,7 +104,7 @@ export default function MembershipForm() {
                     <input
                       type="text"
                       id="last-name"
-                      name="entry.617648669"
+                      name="lastName"
                       required
                       className="w-full rounded-sm border-3 border-main/40 bg-[#F8FAFF] px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
                     />
@@ -66,7 +118,7 @@ export default function MembershipForm() {
                   <input
                     type="email"
                     id="email"
-                    name="entry.373187324"  
+                    name="email"
                     required
                     className="w-full rounded-sm border-3 border-main/40 bg-[#F8FAFF] px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
                   />
@@ -76,24 +128,30 @@ export default function MembershipForm() {
                   <label htmlFor="education" className="block font-bold mb-2">
                     Educational Background <span className="font-normal">(required)</span>
                   </label>
-                  <input
-                    type="text"
+                  <select
                     id="education"
-                    name="entry.1479962737"
+                    name="educationalBackground"
                     required
                     className="w-full rounded-sm border-3 border-main/40 bg-[#F8FAFF] px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
-                  />
+                  >
+                    <option value="">Select your educational background</option>
+                    <option value="High School">High School</option>
+                    <option value="Bachelor&#39;s Degree">Bachelor&#39;s Degree</option>
+                    <option value="Master&#39;s Degree">Master&#39;s Degree</option>
+                    <option value="PhD">PhD</option>
+                    <option value="Other">Other</option>
+                  </select>
                 </div>
 
                 <div className="mb-8">
                   <label htmlFor="rate" className="block font-bold mb-2">
-                    Rate your experience in superconducting quick design{" "}
+                    Why do you want to join QCSA?{" "}
                     <span className="font-normal">(required)</span>
                   </label>
                   <input
                     type="text"
                     id="rate"
-                    name="entry.1775678834"
+                    name="reasonToJoin"
                     required
                     className="w-full rounded-sm border-3 border-main/40 bg-[#F8FAFF] px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
                   />
@@ -109,19 +167,22 @@ export default function MembershipForm() {
                   <input
                     type="text"
                     id="institution-name"
-                    name="entry.878372702"
+                    name="institutionName"
                     className="w-full rounded-sm bg-[#F8FAFF] border-3 border-main/40 px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
                   />
                 </div>
 
                 <div className="mt-16 flex justify-center">
-                  <button type="submit" className="rounded-sm px-12 py-3 bg-main text-white">
-                    Register
+                  <button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="rounded-sm px-12 py-3 text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={{ backgroundColor: '#234285' }}
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Register'}
                   </button>
                 </div>
               </form>
-
-              <iframe name="hidden_iframe" style={{ display: "none" }} onLoad={afterSubmit} />
             </>
           ) : (
             <div className="text-center text-main">
