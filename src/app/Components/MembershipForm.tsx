@@ -157,7 +157,7 @@ export default function MembershipForm() {
                   />
                 </div>
 
-                <div className="mb-8">
+                {/* <div className="mb-8">
                   <label htmlFor="institution-name" className="block text-main font-bold mb-1">
                     Institution Name
                   </label>
@@ -170,7 +170,7 @@ export default function MembershipForm() {
                     name="institutionName"
                     className="w-full rounded-sm bg-[#F8FAFF] border-3 border-main/40 px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
                   />
-                </div>
+                </div> */}
 
                 <div className="mt-16 flex justify-center">
                   <button 

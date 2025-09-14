@@ -7,7 +7,7 @@ interface MembershipFormData {
   email: string;
   educationalBackground: string;
   reasonToJoin: string;
-  institutionName: string;
+  // institutionName: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
         formData.email,
         formData.educationalBackground,
         formData.reasonToJoin,
-        formData.institutionName || ''
+        // formData.institutionName || ''
       ]
     ];
 
