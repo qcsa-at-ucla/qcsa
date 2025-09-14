@@ -32,8 +32,9 @@ export default function Page() {
         el.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     };
     return (
-        <main className="py-8 md:py-20 bg-[var(--background)]">
+        <div className="min-h-screen flex flex-col bg-[#F3F8FF]">
             <MainWebsiteHeader/>
+            <main className="py-20 px-6 sm:px-8 lg:px-16 flex-grow">
             <div className="max-w-6xl mx-auto px-4 md:px-6" >
                 <section className="flex flex-col md:flex-row items-center md:gap-12" style={{width: 'auto', maxWidth: '1551px', height: 'auto', minHeight: '816px'}}>
                     {/* Left: Image card */}
@@ -151,9 +152,9 @@ export default function Page() {
                     </div>
                 </section>
             </div>
-
+</main>
             <MainWebsiteFooter />
-        </main>
+        </div>
     );
 }
 
