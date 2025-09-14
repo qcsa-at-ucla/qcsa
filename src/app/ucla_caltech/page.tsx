@@ -32,35 +32,35 @@ export default function Page() {
         el.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     };
     return (
-        <main className="py-20 bg-[var(--background)]">
+        <main className="py-8 md:py-20 bg-[var(--background)]">
             <MainWebsiteHeader/>
-            <div className="max-w-6xl mx-auto px-6">
-                <section className="flex flex-col md:flex-row items-center gap-12">
+            <div className="max-w-6xl mx-auto px-4 md:px-6" >
+                <section className="flex flex-col md:flex-row items-center md:gap-12" style={{width: 'auto', maxWidth: '1551px', height: 'auto', minHeight: '816px'}}>
                     {/* Left: Image card */}
-                    <div className="flex-shrink-0 bg-[#F1E6D8] rounded-xl p-6 md:p-8 shadow-sm">
-                        <div className="w-[320px] md:w-[420px] h-auto">
+                    <div className="flex-shrink-0 w-full md:w-auto">
+                        <div className="w-full max-w-[320px] mx-auto md:w-[420px] h-auto md:max-w-none" style={{width: '491px', height: '334px'}}>
                             <Image
                                 src="/images/ucla_caltech.png"
                                 alt="UCLA Caltech"
-                                width={420}
-                                height={420}
-                                className="object-contain rounded-md"
+                                width={491}
+                                height={454}
+                                className="object-contain w-full h-auto"
                             />
                         </div>
                     </div>
 
                     {/* Right: Text */}
-                    <div className="prose prose-lg max-w-2xl lg:prose-xl text-gray-700">
-                        <h1 className="text-3xl md:text-4xl font-extrabold text-[#113d7a] leading-tight">
+                    <div className="prose prose-lg max-w-2xl lg:prose-xl text-gray-700 text-center md:text-left px-4 md:px-0">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#113d7a] leading-tight">
                             EntangleTalks LA
-                            <span className="block mt-1 text-4xl md:text-5xl">
-                                <span className="text-[#2b6cb0] mr-2">UCLA</span>
+                            <span className="block mt-1 text-3xl sm:text-4xl md:text-5xl">
+                                <span className="text-[#2B6BF5] mr-2">UCLA</span>
                                 meets
-                                <span className="text-[#ff7a18]">Caltech!</span>
+                                <span className="text-[#ff7a18]"> Caltech!</span>
                             </span>
                         </h1>
 
-                        <p className="mt-6 text-base md:text-lg leading-relaxed font-kantumruy text-[#234285]">
+                        <p className="mt-4 md:mt-6 text-sm md:text-base lg:text-lg leading-relaxed font-kantumruy text-[#234285]">
                             EntangleTalks LA is the new collaboration between the QCSA and Caltech! As Los Angeles evolves into a
                             global quantum hub, it is important to keep the quantum community well connected - and well nourished.
                             We are creating a space for you to learn about cutting edge research, discuss & present your own, and
@@ -75,9 +75,9 @@ export default function Page() {
                 
 
                 {/* Stay tuned section */}
-                <section className="mt-32 relative">
+                <section className="mt-16 md:mt-32 relative px-4 md:px-0">
                     <div className="flex justify-center items-center">
-                        <div className="relative w-[900px] h-[600px]">
+                        <div className="relative w-full max-w-[900px] h-[400px] md:h-[600px]">
                             <Image
                                 src="/images/aura.png"
                                 alt="button background"
@@ -87,11 +87,11 @@ export default function Page() {
                             />
 
                             {/* Centered stacked headline inside the aura */}
-                            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-10 z-30">
-                                <h2 className="text-2xl md:text-1xl font-bold text-[#234285] leading-tight">
+                            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 md:px-10 z-30">
+                                <h2 className="text-lg md:text-2xl font-kantumruy leading-tight">
                                     Stay tuned for the next edition of EntangleTalks LA hosted
                                 </h2>
-                                <h2 className="mt-2 text-2xl md:text-3xl font-bold text-[#234285] leading-tight mt-8">
+                                <h2 className="mt-4 md:mt-8 text-lg md:text-2xl font-kantumruy text-[#234285] leading-tight">
                                     at Caltech in October 2025!
                                 </h2>
                             </div>
@@ -102,8 +102,8 @@ export default function Page() {
 
                 {/* Past Speakers section */}
                 <section className="mt-16 pb-16 md:pb-24">
-                    <div className="max-w-6xl mx-auto px-40 ">
-                        <h2 className="text-3xl font-bold text-center font-kantumruy text-[#234285] pb-8">Past Speakers</h2>
+                    <div className="max-w-6xl mx-auto px-4 md:px-40">
+                        <h2 className="text-2xl md:text-3xl font-bold text-center font-kantumruy text-[#234285] pb-6 md:pb-8">Past Speakers</h2>
 
                         <div className="relative mt-8">
                             {/* left arrow (styled like events page) */}
@@ -111,23 +111,23 @@ export default function Page() {
                                 aria-label="previous speakers"
                                 type="button"
                                 onClick={() => speakersScrollBy(-1)}
-                                className="absolute top-1/2 -translate-y-1/2 -left-12 md:-left-28 z-20 flex items-center justify-center h-12 w-12 text-[#234285] hover:text-[#1f4978] focus:outline-none hidden md:flex"
+                                className="absolute top-1/2 -translate-y-1/2 -left-6 md:-left-12 lg:-left-28 z-20 flex items-center justify-center h-12 w-12 text-[#234285] hover:text-[#1f4978] focus:outline-none hidden md:flex"
                             >
-                                <span className="text-6xl">‹</span>
+                                <span className="text-4xl md:text-6xl">‹</span>
                             </button>
 
-                            <div ref={speakersRef} className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth mx-auto w-full py-6 px-2">
+                            <div ref={speakersRef} className="flex gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth mx-auto w-full py-6 px-2">
                                 {PAST_SPEAKERS.map((s) => (
-                                    <article key={s.name} className="snap-start flex-shrink-0 w-full md:w-[46%] bg-white p-8 rounded-xl shadow-md text-center">
-                                        <h3 className="font-bold text-lg text-[#113d7a]">{s.name}</h3>
-                                        <p className="mt-1 text-[#234285]  font-kantumruy ">{s.affiliation}</p>
+                                    <article key={s.name} className="snap-start flex-shrink-0 w-[280px] md:w-[46%] bg-white p-6 md:p-8 rounded-xl shadow-md text-center">
+                                        <h3 className="font-bold text-base md:text-lg text-[#113d7a]">{s.name}</h3>
+                                        <p className="mt-1 text-sm md:text-base text-[#234285] font-kantumruy">{s.affiliation}</p>
 
-                                        <div className="my-6 w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-white shadow-inner">
+                                        <div className="my-4 md:my-6 w-24 h-24 md:w-36 md:h-36 mx-auto rounded-full overflow-hidden border-4 border-white shadow-inner">
                                             <Image src={s.img} alt={s.alt} width={144} height={144} className="object-cover w-full h-full" />
                                         </div>
 
                                         <a
-                                            className="inline-block bg-[#234285] text-white px-6 py-2 rounded-md shadow hover:opacity-95"
+                                            className="inline-block bg-[#234285] text-white px-4 md:px-6 py-2 rounded-md shadow hover:opacity-95 text-sm md:text-base"
                                             href={s.url}
                                             target="_blank"
                                             rel="noreferrer"
@@ -143,9 +143,9 @@ export default function Page() {
                                 aria-label="next speakers"
                                 type="button"
                                 onClick={() => speakersScrollBy(1)}
-                                className="absolute top-1/2 -translate-y-1/2 -right-12 md:-right-28 z-20 flex items-center justify-center h-12 w-12 text-[#234285] hover:text-[#1f4978] focus:outline-none hidden md:flex"
+                                className="absolute top-1/2 -translate-y-1/2 -right-6 md:-right-12 lg:-right-28 z-20 flex items-center justify-center h-12 w-12 text-[#234285] hover:text-[#1f4978] focus:outline-none hidden md:flex"
                             >
-                                <span className="text-6xl">›</span>
+                                <span className="text-4xl md:text-6xl">›</span>
                             </button>
                         </div>
                     </div>
