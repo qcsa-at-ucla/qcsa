@@ -28,7 +28,7 @@ const boardMembers = [
   {
     id: 3,
     name: "Nicolas Dirnegger",
-    role: "Quantum Devices",
+    role: "Secretary",
     major: "Electrical Engineering",
     year: "PhD Student",
     bio: "Nicolas received a Bachelor of Science in Electrical Engineering at ETH Zurich, Switzerland in 2022 and a Master of Science in Physics at the University of California, Los Angeles in 2023. He is currently pursuing a PhD in Electrical Engineering in the NarangLab. Currently, his main research focus is on quantum sensing and quantum networks. He also has research interests in quantum error correction and quantum computation. Feel free to reach out if you want to go surfing!",
@@ -83,8 +83,8 @@ const boardMembers = [
   {
     id: 11,
     name: "Connor Engel",
-    role: "Technology Officer",
-    major: "Computer Science",
+    role: "Events & Advertisement",
+    major: "Physics",
     year: "3rd Year",
     bio: "Connor is a third-year undergraduate student majoring in Physics. He currently works as a research assistant in Professor Qianhui Shi’s laboratory, where he contributes to condensed matter physics. Connor is passionate about exploring the fundamental principles of physics and is particularly fascinated by the potential of photonics in advancing quantum computing technologies. He also has an adorable dog who is terrified of Connor getting weird ideas about boxes and superpositions.",
     image: "/images/Connor.png"
@@ -93,7 +93,7 @@ const boardMembers = [
     id: 12,
     name: "Shreya Shirsathe",
     role: "Events & Advertisement",
-    major: "Physics",
+    major: "Computer Engineering",
     year: "3rd Year",
     bio: "Shreya is a 3rd-year undergraduate Computer Engineering student. She is interested in quantum algorithms and hybrid quantum-classical systems. She enjoys connecting with others who share a passion for quantum computing and exploring how classical and quantum systems can work together. Outside of school, she enjoys snowboarding, dancing, and playing the guitar.",
     image: "/images/Shreya.png"
