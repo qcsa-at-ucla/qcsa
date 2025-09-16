@@ -2,36 +2,16 @@
 @tailwind utilities;
 
 /* Add explicit weights so Tailwind/utility classes map correctly */
-@font-face {
-  font-family: 'Kantumruy';
-  src: url('/Kantumruy-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
 
-@font-face {
-  font-family: 'Kantumruy';
-  src: url('/Kantumruy-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
-@font-face {
-  font-family: 'Kantumruy';
-  src: url('/Kantumruy-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+
 
 :root {
   --background: #F3F8FF;
   --foreground: #171717;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: 'Kantumruy, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial';
+  --font-sans: var(--font-kantumruy),
   --font-mono: var(--font-geist-mono);
   --color-main: #234285;
   --color-shadow: #ADC8EF;
@@ -44,6 +24,10 @@
     font-size: 2.25rem; /* equivalent to Tailwind text-4xl */
     font-weight: 700; /* equivalent to Tailwind font-bold */
     color: var(--color-main);
+  }
+  h1, h2, h3, h4, h5, h6, p {
+    font-family: var(--font-kantumruy), sans-serif;
+    color: var(--color-foreground);
   }
 
 }
