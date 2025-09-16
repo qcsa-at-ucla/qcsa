@@ -67,7 +67,7 @@ export default function MembershipForm() {
 
   return (
     <div className="flex flex-col">
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F3F8FF] flex-grow">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F3F8FF] flex-grow ">
         <h2 className="relative -top-4 text-[36px] font-bold text-main text-center mb-1.5">
           Membership
         </h2>

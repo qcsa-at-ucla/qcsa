@@ -11,12 +11,12 @@ export default function AboutUs() {
             {/* Text Content Section */}
             <div className="lg:w-6/12 lg:ml-8 w-full">
               <div className="space-y-8 text-left">
-                <h2 className="text-4xl md:text-5xl font-bold font-kantumruy text-[#234285] mb-6">
+                <h2 className="text-4xl font-bold font-kantumruy text-[#234285] mb-6">
                   About Us
                 </h2>
                 
                 <div className="space-y-4">
-                  <p className="text-(1/2)xl leading-relaxed font-kantumruy text-[#234285]">
+                  <p className="text-normal leading-relaxed font-kantumruy text-[#234285]">
                     The premier quantum science and technology organization at UCLA.
                     Host talks by professors, students, and other institutions. Undergrad 
                     and Grad organization under CQSE for everything under the umbrella 
@@ -28,7 +28,7 @@ export default function AboutUs() {
                 {/* Learn More Button */}
                 <div className="pt-6">
                   <div className="flex justify-center">
-                    <Link href="../about/" className="bg-[#234285] text-white px-8 py-4 text-2xl font-kantumruy hover:bg-blue-700 font-bold transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform inline-block text-center rounded-lg">
+                    <Link href="../about/" className="bg-[#234285] text-white px-8 py-4 text-2xl font-kantumruy font-bold transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform inline-block text-center rounded-lg">
                       Learn More
                     </Link>
                   </div>
