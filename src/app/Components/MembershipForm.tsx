@@ -67,8 +67,8 @@ export default function MembershipForm() {
 
   return (
     <div className="flex flex-col">
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F3F8FF] flex-grow ">
-        <h2 className="relative -top-4 text-[36px] font-bold text-main text-center mb-1.5">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background flex-grow ">
+        <h2 className="relative -top-4 text-[36px] bg-background font-bold text-[#234285] font-kantumruy text-main text-center mb-1.5">
           Membership
         </h2>
 
@@ -79,13 +79,13 @@ export default function MembershipForm() {
                 className="text-main text-2xl font-bold"
                 onSubmit={handleSubmit}
               >
-                <label htmlFor="first-name" className="block text-main font-bold mb-1">
+                <label htmlFor="first-name" className="block text-main font-bold font-bold text-[#234285] mb-1">
                   Name
                 </label>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20">
                   <div className="mb-8">
-                    <label htmlFor="first-name" className="block font-normal mb-2">
+                    <label htmlFor="first-name" className="block font-normal font-bold text-[#234285] mb-2">
                       First Name
                     </label>
                     <input
@@ -93,12 +93,12 @@ export default function MembershipForm() {
                       id="first-name"
                       name="firstName"
                       required
-                      className="w-full rounded-sm border-3 border-main/40 bg-[#F8FAFF] px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
+                      className="w-full rounded-sm border-3 border-main/40 bg-background px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
                     />
                   </div>
 
                   <div className="mb-8">
-                    <label htmlFor="last-name" className="block font-normal mb-2">
+                    <label htmlFor="last-name" className="block font-normal font-bold text-[#234285] mb-2">
                       Last Name
                     </label>
                     <input
@@ -106,13 +106,13 @@ export default function MembershipForm() {
                       id="last-name"
                       name="lastName"
                       required
-                      className="w-full rounded-sm border-3 border-main/40 bg-[#F8FAFF] px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
+                      className="w-full rounded-sm border-3 border-main/40 bg-background font-bold text-[#234285] px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
                     />
                   </div>
                 </div>
 
                 <div className="mb-8">
-                  <label htmlFor="email" className="block font-bold mb-2">
+                  <label htmlFor="email" className="block font-bold font-bold text-[#234285] mb-2">
                     Email <span className="font-normal">(required)</span>
                   </label>
                   <input
@@ -120,19 +120,19 @@ export default function MembershipForm() {
                     id="email"
                     name="email"
                     required
-                    className="w-full rounded-sm border-3 border-main/40 bg-[#F8FAFF] px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
+                    className="w-full rounded-sm border-3 border-main/40 bg-background px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
                   />
                 </div>
 
                 <div className="mb-8">
-                  <label htmlFor="education" className="block font-bold mb-2">
+                  <label htmlFor="education" className="block font-bold mb-2 font-bold text-[#234285]">
                     Educational Background <span className="font-normal">(required)</span>
                   </label>
                   <select
                     id="education"
                     name="educationalBackground"
                     required
-                    className="w-full rounded-sm border-3 border-main/40 bg-[#F8FAFF] px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
+                    className="w-full rounded-sm border-3 border-main/40 bg-background font-bold text-[#234285] px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
                   >
                     <option value="">Select your educational background</option>
                     <option value="High School">High School</option>
@@ -144,7 +144,7 @@ export default function MembershipForm() {
                 </div>
 
                 <div className="mb-8">
-                  <label htmlFor="rate" className="block font-bold mb-2">
+                  <label htmlFor="rate" className="block font-bold font-bold text-[#234285] mb-2">
                     Why do you want to join QCSA?{" "}
                     <span className="font-normal">(required)</span>
                   </label>
@@ -153,7 +153,7 @@ export default function MembershipForm() {
                     id="rate"
                     name="reasonToJoin"
                     required
-                    className="w-full rounded-sm border-3 border-main/40 bg-[#F8FAFF] px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
+                    className="w-full rounded-sm border-3 font-bold text-[#234285] border-main/40 bg-background px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
                   />
                 </div>
 
