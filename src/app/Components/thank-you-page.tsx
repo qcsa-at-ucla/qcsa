@@ -58,10 +58,10 @@ export default function ThankYouPage() {
       <div className="max-w-2xl mx-auto">
         {/* Header */}     
         <div className="text-center mb-8">
-            <h2 className='text-4xl font-semibold m-16 text-[#0078d4]'>
+            <h2 className='text-4xl font-kantumruy m-16 text-[#0078d4]'>
                 QDW 2026 Pre-registration
             </h2>   
-          <h2 className="text-2xl md:text-1xl font-normal text-black-600">
+          <h2 className="text-2xl md:text-1xl font-normal text-[#234285]">
             You may <strong>pre-register</strong> below to indicate your interest and receive an email notifying you when registration opens.
           </h2>
         </div>
@@ -70,12 +70,12 @@ export default function ThankYouPage() {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Name Section */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Name <span className="text-gray-500">(required)</span>
+            <label className="block text-sm font-kantumruy text-[#234285] mb-2">
+              Name <span className="font-kantumruy text-[#234285]">(required)</span>
             </label>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs text-gray-600 mb-1">First Name</label>
+                <label className="block text-xs font-kantumruy text-[#234285] mb-1">First Name</label>
                 <input
                   type="text"
                   name="firstName"
@@ -83,11 +83,11 @@ export default function ThankYouPage() {
                   placeholder='Enter your first name'
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 font-kantumruy text-[#234285] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
               <div>
-                <label className="block text-xs text-gray-600 mb-1">Last Name</label>
+                <label className="block text-xs font-kantumruy text-[#234285] mb-1">Last Name</label>
                 <input
                   type="text"
                   name="lastName"
@@ -95,7 +95,7 @@ export default function ThankYouPage() {
                   placeholder='Enter your last name'
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border font-kantumruy text-[#234285] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function ThankYouPage() {
           {/* Email */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Email <span className="text-gray-500">(required)</span>
+              Email <span className="font-kantumruy text-[#234285]">(required)</span>
             </label>
             <input
               type="email"
@@ -119,8 +119,8 @@ export default function ThankYouPage() {
 
           {/* Educational Background */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Educational Background <span className="text-gray-500">(required)</span>
+            <label className="block text-sm font-kantumruy text-[#234285] mb-2">
+              Educational Background <span className="font-kantumruy text-[#234285]">(required)</span>
             </label>
             <select
               name="educationalBackground"
@@ -140,8 +140,8 @@ export default function ThankYouPage() {
 
           {/* Experience Rating */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Rate your experience in superconducting quick design: <span className="text-gray-500">(required)</span>
+            <label className="block text-sm ffont-kantumruy text-[#234285] mb-2">
+              Rate your experience in superconducting quick design: <span className="font-kantumruy text-[#234285]">(required)</span>
             </label>
             <select
               name="experienceRating"
@@ -160,39 +160,39 @@ export default function ThankYouPage() {
 
           {/* Institution Name */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-kantumruy text-[#234285] mb-2">
               Institution Name
-            </label>        
-             <p className="text-xs text-gray-500 mb-2">The most recent institution you attended</p>
+            </label>
+            <p className="text-xs font-kantumruy text-[#234285] mb-2">The most recent institution you attended</p>
             <input
               type="text"
               name="institutionName"
               value={formData.institutionName}
               onChange={handleInputChange}
               placeholder="Enter your institution name"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 font-kantumruy text-[#234285] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>          
           {/* Submit Message */}
           {submitMessage && (
-            <div className={`text-center p-4 rounded-md ${
+            <div className={`text-center p-4 rounded-md font-kantumruy text-[#234285] ${
               submitMessage.includes('successfully') 
-                ? 'bg-green-100 text-green-700 border border-green-300' 
-                : 'bg-red-100 text-red-700 border border-red-300'
+                ? 'bg-green-100 text-green-700 border border-green-300 font-kantumruy text-[#234285]' 
+                : 'bg-red-100 text-red-700 border border-red-300 font-kantumruy text-[#234285]'
             }`}>
               {submitMessage}
             </div>
           )}
 
           {/* Submit Button */}
-          <div className="flex justify-center pt-2">
+          <div className="flex justify-center pt-2 font-kantumruy text-[#234285]">
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`font-medium py-3 px-8 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+              className={`font-kantumruy bg-[#234285] text-[#234285] py-3 px-8 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                 isSubmitting
                   ? 'bg-gray-400 cursor-not-allowed text-white'
-                  : 'bg-blue-600 hover:bg-blue-700 text-white'
+                  : 'bg-[#234285] hover:bg-blue-700 text-white'
               }`}
             >
               {isSubmitting ? 'Submitting...' : 'Submit'}
