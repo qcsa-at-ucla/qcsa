@@ -105,39 +105,52 @@ export default function UclaUscPage() {
 
 							<div
 								ref={containerRef}
-								className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth py-6 px-6 sm:px-0"
+								className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth py-6 px-6 sm:px-0 items-stretch"
 								style={{ WebkitOverflowScrolling: 'touch' }}
 								role="list"
 								aria-label="Past seminars carousel"
-							>
+								>
 								{SEMINARS.map((s, idx) => (
 									<div key={idx} className="snap-start flex-shrink-0 w-full md:w-[46%] lg:w-[31%]">
-										<div className="relative">
-											{/* decorative light-blue aura behind the card */}
-											<div className="absolute -inset-2 rounded-lg blur-3xl opacity-70 pointer-events-none" style={{background: 'radial-gradient(closest-side, rgba(27,149,236,0.16), rgba(99,179,237,0.04) 55%, transparent 70%)'}} />
-											<div className="bg-white rounded-lg p-10 shadow-lg ring-1 ring-blue-100/60 h-full flex flex-col justify-between relative z-10" style={{boxShadow: '0 12px 30px rgba(35,66,133,0.06)'}}>
-												<div>
-													<h3 className="text-xl md:text-2xl font-semibold text-center text-[#234285] mb-6 font-kantumruy leading-snug">
-														{s.title}
-													</h3>
-									
-													<p className="text-center text-[#234285] mb-3 font-kantumruy text-lg">
-														{s.speaker}
-													</p>
-									
-													<p className="text-center text-[#234285] mb-6 font-kantumruy text-lg">
-														{s.date}
-													</p>
-												</div>
+									<div className="relative">
+										{/* decorative aura (absolute, doesn't affect height) */}
+										<div
+										className="absolute -inset-2 rounded-lg blur-3xl opacity-70 pointer-events-none"
+										style={{
+											background:
+											'radial-gradient(closest-side, rgba(27,149,236,0.16), rgba(99,179,237,0.04) 55%, transparent 70%)',
+										}}
+										/>
 
-												<div className="flex justify-center mt-2">
-													<button className="bg-[#234285] text-white px-8 py-3 rounded-md shadow-sm font-kantumruy">Learn More</button>
-												</div>
-											</div>
+										{/* CARD: fixed floor + 3-row grid to align speaker/date */}
+										<div
+										className="relative z-10 bg-white rounded-lg p-10 shadow-lg ring-1 ring-blue-100/60
+													grid grid-rows-[auto_1fr_auto] min-h-[360px]"
+										style={{ boxShadow: '0 12px 30px rgba(35,66,133,0.06)' }}
+										role="listitem"
+										>
+										{/* Row 1: Title (reserve space so different wrap lengths don't shift layout) */}
+										<h3
+											className="text-xl md:text-2xl font-semibold text-center text-[#234285] mb-6 font-kantumruy leading-snug
+													min-h-[3.5rem] md:min-h-[4.25rem]"
+										>
+											{s.title}
+										</h3>
+
+										{/* Row 2: Spacer grows to push bottom block down uniformly */}
+										<div />
+
+										{/* Row 3: Bottom block (speaker + date) -> aligned across cards */}
+										<div>
+											<p className="text-center text-[#234285] mb-3 font-kantumruy text-lg">{s.speaker}</p>
+											<p className="text-center text-[#234285] font-kantumruy text-lg">{s.date}</p>
+										</div>
 										</div>
 									</div>
+								</div>
 								))}
 							</div>
+
 						</div>
 					</section>
 				</main>
