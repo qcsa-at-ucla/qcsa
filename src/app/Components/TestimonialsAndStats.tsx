@@ -23,33 +23,54 @@ const stats = [
 
 export default function TestimonialsAndStats(){
     return (
-        <section className='flex flex-col items-center text-center w-full p-12'>
-            <h2 className='text-4xl font-semibold m-16 text-[#0078d4]'>
-                What Our Participants Tell Us 
-            </h2>
+        <section className='flex flex-col items-center text-center w-full py-8 sm:py-12 px-4 sm:px-6 lg:px-8'>
+            <header>
+                <h2 className='text-2xl sm:text-3xl md:text-4xl font-semibold my-8 sm:my-12 md:my-16 text-[#0078d4] max-w-4xl mx-auto leading-tight'>
+                    What Our Participants Tell Us 
+                </h2>
+            </header>
 
-            <div className='grid gap-8 sm:grid-cols-3 justify-items-center w-full m-6'>
+            {/* Statistics Section */}
+            <div className='grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-3 justify-items-center w-full max-w-6xl my-6 sm:my-8' role="region" aria-labelledby="statistics-heading">
+                <h3 id="statistics-heading" className="sr-only">Workshop Statistics</h3>
                 {stats.map((stat, ind) => (
-                    <div key={ind} className='max-w-xl w-full p-4'>
-                       <div className='text-8xl font-bold'>{stat.value}</div>
-                       <div className='text-2xl text-center'>{stat.label}</div>
+                    <div key={ind} className='max-w-xl w-full p-4 bg-white rounded-lg shadow-sm border border-gray-100'>
+                       <div className='text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-[#0078d4] mb-2' aria-label={`${stat.value} ${stat.label}`}>
+                           {stat.value}
+                       </div>
+                       <div className='text-lg sm:text-xl md:text-2xl text-[#234285] leading-relaxed'>
+                           {stat.label}
+                       </div>
                     </div>
                 ))}
             </div>
             
-            <div className='grid gap-8 sm:grid-cols-3 text-center justify-items-center w-full m-6'>
+            {/* Testimonials Section */}
+            <div className='grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center justify-items-center w-full max-w-7xl my-6 sm:my-8' role="region" aria-labelledby="testimonials-heading">
+                <h3 id="testimonials-heading" className="sr-only">Participant Testimonials</h3>
                 {testimonials.map((quote, ind) => (
-                    <blockquote key = {ind} className='max-w-xl w-full text-2xl p-2'>
-                        &ldquo;{quote}&rdquo;
+                    <blockquote 
+                        key={ind} 
+                        className='max-w-xl w-full text-base sm:text-lg md:text-xl lg:text-2xl p-4 sm:p-6 bg-gray-50 rounded-lg border-l-4 border-[#0078d4] shadow-sm'
+                        cite="Participant feedback"
+                    >
+                        <p className="text-[#234285] leading-relaxed italic">
+                            &ldquo;{quote}&rdquo;
+                        </p>
+                        <footer className="mt-4">
+                            <cite className="text-sm text-gray-600 not-italic">
+                                Workshop Participant
+                            </cite>
+                        </footer>
                     </blockquote>
                 ))}
             </div>
 
-          
-
-            <h2 className='text-4xl font-semibold m-16 text-[#0078d4] pt-24'>
-                See you at QDW2026!!
-            </h2>
+            <footer className="mt-12 sm:mt-16 md:mt-24">
+                <h2 className='text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0078d4] max-w-4xl mx-auto leading-tight'>
+                    See you at QDW2026!!
+                </h2>
+            </footer>
         </section>
     );
 }

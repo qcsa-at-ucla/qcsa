@@ -54,80 +54,105 @@ export default function ThankYouPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-gray-100 py-6 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         {/* Header */}     
-        <div className="text-center mb-8">
-            <h2 className='text-4xl font-kantumruy m-16 text-[#0078d4]'>
+        <header className="text-center mb-6 sm:mb-8">
+            <h1 className='text-2xl sm:text-3xl md:text-4xl font-kantumruy m-8 sm:m-16 text-[#0078d4]'>
                 QDW 2026 Pre-registration
-            </h2>   
-          <h2 className="text-2xl md:text-1xl font-normal text-[#234285]">
+            </h1>   
+          <p className="text-lg sm:text-xl md:text-2xl font-normal text-[#234285] px-2">
             You may <strong>pre-register</strong> below to indicate your interest and receive an email notifying you when registration opens.
-          </h2>
-        </div>
+          </p>
+        </header>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form 
+          onSubmit={handleSubmit} 
+          className="space-y-6"
+          aria-labelledby="registration-heading"
+          noValidate
+        >
+          <div className="sr-only">
+            <h2 id="registration-heading">Pre-registration Form</h2>
+          </div>
+          
           {/* Name Section */}
-          <div>
-            <label className="block text-sm font-kantumruy text-[#234285] mb-2">
-              Name <span className="font-kantumruy text-[#234285]">(required)</span>
-            </label>
+          <fieldset>
+            <legend className="block text-sm font-kantumruy text-[#234285] mb-2">
+              Name <span className="font-kantumruy text-red-600" aria-label="required">*</span>
+            </legend>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-kantumruy text-[#234285] mb-1">First Name</label>
+                <label htmlFor="firstName" className="block text-xs font-kantumruy text-[#234285] mb-1">
+                  First Name
+                </label>
                 <input
                   type="text"
+                  id="firstName"
                   name="firstName"
                   value={formData.firstName}
                   placeholder='Enter your first name'
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2 font-kantumruy text-[#234285] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  aria-required="true"
+                  aria-describedby="firstName-error"
+                  className="w-full px-3 py-2 font-kantumruy text-[#234285] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                 />
               </div>
               <div>
-                <label className="block text-xs font-kantumruy text-[#234285] mb-1">Last Name</label>
+                <label htmlFor="lastName" className="block text-xs font-kantumruy text-[#234285] mb-1">
+                  Last Name
+                </label>
                 <input
                   type="text"
+                  id="lastName"
                   name="lastName"
                   value={formData.lastName}
                   placeholder='Enter your last name'
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2 border font-kantumruy text-[#234285] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  aria-required="true"
+                  aria-describedby="lastName-error"
+                  className="w-full px-3 py-2 border font-kantumruy text-[#234285] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                 />
               </div>
             </div>
-          </div>
+          </fieldset>
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Email <span className="font-kantumruy text-[#234285]">(required)</span>
+            <label htmlFor="email" className="block text-sm font-kantumruy text-[#234285] mb-2">
+              Email <span className="font-kantumruy text-red-600" aria-label="required">*</span>
             </label>
             <input
               type="email"
+              id="email"
               name="email"
               value={formData.email}
               placeholder='Enter your email address'
               onChange={handleInputChange}
               required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              aria-required="true"
+              aria-describedby="email-error"
+              className="w-full px-3 py-2 font-kantumruy text-[#234285] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
             />
           </div>
 
           {/* Educational Background */}
           <div>
-            <label className="block text-sm font-kantumruy text-[#234285] mb-2">
-              Educational Background <span className="font-kantumruy text-[#234285]">(required)</span>
+            <label htmlFor="educationalBackground" className="block text-sm font-kantumruy text-[#234285] mb-2">
+              Educational Background <span className="font-kantumruy text-red-600" aria-label="required">*</span>
             </label>
             <select
+              id="educationalBackground"
               name="educationalBackground"
               value={formData.educationalBackground}
               onChange={handleInputChange}
               required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+              aria-required="true"
+              aria-describedby="education-error"
+              className="w-full px-3 py-2 font-kantumruy text-[#234285] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white transition-colors"
             >
               <option value="">Select an option</option>
               <option value="high-school">High School</option>              
@@ -140,15 +165,18 @@ export default function ThankYouPage() {
 
           {/* Experience Rating */}
           <div>
-            <label className="block text-sm ffont-kantumruy text-[#234285] mb-2">
-              Rate your experience in superconducting quick design: <span className="font-kantumruy text-[#234285]">(required)</span>
+            <label htmlFor="experienceRating" className="block text-sm font-kantumruy text-[#234285] mb-2">
+              Rate your experience in superconducting quick design: <span className="font-kantumruy text-red-600" aria-label="required">*</span>
             </label>
             <select
+              id="experienceRating"
               name="experienceRating"
               value={formData.experienceRating}
               onChange={handleInputChange}
               required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+              aria-required="true"
+              aria-describedby="experience-error"
+              className="w-full px-3 py-2 font-kantumruy text-[#234285] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white transition-colors"
             >
               <option value="">Select an option</option>
               <option value="beginner">Beginner</option>
@@ -160,47 +188,61 @@ export default function ThankYouPage() {
 
           {/* Institution Name */}
           <div>
-            <label className="block text-sm font-kantumruy text-[#234285] mb-2">
+            <label htmlFor="institutionName" className="block text-sm font-kantumruy text-[#234285] mb-2">
               Institution Name
             </label>
             <p className="text-xs font-kantumruy text-[#234285] mb-2">The most recent institution you attended</p>
             <input
               type="text"
+              id="institutionName"
               name="institutionName"
               value={formData.institutionName}
               onChange={handleInputChange}
               placeholder="Enter your institution name"
-              className="w-full px-3 py-2 font-kantumruy text-[#234285] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 font-kantumruy text-[#234285] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
             />
           </div>          
           {/* Submit Message */}
           {submitMessage && (
-            <div className={`text-center p-4 rounded-md font-kantumruy text-[#234285] ${
-              submitMessage.includes('successfully') 
-                ? 'bg-green-100 text-green-700 border border-green-300 font-kantumruy text-[#234285]' 
-                : 'bg-red-100 text-red-700 border border-red-300 font-kantumruy text-[#234285]'
-            }`}>
+            <div 
+              className={`text-center p-4 rounded-md font-kantumruy ${
+                submitMessage.includes('successfully') 
+                  ? 'bg-green-100 text-green-800 border border-green-300' 
+                  : 'bg-red-100 text-red-800 border border-red-300'
+              }`}
+              role="alert"
+              aria-live="polite"
+              aria-atomic="true"
+            >
               {submitMessage}
             </div>
           )}
 
           {/* Submit Button */}
-          <div className="flex justify-center pt-2 font-kantumruy text-[#234285]">
+          <div className="flex justify-center pt-2">
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`font-kantumruy bg-[#234285] text-[#234285] py-3 px-8 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+              aria-describedby={isSubmitting ? "submitting-status" : undefined}
+              className={`font-kantumruy py-3 px-6 sm:px-8 text-base sm:text-lg rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-w-[120px] ${
                 isSubmitting
-                  ? 'bg-gray-400 cursor-not-allowed text-white'
-                  : 'bg-[#234285] hover:bg-blue-700 text-white'
+                  ? 'bg-gray-400 cursor-not-allowed text-gray-700'
+                  : 'bg-[#234285] hover:bg-blue-700 text-white hover:shadow-lg transform hover:-translate-y-0.5'
               }`}
             >
-              {isSubmitting ? 'Submitting...' : 'Submit'}
+              {isSubmitting ? (
+                <>
+                  <span className="sr-only" id="submitting-status">Form is being submitted</span>
+                  <span aria-hidden="true">Submitting...</span>
+                </>
+              ) : (
+                'Submit'
+              )}
             </button>
           </div>
         </form>
       </div>
-    </div>
+    </main>
   );
 
 
