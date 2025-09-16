@@ -28,7 +28,7 @@ export default function AboutUs() {
                 {/* Learn More Button */}
                 <div className="pt-6">
                   <div className="flex justify-center">
-                    <Link href="../about/" className="bg-[#234285] text-white px-8 py-4 text-2xl font-kantumruy font-bold transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform inline-block text-center rounded-lg">
+                    <Link href="../about/" className="bg-[#234285] text-white px-8 py-4 text-2xl font-kantumruy font-bold transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform inline-block text-center rounded-sm">
                       Learn More
                     </Link>
                   </div>

@@ -279,7 +279,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 									<p className="mb-6 text-lg leading-relaxed font-kantumruy text-[#234285]">{s.sub}</p>
 									<div>
 										<Link
-											className="inline-block bg-[#234285] text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-900 text-lg font-bold transition-colors"
+											className="inline-block bg-[#234285] text-white px-6 py-3 rounded-sm shadow-md hover:bg-blue-900 text-lg font-bold transition-colors"
 											href={
 												s.img.includes('ucla_caltech.png')
 													? '/ucla_caltech'
@@ -384,7 +384,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 				<div className="mt-8 flex justify-center">
 					<button
-						className="bg-[#234285] text-white px-6 py-3 rounded-md shadow-md rounded-lg font-kantumruy text-2xl font-kantumruy transition-colors"
+						className="bg-[#234285] text-white px-8 py-3 rounded-sm shadow-md font-bold font-kantumruy text-2xl font-kantumruy transition-colors"
 						onClick={() => setModalOpen(true)}
 					>
 						Show All
