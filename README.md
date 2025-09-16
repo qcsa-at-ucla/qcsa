@@ -316,10 +316,10 @@ The website is deployed using Vercel. For production deployment:
 
 ### Official QCSA Links
 
-- **Website**: [https://qcsa-at-ucla.github.io](https://qcsa-at-ucla.github.io)
+- **Website**: [QCSA](https://qcsa.vercel.app)
 - **Email**: [quantum.ucla@gmail.com](mailto:quantum.ucla@gmail.com)
 - **LinkedIn**: [QCSA LinkedIn](https://www.linkedin.com/company/quantum-computing-student-association-ucla)
-- **Instagram**: [QCSA Instagram](https://www.instagram.com/qcsa_ucla/)
+- **Instagram**: [QCSA Instagram](https://www.instagram.com/uclaqcsa/)
 
 ### UCLA Affiliations
 
