@@ -166,6 +166,26 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 		return () => el.removeEventListener('scroll', handler);
 	}, []);
 
+	// Handle keyboard navigation for modal
+	useEffect(() => {
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key === 'Escape' && selectedPast) {
+				setSelectedPast(null);
+			}
+		};
+
+		if (selectedPast) {
+			document.addEventListener('keydown', handleKeyDown);
+			// Prevent background scrolling when modal is open
+			document.body.style.overflow = 'hidden';
+		}
+
+		return () => {
+			document.removeEventListener('keydown', handleKeyDown);
+			document.body.style.overflow = 'unset';
+		};
+	}, [selectedPast]);
+
 	const scrollBy = (direction: number) => {
 		const el = containerRef.current;
 		if (!el) return;
@@ -300,15 +320,29 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 			{/* Past event details modal */}
 			{selectedPast && (
-				<div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/60" onClick={() => setSelectedPast(null)} style={{ backdropFilter: 'blur(2px)'}}>
+				<div 
+					className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/60" 
+					onClick={() => setSelectedPast(null)} 
+					style={{ backdropFilter: 'blur(2px)'}}
+					role="dialog"
+					aria-modal="true"
+					aria-labelledby="modal-title"
+					aria-describedby="modal-content"
+				>
 					<div className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-auto p-6" onClick={(e) => e.stopPropagation()}>
 						<div className="flex items-start justify-between gap-4">
-							<div>
-								<h3 className="text-2xl font-semibold mb-2">{selectedPast.title}</h3>
-								<p className="text-sm text-slate-600 mb-4">{selectedPast.date}</p>
-								<div className="prose max-w-none text-slate-700">{selectedPast.content}</div>
+							<div className="flex-grow">
+								<h3 id="modal-title" className="text-2xl font-semibold mb-2 font-kantumruy text-[#234285]">{selectedPast.title}</h3>
+								<p className="text-sm text-slate-600 mb-4 font-kantumruy">{selectedPast.date}</p>
+								<div id="modal-content" className="prose max-w-none text-slate-700 font-kantumruy leading-relaxed">{selectedPast.content}</div>
 							</div>
-							<button className="text-slate-600 hover:text-slate-800" onClick={() => setSelectedPast(null)}>Close</button>
+							<button 
+								className="text-slate-600 hover:text-slate-800 focus:text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 rounded p-2 transition-colors duration-200 flex-shrink-0" 
+								onClick={() => setSelectedPast(null)}
+								aria-label="Close modal"
+							>
+								<span aria-hidden="true">✕</span>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -417,25 +451,31 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 				<div className="relative">
 					<button
-						aria-label="previous past"
+						aria-label="View previous past events"
 						onClick={() => pastScrollBy(-1)}
-						className="absolute top-1/2 -translate-y-1/2 -left-8 md:-left-12 z-20 flex items-center justify-center h-12 w-12 text-blue-800 hover:text-blue-900 focus:outline-none"
+						className="absolute top-1/2 -translate-y-1/2 -left-4 sm:-left-8 md:-left-12 z-20 flex items-center justify-center h-12 w-12 text-blue-800 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 rounded-full transition-colors duration-200"
 					>
-						<span className="text-6xl">‹</span>
+						<span className="text-4xl sm:text-6xl" aria-hidden="true">‹</span>
 					</button>
 
-					<div ref={pastRef} className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth py-6 px-6 sm:px-0" role="list" aria-label="Past events carousel">
+					<div ref={pastRef} className="flex gap-4 sm:gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth py-6 px-2 sm:px-6 md:px-0" role="list" aria-label="Past events carousel">
 						{pastEvents.map((p, idx) => (
-							<div key={idx} className="snap-start flex-shrink-0" style={{ width: '297px', height: '327px' }}>
+							<div key={idx} className="snap-start flex-shrink-0 w-72 sm:w-80 md:w-[297px]" style={{ height: '327px' }}>
 								<div className="relative w-full h-full">
 									{/* light blue aura */}
 									<div aria-hidden className="absolute inset-0 rounded-md" style={{ boxShadow: '0 10px 30px rgba(49,100,180,0.12)' }} />
-									<article className="relative rounded-md p-6 w-full h-full flex flex-col" style={{ backgroundColor: 'hsl(215,100%,98%)', boxShadow: '0 10px 24px rgba(14,57,106,0.06)', borderTop: '1px solid rgba(14,57,106,0.02)' }}>
-										<h3 className="text-2xl text-[#234285] mb-4 font-kantumruy">{p.title}</h3>
-										<p className="text-base text-slate-600 mb-1 font-kantumruy text-[#234285]">{p.date}</p>
-										<p className="mb-4 font-kantumruy text-[#234285] text-base flex-grow">{p.excerpt}</p>
-										<div className="mt-auto text-left">
-											<button onClick={() => setSelectedPast(p)} className="text-blue-800 underline text-base">Read More</button>
+									<article className="relative rounded-md p-4 sm:p-6 w-full h-full flex flex-col overflow-hidden" style={{ backgroundColor: 'hsl(215,100%,98%)', boxShadow: '0 10px 24px rgba(14,57,106,0.06)', borderTop: '1px solid rgba(14,57,106,0.02)' }}>
+										<h3 className="text-lg text-[#234285] mb-3 font-kantumruy leading-tight break-words">{p.title}</h3>
+										<p className="text-sm text-slate-600 mb-2 font-kantumruy text-[#234285]">{p.date}</p>
+										<p className="mb-4 font-kantumruy text-[#234285] text-sm flex-grow leading-relaxed break-words overflow-hidden">{p.excerpt}</p>
+										<div className="mt-auto flex justify-start items-end flex-shrink-0">
+											<button 
+												onClick={() => setSelectedPast(p)} 
+												className="text-blue-800 hover:text-blue-900 focus:text-blue-900 underline text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 rounded px-1"
+												aria-label={`Read more about ${p.title}`}
+											>
+												Read More
+											</button>
 										</div>
 									</article>
 								</div>
@@ -444,11 +484,11 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 					</div>
 
 					<button
-						aria-label="next past"
+						aria-label="View next past events"
 						onClick={() => pastScrollBy(1)}
-						className="absolute top-1/2 -translate-y-1/2 -right-8 md:-right-12 z-20 flex items-center justify-center h-12 w-12 text-blue-800 hover:text-blue-900 focus:outline-none"
+						className="absolute top-1/2 -translate-y-1/2 -right-4 sm:-right-8 md:-right-12 z-20 flex items-center justify-center h-12 w-12 text-blue-800 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 rounded-full transition-colors duration-200"
 					>
-						<span className="text-6xl">›</span>
+						<span className="text-4xl sm:text-6xl" aria-hidden="true">›</span>
 					</button>
 				</div>
 			</section>

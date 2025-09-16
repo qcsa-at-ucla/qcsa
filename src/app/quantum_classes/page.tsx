@@ -129,7 +129,7 @@ export default function QuantumClassesPage() {
 					</div>
 
 					{/* Right gradient card with avatar */}
-					<aside className="flex items-center justify-center relative">
+					<aside className="flex items-center justify-center relative pointer-events-none">
                         <div className="w-full h-full flex items-start justify-center relative">
 							{/* Background aura image */}
 							<div className="absolute inset-0 flex items-center justify-center opacity-100">
@@ -142,7 +142,7 @@ export default function QuantumClassesPage() {
 								/>
 							</div>
 							{/* Foreground atom image */}
-	                        <div className="-mt-2 relative z-10">
+	                        <div className="-mt-2 relative">
 								<Image 
 									src="/images/quantum_atom.png" 
 									alt="quantum atom" 
@@ -201,7 +201,7 @@ export default function QuantumClassesPage() {
 						</div>
 
 						{/* Right gradient card with avatar */}
-					<aside className="flex items-center justify-center relative">
+					<aside className="flex items-center justify-center relative pointer-events-none">
                         <div className="w-full h-full flex items-start justify-center relative">
 							{/* Background aura image */}
 							<div className="absolute inset-0 flex items-center justify-center opacity-100">
@@ -214,7 +214,7 @@ export default function QuantumClassesPage() {
 								/>
 							</div>
 							{/* Foreground atom image */}
-	                        <div className="-mt-2 relative z-10">
+	                        <div className="-mt-2 relative">
 								<Image 
 									src="/images/orbital.png" 
 									alt="quantum atom" 
@@ -273,7 +273,7 @@ export default function QuantumClassesPage() {
 						</div>
 
 							{/* Right gradient card with avatar */}
-					<aside className="flex items-center justify-center relative">
+					<aside className="flex items-center justify-center relative pointer-events-none">
                         <div className="w-full h-full flex items-start justify-center relative">
 							{/* Background aura image */}
 							<div className="absolute inset-0 flex items-center justify-center opacity-100">
@@ -286,7 +286,7 @@ export default function QuantumClassesPage() {
 								/>
 							</div>
 							{/* Foreground atom image */}
-	                        <div className="-mt-2 relative z-10">
+	                        <div className="-mt-2 relative">
 								<Image 
 									src="/images/random_waves.png" 
 									alt="quantum atom" 
@@ -345,7 +345,7 @@ export default function QuantumClassesPage() {
 					</div>
 
 						{/* Right gradient card with avatar */}
-					<aside className="flex items-center justify-center relative">
+					<aside className="flex items-center justify-center relative pointer-events-none">
                         <div className="w-full h-full flex items-start justify-center relative">
 							{/* Background aura image */}
 							<div className="absolute inset-0 flex items-center justify-center opacity-100">
@@ -358,7 +358,7 @@ export default function QuantumClassesPage() {
 								/>
 							</div>
 							{/* Foreground atom image */}
-	                        <div className="-mt-2 relative z-10">
+	                        <div className="-mt-2 relative">
 								<Image 
 									src="/images/crystals.png" 
 									alt="quantum atom" 
@@ -417,7 +417,7 @@ export default function QuantumClassesPage() {
 					</div>
 
 						{/* Right gradient card with avatar */}
-					<aside className="flex items-center justify-center relative">
+					<aside className="flex items-center justify-center relative pointer-events-none">
                         <div className="w-full h-full flex items-start justify-center relative">
 							{/* Background aura image */}
 							<div className="absolute inset-0 flex items-center justify-center opacity-100">
@@ -430,7 +430,7 @@ export default function QuantumClassesPage() {
 								/>
 							</div>
 							{/* Foreground atom image */}
-	                        <div className="-mt-2 relative z-10">
+	                        <div className="-mt-2 relative">
 								<Image 
 									src="/images/quantum_chip.png" 
 									alt="quantum atom" 
