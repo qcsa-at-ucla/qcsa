@@ -8,10 +8,10 @@ export default function GetInvolved() {
         <h2 className="text-4xl font-bold text-[#234285] text-center mb-12">
             JOIN THE MOVEMENT.
         </h2>
-        <h2 className="text-2xl lg:text-4xl text-[#234285] text-center mb-4">
+        <h2 className="text-2xl lg:text-4xl text-[#234285] font-normal text-center mb-4">
             UCLA&apos;s quantum future begins
         </h2>
-        <h2 className="text-2xl lg:text-4xl text-[#234285] text-center">
+        <h2 className="text-2xl lg:text-4xl text-[#234285] font-normal text-center">
             with you---one qubit at a time.
         </h2>
         <div className="flex justify-center items-center">
