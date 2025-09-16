@@ -31,7 +31,7 @@ export default function TextAndPhoto({
               {/* Text */}
               <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-4 px-4 translate-y-30">
                 <h2 className="relative -top-4 text-[36px] font-bold text-[#234285] -translate-y-2">{title}</h2>
-                <p className="text-base text-[#234285] leading-relaxed font-[Kantumruy] px-12 lg:px-8 -translate-y-2 ">
+                <p className="text-base text-[#234285] leading-relaxed font-[Kantumruy] px-12 lg:px-10 -translate-y-4 ">
                   {description}
                 </p>
               </div>
