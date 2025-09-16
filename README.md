@@ -23,7 +23,7 @@ The website features modern design with custom fonts (Kantumruy Pro), responsive
 - **Newsletter Integration**: Seamless Mailchimp integration for member communications and updates
 - **Event Management**: Comprehensive events calendar with detailed information about workshops, talks, and collaborations
 
-### � Educational Resources
+### 🌟  Educational Resources
 
 - **Quantum Classes at UCLA**: Curated list of quantum-related courses with prerequisites and descriptions
 - **Resource Library**: Educational materials, research papers, and learning paths for quantum computing
@@ -49,7 +49,6 @@ The website features modern design with custom fonts (Kantumruy Pro), responsive
 - **TypeScript**: Full type safety and enhanced developer experience
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
 - **API Integration**: RESTful APIs for form submissions and data synchronization
-- **Admin Dashboard**: Backend management for member data and newsletter synchronization
 
 ## Environment Setup
 
