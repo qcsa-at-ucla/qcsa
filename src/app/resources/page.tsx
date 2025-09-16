@@ -35,7 +35,7 @@ export default function ResourcesPage() {
 						<div className="lg:w-1/3 flex justify-center lg:justify-end">
 							<div className="w-96 h-64 rounded-md p-6 flex items-center justify-center ">
 								{/* increased image size so it appears taller; parent box remains w-96 h-64 so it won't grow */}
-								<Image src="/images/resources1.png" alt="resource graphic" width={350} height={300} className="object-contain max-w-none" />
+								<Image src="/images/QHack_Graphic.png" alt="resource graphic" width={350} height={300} className="object-contain max-w-none" />
 							</div>
 						</div>
 					</div>
@@ -64,7 +64,7 @@ export default function ResourcesPage() {
 						<div className="lg:w-1/3 flex justify-center lg:justify-end">
 							<div className="w-96 h-64 rounded-md p-6 flex items-center justify-center ">
 								{/* increased image size so it appears taller; parent box remains w-96 h-64 so it won't grow */}
-								<Image src="/images/resources2.png" alt="resource graphic" width={350} height={300} className="object-contain max-w-none" />
+								<Image src="/images/QuantumClasses_Graphic.png" alt="resource graphic" width={350} height={300} className="object-contain max-w-none" />
 							</div>
 						</div>
 					</div>
@@ -92,7 +92,7 @@ export default function ResourcesPage() {
 						<div className="lg:w-1/3 flex justify-center lg:justify-end">
 							<div className="w-96 h-64 rounded-md p-6 flex items-center justify-center ">
 								{/* increased image size so it appears taller; parent box remains w-96 h-64 so it won't grow */}
-								<Image src="/images/resources3.png" alt="resource graphic" width={350} height={300} className="object-contain max-w-none" />
+								<Image src="/images/Newsletter_Graphic.png" alt="resource graphic" width={350} height={300} className="object-contain max-w-none" />
 							</div>
 						</div>
 					</div>
