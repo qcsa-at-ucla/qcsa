@@ -6,23 +6,23 @@ export default function JoinHackathon() {
         <h2 className="text-center text-4xl my-12">Join a Quantum Hackathon</h2>
 
         <div className = 'flex flex-wrap justify-center gap-16 item-stretch'>
-            <div className='flex'>
+            <div className='flex text-[#234285]'>
             <HackathonCard
                 imageSrc="/images/iquhack.png"
                 title="iQuHack"
                 subtitle="MIT, Boston"
                 description="iQuHACK (interdisciplinary Quantum HACKathon) is MIT's annual quantum hackathon. The aim is to bring students (high school through early-career professionals) from a diverse set of backgrounds to explore improvements and applications of near-term quantum devices."
-                href="#"
+                href="https://www.iquise.mit.edu/iQuHACK/2025-01-31"
                 cta="Application Link"
             />
             </div>
-            <div className='flex'>
+            <div className='flex text-[#234285]'>
             <HackathonCard
                 imageSrc="/images/yquantum.png"
                 title="YQuantum"
                 subtitle="Yale, New Haven"
                 description="YQuantum is Yale’s premier quantum computing hackathon"
-                href="#"
+                href="https://yquantum.info/"
                 cta="Application Link"
             />
             </div>
