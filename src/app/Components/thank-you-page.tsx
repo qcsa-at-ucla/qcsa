@@ -14,6 +14,7 @@ export default function ThankYouPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<{[key: string]: string}>({});
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -21,8 +22,63 @@ export default function ThankYouPage() {
       ...prev,
       [name]: value
     }));
+    
+    // Clear field error when user starts typing
+    if (fieldErrors[name]) {
+      setFieldErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
   };  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Client-side validation
+    const errors: string[] = [];
+    const newFieldErrors: {[key: string]: string} = {};
+    
+    if (!formData.firstName.trim()) {
+      errors.push('First name is required');
+      newFieldErrors.firstName = 'First name is required';
+    }
+    
+    if (!formData.lastName.trim()) {
+      errors.push('Last name is required');
+      newFieldErrors.lastName = 'Last name is required';
+    }
+    
+    if (!formData.email.trim()) {
+      errors.push('Email is required');
+      newFieldErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      errors.push('Please enter a valid email address');
+      newFieldErrors.email = 'Please enter a valid email address';
+    }
+    
+    if (!formData.educationalBackground) {
+      errors.push('Educational background is required');
+      newFieldErrors.educationalBackground = 'Educational background is required';
+    }
+    
+    if (!formData.experienceRating) {
+      errors.push('Experience rating is required');
+      newFieldErrors.experienceRating = 'Experience rating is required';
+    }
+    
+    if (errors.length > 0) {
+      setFieldErrors(newFieldErrors);
+      setSubmitMessage(`Please fix the following errors: ${errors.join(', ')}`);
+      // Focus on first error field
+      const firstErrorField = Object.keys(newFieldErrors)[0];
+      const firstErrorElement = document.getElementById(firstErrorField);
+      if (firstErrorElement) {
+        firstErrorElement.focus();
+      }
+      return;
+    }
+    
+    // Clear any previous errors
+    setFieldErrors({});
     setIsSubmitting(true);
     setSubmitMessage('');
 
@@ -96,9 +152,17 @@ export default function ThankYouPage() {
                   onChange={handleInputChange}
                   required
                   aria-required="true"
-                  aria-describedby="firstName-error"
-                  className="w-full px-3 py-2 font-kantumruy text-[#234285] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                  aria-describedby={fieldErrors.firstName ? "firstName-error" : undefined}
+                  aria-invalid={!!fieldErrors.firstName}
+                  className={`w-full px-3 py-2 font-kantumruy text-[#234285] border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
+                    fieldErrors.firstName ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                  }`}
                 />
+                {fieldErrors.firstName && (
+                  <p id="firstName-error" className="mt-1 text-sm text-red-600" role="alert">
+                    {fieldErrors.firstName}
+                  </p>
+                )}
               </div>
               <div>
                 <label htmlFor="lastName" className="block text-xs font-kantumruy text-[#234285] mb-1">
@@ -113,9 +177,17 @@ export default function ThankYouPage() {
                   onChange={handleInputChange}
                   required
                   aria-required="true"
-                  aria-describedby="lastName-error"
-                  className="w-full px-3 py-2 border font-kantumruy text-[#234285] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                  aria-describedby={fieldErrors.lastName ? "lastName-error" : undefined}
+                  aria-invalid={!!fieldErrors.lastName}
+                  className={`w-full px-3 py-2 border font-kantumruy text-[#234285] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
+                    fieldErrors.lastName ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                  }`}
                 />
+                {fieldErrors.lastName && (
+                  <p id="lastName-error" className="mt-1 text-sm text-red-600" role="alert">
+                    {fieldErrors.lastName}
+                  </p>
+                )}
               </div>
             </div>
           </fieldset>
@@ -134,9 +206,17 @@ export default function ThankYouPage() {
               onChange={handleInputChange}
               required
               aria-required="true"
-              aria-describedby="email-error"
-              className="w-full px-3 py-2 font-kantumruy text-[#234285] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              aria-describedby={fieldErrors.email ? "email-error" : undefined}
+              aria-invalid={!!fieldErrors.email}
+              className={`w-full px-3 py-2 font-kantumruy text-[#234285] border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
+                fieldErrors.email ? 'border-red-500 bg-red-50' : 'border-gray-300'
+              }`}
             />
+            {fieldErrors.email && (
+              <p id="email-error" className="mt-1 text-sm text-red-600" role="alert">
+                {fieldErrors.email}
+              </p>
+            )}
           </div>
 
           {/* Educational Background */}
@@ -151,8 +231,11 @@ export default function ThankYouPage() {
               onChange={handleInputChange}
               required
               aria-required="true"
-              aria-describedby="education-error"
-              className="w-full px-3 py-2 font-kantumruy text-[#234285] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white transition-colors"
+              aria-describedby={fieldErrors.educationalBackground ? "education-error" : undefined}
+              aria-invalid={!!fieldErrors.educationalBackground}
+              className={`w-full px-3 py-2 font-kantumruy text-[#234285] border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white transition-colors ${
+                fieldErrors.educationalBackground ? 'border-red-500 bg-red-50' : 'border-gray-300'
+              }`}
             >
               <option value="">Select an option</option>
               <option value="high-school">High School</option>              
@@ -161,6 +244,11 @@ export default function ThankYouPage() {
               <option value="phd">PhD</option>
               <option value="other">Other</option>
             </select>
+            {fieldErrors.educationalBackground && (
+              <p id="education-error" className="mt-1 text-sm text-red-600" role="alert">
+                {fieldErrors.educationalBackground}
+              </p>
+            )}
           </div>
 
           {/* Experience Rating */}
@@ -175,8 +263,11 @@ export default function ThankYouPage() {
               onChange={handleInputChange}
               required
               aria-required="true"
-              aria-describedby="experience-error"
-              className="w-full px-3 py-2 font-kantumruy text-[#234285] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white transition-colors"
+              aria-describedby={fieldErrors.experienceRating ? "experience-error" : undefined}
+              aria-invalid={!!fieldErrors.experienceRating}
+              className={`w-full px-3 py-2 font-kantumruy text-[#234285] border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white transition-colors ${
+                fieldErrors.experienceRating ? 'border-red-500 bg-red-50' : 'border-gray-300'
+              }`}
             >
               <option value="">Select an option</option>
               <option value="beginner">Beginner</option>
@@ -184,6 +275,11 @@ export default function ThankYouPage() {
               <option value="advanced">Advanced</option>
               <option value="expert">Expert</option>
             </select>
+            {fieldErrors.experienceRating && (
+              <p id="experience-error" className="mt-1 text-sm text-red-600" role="alert">
+                {fieldErrors.experienceRating}
+              </p>
+            )}
           </div>
 
           {/* Institution Name */}
