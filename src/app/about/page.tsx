@@ -51,7 +51,7 @@ const boardMembers = [
   {
     id: 3,
     name: "Nicolas Dirnegger",
-    role: "Secretary",
+    role: "Quantum Devices",
     major: "Electrical Engineering",
     year: "PhD Student",
     bio: "Nicolas received a Bachelor of Science in Electrical Engineering at ETH Zurich, Switzerland in 2022 and a Master of Science in Physics at the University of California, Los Angeles in 2023. He is currently pursuing a PhD in Electrical Engineering in the NarangLab. Currently, his main research focus is on quantum sensing and quantum networks. He also has research interests in quantum error correction and quantum computation. Feel free to reach out if you want to go surfing!",
