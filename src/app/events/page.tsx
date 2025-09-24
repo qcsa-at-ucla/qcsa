@@ -14,10 +14,10 @@ const eventsData = [
 		location: "UCLA, CA",
 	},
 	{
-		datePrimary: "##",
+		datePrimary: "6",
 		dateSecondary: "October",
 		title: "QCSA Fall GM",
-		location: "UCLA, CA",
+		location: "Mong Auditorium 6pm",
 	},
 	{
 		datePrimary: "17-19",
