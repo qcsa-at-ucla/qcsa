@@ -282,7 +282,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 							sub: 'Monthly seminar and networking series between UCLA and Caltech on quantum information theory and computing.',
 						},
 						{
-							img: '/images/ucla_acm.png',
+							img: '/images/acmquantum.svg',
 							title: 'QCSA x ACM Introductory Workshop',
 							sub: 'Are you curious about quantum computing but not sure where to start? Join us on every Tuesdays from 6pm-8pm in the Tesla room, excluding week 4 and week 10.',
 						},
