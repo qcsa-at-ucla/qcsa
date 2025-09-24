@@ -284,7 +284,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 						{
 							img: '/images/acmquantum.svg',
 							title: 'QCSA x ACM Introductory Workshop',
-							sub: 'Are you curious about quantum computing but not sure where to start? Join us on every Tuesdays from 6pm-8pm in the Tesla room, excluding week 4 and week 10.',
+							sub: 'Are you curious about quantum computing but not sure where to start? Join our workshops every Wednesday from 6pm-8pm in Boelter 2444!',
 						},
 					].map((s, idx) => (
 						<article key={idx} className="rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow overflow-hidden">
