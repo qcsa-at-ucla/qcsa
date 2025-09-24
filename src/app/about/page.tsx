@@ -4,6 +4,27 @@ import Image from 'next/image';
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import MainWebsiteHeader from '../Components/mainWebsiteHeader';
 
+// Define types for team members
+interface TeamMember {
+  id: number;
+  name: string;
+  role: string;
+  major: string;
+  year: string;
+  bio: string;
+  image: string;
+  linkedIn: string;
+}
+
+interface FacultyMember {
+  id: number;
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+  linkedIn: string;
+}
+
 
 // Board member data - you can easily expand this to 12 members or more or less :D
 const boardMembers = [
@@ -14,7 +35,8 @@ const boardMembers = [
     major: "Physics",
     year: "2nd Year",
     bio: "Victor is a second year at UCLA studying Electrical Engineering with a minor in Mathematics. He works in the Petta Group to model the effects of cosmic rays on semiconductor spin qubits and to perform automated tune-up of quantum dot systems. He enjoys teaching others about quantum science, such as through QCSA's involvement in ACM Quantum. In his free time, he enjoys playing the piano, reading fantasy & science fiction, eating good food, and calisthenics. ",
-    image: "/images/Victor Yu.png"
+    image: "/images/Victor Yu.png",
+    linkedIn: "https://www.linkedin.com/in/victoryu0/"
   },
   {
     id: 2,
@@ -23,7 +45,8 @@ const boardMembers = [
     major: "EECS",
     year: "PhD Student",
     bio: "Alex is an EECS PhD student at the Narang Lab. He completed his BSc in Physics and MSc in Quantum Engineering at ETH Zürich in Switzerland and worked at IBM and the German Aerospace Center before joining UCLA in 2024. In his research, Alexander focuses on Quantum Algorithms and Learning Theory as well as optimization techniques and Machine Learning. On the rare occasion that he quantum tunnels outside the office he enjoys water sports, Brazilian Jiu Jitsu and all things Italian in nature.",
-    image: "/images/alexander Jurgens.png"
+    image: "/images/alexander Jurgens.png",
+    linkedIn: "https://www.linkedin.com/in/alexander-jurgens/"
   },
   {
     id: 3,
@@ -32,7 +55,8 @@ const boardMembers = [
     major: "Electrical Engineering",
     year: "PhD Student",
     bio: "Nicolas received a Bachelor of Science in Electrical Engineering at ETH Zurich, Switzerland in 2022 and a Master of Science in Physics at the University of California, Los Angeles in 2023. He is currently pursuing a PhD in Electrical Engineering in the NarangLab. Currently, his main research focus is on quantum sensing and quantum networks. He also has research interests in quantum error correction and quantum computation. Feel free to reach out if you want to go surfing!",
-    image: "/images/Nicolas Dirnegger.png"
+    image: "/images/Nicolas Dirnegger.png",
+    linkedIn: "https://www.linkedin.com/in/nicolas-dirnegger-aa8442100/"
   },
   // Add 9 more members following the same structure
   {
@@ -42,7 +66,8 @@ const boardMembers = [
     major: "EE & Physics",
     year: "PhD Student",
     bio: "Cody received a double Bachelor of Science in Electrical Engineering and Physics from UCLA and a Masters of Science in Electrical Engineering from UCLA with a Distinguished Masters Thesis Award. He is currently pursuing a PhD at the Mesoscopic Optics and Quantum Electronics Lab as an NSF Graduate Research Fellow. Currently, his main research focus is on superconducting bosonic qubits and silicon color centers. Before starting graduate school, he interned at Stanford Research Institute as a Quantum Machine Learning Intern. In his free time, he enjoys producing music, cooking, fashion, and raving.",
-    image: "/images/Cody Fan.png"
+    image: "/images/Cody Fan.png",
+    linkedIn: "https://www.linkedin.com/in/cody-fan-09717a167/"
   },
   {
     id: 7,
@@ -51,7 +76,8 @@ const boardMembers = [
     major: "Law",
     year: "4th Year",
     bio: "Drew is a 4th-year law student at UCLA, concentrating in Business Law & Policy, as well as Media, Entertainment, Technology & Sports Law. He additionally serves as a Chief Managing Editor for the UCLA Journal of Law & Technology, the Vice President of the Law & Entrepreneurship Association, and an Alumni & Career Outreach Chair for the AI Law Association. Before law school, he received his bachelor's degree in Mathematics & Philosophy from Boston University, minoring in Economics. After law school, he expects to pursue a career in transactional law in entrepreneurial sectors.",
-    image: "/images/Drew.png"
+    image: "/images/Drew.png",
+    linkedIn: "https://www.linkedin.com/in/drew-m-downing/"
   },
   {
     id: 8,
@@ -60,7 +86,8 @@ const boardMembers = [
     major: "Computer Science & Economics",
     year: "3rd Year",
     bio: "Samuel is a 3rd-year Computer Science and Economics student at UCLA. He serves as Sector Head at Bruin Capital Management and is actively involved in multiple finance organizations on campus. Samuel previously served 18 months in the Republic of Korea Army, where he worked in Korean-English interpretation and military logistics. His past experiences also include internships in corporate finance and consulting. After graduation, he hopes to pursue a career in the finance industry.",
-    image: "/images/Samuel.png"
+    image: "/images/Samuel.png",
+    linkedIn: "https://www.linkedin.com/in/samuel-oh-ucla/"
   },
   {
     id: 9,
@@ -69,7 +96,8 @@ const boardMembers = [
     major: "Physics",
     year: "2nd Year",
     bio: "Ilaana is an undergraduate at UCLA studying Biophysics and on the QCSA leadership board. She is involved in the research of computational fluid dynamics to model blood vessels, talent development via mixed-methods psychology, and modeling distant stars in the Milky Way galaxy. Ilaana has previously worked with the American Cancer Society, ACM, City of Austin Law Department, Society of Robotic Surgeons, and Ascension Seton Medical Center in Austin. At UCLA, Ilaana is an editor at the Society and Genetics Research Journal and co-manager of the Upsilon Lab CFD group. She is also a nationally registered Emergency Medical Technician. Outside of her academic involvements, Ilaana loves Roblox, Minecraft, and caffeine. ",
-    image: "/images/ilaana.png"
+    image: "/images/Ilaana.png",
+    linkedIn: "https://www.linkedin.com/in/ilaanak/"
   },
   {
     id: 10,
@@ -78,34 +106,38 @@ const boardMembers = [
     major: "Computer Science",
     year: "2nd Year",
     bio: "Naren is a 2nd-year undergraduate computer science major. He's interested quantum optimization algorithms and building the latest in quantum software. He's currently researching heuristics to solve the qubit mapping problem. Outside of programming, he enjoys mountain biking and skiing in the mountains..",
-    image: "/images/Naren.png"
+    image: "/images/Naren.png",
+    linkedIn: "https://www.linkedin.com/in/naren-sathishkumar/"
   },
   {
     id: 11,
     name: "Connor Engel",
-    role: "Technology Officer",
-    major: "Computer Science",
+    role: "Events & Advertisement",
+    major: "Physics",
     year: "3rd Year",
     bio: "Connor is a third-year undergraduate student majoring in Physics. He currently works as a research assistant in Professor Qianhui Shi’s laboratory, where he contributes to condensed matter physics. Connor is passionate about exploring the fundamental principles of physics and is particularly fascinated by the potential of photonics in advancing quantum computing technologies. He also has an adorable dog who is terrified of Connor getting weird ideas about boxes and superpositions.",
-    image: "/images/Connor.png"
+    image: "/images/Connor.png",
+    linkedIn: "https://www.linkedin.com/in/connor-engel-492216254/"
   },
   {
     id: 12,
     name: "Shreya Shirsathe",
     role: "Events & Advertisement",
-    major: "Physics",
+    major: "Computer Engineering",
     year: "3rd Year",
     bio: "Shreya is a 3rd-year undergraduate Computer Engineering student. She is interested in quantum algorithms and hybrid quantum-classical systems. She enjoys connecting with others who share a passion for quantum computing and exploring how classical and quantum systems can work together. Outside of school, she enjoys snowboarding, dancing, and playing the guitar.",
-    image: "/images/Shreya.png"
+    image: "/images/Shreya.png",
+    linkedIn: "https://www.linkedin.com/in/shreya-shirsathe-b90256288/"
   },
   {
     id: 13,
     name: "Harshita Kukreja",
-    role: "Head of Digital infrastructure",
+    role: "Head of Digital Infrastructure",
     major: "Computer Science and Engineering",
     year: "2nd Year",
     bio: "Harshita is a second-year Computer Science and Engineering student at UCLA, minoring in Disability Studies. She is passionate about digital accessibility and inclusive design, and recently launched NextA11y, a web accessibility bootcamp for middle and high school students in India. Outside of coding, Harshita enjoys 3D modeling in SOLIDWORKS, sketching, and exploring campus.",
-    image: "/images/harshita.png"
+    image: "/images/harshita.png",
+    linkedIn: "https://www.linkedin.com/in/harshita-kukreja-28h/"
   },
   {
     id: 14,
@@ -114,7 +146,8 @@ const boardMembers = [
     major: "Computer Science",
     year: "4th Year",
     bio: "Helloo!! Clyde Villacrusis is an undergraduate 4th year Computer Science and Linguistics double major. He is apart of the QCSA's tech team and working on making an interactive and accessible website for all. He is extremely excited to learn more about Quantum Computing while also developing his tech skills. Besides QCSA. he also interned under UCLA Health to make their AI-powered application (still in progress) and he is also in fetch.ai x qcsa x bruin.ai research group to research more about predicting binding affinities using hybrid CNNs, traditional Machine learning modes, and quantum circuits! He also likes to play Valorant, Minecraft, nature, and caffeine. Hit him up anytime to learn or just to chat about anything!",
-    image: "/images/clyde.png"
+    image: "/images/clyde.png",
+    linkedIn: "https://www.linkedin.com/in/clydevillacrusis/"
   },
   {
     id: 15,
@@ -123,7 +156,8 @@ const boardMembers = [
     major: "Computer Science",
     year: "2nd Year",
     bio: "Emma is a second year undergraduate Computer Science student at UCLA with an interest in software development and AI. In her free time, she enjoys playing volleyball, visiting cafes, and learning Japanese.",
-    image: "/images/emma.png"
+    image: "/images/emma.png",
+    linkedIn: "https://www.linkedin.com/in/emma-zhang-511838245/"
   },
   {
     id: 16,
@@ -132,7 +166,8 @@ const boardMembers = [
     major: "Design Media Arts and Psychology",
     year: "2nd-Year",
     bio: "Kimberley is a second-year undergraduate studying Design Media Arts and Psychology. She is part of QCSA’s design team, creating engaging websites and developing their visual branding. She is excited to learn more about quantum science while building her design skills. Kimberley previously interned in communications at BOUSD and is currently involved in Daily Bruin, BruinLife, Adobe Creatives, and Stratist Prep. In her free time, she enjoys spontaneous side-quests, playing tennis, photography, and sketch-booking.",
-    image: "/images/kimberley.png"
+    image: "/images/kimberley.png",
+    linkedIn: "https://www.linkedin.com/in/kimberleywu/"
   },
   {
     id: 17,
@@ -141,7 +176,8 @@ const boardMembers = [
     major: "Cognitive Science and Architecture",
     year: "2nd Year",
     bio: "Gina is a second year undergraduate Cognitive Science and Architecture student at UCLA. She is a part of the QCSA's design team and eager to create an intuitive and immersive website experience for all. Gina is passionate about learning more about the art of quantum while developing design skills. At UCLA Gina is involved in the Data-Graphics section of the Daily Bruin, secretary for the American Institute of Architecture Students, and worked as a designer for a journaling app called Rose Garden. In her free time you can find her exploring LA for new thrift finds and cafes.",
-    image: "/images/gina.png"
+    image: "/images/gina.png",
+    linkedIn: "https://www.linkedin.com/in/gina-namkung/"
   },
   {
     id: 18,
@@ -150,7 +186,8 @@ const boardMembers = [
     major: "Bioengineering",
     year: "4th Year",
     bio: "Sanskriti is a fourth year undergraduate bioengineering student at UCLA. She enjoys exploring quantum computing for chemistry and biological applications. She has previously led the industry collaboration with QCSA, BruinAI, and Fetch.ai to explore the use of hybrid quantum-CNNs for predicting protein-ligand binding energies. She loves hearing about projects other people are working on and are excited about, so contact her any time to chat over lunch :)",
-    image: "/images/sanskriti.png"
+    image: "/images/sanskriti.png",
+    linkedIn: "https://www.linkedin.com/in/sanskriti/"
   },
   {
     id: 19,
@@ -159,7 +196,8 @@ const boardMembers = [
     major: "PhD Candidate",
     year: "5th Year",
     bio: "Sadman Ahmed Shanto is a Ph.D. candidate in Physics at the University of Southern California, working in the Levenson-Falk Lab on superconducting quantum hardware. His research focuses on quasiparticle dynamics in superconducting circuits and the automation of quantum device design workflows. To learn more about his work and interests, you can visit https://sadmanahmedshanto.com/",
-    image: "/images/shanto.png"
+    image: "/images/shanto.png",
+    linkedIn: "https://www.linkedin.com/in/sshanto/"
   },
  
 ];
@@ -170,12 +208,38 @@ const facultyLeadership = [
     name: "Professor Mark Gyure",
     role: "Faculty Director",
     bio: "In addition to coordinating the day-to-day activities of the CQSE, Gyure’s research is focused on the theory and simulation of solid-state quantum information processing devices and architectures, specifically electrostatically-defined semiconductor quantum dots. He and collaborators at UCLA and HRL Laboratories, LLC in Malibu have developed a sophisticated device modeling code that employs the full configuration-interaction (FCI) method to solve the multi-electron Schrodinger equation self consistently with the electrostatic potential generated from realistic device geometries, enabling highly accurate calculations of the energy spectrum of coupled quantum dot systems. He came to UCLA recently from HRL Laboratories where he was the Principal Investigator and Chief Scientist for over 15 years on numerous programs in the quantum information science and technology area.",
-    image: "/images/mark.png"
+    image: "/images/mark.png",
+    linkedIn: "https://www.linkedin.com/in/mark-gyure-15b186196/"
   }
 ];
 
 export default function AboutPage() {
   const [hoveredMember, setHoveredMember] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [selectedMember, setSelectedMember] = useState<TeamMember | FacultyMember | null>(null);
+
+  // Detect mobile device
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleMemberClick = (member: TeamMember | FacultyMember) => {
+    if (isMobile) {
+      setSelectedMember(member);
+    } else {
+      // Desktop: navigate to LinkedIn
+      if (member.linkedIn) {
+        window.open(member.linkedIn, '_blank', 'noopener,noreferrer');
+      }
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#F3F8FF]">
@@ -356,12 +420,13 @@ export default function AboutPage() {
               <div
                 key={member.id} 
                 className="relative group cursor-pointer"
-                onMouseEnter={() => setHoveredMember(member.id)}
-                onMouseLeave={() => setHoveredMember(null)}
+                onMouseEnter={() => !isMobile && setHoveredMember(member.id)}
+                onMouseLeave={() => !isMobile && setHoveredMember(null)}
+                onClick={() => handleMemberClick(member)}
               >
                 
                 <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105">
-                  <div className="w-full h-64 bg-gray-200 flex items-center justify-center overflow-hidden">
+                  <div className="w-full h-64 bg-gray-200 flex items-center justify-center overflow-hidden relative">
                     {member.image ? (
                       <Image
                         src={member.image}
@@ -375,6 +440,22 @@ export default function AboutPage() {
                         <span className="text-gray-600 text-2xl">📷</span>
                       </div>
                     )}
+                    
+                    {/* Mobile LinkedIn Info Icon */}
+                    {isMobile && (
+                      <button
+                        className="absolute top-2 right-2 w-8 h-8 bg-[#234285] text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg hover:bg-blue-700 transition-colors z-10"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (member.linkedIn) {
+                            window.open(member.linkedIn, '_blank', 'noopener,noreferrer');
+                          }
+                        }}
+                        aria-label={`View ${member.name}'s LinkedIn profile`}
+                      >
+                        i
+                      </button>
+                    )}
                   </div>
                   <div className="p-6 text-center font-kantumruy">
                     <h3 className="font-bold text-lg text-gray-800 mb-1">{member.name}</h3>
@@ -383,8 +464,8 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                {/* Hover Popup */}
-                {hoveredMember === member.id && (
+                {/* Desktop Hover Popup */}
+                {!isMobile && hoveredMember === member.id && (
                   <div className="absolute z-50 top-0 left-0 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-x-2 -translate-y-2 font-kantumruy">
                     <div className="flex items-start gap-4">
                       <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
@@ -423,11 +504,12 @@ export default function AboutPage() {
                   <div
                     key={faculty.id}
                     className="relative group cursor-pointer w-full max-w-sm"
-                    onMouseEnter={() => setHoveredMember(faculty.id)}
-                    onMouseLeave={() => setHoveredMember(null)}
+                    onMouseEnter={() => !isMobile && setHoveredMember(faculty.id)}
+                    onMouseLeave={() => !isMobile && setHoveredMember(null)}
+                    onClick={() => handleMemberClick(faculty)}
                   >
                     <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105">
-                      <div className="w-full h-64 bg-gray-200 flex items-center justify-center overflow-hidden">
+                      <div className="w-full h-64 bg-gray-200 flex items-center justify-center overflow-hidden relative">
                         {faculty.image ? (
                           <Image
                             src={faculty.image}
@@ -440,6 +522,22 @@ export default function AboutPage() {
                           <div className="w-20 h-20 bg-gray-400 rounded-full flex items-center justify-center">
                             <span className="text-gray-600 text-3xl">📷</span>
                           </div>
+                        )}
+                        
+                        {/* Mobile LinkedIn Info Icon */}
+                        {isMobile && (
+                          <button
+                            className="absolute top-2 right-2 w-8 h-8 bg-[#234285] text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg hover:bg-blue-700 transition-colors z-10"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              if (faculty.linkedIn) {
+                                window.open(faculty.linkedIn, '_blank', 'noopener,noreferrer');
+                              }
+                            }}
+                            aria-label={`View ${faculty.name}'s LinkedIn profile`}
+                          >
+                            i
+                          </button>
                         )}
                       </div>
                       <div className="p-6 text-center font-[Kantumruy]">
@@ -478,11 +576,12 @@ export default function AboutPage() {
                   <div
                     key={faculty.id}
                     className="relative group cursor-pointer w-full max-w-sm"
-                    onMouseEnter={() => setHoveredMember(faculty.id)}
-                    onMouseLeave={() => setHoveredMember(null)}
+                    onMouseEnter={() => !isMobile && setHoveredMember(faculty.id)}
+                    onMouseLeave={() => !isMobile && setHoveredMember(null)}
+                    onClick={() => handleMemberClick(faculty)}
                   >
                     <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105">
-                      <div className="w-full h-64 bg-gray-200 flex items-center justify-center overflow-hidden">
+                      <div className="w-full h-64 bg-gray-200 flex items-center justify-center overflow-hidden relative">
                         {faculty.image ? (
                           <Image
                             src={faculty.image}
@@ -496,6 +595,22 @@ export default function AboutPage() {
                             <span className="text-gray-600 text-3xl">📷</span>
                           </div>
                         )}
+                        
+                        {/* Mobile LinkedIn Info Icon */}
+                        {isMobile && (
+                          <button
+                            className="absolute top-2 right-2 w-8 h-8 bg-[#234285] text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg hover:bg-blue-700 transition-colors z-10"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              if (faculty.linkedIn) {
+                                window.open(faculty.linkedIn, '_blank', 'noopener,noreferrer');
+                              }
+                            }}
+                            aria-label={`View ${faculty.name}'s LinkedIn profile`}
+                          >
+                            i
+                          </button>
+                        )}
                       </div>
                       <div className="p-6 text-center font-[Kantumruy]">
                         <h3 className="font-bold text-lg text-gray-800 mb-1">{faculty.name}</h3>
@@ -503,8 +618,8 @@ export default function AboutPage() {
                       </div>
                     </div>
 
-                    {/* Hover Popup for Faculty */}
-                    {hoveredMember === faculty.id && (
+                    {/* Desktop Hover Popup for Faculty */}
+                    {!isMobile && hoveredMember === faculty.id && (
                       <div className="absolute z-50 top-0 left-0 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-x-2 -translate-y-2 font-kantumruy">
                         <div className="flex items-start gap-4">
                           <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
@@ -530,6 +645,67 @@ export default function AboutPage() {
             )}
         </div>
       </section>
+
+      {/* Mobile Bio Modal */}
+      {isMobile && selectedMember && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60" 
+          onClick={() => setSelectedMember(null)} 
+          style={{ backdropFilter: 'blur(2px)'}}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+          aria-describedby="modal-content"
+        >
+          <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-auto p-6" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-start justify-between gap-4 mb-4">
+              <div className="flex items-start gap-4 flex-1">
+                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Image
+                    src={selectedMember.image || "/images/placeholder-member.jpg"}
+                    alt={selectedMember.name}
+                    width={64}
+                    height={64}
+                    className="rounded-full object-cover"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h3 id="modal-title" className="font-bold text-lg text-gray-800 mb-1 font-kantumruy">{selectedMember.name}</h3>
+                  <p className="text-[#234285] font-medium mb-1 font-kantumruy">{selectedMember.role}</p>
+                  {'major' in selectedMember && (
+                    <p className="text-gray-600 text-sm font-kantumruy">{selectedMember.major}, {selectedMember.year}</p>
+                  )}
+                </div>
+              </div>
+              <button 
+                className="text-gray-600 hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 rounded p-2 transition-colors duration-200 flex-shrink-0" 
+                onClick={() => setSelectedMember(null)}
+                aria-label="Close modal"
+              >
+                <span aria-hidden="true" className="text-xl">✕</span>
+              </button>
+            </div>
+            <div id="modal-content" className="text-gray-700 text-sm leading-relaxed font-kantumruy">
+              {selectedMember.bio}
+            </div>
+            
+            {/* LinkedIn Button for Mobile Modal */}
+            {selectedMember.linkedIn && (
+              <div className="mt-6 flex justify-center">
+                <button
+                  className="bg-[#234285] text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 font-kantumruy"
+                  onClick={() => {
+                    window.open(selectedMember.linkedIn, '_blank', 'noopener,noreferrer');
+                  }}
+                >
+                  View LinkedIn Profile
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       </main>
             <MainWebsiteFooter />
     </div>

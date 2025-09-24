@@ -166,6 +166,26 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 		return () => el.removeEventListener('scroll', handler);
 	}, []);
 
+	// Handle keyboard navigation for modal
+	useEffect(() => {
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key === 'Escape' && selectedPast) {
+				setSelectedPast(null);
+			}
+		};
+
+		if (selectedPast) {
+			document.addEventListener('keydown', handleKeyDown);
+			// Prevent background scrolling when modal is open
+			document.body.style.overflow = 'hidden';
+		}
+
+		return () => {
+			document.removeEventListener('keydown', handleKeyDown);
+			document.body.style.overflow = 'unset';
+		};
+	}, [selectedPast]);
+
 	const scrollBy = (direction: number) => {
 		const el = containerRef.current;
 		if (!el) return;
@@ -179,7 +199,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 		<div className="min-h-screen bg-slate-50">
 			<MainWebsiteHeader/>
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-				<h2 className="text-center text-3xl sm:text-4xl font-semibold text-blue-900 mb-8">
+				<h2 className="text-center text-4xl font-semibold text-blue-900 mb-8">
 					Upcoming Events
 				</h2>
 
@@ -201,14 +221,14 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 						aria-label="Upcoming events carousel"
 					>
 						{eventsData.map((e, i) => (
-							<div key={i} className="snap-start flex-shrink-0 w-full sm:w-[46%] lg:w-[31%] ">
+							<div key={i} className="snap-start flex-shrink-0" style={{ width: '380px', height: '456px' }}>
 								{/* aura wrapper */}
-								<div className="relative">
+								<div className="relative w-full h-full">
 									<div aria-hidden className="absolute inset-0 rounded-md" style={{ boxShadow: '0 10px 30px rgba(49,100,180,0.12)' }} />
 
 									<article
 										role="listitem"
-										className="relative bg-white rounded-md p-8"
+										className="relative bg-white rounded-md p-8 w-full h-full flex flex-col"
 										style={{
 											boxShadow: '0 10px 24px rgba(14,57,106,0.06)',
 											borderTop: '1px solid rgba(14,57,106,0.02)'
@@ -216,15 +236,15 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 									>
 										<div className="flex flex-col items-start gap-6">
 											<div className="text-blue-900  text-6xl sm:text-6xl leading-none font-kantumruy text-[#234285]">
-												<div>{e.datePrimary}</div>
-												<div className="text-4xl mt-3 font-bold font-kantumruy text-[#234285]">{e.dateSecondary}</div>
+												<div style={{width: '163px', height: '83px'}}>{e.datePrimary}</div>
+												<div style={{width: '163px', height: '83px'}} className="text-4xl mt-3 font-bold font-kantumruy text-[#234285]">{e.dateSecondary}</div>
 											</div>
 
 											<div>
-												<h3 className="text-2xl mb-2 font-kantumruy text-[#234285]">
+												<h3 className="text-2xl mb-2 font-kantumruy text-[#234285] " style={{width: '285px', height: '65px'}}>
 													{e.title}
 												</h3>
-												<p className="text-slate-600 font-semibold font-kantumruy text-[#234285]">{e.location}</p>
+												<p className="text-slate-600 font-semibold font-kantumruy text-[#234285]" style={{width: '285px', height: '43px'}}>{e.location}</p>
 											</div>
 										</div>
 									</article>
@@ -246,7 +266,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 			{/* Signature Events - matches the pasted image layout: stacked cards with image on left and content on right */}
 			<section className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-				<h2 className="text-center text-3xl sm:text-4xl font-semibold mb-8 font-kantumruy text-[#234285]">
+				<h2 className="text-center text-3xl sm:text-4xl font-semibold mb-8 font-kantumruy text-[#234285]" style={{height: '65px'}}>
 					Signature Events
 				</h2>
 				<div className="space-y-8 font-kantumruy text-[#234285]">
@@ -267,33 +287,29 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 							sub: 'Are you curious about quantum computing but not sure where to start? Join us on every Tuesdays from 6pm-8pm in the Tesla room, excluding week 4 and week 10.',
 						},
 					].map((s, idx) => (
-						<article key={idx} className="bg-white rounded-md shadow-sm border border-transparent hover:shadow-md transition-shadow">
+						<article key={idx} className="rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow overflow-hidden">
 							<div className="flex flex-col md:flex-row items-stretch">
 								{/* Image pane */}
-								<div className="md:w-1/3 flex-shrink-0 bg-slate-100 rounded-t-md md:rounded-l-md md:rounded-tr-none flex items-center justify-center">
-									<Image src={s.img} alt={s.title} width={340} height={260} className="object-contain max-w-none max-h-none" />
+								<div className="md:w-1/2 flex-shrink-0 bg-gray-50">
+									<Image src={s.img} alt={s.title} width={518} height={368} className="w-full h-full object-cover" />
 								</div>
 								{/* Content pane */}
-								<div className="md:w-2/3 p-6 border-l md:border-l-0 md:border-l-0">
-									<div className="flex flex-col h-full justify-between">
-										<div>
-											<h3 className="text-lg font-semibold mb-2 font-kantumruy text-[#234285]">{s.title}</h3>
-											<p className=" mb-4 text-lg font-kantumruy text-[#234285]">{s.sub}</p>
-										</div>
-										<div className="pt-2">
-											<Link
-												className="bg-blue-800 text-white px-4 py-2 rounded shadow-sm hover:bg-blue-900"
-												href={
-													s.img.includes('ucla_caltech.png')
-														? '/ucla_caltech'
-														: s.img.includes('ucla_usc.png')
-														? '/ucla_usc'
-														: '/ucla_acm'
-												}
-											>
-												Learn More
-											</Link>
-										</div>
+								<div className="md:w-1/2 flex flex-col justify-center p-8">
+									<h3 className="text-3xl font-bold mb-4 font-kantumruy text-[#234285]">{s.title}</h3>
+									<p className="mb-6 text-lg leading-relaxed font-kantumruy text-[#234285]">{s.sub}</p>
+									<div>
+										<Link
+											className="inline-block bg-[#234285] text-white px-6 py-3 rounded-sm shadow-md hover:bg-blue-900 text-lg font-bold transition-colors"
+											href={
+												s.img.includes('ucla_caltech.png')
+													? '/ucla_caltech'
+													: s.img.includes('ucla_usc.png')
+													? '/ucla_usc'
+													: '/ucla_acm'
+											}
+										>
+											Learn More
+										</Link>
 									</div>
 								</div>
 							</div>
@@ -304,15 +320,29 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 			{/* Past event details modal */}
 			{selectedPast && (
-				<div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/60" onClick={() => setSelectedPast(null)} style={{ backdropFilter: 'blur(2px)'}}>
+				<div 
+					className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/60" 
+					onClick={() => setSelectedPast(null)} 
+					style={{ backdropFilter: 'blur(2px)'}}
+					role="dialog"
+					aria-modal="true"
+					aria-labelledby="modal-title"
+					aria-describedby="modal-content"
+				>
 					<div className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-auto p-6" onClick={(e) => e.stopPropagation()}>
 						<div className="flex items-start justify-between gap-4">
-							<div>
-								<h3 className="text-2xl font-semibold mb-2">{selectedPast.title}</h3>
-								<p className="text-sm text-slate-600 mb-4">{selectedPast.date}</p>
-								<div className="prose max-w-none text-slate-700">{selectedPast.content}</div>
+							<div className="flex-grow">
+								<h3 id="modal-title" className="text-2xl font-semibold mb-2 font-kantumruy text-[#234285]">{selectedPast.title}</h3>
+								<p className="text-sm text-slate-600 mb-4 font-kantumruy">{selectedPast.date}</p>
+								<div id="modal-content" className="prose max-w-none text-slate-700 font-kantumruy leading-relaxed">{selectedPast.content}</div>
 							</div>
-							<button className="text-slate-600 hover:text-slate-800" onClick={() => setSelectedPast(null)}>Close</button>
+							<button 
+								className="text-slate-600 hover:text-slate-800 focus:text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 rounded p-2 transition-colors duration-200 flex-shrink-0" 
+								onClick={() => setSelectedPast(null)}
+								aria-label="Close modal"
+							>
+								<span aria-hidden="true">✕</span>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -322,7 +352,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 			{/* Event Calendar - embedded Google Calendar and .ics download */}
 			<section className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-				<h2 className="text-center text-3xl sm:text-4xl font-semibold mb-6 font-kantumruy text-[#234285]">Event Calendar</h2>
+				<h2 className="text-center text-4xl font-bold mb-6 font-kantumruy text-[#234285]">Event Calendar</h2>
 				<div className="bg-white rounded-lg shadow-lg p-6" style={{ boxShadow: '0 8px 24px rgba(14,57,106,0.06)', border: '1px solid rgba(14,57,106,0.06)' }}>
 					{/* <p className="text-center text-slate-600 mb-4">Browse our calendar below. You can subscribe or download the .ics file for your calendar app.</p> */}
 					<div className="flex flex-col md:flex-row gap-4 items-start">
@@ -365,7 +395,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 				</div>
 			</section>
             <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-				<h2 className="text-center text-3xl sm:text-4xl font-semibold mb-6 font-kantumruy text-[#234285]">Gallery</h2>
+				<h2 className="text-center text-4xl font-bold mb-6 font-kantumruy text-[#234285]">Gallery</h2>
 
 				{/* Thumbnails grid */}
 				<div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -388,7 +418,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 				<div className="mt-8 flex justify-center">
 					<button
-						className="bg-blue-800 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-900 font-kantumruy text-lg"
+						className="bg-[#234285] text-white px-8 py-3 rounded-sm shadow-md font-bold font-kantumruy text-2xl font-kantumruy transition-colors"
 						onClick={() => setModalOpen(true)}
 					>
 						Show All
@@ -417,28 +447,36 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 			{/* Past Events carousel (placed after gallery) */}
 			<section className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-				<h2 className="text-center text-3xl sm:text-4xl font-semibold text-blue-900 mb-8">Past Events</h2>
+				<h2 className="text-center text-4xl font-kantumruy text-blue-900 mb-8">Past Events</h2>
 
 				<div className="relative">
 					<button
-						aria-label="previous past"
+						aria-label="View previous past events"
 						onClick={() => pastScrollBy(-1)}
-						className="absolute top-1/2 -translate-y-1/2 -left-8 md:-left-12 z-20 flex items-center justify-center h-12 w-12 text-blue-800 hover:text-blue-900 focus:outline-none"
+						className="absolute top-1/2 -translate-y-1/2 -left-4 sm:-left-8 md:-left-12 z-20 flex items-center justify-center h-12 w-12 text-blue-800 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 rounded-full transition-colors duration-200"
 					>
-						<span className="text-6xl">‹</span>
+						<span className="text-4xl sm:text-6xl" aria-hidden="true">‹</span>
 					</button>
 
-					<div ref={pastRef} className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth py-6 px-6 sm:px-0" role="list" aria-label="Past events carousel">
+					<div ref={pastRef} className="flex gap-4 sm:gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth py-6 px-2 sm:px-6 md:px-0" role="list" aria-label="Past events carousel">
 						{pastEvents.map((p, idx) => (
-							<div key={idx} className="snap-start flex-shrink-0 w-full sm:w-[46%] lg:w-[31%]">
-								<div className="relative">
+							<div key={idx} className="snap-start flex-shrink-0 w-72 sm:w-80 md:w-[297px]" style={{ height: '327px' }}>
+								<div className="relative w-full h-full">
 									{/* light blue aura */}
 									<div aria-hidden className="absolute inset-0 rounded-md" style={{ boxShadow: '0 10px 30px rgba(49,100,180,0.12)' }} />
-									<article className="relative rounded-md p-6" style={{ backgroundColor: 'hsl(215,100%,98%)', boxShadow: '0 10px 24px rgba(14,57,106,0.06)', borderTop: '1px solid rgba(14,57,106,0.02)' }}>
-										<h3 className="text-lg text-[#234285] mb-4 font-kantumruy">{p.title}</h3>
-										<p className="text-sm text-slate-600 mb-1 font-kantumruy text-[#234285]">{p.date}</p>
-										<p className="mb-4 font-kantumruy text-[#234285]">{p.excerpt}</p>
-										<button onClick={() => setSelectedPast(p)} className="text-blue-800 underline">Read More</button>
+									<article className="relative rounded-md p-4 sm:p-6 w-full h-full flex flex-col overflow-hidden" style={{ backgroundColor: 'hsl(215,100%,98%)', boxShadow: '0 10px 24px rgba(14,57,106,0.06)', borderTop: '1px solid rgba(14,57,106,0.02)' }}>
+										<h3 className="text-lg text-[#234285] mb-3 font-kantumruy leading-tight break-words">{p.title}</h3>
+										<p className="text-sm text-slate-600 mb-2 font-kantumruy text-[#234285]">{p.date}</p>
+										<p className="mb-4 font-kantumruy text-[#234285] text-sm flex-grow leading-relaxed break-words overflow-hidden">{p.excerpt}</p>
+										<div className="mt-auto flex justify-start items-end flex-shrink-0">
+											<button 
+												onClick={() => setSelectedPast(p)} 
+												className="text-blue-800 hover:text-blue-900 focus:text-blue-900 underline text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 rounded px-1"
+												aria-label={`Read more about ${p.title}`}
+											>
+												Read More
+											</button>
+										</div>
 									</article>
 								</div>
 							</div>
@@ -446,11 +484,11 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 					</div>
 
 					<button
-						aria-label="next past"
+						aria-label="View next past events"
 						onClick={() => pastScrollBy(1)}
-						className="absolute top-1/2 -translate-y-1/2 -right-8 md:-right-12 z-20 flex items-center justify-center h-12 w-12 text-blue-800 hover:text-blue-900 focus:outline-none"
+						className="absolute top-1/2 -translate-y-1/2 -right-4 sm:-right-8 md:-right-12 z-20 flex items-center justify-center h-12 w-12 text-blue-800 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 rounded-full transition-colors duration-200"
 					>
-						<span className="text-6xl">›</span>
+						<span className="text-4xl sm:text-6xl" aria-hidden="true">›</span>
 					</button>
 				</div>
 			</section>

@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Kantumruy_Pro } from "next/font/google";
+
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const kantumruy = Kantumruy_Pro({
   subsets: ["latin"],
+  weight: ["400", "700"], // choose what you need
+  variable: "--font-kantumruy",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "QCSA - Quantum Computing Student Association at UCLA",
@@ -44,7 +42,7 @@ export default function RootLayout({
         }} />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={kantumruy.variable}
       >
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <a href="#footer" className="skip-link">Skip to footer</a>

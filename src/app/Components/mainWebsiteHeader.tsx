@@ -34,28 +34,28 @@ export default function MainWebsiteHeader() {
           </div>
 
           {/* Center/Right - Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8 font-kantumruy text-2xl">
             <Link 
               href="/events" 
-              className="text-gray-700 hover:text-[#234285] font-medium text-lg transition-colors duration-200"
+              className=" hover:text-[#234285] text-[#234285] font-kantumruy font-bold text-2xl transition-colors duration-200"
             >
               Events
             </Link>
             <Link 
               href="/about" 
-              className="text-gray-700 hover:text-[#234285] font-medium text-lg transition-colors duration-200"
+              className=" hover:text-[#234285] text-[#234285] font-kantumruy font-bold text-2xl transition-colors duration-200"
             >
               About
             </Link>
             <Link 
               href="/resources" 
-              className="text-gray-700 hover:text-[#234285] font-medium text-lg transition-colors duration-200"
+              className=" hover:text-[#234285] text-[#234285] font-kantumruy font-bold text-2xl transition-colors duration-200"
             >
               Resources
             </Link>
             <Link 
               href="/join-us" 
-              className="bg-[#234285] text-white px-6 py-2 rounded-md font-semibold text-lg hover:bg-blue-700 transition-colors duration-200 shadow-md"
+              className="bg-[#234285] text-white px-6 py-2 rounded-md text-[#234285] font-kantumruy text-2xl hover:bg-blue-700 transition-colors duration-200 shadow-md"
             >
               Join us
             </Link>
@@ -92,31 +92,31 @@ export default function MainWebsiteHeader() {
             : 'max-h-0 opacity-0 overflow-hidden'
         }`}>
           <div className="border-t border-blue-300 pt-4">
-            <div className="flex flex-col space-y-3">
+            <div className="flex flex-col space-y-3 ">
               <Link 
                 href="/events" 
-                className="text-gray-700 hover:text-[#234285] font-medium text-lg transition-colors duration-200 py-2 px-2 hover:bg-blue-50 rounded-md"
+                className=" hover:text-[#234285] text-[#234285] font-kantumruy font-bold text-2xl transition-colors duration-200 py-2 px-2 hover:bg-blue-50 rounded-md"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Events
               </Link>
               <Link 
                 href="/about" 
-                className="text-gray-700 hover:text-[#234285] font-medium text-lg transition-colors duration-200 py-2 px-2 hover:bg-blue-50 rounded-md"
+                className="hover:text-[#234285] text-[#234285] font-kantumruy font-bold text-2xl transition-colors duration-200 py-2 px-2 hover:bg-blue-50 rounded-md"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link 
                 href="/resources" 
-                className="text-gray-700 hover:text-[#234285] font-medium text-lg transition-colors duration-200 py-2 px-2 hover:bg-blue-50 rounded-md"
+                className="hover:text-[#234285] text-[#234285] font-kantumruy font-bold text-2xl transition-colors duration-200 py-2 px-2 hover:bg-blue-50 rounded-md"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Resources
               </Link>
               <Link 
                 href="/join-us" 
-                className="bg-[#234285] text-white px-6 py-3 rounded-md font-semibold text-lg hover:bg-blue-700 transition-colors duration-200 shadow-md inline-block text-center mt-2"
+                className="bg-[#234285] text-white px-6 py-3 rounded-md text-[#234285] font-kantumruy font-bold text-2xl hover:bg-blue-700 transition-colors duration-200 shadow-md inline-block text-center mt-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Join us

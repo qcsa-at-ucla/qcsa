@@ -47,32 +47,32 @@ const DEVICE_COURSES = [
 ];
 
 const DESCRIPTIONS: Record<string, string> = {
-	"Math 33A: Linear Algebra and Applications": "Lecture, three hours; discussion, one hour. Enforced requisite: course 3B or 31B or 32A with grade of C– or better. Introduction to linear algebra: systems of linear equations, matrix algebra, linear independence, subspaces, bases and dimension, orthogonality, least-squares methods, determinants, eigenvalues and eigenvectors, matrix diagonalization, and symmetric matrices. P/NP or letter grading.",
-	"Math 115A: Linear Algebra": "Lecture, three hours; discussion, two hours. Requisite: course 33A. Techniques of proof, abstract vector spaces, linear transformations, and matrices; determinants; inner product spaces; eigenvector theory. P/NP or letter grading.",
-	"Physics 115A: Quantum Mechanics": "Lecture, three hours; discussion, one hour. Requisites: courses 17, 32, 105A. Classical background. Basic ideas of quantum nature of light, wave-particle duality, Heisenberg uncertainty principle, Schrödinger equation. One-dimensional square well and harmonic oscillator problems. One-dimensional scattering, Formal theory, Hilbert spaces, and Dirac notation. P/NP or letter grading.",
-	"Physics 115B: Quantum Mechanics": "Lecture, three hours; discussion, one hour. Enforced requisites: courses 115A, 131. Formal theory: commutator algebra, Hermitian operators, generalized uncertainty principle, Ehrenfast relations. Three-dimensional problems. Central potentials. Angular momentum. Hydrogen atom. Identical particles and Pauli exclusion principle. Electrons in an electromagnetic field. Letter grading.",
-	"Physics 115C: Quantum Mechanics": "Lecture, three hours; discussion, one hour. Requisite: course 115B. Time-independent perturbation theory, application to atomic spectra. Time-dependent perturbation theory. Fermi's golden rule. Scattering. Wentzel-Kramers-Brillouin (WKB) approximation. P/NP or letter grading.",
-	"Physics 221A: Quantum Mechanics": "Lecture, three hours. Fundamentals of quantum mechanics, operators and state vectors, equations of motion. Letter grading.",
-	"Physics 221B: Quantum Mechanics": "Lecture, three hours. Requisite: course 221A. Rotations and other symmetry operations, perturbation theory. S/U or letter grading.",
-	"Physics 245: Quantum Computation": "Lecture, three hours; discussion, one hour. Requisite: course 115A. Recommended requisites: courses 115B, 115C, 131. Quantum circuits, quantum Fourier transform, quantum algorithms, physical implementations and Jaynes-Cummings model. May not be repeated for credit. Letter grading.",
-	"ECE 128: Principles of Quantum Technology": "Lecture, four hours; discussion, four hours; outside study, four hours. Requisite: Physics 1C. Introduction to fundamentals of nanoscience for electronics nanosystems. Principles of fundamental quantities: electron charge, effective mass, Bohr magneton, and spin, as well as theoretical approaches. From these nanoscale components, discussion of basic behaviors of nanosystems such as analysis of dynamics, variability, and noise, contrasted with those of scaled CMOS. Incorporation of design project in which students are challenged to design electronics nanosystems. Letter grading.",
-	"Physics 123: Atomic Structure": "Lecture, three hours; discussion, one hour. Requisites: courses 1A, 1B, and 1C (or 1AH, 1BH, and 1CH), Mathematics 32B, 33A, 33B. Corequisite: course 115C. Theory of atomic structure. Interaction of radiation with matter. P/NP or letter grading.",
-	"Physics 180Q: Quantum Optics Laboratory": "Lecture, two hours; laboratory, six hours. Requisite or corequisite: course 115C. Limited to junior/senior Astrophysics and Physics majors. Use of techniques of quantum optics to demonstrate concepts of quantum mechanics, including superposition, quantum measurement, hidden variable theories, and Bell's inequality. Examination and use of modern optics, including lasers, optics, fibers, polarization manipulation, and photon counting. Letter grading.",
-	"Physics 213B: Advanced Atomic, Molecular, and Optical Physics": "Lecture, three hours. Requisite: course 221A (may be taken concurrently). Quantum optics, quantum entanglement, quantum information processing, quantum sensing, quantum communication. S/U or letter grading.",
-	"ECE 170A: Principles of Photonics": "Lecture, four hours; recitation, one hour; outside study, seven hours. Enforced requisites: courses 2, 101A. Development of solid foundation on essential principles of photonics from ground up with minimum prior knowledge on this subject. Topics include optical properties of materials, optical wave propagation and modes, optical interferometers and resonators, optical coupling and modulation, optical absorption and emission, principles of lasers and light-emitting diodes, and optical detection. Letter grading.",
-	"ECE 170B: Lasers and Photonic Devices": "Lecture, four hours; recitation, one hour; outside study, seven hours. Enforced requisite: course 170A. Coverage of laser physics, related photonic devices, and applications of lasers. Topics include resonators, thermal radiation, Einstein coefficients, optical amplification, semiconductor lasers, optical modulation and detection. Letter grading.",
-	"Physics 140B: Quantum States of Matter": "Lecture, three hours; discussion, one hour. Enforced requisite: course 140A. Elementary discussion of properties of solids. Use of theory of electrons and the lattice to examine properties of semiconductors, metals, and superconductors, together with magnetic and dielectric properties of materials. Properties of noncrystalline solids. Letter grading.",
-	"ECE 123A: Fundamentals of Solid-State I": "Lecture, three hours; discussion, one hour; outside study, eight hours. Requisite: course 2 or Physics 1C. Limited to junior/senior engineering majors. Fundamentals of solid-state, introduction to quantum mechanics and quantum statistics applied to solid-state. Crystal structure, energy levels in solids, and band theory and semiconductor properties. Letter grading.",
-	"ECE: Fundamentals of Solid-State II": "Lecture, four hours; outside study, eight hours. Enforced requisite: course 123A. Discussion of solid-state properties, lattice vibrations, thermal properties, dielectric, magnetic, and superconducting properties. Letter grading.",
-	"ECE 223: Solid-State Electronics I": "Lecture, four hours; discussion, one hour; outside study, seven hours. Recommended requisite: course 270. Energy band theory, electronic band structure of various elementary, compound, and alloy semiconductors, defects in semiconductors. Recombination mechanisms, transport properties. Letter grading.",
-	"ECE 224: Solid-State Electronics II": "Lecture, four hours; outside study, eight hours. Requisite: course 223. Techniques to solve Boltzmann transport equation, various scattering mechanisms in semiconductors, high field transport properties in semiconductors, Monte Carlo method in transport. Optical properties. Letter grading.",
-	"ECE 225: Physics of Semiconductor Nanostructures and Devices": "Lecture, four hours; outside study, eight hours. Requisite: course 223. Theoretical methods for circulating electronics and optical properties of semiconductor structures. Quantum size effects and low-dimensional systems. Application to semiconductor nanometer scale devices, including negative resistance diodes, transistors, and detectors. Letter grading.",
-	"ECE 128: Principles of Nanoelectronics" : "Lecture, four hours; discussion, four hours; outside study, four hours. Requisite: Physics 1C. Introduction to fundamentals of nanoscience for electronics nanosystems. Principles of fundamental quantities: electron charge, effective mass, Bohr magneton, and spin, as well as theoretical approaches. From these nanoscale components, discussion of basic behaviors of nanosystems such as analysis of dynamics, variability, and noise, contrasted with those of scaled CMOS. Incorporation of design project in which students are challenged to design electronics nanosystems. Letter grading.",
-    "ECE 163DA: Microwave and Wireless Design I": "Lecture, one hour; laboratory, three hours; outside study, eight hours. Enforced requisites: courses 101A, 101B. Course 163DA is enforced requisite to 163DB. Limited to senior Electrical Engineering majors. Capstone design course, with emphasis on transmission line-based circuits and components to address need in industry and research community for students with microwave and wireless circuit design experiences. Standard design procedure for waveguide and transmission line-based microwave circuits and systems to gain experience in using Microwave CAD software such as Agilent ADS or HFSS. How to fabricate and test these designs, In Progress grading (credit to be given only on completion of course 163DB).",
-	"ECE 163DB: Microwave and Wireless Design II": "Lecture, one hour; laboratory, three hours; outside study, eight hours. Enforced requisites: courses 101A, 101B, 163DA. Limited to senior Electrical Engineering majors. Design of radio frequency circuits and systems, with emphasis on both theoretical foundations and hands-on experience. Design of radio frequency transceivers and their building blocks according to given specifications or in form of open-ended problems. Introduction to advanced topics related to projects through lecture and laboratories. Creation by students of end-to-end systems in application context, managing trade-offs across subsystems while meeting constraints and optimizing metrics related to cost, performance, ease of use, manufacturability, testing, and other real-world issues. Oral and written presentations of project results required. Letter grading.",
-	"ECE 121DA: Semiconductor Processing and Device Design": "Lecture, four hours; laboratory, four hours; outside study, four hours. Enforced requisite or corequisite: course 121B. Design fabrication and characterization of p-n junction and transistors. Students perform various processing tasks such as wafer preparation, oxidation, diffusion, metallization, and photolithography. Introduction to CAD tools used in integrated circuit processing and device design. Device structure optimization tool based on MEDICI; process integration tool based on SUPREM. Course familiarizes students with those tools. Using CAD tools, CMOS process integration to be designed. In progress grading (credit to be given only on completion of course 121DB).",
-	"ECE 121DB: Semiconductor Processing and Device Design": "Lecture, two hours; laboratory, four hours; outside study, six hours. Enforced requisites: courses 121B, 121DA. Design fabrication and characterization of p-n junction and transistors. Students perform various processing tasks such as wafer preparation, oxidation, diffusion, metallization, and photolithography. Introduction to CAD tools used in integrated circuit processing and device design. Device structure optimization tool based on MEDICI; process integration tool based on SUPREM. Course familiarizes students with those tools. Using CAD tools, CMOS process integration to be designed. Letter grading.",
-	"ECE 110: Circuit Theory II": "Lecture, three hours; discussion, one hour; outside study, eight hours. Enforced requisites: courses 10, M16 (or Computer Science M51A), 102. Corequisite: course 111L (enforced only for Computer Science and Engineering and Electrical Engineering majors). Sinusoidal excitation and phasors, AC steady state analysis, AC steady state power, network functions, poles and zeros, frequency response, mutual inductance, ideal transformer, application of Laplace transforms to circuit analysis. Letter grading.",
+	"Math 33A: Linear Algebra and Applications": "<strong>Enforced requisite:</strong> Course 3B or 31B or 32A with grade of C– or better.<br><br><strong>Introduction to linear algebra:</strong><br>Systems of linear equations, matrix algebra, linear independence, subspaces, bases and dimension, orthogonality, least-squares methods, determinants, eigenvalues and eigenvectors, matrix diagonalization, and symmetric matrices. P/NP or letter grading.",
+	"Math 115A: Linear Algebra": "<strong>Requisite:</strong> Course 33A.<br><br><strong>Advanced linear algebra:</strong><br>Techniques of proof, abstract vector spaces, linear transformations, and matrices; determinants; inner product spaces; eigenvector theory. P/NP or letter grading.",
+	"Physics 115A: Quantum Mechanics": "<strong>Requisites:</strong> Courses 17, 32, 105A.<br><br><strong>Introduction to quantum mechanics:</strong><br>Classical background. Basic ideas of quantum nature of light, wave-particle duality, Heisenberg uncertainty principle, Schrödinger equation. One-dimensional square well and harmonic oscillator problems. One-dimensional scattering, Formal theory, Hilbert spaces, and Dirac notation. P/NP or letter grading.",
+	"Physics 115B: Quantum Mechanics": "<strong>Enforced requisites:</strong> Courses 115A, 131.<br><br><strong>Intermediate quantum mechanics:</strong><br>Formal theory: commutator algebra, Hermitian operators, generalized uncertainty principle, Ehrenfast relations. Three-dimensional problems. Central potentials. Angular momentum. Hydrogen atom. Identical particles and Pauli exclusion principle. Electrons in an electromagnetic field. Letter grading.",
+	"Physics 115C: Quantum Mechanics": "<strong>Requisite:</strong> Course 115B.<br><br><strong>Advanced quantum mechanics:</strong><br>Time-independent perturbation theory, application to atomic spectra. Time-dependent perturbation theory. Fermi's golden rule. Scattering. Wentzel-Kramers-Brillouin (WKB) approximation. P/NP or letter grading.",
+	"Physics 221A: Quantum Mechanics": "<strong>Graduate-level quantum mechanics:</strong><br>Fundamentals of quantum mechanics, operators and state vectors, equations of motion. Letter grading.",
+	"Physics 221B: Quantum Mechanics": "<strong>Requisite:</strong> Course 221A.<br><br><strong>Advanced graduate quantum mechanics:</strong><br>Rotations and other symmetry operations, perturbation theory. S/U or letter grading.",
+	"Physics 245: Quantum Computation": "<strong>Requisite:</strong> Course 115A. <strong>Recommended requisites:</strong> Courses 115B, 115C, 131.<br><br><strong>Introduction to quantum computation:</strong><br>Quantum circuits, quantum Fourier transform, quantum algorithms, physical implementations and Jaynes-Cummings model. May not be repeated for credit. Letter grading.",
+	"ECE 128: Principles of Quantum Technology": "<strong>Requisite:</strong> Physics 1C.<br><br><strong>Fundamentals of nanoscience for electronics nanosystems:</strong><br>Principles of fundamental quantities: electron charge, effective mass, Bohr magneton, and spin, as well as theoretical approaches. From these nanoscale components, discussion of basic behaviors of nanosystems such as analysis of dynamics, variability, and noise, contrasted with those of scaled CMOS. Incorporation of design project in which students are challenged to design electronics nanosystems. Letter grading.",
+	"Physics 123: Atomic Structure": "<strong>Requisites:</strong> Courses 1A, 1B, and 1C (or 1AH, 1BH, and 1CH), Mathematics 32B, 33A, 33B. <strong>Corequisite:</strong> Course 115C.<br><br><strong>Theory of atomic structure:</strong><br>Interaction of radiation with matter. P/NP or letter grading.",
+	"Physics 180Q: Quantum Optics Laboratory": "<strong>Requisite or corequisite:</strong> Course 115C. Limited to junior/senior Astrophysics and Physics majors.<br><br><strong>Quantum optics laboratory techniques:</strong><br>Use of techniques of quantum optics to demonstrate concepts of quantum mechanics, including superposition, quantum measurement, hidden variable theories, and Bell's inequality. Examination and use of modern optics, including lasers, optics, fibers, polarization manipulation, and photon counting. Letter grading.",
+	"Physics 213B: Advanced Atomic, Molecular, and Optical Physics": "<strong>Requisite:</strong> Course 221A (may be taken concurrently).<br><br><strong>Advanced quantum optics and quantum information:</strong><br>Quantum optics, quantum entanglement, quantum information processing, quantum sensing, quantum communication. S/U or letter grading.",
+	"ECE 170A: Principles of Photonics": "<strong>Enforced requisites:</strong> Courses 2, 101A.<br><br><strong>Essential principles of photonics:</strong><br>Development of solid foundation on essential principles of photonics from ground up with minimum prior knowledge on this subject. Topics include optical properties of materials, optical wave propagation and modes, optical interferometers and resonators, optical coupling and modulation, optical absorption and emission, principles of lasers and light-emitting diodes, and optical detection. Letter grading.",
+	"ECE 170B: Lasers and Photonic Devices": "<strong>Enforced requisite:</strong> Course 170A.<br><br><strong>Laser physics and photonic devices:</strong><br>Coverage of laser physics, related photonic devices, and applications of lasers. Topics include resonators, thermal radiation, Einstein coefficients, optical amplification, semiconductor lasers, optical modulation and detection. Letter grading.",
+	"Physics 140B: Quantum States of Matter": "<strong>Enforced requisite:</strong> Course 140A.<br><br><strong>Properties of solids:</strong><br>Elementary discussion of properties of solids. Use of theory of electrons and the lattice to examine properties of semiconductors, metals, and superconductors, together with magnetic and dielectric properties of materials. Properties of noncrystalline solids. Letter grading.",
+	"ECE 123A: Fundamentals of Solid-State I": "<strong>Requisite:</strong> Course 2 or Physics 1C. Limited to junior/senior engineering majors.<br><br><strong>Fundamentals of solid-state:</strong><br>Introduction to quantum mechanics and quantum statistics applied to solid-state. Crystal structure, energy levels in solids, and band theory and semiconductor properties. Letter grading.",
+	"ECE: Fundamentals of Solid-State II": "<strong>Enforced requisite:</strong> Course 123A.<br><br><strong>Advanced solid-state properties:</strong><br>Discussion of solid-state properties, lattice vibrations, thermal properties, dielectric, magnetic, and superconducting properties. Letter grading.",
+	"ECE 223: Solid-State Electronics I": "<strong>Recommended requisite:</strong> Course 270.<br><br><strong>Energy band theory and semiconductor physics:</strong><br>Energy band theory, electronic band structure of various elementary, compound, and alloy semiconductors, defects in semiconductors. Recombination mechanisms, transport properties. Letter grading.",
+	"ECE 224: Solid-State Electronics II": "<strong>Requisite:</strong> Course 223.<br><br><strong>Advanced semiconductor transport:</strong><br>Techniques to solve Boltzmann transport equation, various scattering mechanisms in semiconductors, high field transport properties in semiconductors, Monte Carlo method in transport. Optical properties. Letter grading.",
+	"ECE 225: Physics of Semiconductor Nanostructures and Devices": "<strong>Requisite:</strong> Course 223.<br><br><strong>Semiconductor nanostructures:</strong><br>Theoretical methods for circulating electronics and optical properties of semiconductor structures. Quantum size effects and low-dimensional systems. Application to semiconductor nanometer scale devices, including negative resistance diodes, transistors, and detectors. Letter grading.",
+	"ECE 128: Principles of Nanoelectronics" : "<strong>Requisite:</strong> Physics 1C.<br><br><strong>Fundamentals of nanoscience for electronics nanosystems:</strong><br>Introduction to fundamentals of nanoscience for electronics nanosystems. Principles of fundamental quantities: electron charge, effective mass, Bohr magneton, and spin, as well as theoretical approaches. From these nanoscale components, discussion of basic behaviors of nanosystems such as analysis of dynamics, variability, and noise, contrasted with those of scaled CMOS. Incorporation of design project in which students are challenged to design electronics nanosystems. Letter grading.",
+    "ECE 163DA: Microwave and Wireless Design I": "<strong>Enforced requisites:</strong> Courses 101A, 101B. Course 163DA is enforced requisite to 163DB. Limited to senior Electrical Engineering majors.<br><br><strong>Microwave and wireless circuit design:</strong><br>Capstone design course, with emphasis on transmission line-based circuits and components to address need in industry and research community for students with microwave and wireless circuit design experiences. Standard design procedure for waveguide and transmission line-based microwave circuits and systems to gain experience in using Microwave CAD software such as Agilent ADS or HFSS. How to fabricate and test these designs. In Progress grading (credit to be given only on completion of course 163DB).",
+	"ECE 163DB: Microwave and Wireless Design II": "<strong>Enforced requisites:</strong> Courses 101A, 101B, 163DA. Limited to senior Electrical Engineering majors.<br><br><strong>Advanced radio frequency circuit design:</strong><br>Design of radio frequency circuits and systems, with emphasis on both theoretical foundations and hands-on experience. Design of radio frequency transceivers and their building blocks according to given specifications or in form of open-ended problems. Introduction to advanced topics related to projects through lecture and laboratories. Creation by students of end-to-end systems in application context, managing trade-offs across subsystems while meeting constraints and optimizing metrics related to cost, performance, ease of use, manufacturability, testing, and other real-world issues. Oral and written presentations of project results required. Letter grading.",
+	"ECE 121DA: Semiconductor Processing and Device Design": "<strong>Enforced requisite or corequisite:</strong> Course 121B.<br><br><strong>Semiconductor fabrication and characterization:</strong><br>Design fabrication and characterization of p-n junction and transistors. Students perform various processing tasks such as wafer preparation, oxidation, diffusion, metallization, and photolithography. Introduction to CAD tools used in integrated circuit processing and device design. Device structure optimization tool based on MEDICI; process integration tool based on SUPREM. Course familiarizes students with those tools. Using CAD tools, CMOS process integration to be designed. In progress grading (credit to be given only on completion of course 121DB).",
+	"ECE 121DB: Semiconductor Processing and Device Design": "<strong>Enforced requisites:</strong> Courses 121B, 121DA.<br><br><strong>Advanced semiconductor processing:</strong><br>Design fabrication and characterization of p-n junction and transistors. Students perform various processing tasks such as wafer preparation, oxidation, diffusion, metallization, and photolithography. Introduction to CAD tools used in integrated circuit processing and device design. Device structure optimization tool based on MEDICI; process integration tool based on SUPREM. Course familiarizes students with those tools. Using CAD tools, CMOS process integration to be designed. Letter grading.",
+	"ECE 110: Circuit Theory II": "<strong>Enforced requisites:</strong> Courses 10, M16 (or Computer Science M51A), 102. <strong>Corequisite:</strong> Course 111L (enforced only for Computer Science and Engineering and Electrical Engineering majors).<br><br><strong>Advanced circuit analysis:</strong><br>Sinusoidal excitation and phasors, AC steady state analysis, AC steady state power, network functions, poles and zeros, frequency response, mutual inductance, ideal transformer, application of Laplace transforms to circuit analysis. Letter grading.",
 };
 
 export default function QuantumClassesPage() {
@@ -114,8 +114,10 @@ export default function QuantumClassesPage() {
 										</button>
 
 										{open && (
-											<div className="mt-3 text-sm text-gray-600 pl-2" id={`course-content-${i}`}>
-												{DESCRIPTIONS[c] || (
+											<div className="mt-3 text-sm text-gray-600 pl-2 font-kantumruy" id={`course-content-${i}`}>
+												{DESCRIPTIONS[c] ? (
+													<div dangerouslySetInnerHTML={{ __html: DESCRIPTIONS[c] }} />
+												) : (
 													<>Placeholder information about {c}. You can replace this with instructors, quarter, or notes.</>
 												)}
 											</div>
@@ -127,11 +129,28 @@ export default function QuantumClassesPage() {
 					</div>
 
 					{/* Right gradient card with avatar */}
-					<aside className="flex items-center justify-center">
-                        <div className="w-full h-full flex items-start justify-center">
-	                            <div className="-mt-2">
-									<Image src="/images/quantum_aura.png" alt="quantum aura" width={500} height={200} className="object-contain max-w-none" />
-								</div>
+					<aside className="flex items-center justify-center relative pointer-events-none">
+                        <div className="w-full h-full flex items-start justify-center relative">
+							{/* Background aura image */}
+							<div className="absolute inset-0 flex items-center justify-center opacity-100">
+								<Image 
+									src="/images/quantum_aura.png" 
+									alt="quantum aura background" 
+									width={600} 
+									height={400} 
+									className="object-contain max-w-none" 
+								/>
+							</div>
+							{/* Foreground atom image */}
+	                        <div className="-mt-2 relative">
+								<Image 
+									src="/images/quantum_atom.png" 
+									alt="quantum atom" 
+									width={400} 
+									height={200} 
+									className="object-contain max-w-none" 
+								/>
+							</div>
 						</div>
 									
 					</aside>
@@ -168,7 +187,9 @@ export default function QuantumClassesPage() {
 
 											{open && (
 												<div className="mt-3 text-sm text-gray-600 pl-2" id={`course-content-${idx}`}>
-													{DESCRIPTIONS[c] || (
+													{DESCRIPTIONS[c] ? (
+														<div dangerouslySetInnerHTML={{ __html: DESCRIPTIONS[c] }} />
+													) : (
 														<>Placeholder information about {c}. You can replace this with instructors, quarter, or notes.</>
 													)}
 												</div>
@@ -180,14 +201,31 @@ export default function QuantumClassesPage() {
 						</div>
 
 						{/* Right gradient card with avatar */}
-						<aside className="flex items-center justify-center">
-							<div className="w-full h-full flex items-start justify-center">
-								<div className="-mt-2">
-									<Image src="/images/quantum_aura.png" alt="quantum aura" width={500} height={200} className="object-contain max-w-none" />
-								</div>
+					<aside className="flex items-center justify-center relative pointer-events-none">
+                        <div className="w-full h-full flex items-start justify-center relative">
+							{/* Background aura image */}
+							<div className="absolute inset-0 flex items-center justify-center opacity-100">
+								<Image 
+									src="/images/quantum_aura.png" 
+									alt="quantum aura background" 
+									width={600} 
+									height={400} 
+									className="object-contain max-w-none" 
+								/>
 							</div>
-                        
-						</aside>
+							{/* Foreground atom image */}
+	                        <div className="-mt-2 relative">
+								<Image 
+									src="/images/orbital.png" 
+									alt="quantum atom" 
+									width={350} 
+									height={300} 
+									className="object-contain max-w-none" 
+								/>
+							</div>
+						</div>
+									
+					</aside>
 					</section>
 
 					{/* AMO Physics / Quantum Optics */}
@@ -221,7 +259,9 @@ export default function QuantumClassesPage() {
 
 											{open && (
 												<div className="mt-3 text-sm text-gray-600 pl-2" id={`course-content-${idx}`}>
-													{DESCRIPTIONS[c] || (
+													{DESCRIPTIONS[c] ? (
+														<div dangerouslySetInnerHTML={{ __html: DESCRIPTIONS[c] }} />
+													) : (
 														<>Placeholder information about {c}. You can replace this with instructors, quarter, or notes.</>
 													)}
 												</div>
@@ -232,15 +272,32 @@ export default function QuantumClassesPage() {
 							</div>
 						</div>
 
-						{/* Right gradient card with avatar */}
-						<aside className="flex items-center justify-center">
-							<div className="w-full h-full flex items-start justify-center">
-								<div className="-mt-2">
-									<Image src="/images/quantum_aura.png" alt="quantum aura" width={500} height={200} className="object-contain max-w-none" />
-								</div>
+							{/* Right gradient card with avatar */}
+					<aside className="flex items-center justify-center relative pointer-events-none">
+                        <div className="w-full h-full flex items-start justify-center relative">
+							{/* Background aura image */}
+							<div className="absolute inset-0 flex items-center justify-center opacity-100">
+								<Image 
+									src="/images/quantum_aura.png" 
+									alt="quantum aura background" 
+									width={600} 
+									height={400} 
+									className="object-contain max-w-none" 
+								/>
 							</div>
-                        
-						</aside>
+							{/* Foreground atom image */}
+	                        <div className="-mt-2 relative">
+								<Image 
+									src="/images/random_waves.png" 
+									alt="quantum atom" 
+									width={350} 
+									height={300} 
+									className="object-contain max-w-none" 
+								/>
+							</div>
+						</div>
+									
+					</aside>
 					</section>
 
 				{/* Solid State Physics */}
@@ -274,7 +331,9 @@ export default function QuantumClassesPage() {
 
 										{open && (
 											<div className="mt-3 text-sm text-gray-600 pl-2" id={`course-content-${idx}`}>
-												{DESCRIPTIONS[c] || (
+												{DESCRIPTIONS[c] ? (
+													<div dangerouslySetInnerHTML={{ __html: DESCRIPTIONS[c] }} />
+												) : (
 													<>Placeholder information about {c}. You can replace this with instructors, quarter, or notes.</>
 												)}
 											</div>
@@ -285,14 +344,31 @@ export default function QuantumClassesPage() {
 						</div>
 					</div>
 
-					{/* Right gradient card with avatar */}
-					<aside className="flex items-center justify-center">
-						<div className="w-full h-full flex items-start justify-center">
-							<div className="-mt-2">
-								<Image src="/images/quantum_aura.png" alt="quantum aura" width={500} height={200} className="object-contain max-w-none" />
+						{/* Right gradient card with avatar */}
+					<aside className="flex items-center justify-center relative pointer-events-none">
+                        <div className="w-full h-full flex items-start justify-center relative">
+							{/* Background aura image */}
+							<div className="absolute inset-0 flex items-center justify-center opacity-100">
+								<Image 
+									src="/images/quantum_aura.png" 
+									alt="quantum aura background" 
+									width={600} 
+									height={400} 
+									className="object-contain max-w-none" 
+								/>
+							</div>
+							{/* Foreground atom image */}
+	                        <div className="-mt-2 relative">
+								<Image 
+									src="/images/crystals.png" 
+									alt="quantum atom" 
+									width={350} 
+									height={300} 
+									className="object-contain max-w-none" 
+								/>
 							</div>
 						</div>
-						
+									
 					</aside>
 				</section>
 
@@ -327,7 +403,9 @@ export default function QuantumClassesPage() {
 
 										{open && (
 											<div className="mt-3 text-sm text-gray-600 pl-2" id={`course-content-${idx}`}>
-												{DESCRIPTIONS[c] || (
+												{DESCRIPTIONS[c] ? (
+													<div dangerouslySetInnerHTML={{ __html: DESCRIPTIONS[c] }} />
+												) : (
 													<>Placeholder information about {c}. You can replace this with instructors, quarter, or notes.</>
 												)}
 											</div>
@@ -338,14 +416,31 @@ export default function QuantumClassesPage() {
 						</div>
 					</div>
 
-					{/* Right gradient card with avatar */}
-					<aside className="flex items-center justify-center">
-						<div className="w-full h-full flex items-start justify-center">
-							<div className="-mt-2">
-								<Image src="/images/quantum_aura.png" alt="quantum aura" width={500} height={200} className="object-contain max-w-none" />
+						{/* Right gradient card with avatar */}
+					<aside className="flex items-center justify-center relative pointer-events-none">
+                        <div className="w-full h-full flex items-start justify-center relative">
+							{/* Background aura image */}
+							<div className="absolute inset-0 flex items-center justify-center opacity-100">
+								<Image 
+									src="/images/quantum_aura.png" 
+									alt="quantum aura background" 
+									width={600} 
+									height={400} 
+									className="object-contain max-w-none" 
+								/>
+							</div>
+							{/* Foreground atom image */}
+	                        <div className="-mt-2 relative">
+								<Image 
+									src="/images/quantum_chip.png" 
+									alt="quantum atom" 
+									width={350} 
+									height={200} 
+									className="object-contain max-w-none" 
+								/>
 							</div>
 						</div>
-						
+									
 					</aside>
 				</section>
 

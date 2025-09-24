@@ -20,7 +20,7 @@ export default function HackathonCard({imageSrc, title, subtitle, description, h
                 />
             </div>
 
-            <div className="flex flex-1 flex-col gap-3 py-5">
+            <div className="flex flex-1 flex-col gap-3 pt-5">
                 <h2 className="text-2xl font-bold text-main">{title}</h2>
                 {subtitle && (
                 <p className="text-sm font-bold text-main">{subtitle}</p>
@@ -32,7 +32,7 @@ export default function HackathonCard({imageSrc, title, subtitle, description, h
                 <div className="mt-auto pt-2 flex justify-center ">
                 <a
                     href={href}
-                    className="inline-flex items-center justify-center rounded-sm  bg-main px-7 py-4 text-2xl text-lighter
+                    className="inline-flex items-center justify-center rounded-sm  bg-main px-7.5 py-3.5 text-2xl text-lighter
                                 shadow-sm transition hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2E4A86]/60"
                 >
                     {cta}
