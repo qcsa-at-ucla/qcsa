@@ -7,9 +7,9 @@ import Link from 'next/link';
 import MainWebsiteHeader from '../Components/mainWebsiteHeader';
 
 const PAST_SEMINARS = [
-    { title: 'Week 1: Introduction and Motivation', href: '#' },
-    { title: 'Week 2: Mathematical Foundations', href: '#' },
-    { title: 'Week 4: Entanglement & Teleportation', href: '#' },
+    { title: 'Week 1: Introduction and Motivation', href: 'https://drive.google.com/file/d/14X4zg8485xQI8Yjs3QbWn2NqbVCjmfGL/view' },
+    { title: 'Week 2: Mathematical Foundations', href: 'https://drive.google.com/file/d/14X4zg8485xQI8Yjs3QbWn2NqbVCjmfGL/view' },
+    { title: 'Week 4: Entanglement & Teleportation', href: 'https://youtu.be/6PcuyKaVyho?feature=shared' },
 ];
 
 export default function Page() {
@@ -29,7 +29,7 @@ export default function Page() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-center py-6 md:py-12">
                     <div className="rounded-md overflow-hidden bg-white">
-                        <Image src="/images/qcsa_acm_workshop.png" alt="QCSA ACM Workshop" width={820} height={360} className="w-full h-[220px] md:h-[360px] object-cover" />
+                        <Image src="/images/workshop_template__1_.png" alt="QCSA ACM Workshop" width={820} height={360} className="w-full h-[220px] md:h-[360px] object-cover" />
                     </div>
 
                     <div className="prose max-w-xl text-[#234285] text-center md:text-left px-4 md:px-0">
