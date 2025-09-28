@@ -84,6 +84,83 @@ The series focuses on quantum information science, including quantum computers, 
                         </button>
                     </div>
                 </section>
+
+                {/* RSVP Section */}
+                <section className="py-8 md:py-16">
+                    <div className="max-w-4xl mx-auto">
+                        <div className="text-center mb-8 md:mb-12">
+                            <h2 className="text-3xl md:text-4xl font-bold text-[#234285] mb-4 font-kantumruy">
+                                Ready to Join Us?
+                            </h2>
+                            <p className="text-lg md:text-xl text-[#234285] opacity-80 max-w-2xl mx-auto">
+                                Reserve your spot for upcoming workshops and stay updated with our quantum journey!
+                            </p>
+                        </div>
+                        
+                        <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100">
+                            <div className="bg-gradient-to-r from-blue-900 to-blue-800 px-6 py-4">
+                                <h3 className="text-xl md:text-2xl font-bold text-white text-center font-kantumruy">
+                                    ACM Quantum Workshop RSVP
+                                </h3>
+                            </div>
+                            
+                            <div className="p-4 md:p-6">
+                                <div className="aspect-video w-full min-h-[500px] md:min-h-[600px]">
+                                    <iframe 
+                                        src="https://docs.google.com/forms/d/e/1FAIpQLScf_RNKIr7M5WHYhe7wKBu8oypT0i8BD5qu2CpRL1y3_WW1WA/viewform?embedded=true"
+                                        className="w-full h-full border-0 rounded-lg"
+                                        frameBorder="0"
+                                        marginHeight={0}
+                                        marginWidth={0}
+                                        title="Workshop RSVP Form"
+                                    >
+                                        Loading…
+                                    </iframe>
+                                </div>
+                                
+                                <div className="mt-6 text-center">
+                                    <p className="text-sm text-gray-600 mb-4">
+                                        Having trouble with the form above?
+                                    </p>
+                                    <Link 
+                                        href="https://docs.google.com/forms/d/e/1FAIpQLScf_RNKIr7M5WHYhe7wKBu8oypT0i8BD5qu2CpRL1y3_WW1WA/viewform"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 bg-blue-900 text-white px-6 py-3 rounded-lg shadow-sm hover:bg-blue-800 transition-colors font-kantumruy text-lg font-medium"
+                                    >
+                                        Open Form in New Tab
+                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mt-8 text-center">
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-[#234285] opacity-70">
+                                <div className="flex items-center gap-2">
+                                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                    </svg>
+                                    <span>Free to attend</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                    </svg>
+                                    <span>No experience required</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                    </svg>
+                                    <span>Materials provided</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 
             </div>
 </main>
