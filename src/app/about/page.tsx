@@ -71,16 +71,6 @@ const boardMembers = [
   },
   {
     id: 7,
-    name: "Drew Downing",
-    role: "Compliance",
-    major: "Law",
-    year: "4th Year",
-    bio: "Drew is a 4th-year law student at UCLA, concentrating in Business Law & Policy, as well as Media, Entertainment, Technology & Sports Law. He additionally serves as a Chief Managing Editor for the UCLA Journal of Law & Technology, the Vice President of the Law & Entrepreneurship Association, and an Alumni & Career Outreach Chair for the AI Law Association. Before law school, he received his bachelor's degree in Mathematics & Philosophy from Boston University, minoring in Economics. After law school, he expects to pursue a career in transactional law in entrepreneurial sectors.",
-    image: "/images/Drew.png",
-    linkedIn: "https://www.linkedin.com/in/drew-m-downing/"
-  },
-  {
-    id: 8,
     name: "Samuel Oh",
     role: "Finances",
     major: "Computer Science & Economics",
@@ -90,7 +80,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/samuel-oh-ucla/"
   },
   {
-    id: 9,
+    id: 8,
     name: "Ilaana Khan",
     role: "Events & Advertisement",
     major: "Physics",
@@ -100,7 +90,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/ilaanak/"
   },
   {
-    id: 10,
+    id: 9,
     name: "Naren Sathishkumar",
     role: "",
     major: "Computer Science",
@@ -110,7 +100,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/naren-sathishkumar/"
   },
   {
-    id: 11,
+    id: 10,
     name: "Connor Engel",
     role: "Events & Advertisement",
     major: "Physics",
@@ -120,7 +110,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/connor-engel-492216254/"
   },
   {
-    id: 12,
+    id: 11,
     name: "Shreya Shirsathe",
     role: "Events & Advertisement",
     major: "Computer Engineering",
@@ -130,7 +120,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/shreya-shirsathe-b90256288/"
   },
   {
-    id: 13,
+    id: 12,
     name: "Harshita Kukreja",
     role: "Head of Digital Infrastructure",
     major: "Computer Science and Engineering",
@@ -140,7 +130,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/harshita-kukreja-28h/"
   },
   {
-    id: 14,
+    id: 13,
     name: "Clyde Villacrusis",
     role: "Web Developer",
     major: "Computer Science",
@@ -150,7 +140,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/clydevillacrusis/"
   },
   {
-    id: 15,
+    id: 14,
     name: "Emma Zhang",
     role: "Web Developer",
     major: "Computer Science",
@@ -160,7 +150,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/emma-zhang-511838245/"
   },
   {
-    id: 16,
+    id: 15,
     name: "Kimberley Wu",
     role: "Designer",
     major: "Design Media Arts and Psychology",
@@ -170,7 +160,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/kimberleywu/"
   },
   {
-    id: 17,
+    id: 16,
     name: "Gina Namkung",
     role: "Designer",
     major: "Cognitive Science and Architecture",
@@ -180,7 +170,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/gina-namkung/"
   },
   {
-    id: 18,
+    id: 17,
     name: "Sanskriti Shindadkar",
     role: "Researcher Lead",
     major: "Bioengineering",
@@ -190,7 +180,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/sanskriti/"
   },
   {
-    id: 19,
+    id: 18,
     name: "Sadman Ahmed Shanto",
     role: "President of USC QCSA",
     major: "PhD Candidate",
