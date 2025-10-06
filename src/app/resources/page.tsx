@@ -14,8 +14,50 @@ export default function ResourcesPage() {
 					Resources
 				</h1>
 
+				{/* QCSA Membership Form - Featured at the top */}
+				<div className="rounded-lg w-full p-1 shadow-[0_0_50px_rgba(99,179,255,0.30)] bg-gradient-to-r from-blue-50 to-indigo-50">
+					<section className="bg-white rounded-lg p-10 shadow-[0_20px_50px_rgba(35,66,133,0.12)] ring-4 ring-[rgba(35,66,133,0.06)]">
+						<div className="flex flex-col lg:flex-row items-center gap-8">
+							{/* Left: Text block */}
+							<div className="lg:w-2/3">
+								<div className="flex items-center gap-3 mb-4">
+									{/* <div className="w-2 h-8 bg-gradient-to-b from-[#234285] to-blue-400 rounded-full"></div> */}
+									<h2 className="text-3xl text-[#234285] font-kantumruy font-bold">QCSA Membership Form</h2>
+								</div>
+								<p className="text-[#234285] text-base mb-6 leading-relaxed">
+									Join the Quantum Computing Society at UCLA! Become part of our vibrant community of students passionate about quantum computing and quantum information science. Get access to exclusive workshops, networking events, and opportunities to work on cutting-edge quantum projects.
+								</p>
+								<div className="flex flex-col sm:flex-row gap-4">
+									<a 
+										href="https://docs.google.com/forms/d/e/1FAIpQLSedU6c7m4swzNhmzJURbi5GkkYYyvX7Y5lqNxmCoj9aw4hlQg/viewform?usp=header"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="inline-block bg-[#234285] text-white px-8 py-3 rounded-md text-lg font-kantumruy shadow-md hover:shadow-xl hover:from-[#1f3f75] hover:to-blue-800 transition-all duration-300 transform hover:scale-105 text-center"
+									>
+										Join Now →
+									</a>
+								</div>
+							</div>
+
+							{/* Right: Image / gradient card */}
+							<div className="lg:w-1/3 flex justify-center lg:justify-end">
+								<div className="w-96 h-64 rounded-md p-6 flex items-center justify-center relative overflow-hidden">
+									<div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-indigo-50 to-blue-200 opacity-50"></div>
+									<Image 
+										src="/images/join-us.png" 
+										alt="Join QCSA" 
+										width={350} 
+										height={300} 
+										className="object-contain max-w-none relative z-10 drop-shadow-lg" 
+									/>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+
 				{/* wrapper adds a subtle light-blue neon aura around the card without changing its size */}
-				<div className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)]">
+				<div className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24">
 					<section className="bg-white rounded-lg p-10 shadow-[0_18px_40px_rgba(35,66,133,0.08)] ring-4 ring-[rgba(35,66,133,0.04)]">
 						<div className="flex flex-col lg:flex-row items-center gap-8">
 						{/* Left: Text block */}
