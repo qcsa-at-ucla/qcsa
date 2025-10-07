@@ -15,13 +15,11 @@ export default function ResourcesPage() {
 				</h1>
 
 				{/* QCSA Membership Form - Featured at the top */}
-				<div className="rounded-lg w-full p-1 shadow-[0_0_50px_rgba(99,179,255,0.30)] bg-gradient-to-r from-blue-50 to-indigo-50">
+				{/* <div className="rounded-lg w-full p-1 shadow-[0_0_50px_rgba(99,179,255,0.30)] bg-gradient-to-r from-blue-50 to-indigo-50">
 					<section className="bg-white rounded-lg p-10 shadow-[0_20px_50px_rgba(35,66,133,0.12)] ring-4 ring-[rgba(35,66,133,0.06)]">
 						<div className="flex flex-col lg:flex-row items-center gap-8">
-							{/* Left: Text block */}
 							<div className="lg:w-2/3">
 								<div className="flex items-center gap-3 mb-4">
-									{/* <div className="w-2 h-8 bg-gradient-to-b from-[#234285] to-blue-400 rounded-full"></div> */}
 									<h2 className="text-3xl text-[#234285] font-kantumruy font-bold">QCSA Membership Form</h2>
 								</div>
 								<p className="text-[#234285] text-base mb-6 leading-relaxed">
@@ -39,7 +37,6 @@ export default function ResourcesPage() {
 								</div>
 							</div>
 
-							{/* Right: Image / gradient card */}
 							<div className="lg:w-1/3 flex justify-center lg:justify-end">
 								<div className="w-96 h-64 rounded-md p-6 flex items-center justify-center relative overflow-hidden">
 									<div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-indigo-50 to-blue-200 opacity-50"></div>
@@ -54,7 +51,7 @@ export default function ResourcesPage() {
 							</div>
 						</div>
 					</section>
-				</div>
+				</div> */}
 
 				{/* wrapper adds a subtle light-blue neon aura around the card without changing its size */}
 				<div className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24">
