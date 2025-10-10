@@ -20,10 +20,10 @@ const eventsData = [
 		location: "UCLA, CA",
 	},
 	{
-		datePrimary: "17-19",
+		datePrimary: "20",
 		dateSecondary: "November",
 		title: "QuBE: Quantum Bio",
-		location: "UCLA, CA",
+		location: "CNSI, UCLA, CA",
 	},
 ];
 
@@ -288,7 +288,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 						},
 						{
 							img: '/images/Qube.png',
-							title: 'Quantum BioEngineering (QuBe)',
+							title: 'Quantum BioEngineering (QuBE)',
 							sub: 'Seminar and workshop on quantum computing applications in biochemistry. Featuring speakers from USC and IBM at CNSI + a Qiskit workshop on modeling solubility.',
 						},
 					].map((s, idx) => (
