@@ -141,7 +141,7 @@ const InfiniteCarousel = ({ direction = 'left' }: { direction?: 'left' | 'right'
                   <img
                     src={sponsor.logo}
                     alt={`${sponsor.name} logo`}
-                    className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 focus:grayscale-0 transition-all duration-300"
+                    className="max-w-full max-h-full object-contain transition-all duration-300"
                     loading="lazy"
                   />
                 </a>
@@ -170,7 +170,7 @@ const InfiniteCarousel = ({ direction = 'left' }: { direction?: 'left' | 'right'
                   <img
                     src={sponsor.logo}
                     alt=""
-                    className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    className="max-w-full max-h-full object-contain transition-all duration-300"
                     loading="lazy"
                   />
                 </a>
