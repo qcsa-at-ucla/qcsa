@@ -286,6 +286,11 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 							title: 'QCSA x ACM Introductory Workshop',
 							sub: 'Are you curious about quantum computing but not sure where to start? Join our workshops every Wednesday from 6pm-8pm in Boelter 2444!',
 						},
+						{
+							img: '/images/Qube.png',
+							title: 'Quantum BioEngineering (QuBe)',
+							sub: 'Seminar and workshop on quantum computing applications in biochemistry. Featuring speakers from USC and IBM at CNSI + a Qiskit workshop on modeling solubility.',
+						},
 					].map((s, idx) => (
 						<article key={idx} className="rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow overflow-hidden">
 							<div className="flex flex-col md:flex-row items-stretch">
