@@ -57,13 +57,19 @@ export default function MainWebsiteFooter() {
             </Link>
 
             {/* Patreon */}
-            <Link href="https://www.patreon.com/cw/qcsa" target="_blank" rel="noopener noreferrer" aria-label="Support QCSA on Patreon (opens in new tab)" className="text-gray-700 hover:text-gray-900 transition-colors">
+            <Link 
+              href="https://www.patreon.com/cw/qcsa" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="Support QCSA on Patreon (opens in new tab)" 
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
               <Image
-                src="/images/patreon.png"
+                src="/images/patreon.svg"
                 alt="Patreon Logo"
                 width={32}
                 height={32}
-                className="object-contain"
+                className="object-contain opacity-70 hover:opacity-100 transition-opacity"
               />
             </Link>
           </div>
