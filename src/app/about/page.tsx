@@ -80,7 +80,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/samuel-oh-ucla/"
   },
   {
-    id: 17,
+    id: 6,
     name: "Sanskriti Shindadkar",
     role: "Research Lead",
     major: "Bioengineering",
@@ -90,7 +90,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/sanskriti/"
   },
   {
-    id: 6,
+    id: 7,
     name: "Ilaana Khan",
     role: "Events & Advertisement",
     major: "Physics",
@@ -100,7 +100,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/ilaanak/"
   },
   {
-    id: 7,
+    id: 8,
     name: "Shreya Shirsathe",
     role: "Events & Advertisement",
     major: "Computer Engineering",
@@ -110,7 +110,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/shreya-shirsathe-b90256288/"
   }, 
   {
-    id: 8,
+    id: 9,
     name: "Connor Engel",
     role: "Events & Advertisement",
     major: "Physics",
@@ -120,7 +120,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/connor-engel-492216254/"
   },
   {
-    id: 12,
+    id: 10,
     name: "Harshita Kukreja",
     role: "Head of Digital Infrastructure/Tech Lead",
     major: "Computer Science and Engineering",
@@ -130,7 +130,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/harshita-kukreja-28h/"
   },
   {
-    id: 13,
+    id: 11,
     name: "Clyde Villacrusis",
     role: "Web Developer",
     major: "Computer Science",
@@ -140,7 +140,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/clydevillacrusis/"
   },
   {
-    id: 14,
+    id: 12,
     name: "Emma Zhang",
     role: "Web Developer",
     major: "Computer Science",
@@ -150,7 +150,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/emma-zhang-511838245/"
   },
   {
-    id: 15,
+    id: 13,
     name: "Kimberley Wu",
     role: "Designer",
     major: "Design Media Arts and Psychology",
@@ -160,7 +160,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/kimberleywu/"
   },
   {
-    id: 16,
+    id: 14,
     name: "Gina Namkung",
     role: "Designer",
     major: "Cognitive Science and Architecture",
@@ -169,9 +169,19 @@ const boardMembers = [
     image: "/images/gina.png",
     linkedIn: "https://www.linkedin.com/in/gina-namkung/"
   },
+  {
+    id: 15,
+    name: "Sameer Kumar",
+    role: "Corporate Relations",
+    major: "Electrical Engineering",
+    year: "2nd Year",
+    bio: "Sameer Kumar is a second-year Electrical Engineering student at UCLA with a passion for circuit design, wireless systems, and robotics. He previously interned at the Johns Hopkins Applied Physics Laboratory, where he worked on microwave signal research and led prototype development in Wireless Power Transfer and Electric Impedance Spectroscopy.",
+    image: "/images/sameer.jpg",
+    linkedIn: "https://www.linkedin.com/in/sameer-kumar-aa981b32a/"
+  },
   
   {
-    id: 9,
+    id: 16,
     name: "Naren Sathishkumar",
     role: "",
     major: "Computer Science",
