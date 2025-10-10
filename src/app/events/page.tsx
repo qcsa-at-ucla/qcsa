@@ -8,21 +8,21 @@ import MainWebsiteHeader from "../Components/mainWebsiteHeader";
 
 const eventsData = [
 	{
-		datePrimary: "22",
-		dateSecondary: "September",
-		title: "QCSA at Enormous Activities Fair",
+		datePrimary: "18-19",
+		dateSecondary: "October",
+		title: "Qiskit Fall Fest",
 		location: "UCLA, CA",
 	},
 	{
-		datePrimary: "6",
-		dateSecondary: "October",
-		title: "QCSA Fall GM",
-		location: "Mong Auditorium 6pm",
+		datePrimary: "11-13",
+		dateSecondary: "November",
+		title: "QuARC 2025",
+		location: "UCLA, CA",
 	},
 	{
 		datePrimary: "17-19",
-		dateSecondary: "October",
-		title: "Qiskit Fall Fest",
+		dateSecondary: "November",
+		title: "QuBE: Quantum Bio",
 		location: "UCLA, CA",
 	},
 ];
