@@ -40,7 +40,7 @@ const boardMembers = [
   },
   {
     id: 2,
-    name: "Alexander Jurgens",
+    name: "Alexander Jürgens",
     role: "President",
     major: "EECS",
     year: "PhD Student",
@@ -70,7 +70,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/cody-fan-09717a167/"
   },
   {
-    id: 7,
+    id: 5,
     name: "Samuel Oh",
     role: "Finances",
     major: "Computer Science & Economics",
@@ -80,7 +80,17 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/samuel-oh-ucla/"
   },
   {
-    id: 8,
+    id: 17,
+    name: "Sanskriti Shindadkar",
+    role: "Research Lead",
+    major: "Bioengineering",
+    year: "4th Year",
+    bio: "Sanskriti is a fourth year undergraduate bioengineering student at UCLA. She enjoys exploring quantum computing for chemistry and biological applications. She has previously led the industry collaboration with QCSA, BruinAI, and Fetch.ai to explore the use of hybrid quantum-CNNs for predicting protein-ligand binding energies. She loves hearing about projects other people are working on and are excited about, so contact her any time to chat over lunch :)",
+    image: "/images/sanskriti.png",
+    linkedIn: "https://www.linkedin.com/in/sanskriti/"
+  },
+  {
+    id: 6,
     name: "Ilaana Khan",
     role: "Events & Advertisement",
     major: "Physics",
@@ -90,17 +100,17 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/ilaanak/"
   },
   {
-    id: 9,
-    name: "Naren Sathishkumar",
-    role: "",
-    major: "Computer Science",
-    year: "2nd Year",
-    bio: "Naren is a 2nd-year undergraduate computer science major. He's interested quantum optimization algorithms and building the latest in quantum software. He's currently researching heuristics to solve the qubit mapping problem. Outside of programming, he enjoys mountain biking and skiing in the mountains..",
-    image: "/images/Naren.png",
-    linkedIn: "https://www.linkedin.com/in/naren-sathishkumar/"
-  },
+    id: 7,
+    name: "Shreya Shirsathe",
+    role: "Events & Advertisement",
+    major: "Computer Engineering",
+    year: "3rd Year",
+    bio: "Shreya is a 3rd-year undergraduate Computer Engineering student. She is interested in quantum algorithms and hybrid quantum-classical systems. She enjoys connecting with others who share a passion for quantum computing and exploring how classical and quantum systems can work together. Outside of school, she enjoys snowboarding, dancing, and playing the guitar.",
+    image: "/images/Shreya.png",
+    linkedIn: "https://www.linkedin.com/in/shreya-shirsathe-b90256288/"
+  }, 
   {
-    id: 10,
+    id: 8,
     name: "Connor Engel",
     role: "Events & Advertisement",
     major: "Physics",
@@ -110,19 +120,9 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/connor-engel-492216254/"
   },
   {
-    id: 11,
-    name: "Shreya Shirsathe",
-    role: "Events & Advertisement",
-    major: "Computer Engineering",
-    year: "3rd Year",
-    bio: "Shreya is a 3rd-year undergraduate Computer Engineering student. She is interested in quantum algorithms and hybrid quantum-classical systems. She enjoys connecting with others who share a passion for quantum computing and exploring how classical and quantum systems can work together. Outside of school, she enjoys snowboarding, dancing, and playing the guitar.",
-    image: "/images/Shreya.png",
-    linkedIn: "https://www.linkedin.com/in/shreya-shirsathe-b90256288/"
-  },
-  {
     id: 12,
     name: "Harshita Kukreja",
-    role: "Head of Digital Infrastructure",
+    role: "Head of Digital Infrastructure/Tech Lead",
     major: "Computer Science and Engineering",
     year: "2nd Year",
     bio: "Harshita is a second-year Computer Science and Engineering student at UCLA, minoring in Disability Studies. She is passionate about digital accessibility and inclusive design, and recently launched NextA11y, a web accessibility bootcamp for middle and high school students in India. Outside of coding, Harshita enjoys 3D modeling in SOLIDWORKS, sketching, and exploring campus.",
@@ -169,25 +169,16 @@ const boardMembers = [
     image: "/images/gina.png",
     linkedIn: "https://www.linkedin.com/in/gina-namkung/"
   },
+  
   {
-    id: 17,
-    name: "Sanskriti Shindadkar",
-    role: "Researcher Lead",
-    major: "Bioengineering",
-    year: "4th Year",
-    bio: "Sanskriti is a fourth year undergraduate bioengineering student at UCLA. She enjoys exploring quantum computing for chemistry and biological applications. She has previously led the industry collaboration with QCSA, BruinAI, and Fetch.ai to explore the use of hybrid quantum-CNNs for predicting protein-ligand binding energies. She loves hearing about projects other people are working on and are excited about, so contact her any time to chat over lunch :)",
-    image: "/images/sanskriti.png",
-    linkedIn: "https://www.linkedin.com/in/sanskriti/"
-  },
-  {
-    id: 18,
-    name: "Sadman Ahmed Shanto",
-    role: "President of USC QCSA",
-    major: "PhD Candidate",
-    year: "5th Year",
-    bio: "Sadman Ahmed Shanto is a Ph.D. candidate in Physics at the University of Southern California, working in the Levenson-Falk Lab on superconducting quantum hardware. His research focuses on quasiparticle dynamics in superconducting circuits and the automation of quantum device design workflows. To learn more about his work and interests, you can visit https://sadmanahmedshanto.com/",
-    image: "/images/shanto.png",
-    linkedIn: "https://www.linkedin.com/in/sshanto/"
+    id: 9,
+    name: "Naren Sathishkumar",
+    role: "",
+    major: "Computer Science",
+    year: "2nd Year",
+    bio: "Naren is a 2nd-year undergraduate computer science major. He's interested quantum optimization algorithms and building the latest in quantum software. He's currently researching heuristics to solve the qubit mapping problem. Outside of programming, he enjoys mountain biking and skiing in the mountains..",
+    image: "/images/Naren.png",
+    linkedIn: "https://www.linkedin.com/in/naren-sathishkumar/"
   },
  
 ];
