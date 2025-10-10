@@ -183,7 +183,7 @@ const boardMembers = [
   {
     id: 16,
     name: "Naren Sathishkumar",
-    role: "",
+    role: "Outreach",
     major: "Computer Science",
     year: "2nd Year",
     bio: "Naren is a 2nd-year undergraduate computer science major. He's interested quantum optimization algorithms and building the latest in quantum software. He's currently researching heuristics to solve the qubit mapping problem. Outside of programming, he enjoys mountain biking and skiing in the mountains..",
