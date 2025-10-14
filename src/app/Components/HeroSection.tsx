@@ -16,7 +16,7 @@ const HeroSection = () => {
               Join us for Qiskit Fall Fest 2025
             </h2>
             <p className="text-base md:text-lg font-kantumruy max-w-2xl" style={{color: '#F3F8FF'}}>
-              Three days of quantum computing workshops, hackathon challenges, and networking with an IBM speaker. 
+              Two days of quantum computing workshops, hackathon challenges, and networking with an IBM speaker. 
               Build your quantum project and connect with the community!
             </p>
             <a 
