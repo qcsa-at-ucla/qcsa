@@ -12,7 +12,7 @@ const eventsData = [
 		dateSecondary: "September",
 		title: "QCSA at Enormous Activities Fair",
 		location: "Royce Hall, UCLA, CA",
-		time: "10:00 AM - 4:00 PM",
+		time: "11:00 AM - 2:00 PM",
 		description: "Join us at UCLA's Enormous Activities Fair! Come meet the QCSA team, learn about quantum computing, and discover opportunities to get involved in our community. We'll have information about our workshops, seminars, and upcoming events. Whether you're new to quantum or already passionate about it, we'd love to meet you!",
 	},
 	{
@@ -21,7 +21,7 @@ const eventsData = [
 		title: "QCSA Fall GM",
 		location: "Mong Auditorium, UCLA, CA",
 		time: "6:00 PM - 8:00 PM",
-		description: "Our Fall General Meeting is the perfect opportunity to learn about QCSA's mission, meet our board members, and connect with fellow quantum enthusiasts. We'll present our plans for the academic year, including workshops, speaker series, hackathons, and collaborative research opportunities. Refreshments will be provided!",
+		description: "Our Fall General Meeting is the perfect opportunity to learn about QCSA's mission, meet our board members, and connect with fellow quantum enthusiasts. We'll present our plans for the academic year, including workshops, speaker series, hackathons, and collaborative research opportunities!",
 	},
 	{
 		datePrimary: "18-19",
@@ -46,7 +46,7 @@ const eventsData = [
 		dateSecondary: "November",
 		title: "QuBE: Quantum Bio",
 		location: "CNSI, UCLA, CA",
-		time: "5:00 PM - 8:00 PM",
+		time: "All Day Event",
 		description: "Explore the intersection of quantum computing and bioengineering at our QuBE seminar! Featuring speakers from USC and IBM, this event will showcase how quantum algorithms are revolutionizing biochemistry research. Following the talks, join us for a hands-on Qiskit workshop focused on modeling molecular solubility and other bio applications.",
 	},
 ];
