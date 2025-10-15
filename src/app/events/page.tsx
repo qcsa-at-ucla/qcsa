@@ -8,28 +8,56 @@ import MainWebsiteHeader from "../Components/mainWebsiteHeader";
 
 const eventsData = [
 	{
+		datePrimary: "22",
+		dateSecondary: "September",
+		title: "QCSA at Enormous Activities Fair",
+		location: "Royce Hall, UCLA, CA",
+		time: "10:00 AM - 4:00 PM",
+		description: "Join us at UCLA's Enormous Activities Fair! Come meet the QCSA team, learn about quantum computing, and discover opportunities to get involved in our community. We'll have information about our workshops, seminars, and upcoming events. Whether you're new to quantum or already passionate about it, we'd love to meet you!",
+	},
+	{
+		datePrimary: "6",
+		dateSecondary: "October",
+		title: "QCSA Fall GM",
+		location: "Mong Auditorium, UCLA, CA",
+		time: "6:00 PM - 8:00 PM",
+		description: "Our Fall General Meeting is the perfect opportunity to learn about QCSA's mission, meet our board members, and connect with fellow quantum enthusiasts. We'll present our plans for the academic year, including workshops, speaker series, hackathons, and collaborative research opportunities. Refreshments will be provided!",
+	},
+	{
 		datePrimary: "18-19",
 		dateSecondary: "October",
 		title: "Qiskit Fall Fest",
-		location: "UCLA, CA",
+		location: "Boelter Hall 8500 + Mong Auditorium, UCLA, CA",
+		time: "All Day Event",
+		description: "Join us for UCLA's Qiskit Fall Fest, a two-day celebration of quantum computing! This event features hands-on workshops with IBM Qiskit, technical talks from industry experts, networking opportunities, and exciting challenges. Whether you're a beginner or experienced quantum developer, there's something for everyone. Prizes and swag will be available!",
+		link: "https://qiskit-fall-fest-ucla.vercel.app",
 	},
 	{
 		datePrimary: "11-13",
 		dateSecondary: "November",
 		title: "QuARC 2025",
 		location: "UCLA, CA",
+		time: "Multi-Day Conference",
+		description: "The Quantum Architecture Conference (QuARC) 2025 brings together researchers, students, and industry professionals to explore the latest advances in quantum computing architecture. The conference includes keynote presentations, technical sessions, poster presentations, and networking events. Don't miss this premier gathering of the quantum computing community!",
+		link: "https://quarc.squarespace.com/",
 	},
 	{
 		datePrimary: "20",
 		dateSecondary: "November",
 		title: "QuBE: Quantum Bio",
 		location: "CNSI, UCLA, CA",
+		time: "5:00 PM - 8:00 PM",
+		description: "Explore the intersection of quantum computing and bioengineering at our QuBE seminar! Featuring speakers from USC and IBM, this event will showcase how quantum algorithms are revolutionizing biochemistry research. Following the talks, join us for a hands-on Qiskit workshop focused on modeling molecular solubility and other bio applications.",
 	},
 ];
 
 export default function EventsPage() {
 	const containerRef = useRef<HTMLDivElement | null>(null);
     const [modalOpen, setModalOpen] = useState(false);
+
+	// State for upcoming events modal
+	type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string };
+	const [selectedEvent, setSelectedEvent] = useState<UpcomingEvent | null>(null);
 
 	// past events carousel ref and data
 	const pastRef = useRef<HTMLDivElement | null>(null);
@@ -166,15 +194,20 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 		return () => el.removeEventListener('scroll', handler);
 	}, []);
 
-	// Handle keyboard navigation for modal
+	// Handle keyboard navigation for modals
 	useEffect(() => {
 		const handleKeyDown = (event: KeyboardEvent) => {
-			if (event.key === 'Escape' && selectedPast) {
-				setSelectedPast(null);
+			if (event.key === 'Escape') {
+				if (selectedPast) {
+					setSelectedPast(null);
+				}
+				if (selectedEvent) {
+					setSelectedEvent(null);
+				}
 			}
 		};
 
-		if (selectedPast) {
+		if (selectedPast || selectedEvent) {
 			document.addEventListener('keydown', handleKeyDown);
 			// Prevent background scrolling when modal is open
 			document.body.style.overflow = 'hidden';
@@ -184,7 +217,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 			document.removeEventListener('keydown', handleKeyDown);
 			document.body.style.overflow = 'unset';
 		};
-	}, [selectedPast]);
+	}, [selectedPast, selectedEvent]);
 
 	const scrollBy = (direction: number) => {
 		const el = containerRef.current;
@@ -200,7 +233,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 			<MainWebsiteHeader/>
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
 				<h2 className="text-center text-4xl font-semibold text-blue-900 mb-8">
-					Upcoming Events
+					Upcoming Fall Quarter Events
 				</h2>
 
 				<div className="relative overflow-visible ">
@@ -228,7 +261,8 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 									<article
 										role="listitem"
-										className="relative bg-white rounded-md p-8 w-full h-full flex flex-col"
+										onClick={() => setSelectedEvent(e)}
+										className="relative bg-white rounded-md p-8 w-full h-full flex flex-col cursor-pointer hover:shadow-xl transition-shadow"
 										style={{
 											boxShadow: '0 10px 24px rgba(14,57,106,0.06)',
 											borderTop: '1px solid rgba(14,57,106,0.02)'
@@ -236,15 +270,15 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 									>
 										<div className="flex flex-col items-start gap-6">
 											<div className="text-blue-900  text-6xl sm:text-6xl leading-none font-kantumruy text-[#234285]">
-												<div style={{width: '163px', height: '83px'}}>{e.datePrimary}</div>
+												<div style={{width: '163px', height: '83px'}}><strong>{e.datePrimary}</strong></div>
 												<div style={{width: '163px', height: '83px'}} className="text-4xl mt-3 font-bold font-kantumruy text-[#234285]">{e.dateSecondary}</div>
 											</div>
 
 											<div>
-												<h3 className="text-2xl mb-2 font-kantumruy text-[#234285] " style={{width: '285px', height: '65px'}}>
+												<h3 className="text-4xl mb-2 font-kantumruy text-[#234285] " style={{width: '285px', height: '65px'}}>
 													{e.title}
 												</h3>
-												<p className="text-slate-600 font-semibold font-kantumruy text-[#234285]" style={{width: '285px', height: '43px'}}>{e.location}</p>
+												<p className="text-slate-600 font-semibold font-kantumruy text-[#234285] text-2xl mt-14" style={{width: '285px', height: '43px'}}>{e.location}</p>
 											</div>
 										</div>
 									</article>
@@ -263,6 +297,67 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 					</button>
 				</div>
 			</main>
+
+			{/* Upcoming event details modal */}
+			{selectedEvent && (
+				<div 
+					className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/60" 
+					onClick={() => setSelectedEvent(null)} 
+					style={{ backdropFilter: 'blur(2px)'}}
+					role="dialog"
+					aria-modal="true"
+					aria-labelledby="upcoming-modal-title"
+					aria-describedby="upcoming-modal-content"
+				>
+					<div className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-auto p-8" onClick={(e) => e.stopPropagation()}>
+						<div className="flex items-start justify-between gap-4">
+							<div className="flex-grow">
+								{/* Date badge */}
+								<div className="inline-flex items-center gap-3 mb-4 bg-blue-50 px-4 py-2 rounded-md">
+									<span className="text-5xl font-bold font-kantumruy text-[#234285]">{selectedEvent.datePrimary}</span>
+									<span className="text-2xl font-semibold font-kantumruy text-[#234285]">{selectedEvent.dateSecondary}</span>
+								</div>
+								
+								<h3 id="upcoming-modal-title" className="text-3xl font-bold mb-3 font-kantumruy text-[#234285]">{selectedEvent.title}</h3>
+								
+								<div className="space-y-2 mb-4">
+									<p className="text-lg text-slate-700 font-kantumruy flex items-center gap-2">
+										<span className="font-semibold">📍 Location:</span> {selectedEvent.location}
+									</p>
+									<p className="text-lg text-slate-700 font-kantumruy flex items-center gap-2">
+										<span className="font-semibold">🕐 Time:</span> {selectedEvent.time}
+									</p>
+								</div>
+								
+								<div id="upcoming-modal-content" className="prose max-w-none text-slate-700 font-kantumruy leading-relaxed text-lg">
+									{selectedEvent.description}
+								</div>
+
+								{/* Event link button if available */}
+								{selectedEvent.link && (
+									<div className="mt-6">
+										<a
+											href={selectedEvent.link}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="inline-block bg-[#234285] text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-900 text-lg font-semibold transition-colors font-kantumruy"
+										>
+											Visit Event Website →
+										</a>
+									</div>
+								)}
+							</div>
+							<button 
+								className="text-slate-600 hover:text-slate-800 focus:text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 rounded p-2 transition-colors duration-200 flex-shrink-0" 
+								onClick={() => setSelectedEvent(null)}
+								aria-label="Close modal"
+							>
+								<span aria-hidden="true" className="text-2xl">✕</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			)}
 
 			{/* Signature Events - matches the pasted image layout: stacked cards with image on left and content on right */}
 			<section className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
