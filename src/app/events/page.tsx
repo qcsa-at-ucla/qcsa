@@ -274,7 +274,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 											ev.stopPropagation();
 											setSelectedEvent(e);
 										}}
-										className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-800 hover:bg-blue-200 hover:text-blue-900 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 z-10"
+										className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-[#234285] hover:bg-blue-200 hover:text-blue-900 transition-colors duration-200 "
 										aria-label={`View details for ${e.title}`}
 										title="Click for more information"
 									>
