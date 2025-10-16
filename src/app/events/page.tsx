@@ -259,16 +259,31 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 								<div className="relative w-full h-full">
 									<div aria-hidden className="absolute inset-0 rounded-md" style={{ boxShadow: '0 10px 30px rgba(49,100,180,0.12)' }} />
 
-									<article
-										role="listitem"
-										onClick={() => setSelectedEvent(e)}
-										className="relative bg-white rounded-md p-8 w-full h-full flex flex-col cursor-pointer hover:shadow-xl transition-shadow"
-										style={{
-											boxShadow: '0 10px 24px rgba(14,57,106,0.06)',
-											borderTop: '1px solid rgba(14,57,106,0.02)'
+								<article
+									role="listitem"
+									onClick={() => setSelectedEvent(e)}
+									className="relative bg-white rounded-md p-8 w-full h-full flex flex-col cursor-pointer hover:shadow-xl transition-shadow"
+									style={{
+										boxShadow: '0 10px 24px rgba(14,57,106,0.06)',
+										borderTop: '1px solid rgba(14,57,106,0.02)'
+									}}
+								>
+									{/* Info icon in top right corner */}
+									<button
+										onClick={(ev) => {
+											ev.stopPropagation();
+											setSelectedEvent(e);
 										}}
+										className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-800 hover:bg-blue-200 hover:text-blue-900 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 z-10"
+										aria-label={`View details for ${e.title}`}
+										title="Click for more information"
 									>
-										<div className="flex flex-col items-start gap-6">
+										<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+											<path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+										</svg>
+									</button>
+
+									<div className="flex flex-col items-start gap-6">
 											<div className="text-blue-900  text-6xl sm:text-6xl leading-none font-kantumruy text-[#234285]">
 												<div style={{width: '163px', height: '83px'}}><strong>{e.datePrimary}</strong></div>
 												<div style={{width: '163px', height: '83px'}} className="text-4xl mt-3 font-bold font-kantumruy text-[#234285]">{e.dateSecondary}</div>
