@@ -33,7 +33,7 @@ const eventsData = [
 		link: "https://qiskit-fall-fest-ucla.vercel.app",
 	},
 	{
-		datePrimary: "11-13",
+		datePrimary: "10-12",
 		dateSecondary: "November",
 		title: "QuARC 2025",
 		location: "UCLA, CA",
