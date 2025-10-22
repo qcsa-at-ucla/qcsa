@@ -29,9 +29,9 @@ export default function TextAndPhoto({
                 className="absolute inset-0 w-full h-full object-contain opacity-20 pointer-events-none select-none scale-[1.35] translate-y-6 translate-x-1"
               />
               {/* Text */}
-              <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-4 px-4 translate-y-30">
-                <h2 className="relative -top-4 text-[36px] font-bold text-[#234285] -translate-y-2">{title}</h2>
-                <p className="text-base text-[#234285] leading-relaxed font-[Kantumruy] px-12 lg:px-10 -translate-y-4 ">
+              <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-2 sm:space-y-4 px-4 sm:px-8 md:px-12 lg:px-10 h-full -translate-y-8 sm:-translate-y-4">
+                <h2 className="text-[28px] sm:text-[32px] md:text-[36px] font-bold text-[#234285]">{title}</h2>
+                <p className="text-sm sm:text-base text-[#234285] leading-relaxed font-[Kantumruy]">
                   {description}
                 </p>
               </div>

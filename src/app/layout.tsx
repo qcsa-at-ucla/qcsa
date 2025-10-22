@@ -14,14 +14,23 @@ export const metadata: Metadata = {
   title: "QCSA - Quantum Computing Student Association at UCLA",
   description: "The premier quantum science and technology organization at UCLA. Join us in building the quantum future through education, innovation, and community.",
   icons: {
-    icon: "/images/V1_QCSA_Logo-18.png",
-    shortcut: "/images/V1_QCSA_Logo-18.png",
-    apple: "/images/V1_QCSA_Logo-18.png",
+    icon: [
+      { url: "/images/V1_QCSA_Logo-18.png", type: "image/png" },
+    ],
+    shortcut: [{ url: "/images/V1_QCSA_Logo-18.png", type: "image/png" }],
+    apple: [{ url: "/images/V1_QCSA_Logo-18.png", type: "image/png" }],
   },
   openGraph: {
     title: "QCSA - Quantum Computing Student Association at UCLA",
     description: "The premier quantum science and technology organization at UCLA. Join us in building the quantum future through education, innovation, and community.",
-    images: ["/images/V1_QCSA_Logo-18.png"],
+    images: [{
+      url: "/images/V1_QCSA_Logo-18.png",
+      width: 1200,
+      height: 630,
+      alt: "QCSA Logo",
+    }],
+    siteName: "QCSA at UCLA",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
@@ -29,6 +38,7 @@ export const metadata: Metadata = {
     description: "The premier quantum science and technology organization at UCLA. Join us in building the quantum future through education, innovation, and community.",
     images: ["/images/V1_QCSA_Logo-18.png"],
   },
+  metadataBase: new URL("https://qcsa-ucla.org"),
 };
 
 export default function RootLayout({
@@ -39,6 +49,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" type="image/png" href="/images/V1_QCSA_Logo-18.png" />
+        <link rel="apple-touch-icon" href="/images/V1_QCSA_Logo-18.png" />
         <style dangerouslySetInnerHTML={{
           __html: `
             .skip-link {
