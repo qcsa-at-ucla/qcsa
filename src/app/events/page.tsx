@@ -233,7 +233,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 			<MainWebsiteHeader/>
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
 				<h2 className="text-center text-4xl font-semibold text-blue-900 mb-8">
-					Upcoming Fall Quarter Events
+					Fall Quarter Events
 				</h2>
 
 				<div className="relative overflow-visible ">
@@ -397,19 +397,19 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 							sub: 'Are you curious about quantum computing but not sure where to start? Join our workshops every Wednesday from 6pm-8pm in Boelter 2444!',
 						},
 						{
-							img: '/images/Qube.png',
-							title: 'Quantum BioEngineering (QuBE)',
+							img: '/images/qube.png',
+							title: 'Quantum Computing Application in BioChemistry',
 							sub: 'Seminar and workshop on quantum computing applications in biochemistry. Featuring speakers from USC and IBM at CNSI + a Qiskit workshop on modeling solubility.',
 						},
 					].map((s, idx) => (
 						<article key={idx} className="rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow overflow-hidden">
 							<div className="flex flex-col md:flex-row items-stretch">
 								{/* Image pane */}
-								<div className="md:w-1/2 flex-shrink-0 bg-gray-50">
+								<div className="md:w-1/2 flex-shrink-0 ">
 									<Image src={s.img} alt={s.title} width={518} height={368} className="w-full h-full object-cover" />
 								</div>
 								{/* Content pane */}
-								<div className="md:w-1/2 flex flex-col justify-center p-8">
+								<div className="md:w-1/2 flex flex-col justify-center p-8 bg-white">
 									<h3 className="text-3xl font-bold mb-4 font-kantumruy text-[#234285]">{s.title}</h3>
 									<p className="mb-6 text-lg leading-relaxed font-kantumruy text-[#234285]">{s.sub}</p>
 									<div>

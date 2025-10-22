@@ -13,6 +13,22 @@ const kantumruy = Kantumruy_Pro({
 export const metadata: Metadata = {
   title: "QCSA - Quantum Computing Student Association at UCLA",
   description: "The premier quantum science and technology organization at UCLA. Join us in building the quantum future through education, innovation, and community.",
+  icons: {
+    icon: "/images/V1_QCSA_Logo-18.png",
+    shortcut: "/images/V1_QCSA_Logo-18.png",
+    apple: "/images/V1_QCSA_Logo-18.png",
+  },
+  openGraph: {
+    title: "QCSA - Quantum Computing Student Association at UCLA",
+    description: "The premier quantum science and technology organization at UCLA. Join us in building the quantum future through education, innovation, and community.",
+    images: ["/images/V1_QCSA_Logo-18.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "QCSA - Quantum Computing Student Association at UCLA",
+    description: "The premier quantum science and technology organization at UCLA. Join us in building the quantum future through education, innovation, and community.",
+    images: ["/images/V1_QCSA_Logo-18.png"],
+  },
 };
 
 export default function RootLayout({

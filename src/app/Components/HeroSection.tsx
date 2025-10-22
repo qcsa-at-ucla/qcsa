@@ -13,7 +13,7 @@ const HeroSection = () => {
               Quantum Computing Conference
             </div>
             <h2 className="text-2xl md:text-3xl font-kantumruy font-bold" style={{color: '#FFFFFF'}}>
-              QuArc - Quantum Architecture Conference
+              QuARC - Quantum Architecture Conference
             </h2>
             <p className="text-base md:text-lg font-kantumruy max-w-2xl" style={{color: '#F3F8FF'}}>
               Explore a hands-on workshop on quantum compilation & transpilation in quantum computing architecture and connect with leading researchers, industry professionals, and UCLA Professors!

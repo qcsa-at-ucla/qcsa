@@ -14,31 +14,7 @@ export default function ResourcesPage() {
 					Resources
 				</h1>		
 				{/* Mentorship Card */}
-				<div className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)]">
-					<section className="bg-white rounded-lg p-10 shadow-[0_18px_40px_rgba(35,66,133,0.08)] ring-4 ring-[rgba(35,66,133,0.04)]">
-						<div className="flex flex-col lg:flex-row items-center gap-8">
-						{/* Left: Text block */}
-						<div className="lg:w-2/3">
-							<h2 className="text-3xl text-[#234285] font-kantumruy mb-4">Mentorship</h2>
-							<p className="text-[#234285] text-base mb-8">
-								Connect with experienced mentors in quantum computing!
-							</p>
-                                <div>
-                            <Link href="/mentorship" className="inline-block bg-[#234285] text-white px-8 py-3 rounded-md text-lg font-kantumruy shadow-md hover:shadow-lg hover:bg-[#1f3f75] transition">
-									Learn More
-							</Link>
-								</div>
-						</div>
-
-						{/* Right: Image / gradient card */}
-						<div className="lg:w-1/3 flex justify-center lg:justify-end">
-							<div className="w-96 h-64 rounded-md p-6 flex items-center justify-center ">
-								<Image src="/images/quantum_aura.png" alt="mentorship graphic" width={350} height={300} className="object-contain max-w-none" />
-							</div>
-						</div>
-					</div>
-					</section>
-				</div>
+				
 
 
 				{/* QCSA Membership Form - Featured at the top */}
