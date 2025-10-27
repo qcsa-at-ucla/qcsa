@@ -8,31 +8,6 @@ import MainWebsiteHeader from "../Components/mainWebsiteHeader";
 
 const eventsData = [
 	{
-		datePrimary: "22",
-		dateSecondary: "September",
-		title: "QCSA at Enormous Activities Fair",
-		location: "Royce Hall, UCLA, CA",
-		time: "11:00 AM - 2:00 PM",
-		description: "Join us at UCLA's Enormous Activities Fair! Come meet the QCSA team, learn about quantum computing, and discover opportunities to get involved in our community. We'll have information about our workshops, seminars, and upcoming events. Whether you're new to quantum or already passionate about it, we'd love to meet you!",
-	},
-	{
-		datePrimary: "6",
-		dateSecondary: "October",
-		title: "QCSA Fall GM",
-		location: "Mong Auditorium, UCLA, CA",
-		time: "6:00 PM - 8:00 PM",
-		description: "Our Fall General Meeting is the perfect opportunity to learn about QCSA's mission, meet our board members, and connect with fellow quantum enthusiasts. We'll present our plans for the academic year, including workshops, speaker series, hackathons, and collaborative research opportunities!",
-	},
-	{
-		datePrimary: "18-19",
-		dateSecondary: "October",
-		title: "Qiskit Fall Fest",
-		location: "Boelter Hall 8500 + Mong Auditorium, UCLA, CA",
-		time: "All Day Event",
-		description: "Join us for UCLA's Qiskit Fall Fest, a two-day celebration of quantum computing! This event features hands-on workshops with IBM Qiskit, technical talks from industry experts, networking opportunities, and exciting challenges. Whether you're a beginner or experienced quantum developer, there's something for everyone. Prizes and swag will be available!",
-		link: "https://qiskit-fall-fest-ucla.vercel.app",
-	},
-	{
 		datePrimary: "10-12",
 		dateSecondary: "November",
 		title: "QuARC 2025",
@@ -66,6 +41,27 @@ export default function EventsPage() {
 	const [selectedPast, setSelectedPast] = useState<PastEvent | null>(null);
 
 	const pastEvents: PastEvent[] = [
+		{
+			title: 'Qiskit Fall Fest',
+			date: '10/18-19/2025',
+			excerpt: 'UCLA hosted a two-day celebration of quantum computing featuring hands-on workshops with IBM Qiskit, technical talks from industry experts, networking opportunities, and exciting challenges.',
+			href: 'https://qiskit-fall-fest-ucla.vercel.app',
+			content: `UCLA's Qiskit Fall Fest was a two-day celebration of quantum computing! This event featured hands-on workshops with IBM Qiskit, technical talks from industry experts, networking opportunities, and exciting challenges. Whether you were a beginner or experienced quantum developer, there was something for everyone. Prizes and swag were available throughout the event.`,
+		},
+		{
+			title: 'QCSA Fall GM',
+			date: '10/06/2025',
+			excerpt: 'Our Fall General Meeting was the perfect opportunity to learn about QCSA\'s mission, meet our board members, and connect with fellow quantum enthusiasts.',
+			href: '#',
+			content: `Our Fall General Meeting was the perfect opportunity to learn about QCSA's mission, meet our board members, and connect with fellow quantum enthusiasts. We presented our plans for the academic year, including workshops, speaker series, hackathons, and collaborative research opportunities!`,
+		},
+		{
+			title: 'QCSA at Enormous Activities Fair',
+			date: '09/22/2025',
+			excerpt: 'We met students at UCLA\'s Enormous Activities Fair! The QCSA team shared information about quantum computing and opportunities to get involved in our community.',
+			href: '#',
+			content: `We were at UCLA's Enormous Activities Fair! Students came to meet the QCSA team, learn about quantum computing, and discover opportunities to get involved in our community. We shared information about our workshops, seminars, and upcoming events. Whether new to quantum or already passionate about it, students learned about our organization and mission.`,
+		},
 		{
 			title: 'EntangleTalks LA - #2',
 			date: '05/09/2025',
@@ -420,6 +416,8 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 													? '/ucla_caltech'
 													: s.img.includes('ucla_usc.png')
 													? '/ucla_usc'
+													: s.img.includes('qube.png')
+													? '/qube'
 													: '/ucla_acm'
 											}
 										>
