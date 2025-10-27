@@ -259,6 +259,21 @@ export default function Page() {
                         </div>
                     )}
 
+                    {/* QuBE Poster Section */}
+                    <section className="py-8 md:py-16">
+                        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                            <div className="flex justify-center">
+                                <Image 
+                                    src="/images/qube_poster.png" 
+                                    alt="QuBE Event Poster" 
+                                    width={1200} 
+                                    height={1600} 
+                                    className="w-full max-w-xl h-auto rounded-lg shadow-lg" 
+                                />
+                            </div>
+                        </div>
+                    </section>
+
                     {/* Upcoming Events Section */}
                     {UPCOMING_EVENTS.length > 0 && (
                         <section className="py-6 md:py-12">
