@@ -229,7 +229,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 			<MainWebsiteHeader/>
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
 				<h2 className="text-center text-4xl font-semibold text-blue-900 mb-8">
-					Fall Quarter Events
+					Upcoming Events
 				</h2>
 
 				<div className="relative overflow-visible ">
@@ -448,6 +448,20 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 								<h3 id="modal-title" className="text-2xl font-semibold mb-2 font-kantumruy text-[#234285]">{selectedPast.title}</h3>
 								<p className="text-sm text-slate-600 mb-4 font-kantumruy">{selectedPast.date}</p>
 								<div id="modal-content" className="prose max-w-none text-slate-700 font-kantumruy leading-relaxed">{selectedPast.content}</div>
+								
+								{/* Event website link button if available and not just '#' */}
+								{selectedPast.href && selectedPast.href !== '#' && (
+									<div className="mt-6">
+										<a
+											href={selectedPast.href}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="inline-block bg-[#234285] text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-900 text-lg font-semibold transition-colors font-kantumruy"
+										>
+											Visit Event Website →
+										</a>
+									</div>
+								)}
 							</div>
 							<button 
 								className="text-slate-600 hover:text-slate-800 focus:text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 rounded p-2 transition-colors duration-200 flex-shrink-0" 
