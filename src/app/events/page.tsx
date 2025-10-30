@@ -23,6 +23,7 @@ const eventsData = [
 		location: "CNSI, UCLA, CA",
 		time: "All Day Event",
 		description: "Explore the intersection of quantum computing and bioengineering at our QuBE seminar! Featuring speakers from USC and IBM, this event will showcase how quantum algorithms are revolutionizing biochemistry research. Following the talks, join us for a hands-on Qiskit workshop focused on modeling molecular solubility and other bio applications.",
+		link: "/qube",
 	},
 ];
 
