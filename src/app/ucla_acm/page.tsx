@@ -9,6 +9,9 @@ import MainWebsiteHeader from '../Components/mainWebsiteHeader';
 
 const FALL_QUARTER_2025 = [
     { title: 'Week 1: Fall GM', href: 'https://youtu.be/fP2_yKoHhww' },
+    { title: 'Week 2: Quantum Gates, Circuits, Identities, and Quantum Protocols', href: 'https://www.youtube.com/watch?v=U4B3_kf3l6w' },
+    { title: 'Week 3: Deutsch-Josza Algorithm', href: 'https://www.youtube.com/watch?v=Cb2quQh_lXQ' },
+    { title: 'Week 5: Entanglement, Magic & Magic State Distillation', href: 'https://drive.google.com/file/d/1xN6Sx9r-pVAsWhsXVPTpKveF6D-m6MVQ/view?usp=sharing' },
 ];
 
 const PAST_SEMINARS = [
@@ -36,8 +39,9 @@ export default function Page() {
                     <motion.div 
                         className="rounded-md overflow-hidden bg-white"
                         initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
                     >
                         <Image src="/images/workshop_template_2.png" alt="QCSA ACM Workshop" width={820} height={360} className="w-full h-[220px] md:h-[360px] object-cover" />
                     </motion.div>
@@ -45,8 +49,9 @@ export default function Page() {
                     <motion.div 
                         className="prose max-w-xl text-[#234285] text-center md:text-left px-4 md:px-0"
                         initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2, duration: 0.6 }}
                     >
                         <h2 className="text-4xl font-kantumruy ">QCSA x ACM Introductory Workshop</h2>
                         <p className="text-1/2xl mt-4 gap-25">New to quantum? Join our seminar series in collaboration with ACM (Association for Computer Machinery)!
@@ -65,8 +70,9 @@ The series focuses on quantum information science, including quantum computers, 
                 <motion.section 
                     className="py-6 md:py-12"
                     initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6, duration: 0.6 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
                 >
                     <h2 className="text-center text-2xl md:text-3xl font-bold text-[#234285] mb-6 md:mb-8 font-kantumruy">Fall Quarter 2025</h2>
 
@@ -109,8 +115,9 @@ The series focuses on quantum information science, including quantum computers, 
                 <motion.section 
                     className="py-6 md:py-12"
                     initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8, duration: 0.6 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
                 >
                     <h2 className="text-center text-2xl md:text-3xl font-bold text-[#234285] mb-6 md:mb-8 font-kantumruy">Past Seminars</h2>
 
@@ -153,8 +160,9 @@ The series focuses on quantum information science, including quantum computers, 
                 <motion.section 
                     className="py-8 md:py-16"
                     initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.0, duration: 0.6 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
                 >
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-8 md:mb-12">

@@ -53,8 +53,9 @@ export default function UclaUscPage() {
 									<motion.div 
 										className="w-full lg:w-5/12 flex justify-center"
 										initial={{ opacity: 0, x: -50 }}
-										animate={{ opacity: 1, x: 0 }}
-										transition={{ delay: 0.2, duration: 0.6 }}
+										whileInView={{ opacity: 1, x: 0 }}
+										viewport={{ once: true }}
+										transition={{ duration: 0.6 }}
 									>
 										<div className="relative">
 											{/* Aura / glow behind the card */}
@@ -78,8 +79,9 @@ export default function UclaUscPage() {
 						<motion.div 
 							className="w-full lg:w-7/12"
 							initial={{ opacity: 0, x: 50 }}
-							animate={{ opacity: 1, x: 0 }}
-							transition={{ delay: 0.4, duration: 0.6 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							viewport={{ once: true }}
+							transition={{ delay: 0.2, duration: 0.6 }}
 						>
 							<h1 className="text-3xl md:text-4xl font-bold font-kantumruy text-[#234285] mb-6">
 								UCLA x USC
@@ -102,8 +104,9 @@ export default function UclaUscPage() {
 					<motion.section 
 						className="py-12 mt-12"
 						initial={{ opacity: 0, y: 30 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.6, duration: 0.6 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6 }}
 					>
 						<div className="max-w-6xl mx-auto relative">
 							<h2 className="text-4xl md:text-5xl font-bold text-center font-kantumruy text-[#234285] mb-24">

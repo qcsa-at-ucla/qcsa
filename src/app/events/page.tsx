@@ -476,9 +476,9 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 														? '/ucla_caltech'
 														: s.img.includes('ucla_usc.png')
 														? '/ucla_usc'
-														: s.img.includes('Qube.png')
+														: s.img.includes('qube.png')
 														? '/qube'
-														: '/qube'
+														: '/ucla_acm'
 												}
 											>
 												Learn More
