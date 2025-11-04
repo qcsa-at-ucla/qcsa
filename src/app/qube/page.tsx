@@ -135,7 +135,7 @@ export default function Page() {
                                     <div className="md:w-1/2 md:pl-8">
                                         <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
                                             <h3 className="text-xl font-bold text-[#234285] mb-2">1:15 PM – 3:15 PM</h3>
-                                            <p className="text-lg text-[#234285] font-semibold mb-1">Tutorial on PQK</p>
+                                            <p className="text-lg text-[#234285] font-semibold mb-1">Tutorial on Projected Quantum Kernel</p>
                                             <p className="text-base text-[#234285]">By: Meltem Tolunay, IBM</p>
                                         </div>
                                     </div>
