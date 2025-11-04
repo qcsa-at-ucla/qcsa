@@ -95,8 +95,8 @@ export default function Page() {
                                     <div className="md:w-1/2 md:pr-8">
                                         <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
                                             <h3 className="text-xl font-bold text-[#234285] mb-2">10:15 AM – 11:15 PM</h3>
-                                            <p className="text-lg text-[#234285] font-semibold mb-1">Quantum Computing in Biomedicine Lecture</p>
-                                            <p className="text-base text-[#234285]">By: Dr. Sara Capponi</p>
+                                            <p className="text-lg text-[#234285] font-semibold mb-1">Quantum Kernel Methods</p>
+                                            <p className="text-base text-[#234285]">By: Dr. William Munizzi, UCLA Post Doc</p>
                                         </div>
                                     </div>
                                     <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
@@ -110,8 +110,8 @@ export default function Page() {
                                     <div className="md:w-1/2 md:pl-8">
                                         <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
                                             <h3 className="text-xl font-bold text-[#234285] mb-2">11:15 AM - 12:15 PM</h3>
-                                            <p className="text-lg text-[#234285] font-semibold mb-1">Quantum Kernel Methods Lecture</p>
-                                            <p className="text-base text-[#234285]">By: William Munizzi</p>
+                                            <p className="text-lg text-[#234285] font-semibold mb-1">Research Lecture</p>
+                                            <p className="text-base text-[#234285]">By: Sara Capponi, IBM</p>
                                         </div>
                                     </div>
                                 </div>
@@ -135,8 +135,8 @@ export default function Page() {
                                     <div className="md:w-1/2 md:pl-8">
                                         <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
                                             <h3 className="text-xl font-bold text-[#234285] mb-2">1:15 PM – 3:15 PM</h3>
-                                            <p className="text-lg text-[#234285] font-semibold mb-1">Qiskit Workshop on Solubility</p>
-                                            <p className="text-base text-[#234285]">By: Sophy Shin</p>
+                                            <p className="text-lg text-[#234285] font-semibold mb-1">Tutorial on PQK</p>
+                                            <p className="text-base text-[#234285]">By: Meltem Tolunay, IBM</p>
                                         </div>
                                     </div>
                                 </div>
