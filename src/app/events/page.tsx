@@ -5,6 +5,7 @@ import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import Image from 'next/image';
 import Link from 'next/link';
 import MainWebsiteHeader from "../Components/mainWebsiteHeader";
+import { motion } from 'framer-motion';
 
 const eventsData = [
 	{
@@ -229,9 +230,14 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 		<div className="min-h-screen bg-slate-50">
 			<MainWebsiteHeader/>
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-				<h2 className="text-center text-4xl font-semibold text-blue-900 mb-8">
+				<motion.h2 
+					className="text-center text-4xl font-semibold text-blue-900 mb-8"
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
+				>
 					Upcoming Events
-				</h2>
+				</motion.h2>
 
 				<div className="relative overflow-visible ">
 					{/* Left arrow placed outside the cards */}
@@ -251,7 +257,16 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 						aria-label="Upcoming events carousel"
 					>
 						{eventsData.map((e, i) => (
-							<div key={i} className="snap-start flex-shrink-0" style={{ width: '380px', height: '456px' }}>
+							<motion.div 
+								key={i} 
+								className="snap-start flex-shrink-0" 
+								style={{ width: '380px', height: '456px' }}
+								initial={{ opacity: 0, scale: 0.9, y: 20 }}
+								whileInView={{ opacity: 1, scale: 1, y: 0 }}
+								viewport={{ once: true, margin: "-100px" }}
+								transition={{ delay: i * 0.1, duration: 0.5 }}
+								whileHover={{ y: -10, transition: { duration: 0.3 } }}
+							>
 								{/* aura wrapper */}
 								<div className="relative w-full h-full">
 									<div aria-hidden className="absolute inset-0 rounded-md" style={{ boxShadow: '0 10px 30px rgba(49,100,180,0.12)' }} />
@@ -295,7 +310,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 										</div>
 									</article>
 								</div>
-							</div>
+							</motion.div>
 						))}
 					</div>
 
@@ -373,9 +388,16 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 			{/* Signature Events - matches the pasted image layout: stacked cards with image on left and content on right */}
 			<section className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-				<h2 className="text-center text-3xl sm:text-4xl font-semibold mb-8 font-kantumruy text-[#234285]" style={{height: '65px'}}>
+				<motion.h2 
+					className="text-center text-3xl sm:text-4xl font-semibold mb-8 font-kantumruy text-[#234285]" 
+					style={{height: '65px'}}
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, margin: "-100px" }}
+					transition={{ duration: 0.6 }}
+				>
 					Signature Events
-				</h2>
+				</motion.h2>
 				<div className="space-y-8 font-kantumruy text-[#234285]">
 					{[
 						{
@@ -399,35 +421,73 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 							sub: 'Seminar and workshop on quantum computing applications in biochemistry. Featuring speakers from USC and IBM at CNSI + a Qiskit workshop on modeling solubility.',
 						},
 					].map((s, idx) => (
-						<article key={idx} className="rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow overflow-hidden">
+						<motion.article 
+							key={idx} 
+							className="rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow overflow-hidden"
+							initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							viewport={{ once: true, margin: "-100px" }}
+							transition={{ delay: idx * 0.1, duration: 0.6 }}
+							whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+						>
 							<div className="flex flex-col md:flex-row items-stretch">
 								{/* Image pane */}
-								<div className="md:w-1/2 flex-shrink-0 ">
+								<motion.div 
+									className="md:w-1/2 flex-shrink-0 "
+									whileHover={{ scale: 1.05 }}
+									transition={{ duration: 0.3 }}
+								>
 									<Image src={s.img} alt={s.title} width={518} height={368} className="w-full h-full object-cover" />
-								</div>
+								</motion.div>
 								{/* Content pane */}
 								<div className="md:w-1/2 flex flex-col justify-center p-8 bg-white">
-									<h3 className="text-3xl font-bold mb-4 font-kantumruy text-[#234285]">{s.title}</h3>
-									<p className="mb-6 text-lg leading-relaxed font-kantumruy text-[#234285]">{s.sub}</p>
-									<div>
-										<Link
-											className="inline-block bg-[#234285] text-white px-6 py-3 rounded-sm shadow-md hover:bg-blue-900 text-lg font-bold transition-colors"
-											href={
-												s.img.includes('ucla_caltech.png')
-													? '/ucla_caltech'
-													: s.img.includes('ucla_usc.png')
-													? '/ucla_usc'
-													: s.img.includes('Qube.png')
-													? '/qube'
-													: '/qube'
-											}
+									<motion.h3 
+										className="text-3xl font-bold mb-4 font-kantumruy text-[#234285]"
+										initial={{ opacity: 0, y: 20 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										viewport={{ once: true }}
+										transition={{ delay: idx * 0.1 + 0.2, duration: 0.5 }}
+									>
+										{s.title}
+									</motion.h3>
+									<motion.p 
+										className="mb-6 text-lg leading-relaxed font-kantumruy text-[#234285]"
+										initial={{ opacity: 0, y: 20 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										viewport={{ once: true }}
+										transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
+									>
+										{s.sub}
+									</motion.p>
+									<motion.div
+										initial={{ opacity: 0, scale: 0.9 }}
+										whileInView={{ opacity: 1, scale: 1 }}
+										viewport={{ once: true }}
+										transition={{ delay: idx * 0.1 + 0.4, duration: 0.4 }}
+									>
+										<motion.div
+											whileHover={{ scale: 1.05 }}
+											whileTap={{ scale: 0.95 }}
 										>
-											Learn More
-										</Link>
-									</div>
+											<Link
+												className="inline-block bg-[#234285] text-white px-6 py-3 rounded-sm shadow-md hover:bg-blue-900 text-lg font-bold transition-colors"
+												href={
+													s.img.includes('ucla_caltech.png')
+														? '/ucla_caltech'
+														: s.img.includes('ucla_usc.png')
+														? '/ucla_usc'
+														: s.img.includes('Qube.png')
+														? '/qube'
+														: '/qube'
+												}
+											>
+												Learn More
+											</Link>
+										</motion.div>
+									</motion.div>
 								</div>
 							</div>
-						</article>
+						</motion.article>
 					))}
 				</div>
 			</section>
@@ -480,8 +540,23 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 			{/* Event Calendar - embedded Google Calendar and .ics download */}
 			<section className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-				<h2 className="text-center text-4xl font-bold mb-6 font-kantumruy text-[#234285]">Event Calendar</h2>
-				<div className="bg-white rounded-lg shadow-lg p-6" style={{ boxShadow: '0 8px 24px rgba(14,57,106,0.06)', border: '1px solid rgba(14,57,106,0.06)' }}>
+				<motion.h2 
+					className="text-center text-4xl font-bold mb-6 font-kantumruy text-[#234285]"
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, margin: "-100px" }}
+					transition={{ duration: 0.6 }}
+				>
+					Event Calendar
+				</motion.h2>
+				<motion.div 
+					className="bg-white rounded-lg shadow-lg p-6" 
+					style={{ boxShadow: '0 8px 24px rgba(14,57,106,0.06)', border: '1px solid rgba(14,57,106,0.06)' }}
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ delay: 0.2, duration: 0.6 }}
+				>
 					{/* <p className="text-center text-slate-600 mb-4">Browse our calendar below. You can subscribe or download the .ics file for your calendar app.</p> */}
 					<div className="flex flex-col md:flex-row gap-4 items-start">
 						<div className="w-full md:flex-1">
@@ -520,38 +595,76 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 							</div>
 						</div> */}
 					</div>
-				</div>
+				</motion.div>
 			</section>
             <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-				<h2 className="text-center text-4xl font-bold mb-6 font-kantumruy text-[#234285]">Gallery</h2>
+				<motion.h2 
+					className="text-center text-4xl font-bold mb-6 font-kantumruy text-[#234285]"
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, margin: "-100px" }}
+					transition={{ duration: 0.6 }}
+				>
+					Gallery
+				</motion.h2>
 
 				{/* Thumbnails grid */}
 				<div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
 					{/* Top row: first five thumbnails */}
 					{['/images/gallery1.png','/images/gallery2.png','/images/gallery3.png'].map((src, i) => (
-						<div key={i} className="overflow-hidden rounded-lg bg-white shadow-sm">
+						<motion.div 
+							key={i} 
+							className="overflow-hidden rounded-lg bg-white shadow-sm"
+							initial={{ opacity: 0, scale: 0.8, y: 30 }}
+							whileInView={{ opacity: 1, scale: 1, y: 0 }}
+							viewport={{ once: true, margin: "-50px" }}
+							transition={{ delay: i * 0.1, duration: 0.5 }}
+							whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+						>
 							<Image src={src} alt={`Gallery ${i+1}`} width={1200} height={800} className="w-full h-48 sm:h-44 md:h-56 object-cover" loading="lazy" />
-						</div>
+						</motion.div>
 					))}
 
 					{/* Bottom row: two larger thumbnails */}
-					<div className="overflow-hidden rounded-lg bg-white shadow-sm sm:col-span-2">
+					<motion.div 
+						className="overflow-hidden rounded-lg bg-white shadow-sm sm:col-span-2"
+						initial={{ opacity: 0, scale: 0.8, y: 30 }}
+						whileInView={{ opacity: 1, scale: 1, y: 0 }}
+						viewport={{ once: true, margin: "-50px" }}
+						transition={{ delay: 0.3, duration: 0.5 }}
+						whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+					>
 						<Image src={'/images/gallery4.png'} alt={'Gallery 4'} width={800} height={900} className="w-full h-64 md:h-80 object-cover" loading="lazy" />
-					</div>
+					</motion.div>
 
-					<div className="overflow-hidden rounded-lg bg-white shadow-sm">
+					<motion.div 
+						className="overflow-hidden rounded-lg bg-white shadow-sm"
+						initial={{ opacity: 0, scale: 0.8, y: 30 }}
+						whileInView={{ opacity: 1, scale: 1, y: 0 }}
+						viewport={{ once: true, margin: "-50px" }}
+						transition={{ delay: 0.4, duration: 0.5 }}
+						whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+					>
 						<Image src={'/images/gallery5.png'} alt={'Gallery 5'} width={800} height={600} className="w-full h-64 md:h-80 object-cover" loading="lazy" />
-					</div>
+					</motion.div>
 				</div>
 
-				<div className="mt-8 flex justify-center">
-					<button
+				<motion.div 
+					className="mt-8 flex justify-center"
+					initial={{ opacity: 0, scale: 0.9 }}
+					whileInView={{ opacity: 1, scale: 1 }}
+					viewport={{ once: true }}
+					transition={{ delay: 0.5, duration: 0.5 }}
+				>
+					<motion.button
 						className="bg-[#234285] text-white px-8 py-3 rounded-sm shadow-md font-bold font-kantumruy text-2xl font-kantumruy transition-colors"
 						onClick={() => setModalOpen(true)}
+						whileHover={{ scale: 1.05 }}
+						whileTap={{ scale: 0.95 }}
 					>
 						Show All
-					</button>
-				</div>
+					</motion.button>
+				</motion.div>
 			</section>
 
 			{/* Lightbox modal (grid of larger images) */}
@@ -575,7 +688,15 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 			{/* Past Events carousel (placed after gallery) */}
 			<section className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-				<h2 className="text-center text-4xl font-kantumruy text-blue-900 mb-8">Past Events</h2>
+				<motion.h2 
+					className="text-center text-4xl font-kantumruy text-blue-900 mb-8"
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, margin: "-100px" }}
+					transition={{ duration: 0.6 }}
+				>
+					Past Events
+				</motion.h2>
 
 				<div className="relative">
 					<button
@@ -588,7 +709,16 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 
 					<div ref={pastRef} className="flex gap-4 sm:gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth py-6 px-2 sm:px-6 md:px-0" role="list" aria-label="Past events carousel">
 						{pastEvents.map((p, idx) => (
-							<div key={idx} className="snap-start flex-shrink-0 w-72 sm:w-80 md:w-[297px]" style={{ height: '327px' }}>
+							<motion.div 
+								key={idx} 
+								className="snap-start flex-shrink-0 w-72 sm:w-80 md:w-[297px]" 
+								style={{ height: '327px' }}
+								initial={{ opacity: 0, scale: 0.9, y: 20 }}
+								whileInView={{ opacity: 1, scale: 1, y: 0 }}
+								viewport={{ once: true, margin: "-50px" }}
+								transition={{ delay: Math.min(idx * 0.05, 0.5), duration: 0.5 }}
+								whileHover={{ y: -10, scale: 1.02, transition: { duration: 0.3 } }}
+							>
 								<div className="relative w-full h-full">
 									{/* light blue aura */}
 									<div aria-hidden className="absolute inset-0 rounded-md" style={{ boxShadow: '0 10px 30px rgba(49,100,180,0.12)' }} />
@@ -597,17 +727,19 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 										<p className="text-sm text-slate-600 mb-2 font-kantumruy text-[#234285]">{p.date}</p>
 										<p className="mb-4 font-kantumruy text-[#234285] text-sm flex-grow leading-relaxed break-words overflow-hidden">{p.excerpt}</p>
 										<div className="mt-auto flex justify-start items-end flex-shrink-0">
-											<button 
+											<motion.button 
 												onClick={() => setSelectedPast(p)} 
 												className="text-blue-800 hover:text-blue-900 focus:text-blue-900 underline text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 rounded px-1"
 												aria-label={`Read more about ${p.title}`}
+												whileHover={{ scale: 1.1 }}
+												whileTap={{ scale: 0.95 }}
 											>
 												Read More
-											</button>
+											</motion.button>
 										</div>
 									</article>
 								</div>
-							</div>
+							</motion.div>
 						))}
 					</div>
 

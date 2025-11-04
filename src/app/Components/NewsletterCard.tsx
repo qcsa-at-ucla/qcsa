@@ -24,7 +24,7 @@ type Props = {
             <div className = 'flex justify-center'>
                 <a
                 href={href}
-                className="mt-6 inline-flex items-center justify-center rounded-sm bg-main px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-main/60"
+                className="mt-6 inline-flex items-center justify-center rounded-sm bg-main px-4 py-2 text-sm font-kantumruy  shadow-sm transition hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-main/60"
                 >
                 Read More
                 </a>

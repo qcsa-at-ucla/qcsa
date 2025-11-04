@@ -2,14 +2,28 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function MainWebsiteFooter() {
   return (
-    <footer id="footer" className="bg-gradient-to-t from-blue-300 to-blue-100 py-16 px-4 sm:px-6 lg:px-8">
+    <motion.footer 
+      id="footer" 
+      className="bg-gradient-to-t from-blue-300 to-blue-100 py-16 px-4 sm:px-6 lg:px-8"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
           
           {/* Left side - QCSA Logo */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
             <Link href="/" aria-label="Go to homepage" className="flex-shrink-0">
             <div className="w-40 h-24 flex items-center justify-center">
               <Image
@@ -23,9 +37,16 @@ export default function MainWebsiteFooter() {
               />
             </div>
             </Link>
+            </motion.div>
 
           {/* Center - Social Media Icons */}
-          <div className="flex items-center space-x-6">
+          <motion.div 
+            className="flex items-center space-x-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
             {/* Instagram */}
             <Link href="https://www.instagram.com/uclaqcsa" target="_blank" rel="noopener noreferrer" aria-label="Visit QCSA Instagram page (opens in new tab)" className="text-gray-700 hover:text-gray-900 transition-colors">
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" role="img" aria-hidden="true">
@@ -72,10 +93,16 @@ export default function MainWebsiteFooter() {
                 className="object-contain opacity-70 hover:opacity-100 transition-opacity"
               />
             </Link>
-          </div>
+          </motion.div>
 
           {/* Right side - UCLA CQSE Logo */}
-          <div className="flex-shrink-0">
+          <motion.div 
+            className="flex-shrink-0"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
           <Link 
             href="https://cqse.ucla.edu" 
             target="_blank" 
@@ -92,10 +119,10 @@ export default function MainWebsiteFooter() {
               </div>
             </div>
             </Link>
-          </div>
+          </motion.div>
 
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -32,11 +33,21 @@ export default function Page() {
             <main className="py-20 px-6 sm:px-8 lg:px-16 flex-grow">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-center py-6 md:py-12">
-                    <div className="rounded-md overflow-hidden bg-white">
+                    <motion.div 
+                        className="rounded-md overflow-hidden bg-white"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2, duration: 0.6 }}
+                    >
                         <Image src="/images/workshop_template_2.png" alt="QCSA ACM Workshop" width={820} height={360} className="w-full h-[220px] md:h-[360px] object-cover" />
-                    </div>
+                    </motion.div>
 
-                    <div className="prose max-w-xl text-[#234285] text-center md:text-left px-4 md:px-0">
+                    <motion.div 
+                        className="prose max-w-xl text-[#234285] text-center md:text-left px-4 md:px-0"
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4, duration: 0.6 }}
+                    >
                         <h2 className="text-4xl font-kantumruy ">QCSA x ACM Introductory Workshop</h2>
                         <p className="text-1/2xl mt-4 gap-25">New to quantum? Join our seminar series in collaboration with ACM (Association for Computer Machinery)!
 The series focuses on quantum information science, including quantum computers, sensors, and algorithms. This collaboration brings you an accessible introduction to this revolutionary field. No prior experience needed—our approach emphasizes intuitive understanding with hands-on projects throughout the series.What you’ll explore:</p>
@@ -47,11 +58,16 @@ The series focuses on quantum information science, including quantum computers, 
                             <li>Practical quantum algorithms with Qiskit implementation</li>
                             <li>Current landscape of cutting-edge quantum technologies</li>
                         </ul>
-                    </div>
+                    </motion.div>
                 </section>
 
                 {/* Fall Quarter 2025 */}
-                <section className="py-6 md:py-12">
+                <motion.section 
+                    className="py-6 md:py-12"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6, duration: 0.6 }}
+                >
                     <h2 className="text-center text-2xl md:text-3xl font-bold text-[#234285] mb-6 md:mb-8 font-kantumruy">Fall Quarter 2025</h2>
 
                     <div className="relative">
@@ -87,10 +103,15 @@ The series focuses on quantum information science, including quantum computers, 
                             <span className="text-4xl md:text-6xl">›</span>
                         </button>
                     </div>
-                </section>
+                </motion.section>
 
                 {/* Past Seminars */}
-                <section className="py-6 md:py-12">
+                <motion.section 
+                    className="py-6 md:py-12"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                >
                     <h2 className="text-center text-2xl md:text-3xl font-bold text-[#234285] mb-6 md:mb-8 font-kantumruy">Past Seminars</h2>
 
                     <div className="relative">
@@ -126,10 +147,15 @@ The series focuses on quantum information science, including quantum computers, 
                             <span className="text-4xl md:text-6xl">›</span>
                         </button>
                     </div>
-                </section>
+                </motion.section>
 
                 {/* RSVP Section */}
-                <section className="py-8 md:py-16">
+                <motion.section 
+                    className="py-8 md:py-16"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.0, duration: 0.6 }}
+                >
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-8 md:mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold text-[#234285] mb-4 font-kantumruy">
@@ -203,7 +229,7 @@ The series focuses on quantum information science, including quantum computers, 
                             </div>
                         </div>
                     </div>
-                </section>
+                </motion.section>
                 
             </div>
 </main>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -37,7 +38,12 @@ export default function Page() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     {/* Hero Section */}
                     <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-center py-6 md:py-12">
-                        <div className="rounded-md overflow-hidden bg-white">
+                        <motion.div 
+                            className="rounded-md overflow-hidden bg-white"
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.2, duration: 0.6 }}
+                        >
                             <Image 
                                 src="/images/qube.png" 
                                 alt="QuBE - Quantum Computing Applications in BioChemistry" 
@@ -45,19 +51,31 @@ export default function Page() {
                                 height={360} 
                                 className="w-full h-[220px] md:h-[360px] object-cover" 
                             />
-                        </div>
+                        </motion.div>
 
-                        <div className="prose max-w-xl text-[#234285] text-center md:text-left px-4 md:px-0">
+                        <motion.div 
+                            className="prose max-w-xl text-[#234285] text-center md:text-left px-4 md:px-0"
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.4, duration: 0.6 }}
+                        >
                             <h2 className="text-4xl font-kantumruy text-[#234285]">QuBE - Quantum Computing Applications in BioChemistry</h2>
                             <p className="text-lg mt-4 font-kantumruy text-[#234285]">
                                 Seminar and workshop on quantum computing applications in biochemistry. Features speakers from IBM, USC, and UCLA and includes lectures as well as a workshop and project. Hosted at CNSI with online participation as an option!
                             </p>
-                        </div>
+                        </motion.div>
                     </section>
 
                     {/* Event Schedule Section */}
                     <section className="py-12 md:py-16">
-                        <h2 className="text-center text-3xl md:text-4xl font-bold text-[#234285] mb-12 font-kantumruy">Event Schedule</h2>
+                        <motion.h2 
+                            className="text-center text-3xl md:text-4xl font-bold text-[#234285] mb-12 font-kantumruy"
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6, duration: 0.6 }}
+                        >
+                            Event Schedule
+                        </motion.h2>
                         
                         <div className="max-w-4xl mx-auto relative">
                             {/* Timeline line */}

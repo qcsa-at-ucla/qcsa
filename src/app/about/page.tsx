@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import MainWebsiteHeader from '../Components/mainWebsiteHeader';
+import { motion } from 'framer-motion';
 
 // Define types for team members
 interface TeamMember {
@@ -240,7 +241,12 @@ export default function AboutPage() {
       <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-            <div className="relative w-full max-w-[800px] h-[400px] sm:h-[500px] lg:h-[700px] lg:w-1/2">
+            <motion.div 
+              className="relative w-full max-w-[800px] h-[400px] sm:h-[500px] lg:h-[700px] lg:w-1/2"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               <Image
                   src="/images/aura.png"
                   alt=""
@@ -253,16 +259,35 @@ export default function AboutPage() {
               {/* Optional overlay for better text readability */}
               <div className="absolute inset-0 bg-opacity-20 rounded-lg"></div>
               <div className="relative z-10 text-center flex flex-col justify-center h-full px-4 sm:px-6">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl text-[#234285] mb-4 sm:mb-6 lg:mb-8 font-kantumruy drop-shadow-lg">
+                <motion.h1 
+                  className="text-2xl sm:text-3xl lg:text-4xl text-[#234285] mb-4 sm:mb-6 lg:mb-8 font-kantumruy drop-shadow-lg"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.6 }}
+                >
                   Mission Statement
-                </h1>
-                <div className="text-base sm:text-lg lg:text-xl text-[#234285] leading-relaxed font-kantumruy space-y-4 drop-shadow-lg">
+                </motion.h1>
+                <motion.div 
+                  className="text-base sm:text-lg lg:text-xl text-[#234285] leading-relaxed font-kantumruy space-y-4 drop-shadow-lg"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7, duration: 0.6 }}
+                >
                   <p className="text-center max-w-2xl mx-auto">We want to empower the next generation of students through hands-on learning, collaboration, and prepare them to lead in the field of quantum computing.</p>
-                </div>
+                </motion.div>
               </div>
-            </div>
-            <div className="w-full max-w-[450px] lg:w-1/2">
-              <div className="relative w-full aspect-square max-w-[450px] mx-auto bg-white rounded-lg flex items-center justify-center qcsa-aura">
+            </motion.div>
+            <motion.div 
+              className="w-full max-w-[450px] lg:w-1/2"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <motion.div 
+                className="relative w-full aspect-square max-w-[450px] mx-auto bg-white rounded-lg flex items-center justify-center qcsa-aura"
+                whileHover={{ scale: 1.05, rotate: 5 }}
+                transition={{ duration: 0.3 }}
+              >
                 {/* light-blue aura behind the logo
                 <div aria-hidden="true" className="absolute -inset-6 rounded-full bg-[#BEE8FF] opacity-60 blur-3xl z-0" /> */}
 
@@ -274,8 +299,8 @@ export default function AboutPage() {
                   className="relative z-10 object-contain w-full h-auto max-w-[300px] sm:max-w-[350px] lg:max-w-[400px]"
                   onError={(e) => { e.currentTarget.src = '/images/placeholder-logo.jpg'; }}
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -283,12 +308,25 @@ export default function AboutPage() {
       {/* Values Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
             Values
-          </h2>
+          </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Collaboration */}
-            <div className="bg-white rounded-lg p-8 shadow-lg">
+            <motion.div 
+              className="bg-white rounded-lg p-8 shadow-lg"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: 0, duration: 0.6 }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+            >
               <div className="text-center mb-6">
                 <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <svg width="67" height="55" viewBox="0 0 67 55" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -305,10 +343,17 @@ export default function AboutPage() {
                 We believe that progress in quantum computing comes from interdisciplinary teamwork. QCSA 
                 fosters a supportive community that brings together students, researchers, and industry leaders.
               </p>
-            </div>
+            </motion.div>
 
             {/* Educate */}
-            <div className="bg-white rounded-lg p-8 shadow-lg">
+            <motion.div 
+              className="bg-white rounded-lg p-8 shadow-lg"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+            >
               <div className="text-center mb-6">
                 <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
                  <svg width="67" height="55" viewBox="0 0 67 55" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
@@ -325,10 +370,17 @@ export default function AboutPage() {
                 We are committed to making quantum computing accessible to all students. Through workshops, 
                 talks, and hands-on learning, we help break down complex topics and spark curiosity.
               </p>
-            </div>
+            </motion.div>
 
             {/* Innovation */}
-            <div className="bg-white rounded-lg p-8 shadow-lg relative">
+            <motion.div 
+              className="bg-white rounded-lg p-8 shadow-lg relative"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+            >
               {/* <div className="absolute top-4 right-4 bg-purple-600 text-white text-xs px-2 py-1 rounded-full">
                 QCSA
               </div> */}
@@ -359,7 +411,7 @@ export default function AboutPage() {
                 QCSA encourages creative problem-solving and forward thinking. We empower students to
                 explore new ideas, contribute to cutting-edge research, and shape the future.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -367,11 +419,23 @@ export default function AboutPage() {
       {/* CQSE Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16 font-kantumruy">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16 font-kantumruy"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             CQSE
-          </h2>
+          </motion.h2>
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
+            <motion.div 
+              className="lg:w-1/2"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
               <div className="w-full h-80 bg-gradient-to-br from-blue-100 to-blue-300 rounded-lg flex items-center justify-center">
                 <Image
                   src={"/images/CQSE LOGO.png"}
@@ -384,8 +448,14 @@ export default function AboutPage() {
                   }}
                 />
               </div>
-            </div>
-            <div className="lg:w-1/2">
+            </motion.div>
+            <motion.div 
+              className="lg:w-1/2"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
               <h3 className="text-3xl font text-[#234285]  mb-6 font-kantumruy">Who is CQSE?</h3>
               <p className="text-lg text-[#234285] mb-8 leading-relaxed font-kantumruy">
                 The Center for Quantum Science and Engineering (CQSE) leads UCLA&apos;s research and education in 
@@ -395,7 +465,7 @@ export default function AboutPage() {
               <button className="bg-[#234285] text-white px-8 py-3 rounded text-lg font-medium hover:bg-blue-700 transition-colors duration-200 font-kantumruy">
                 <a href="https://www.cqse.ucla.edu/" target="_blank" rel="noopener noreferrer" className="block w-full h-full">Learn More</a>
               </button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -403,17 +473,28 @@ export default function AboutPage() {
       {/* Meet the Team Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16 font-kantumruy">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16 font-kantumruy"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             Meet the Team
-          </h2>
+          </motion.h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 font-kantumruy">
-            {boardMembers.map((member) => (
-              <div
+            {boardMembers.map((member, index) => (
+              <motion.div
                 key={member.id} 
                 className="relative group cursor-pointer"
                 onMouseEnter={() => !isMobile && setHoveredMember(member.id)}
                 onMouseLeave={() => !isMobile && setHoveredMember(null)}
                 onClick={() => handleMemberClick(member)}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05, duration: 0.5 }}
+                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
               >
                 
                 <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105">
@@ -477,7 +558,7 @@ export default function AboutPage() {
                     </div>
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -486,18 +567,29 @@ export default function AboutPage() {
       {/* Faculty Leadership Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16 font-kantumruy">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold text-[#234285] text-center mb-16 font-kantumruy"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             Faculty Leadership
-          </h2>
+          </motion.h2>
             {facultyLeadership.length === 1 ? (
               <div className="flex justify-center">
                 {facultyLeadership.map((faculty) => (
-                  <div
+                  <motion.div
                     key={faculty.id}
                     className="relative group cursor-pointer w-full max-w-sm"
                     onMouseEnter={() => !isMobile && setHoveredMember(faculty.id)}
                     onMouseLeave={() => !isMobile && setHoveredMember(null)}
                     onClick={() => handleMemberClick(faculty)}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2, duration: 0.6 }}
+                    whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                   >
                     <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105">
                       <div className="w-full h-64 bg-gray-200 flex items-center justify-center overflow-hidden relative">
@@ -558,18 +650,23 @@ export default function AboutPage() {
                         </div>
                       </div>
                     )}
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 font-kantumruy justify-items-center">
-                {facultyLeadership.map((faculty) => (
-                  <div
+                {facultyLeadership.map((faculty, index) => (
+                  <motion.div
                     key={faculty.id}
                     className="relative group cursor-pointer w-full max-w-sm"
                     onMouseEnter={() => !isMobile && setHoveredMember(faculty.id)}
                     onMouseLeave={() => !isMobile && setHoveredMember(null)}
                     onClick={() => handleMemberClick(faculty)}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + (index * 0.1), duration: 0.6 }}
+                    whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                   >
                     <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105">
                       <div className="w-full h-64 bg-gray-200 flex items-center justify-center overflow-hidden relative">
@@ -630,7 +727,7 @@ export default function AboutPage() {
                         </div>
                       </div>
                     )}
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             )}
@@ -639,7 +736,7 @@ export default function AboutPage() {
 
       {/* Mobile Bio Modal */}
       {isMobile && selectedMember && (
-        <div 
+        <motion.div 
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60" 
           onClick={() => setSelectedMember(null)} 
           style={{ backdropFilter: 'blur(2px)'}}
@@ -647,8 +744,19 @@ export default function AboutPage() {
           aria-modal="true"
           aria-labelledby="modal-title"
           aria-describedby="modal-content"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
         >
-          <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-auto p-6" onClick={(e) => e.stopPropagation()}>
+          <motion.div 
+            className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-auto p-6" 
+            onClick={(e) => e.stopPropagation()}
+            initial={{ scale: 0.9, y: 20 }}
+            animate={{ scale: 1, y: 0 }}
+            exit={{ scale: 0.9, y: 20 }}
+            transition={{ duration: 0.3 }}
+          >
             <div className="flex items-start justify-between gap-4 mb-4">
               <div className="flex items-start gap-4 flex-1">
                 <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
@@ -693,8 +801,8 @@ export default function AboutPage() {
                 </button>
               </div>
             )}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
 
       </main>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import MainWebsiteHeader from "../Components/mainWebsiteHeader";
@@ -82,11 +83,22 @@ export default function QuantumClassesPage() {
 		<div className="min-h-screen bg-[#F8FAFF] flex flex-col font-kantumruy ">
 			<MainWebsiteHeader/>
 			<main className="w-full max-w-6xl mx-auto px-6 py-16">
-				<h1 className="text-center text-3xl sm:text-4xl font-bold text-[#173a73] mb-8 font-kantumruy text-[#234285]">
+				<motion.h1 
+					className="text-center text-3xl sm:text-4xl font-bold text-[#173a73] mb-8 font-kantumruy text-[#234285]"
+					initial={{ opacity: 0, y: -20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
+				>
 					Quantum Classes at UCLA
-				</h1>
+				</motion.h1>
 
-				<section className="bg-white rounded-lg shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24 p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+				<motion.section 
+					className="bg-white rounded-lg shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24 p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.2, duration: 0.6 }}
+					whileHover={{ scale: 1.01, transition: { duration: 0.3 } }}
+				>
 					<div className="md:col-span-2">
 						<h3 className="text-3xl text-[#234285] font-bold mb-6 ">Quantum Mechanics</h3>
 
@@ -154,10 +166,16 @@ export default function QuantumClassesPage() {
 						</div>
 									
 					</aside>
-				</section>
+				</motion.section>
 
 					{/* Quantum Information Theory */}
-					<section className="bg-white rounded-lg shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24 p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+					<motion.section 
+						className="bg-white rounded-lg shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24 p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
+						initial={{ opacity: 0, y: 30 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.4, duration: 0.6 }}
+						whileHover={{ scale: 1.01, transition: { duration: 0.3 } }}
+					>
 						<div className="md:col-span-2">
 							<h3 className="text-3xl text-[#234285] font-bold mb-6 ">Quantum Information Theory</h3>
 
@@ -226,10 +244,16 @@ export default function QuantumClassesPage() {
 						</div>
 									
 					</aside>
-					</section>
+					</motion.section>
 
 					{/* AMO Physics / Quantum Optics */}
-					<section className="bg-white rounded-lg shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24 p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+					<motion.section 
+						className="bg-white rounded-lg shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24 p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
+						initial={{ opacity: 0, y: 30 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.6, duration: 0.6 }}
+						whileHover={{ scale: 1.01, transition: { duration: 0.3 } }}
+					>
 						<div className="md:col-span-2">
 							<h3 className="text-3xl text-[#234285] font-bold mb-6 ">AMO Physics / Quantum Optics</h3>
 
@@ -298,10 +322,16 @@ export default function QuantumClassesPage() {
 						</div>
 									
 					</aside>
-					</section>
+					</motion.section>
 
 				{/* Solid State Physics */}
-				<section className="bg-white rounded-lg shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24 p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+				<motion.section 
+					className="bg-white rounded-lg shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24 p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.8, duration: 0.6 }}
+					whileHover={{ scale: 1.01, transition: { duration: 0.3 } }}
+				>
 					<div className="md:col-span-2">
 						<h3 className="text-3xl text-[#234285] font-bold mb-6 ">Solid State Physics</h3>
 
@@ -370,10 +400,16 @@ export default function QuantumClassesPage() {
 						</div>
 									
 					</aside>
-				</section>
+				</motion.section>
 
 				{/* Device Design and Fabrication */}
-				<section className="bg-white rounded-lg shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24 p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+				<motion.section 
+					className="bg-white rounded-lg shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24 p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 1.0, duration: 0.6 }}
+					whileHover={{ scale: 1.01, transition: { duration: 0.3 } }}
+				>
 					<div className="md:col-span-2">
 						<h3 className="text-3xl text-[#234285] font-bold mb-6 ">Device Design and Fabrication</h3>
 
@@ -442,7 +478,7 @@ export default function QuantumClassesPage() {
 						</div>
 									
 					</aside>
-				</section>
+				</motion.section>
 
                             
 			</main>

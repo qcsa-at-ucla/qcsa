@@ -4,15 +4,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import MainWebsiteHeader from '../Components/mainWebsiteHeader';
+import { motion } from 'framer-motion';
 
 export default function ResourcesPage() {
 	return (
 		<div className="min-h-screen bg-[#F3F8FF]">
 			<MainWebsiteHeader/>
 			<main id="main-content" className="max-w-6xl mx-auto px-6">
-				<h1 className="text-4xl font-kantumruy font-bold text-[#234285] text-center mb-12 pt-24">
+				<motion.h1 
+					className="text-4xl font-kantumruy font-bold text-[#234285] text-center mb-12 pt-24"
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
+				>
 					Resources
-				</h1>		
+				</motion.h1>		
 				{/* Mentorship Card */}
 				
 
@@ -57,7 +63,13 @@ export default function ResourcesPage() {
 				</div> */}
 
 				{/* wrapper adds a subtle light-blue neon aura around the card without changing its size */}
-				<div className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24">
+				<motion.div 
+					className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24"
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.2, duration: 0.6 }}
+					whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+				>
 					<section className="bg-white rounded-lg p-10 shadow-[0_18px_40px_rgba(35,66,133,0.08)] ring-4 ring-[rgba(35,66,133,0.04)]">
 						<div className="flex flex-col lg:flex-row items-center gap-8">
 						{/* Left: Text block */}
@@ -83,10 +95,16 @@ export default function ResourcesPage() {
 					</div>
 					</section>
 
-				</div>
+				</motion.div>
 
 
-				<div className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24">
+				<motion.div 
+					className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24"
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.4, duration: 0.6 }}
+					whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+				>
 					<section className="bg-white rounded-lg p-10 shadow-[0_18px_40px_rgba(35,66,133,0.08)] ring-4 ring-[rgba(35,66,133,0.04)]">
 						<div className="flex flex-col lg:flex-row items-center gap-8">
 						{/* Left: Text block */}
@@ -112,9 +130,15 @@ export default function ResourcesPage() {
 					</div>
 					</section>
 
-				</div>
+				</motion.div>
 
-				<div className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24">
+				<motion.div 
+					className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24"
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.6, duration: 0.6 }}
+					whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+				>
 					<section className="bg-white rounded-lg p-10 shadow-[0_18px_40px_rgba(35,66,133,0.08)] ring-4 ring-[rgba(35,66,133,0.04)]">
 						<div className="flex flex-col lg:flex-row items-center gap-8">
 						{/* Left: Text block */}
@@ -140,7 +164,7 @@ export default function ResourcesPage() {
 					</div>
 					</section>
 
-				</div>
+				</motion.div>
 
                 
 			</main>

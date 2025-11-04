@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import Image from 'next/image';
 import MainWebsiteHeader from '../Components/mainWebsiteHeader';
@@ -38,7 +39,12 @@ export default function Page() {
             <div className="max-w-6xl mx-auto px-4 md:px-6" >
                 <section className="flex flex-col md:flex-row items-center md:gap-12" style={{width: 'auto', maxWidth: '1551px', height: 'auto', minHeight: '816px'}}>
                     {/* Left: Image card */}
-                    <div className="flex-shrink-0 w-full md:w-auto">
+                    <motion.div 
+                        className="flex-shrink-0 w-full md:w-auto"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2, duration: 0.6 }}
+                    >
                         <div className="w-full max-w-[320px] mx-auto md:w-[420px] h-auto md:max-w-none" style={{width: '491px', height: '334px'}}>
                             <Image
                                 src="/images/ucla_caltech.png"
@@ -48,10 +54,15 @@ export default function Page() {
                                 className="object-contain w-full h-auto"
                             />
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Right: Text */}
-                    <div className="prose prose-lg max-w-2xl lg:prose-xl text-gray-700 text-center md:text-left px-4 md:px-0">
+                    <motion.div 
+                        className="prose prose-lg max-w-2xl lg:prose-xl text-gray-700 text-center md:text-left px-4 md:px-0"
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4, duration: 0.6 }}
+                    >
                         <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#113d7a] leading-tight">
                             EntangleTalks LA
                             <span className="block mt-1 text-3xl sm:text-4xl md:text-5xl">
@@ -68,15 +79,20 @@ export default function Page() {
                             bond over pizza with your peers. This event series hosts short spotlight research talks followed by a
                             casual get-together for networking, sharing ideas, building collaborations and digging into the pizzas.
                             We alternate locations every month and provide you with a shuttle bus across town. Join us for a slice of
-                            LA’s quantum future!
+                            LA&apos;s quantum future!
                         </p>
-                    </div>
+                    </motion.div>
                 </section>
 
                 
 
                 {/* Stay tuned section */}
-                <section className="mt-16 md:mt-32 relative px-4 md:px-0">
+                <motion.section 
+                    className="mt-16 md:mt-32 relative px-4 md:px-0"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6, duration: 0.6 }}
+                >
                     <div className="flex justify-center items-center">
                         <div className="relative w-full max-w-[900px] h-[400px] md:h-[600px]">
                             <Image
@@ -98,11 +114,16 @@ export default function Page() {
                             </div>
                         </div>
                     </div>
-                </section>
+                </motion.section>
 
 
                 {/* Past Speakers section */}
-                <section className="mt-16 pb-16 md:pb-24">
+                <motion.section 
+                    className="mt-16 pb-16 md:pb-24"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                >
                     <div className="max-w-6xl mx-auto px-4 md:px-40">
                         <h2 className="text-2xl md:text-3xl font-bold text-center font-kantumruy text-[#234285] pb-6 md:pb-8">Past Speakers</h2>
 
@@ -150,7 +171,7 @@ export default function Page() {
                             </button>
                         </div>
                     </div>
-                </section>
+                </motion.section>
             </div>
 </main>
             <MainWebsiteFooter />
