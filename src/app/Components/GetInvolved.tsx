@@ -31,7 +31,7 @@ export default function GetInvolved() {
         viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 0.6 }}
       >
-        with you---one qubit at a time.
+        with you—one qubit at a time.
       </motion.h2>
       <div className="flex justify-center items-center">
         <motion.div 
