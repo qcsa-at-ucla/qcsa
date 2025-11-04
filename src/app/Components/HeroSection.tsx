@@ -10,7 +10,7 @@ const HeroSection = () => {
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex flex-col items-center gap-3">
             <div className="text-sm font-kantumruy font-semibold tracking-wider uppercase" style={{color: '#ADC8EF'}}>
-              Quantum Computing Conference
+              November 10-12 (James West Alumni Center)
             </div>
             <h2 className="text-2xl md:text-3xl font-kantumruy font-bold" style={{color: '#FFFFFF'}}>
               QuARC - Quantum Architecture Conference
