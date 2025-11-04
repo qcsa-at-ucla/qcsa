@@ -394,7 +394,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 							sub: 'Are you curious about quantum computing but not sure where to start? Join our workshops every Wednesday from 6pm-8pm in Boelter 2444!',
 						},
 						{
-							img: '/images/Qube.png',
+							img: '/images/qube.png',
 							title: 'Quantum Computing Application in BioChemistry',
 							sub: 'Seminar and workshop on quantum computing applications in biochemistry. Featuring speakers from USC and IBM at CNSI + a Qiskit workshop on modeling solubility.',
 						},

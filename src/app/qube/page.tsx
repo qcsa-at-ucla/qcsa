@@ -39,7 +39,7 @@ export default function Page() {
                     <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-center py-6 md:py-12">
                         <div className="rounded-md overflow-hidden bg-white">
                             <Image 
-                                src="/images/Qube.png" 
+                                src="/images/qube.png" 
                                 alt="QuBE - Quantum Computing Applications in BioChemistry" 
                                 width={820} 
                                 height={360} 
