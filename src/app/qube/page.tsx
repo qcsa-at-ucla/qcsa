@@ -53,7 +53,7 @@ export default function Page() {
                                 className="w-full h-[220px] md:h-[360px] object-cover" 
                             />
                         </motion.div>
-
+                            {/* ss */}
                         <motion.div 
                             className="prose max-w-xl text-[#234285] text-center md:text-left px-4 md:px-0"
                             initial={{ opacity: 0, x: 50 }}
