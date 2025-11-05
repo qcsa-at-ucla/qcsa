@@ -68,167 +68,26 @@ export default function Page() {
                         </motion.div>
                     </section>
 
-                    {/* Event Schedule Section */}
-                    <section className="py-12 md:py-16">
-                        <motion.h2 
-                            className="text-center text-3xl md:text-4xl font-bold text-[#234285] mb-12 font-kantumruy"
-                            initial={{ opacity: 0, y: -20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                        >
-                            Event Schedule
-                        </motion.h2>
-                        
-                        <div className="max-w-4xl mx-auto relative">
-                            {/* Timeline line */}
-                            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-[#234285] transform -translate-x-1/2 hidden md:block" />
-                            
-                            <div className="space-y-8 md:space-y-12">
-                                {/* Event 1 - Left */}
-                                <div className="flex flex-col md:flex-row items-center gap-4">
-                                    <div className="md:w-1/2 md:pr-8">
-                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
-                                            <h3 className="text-xl font-bold text-[#234285] mb-2">9:00 AM – 9:15 AM</h3>
-                                            <p className="text-lg text-[#234285] font-semibold mb-1">Welcome and Introduction</p>
-                                            <p className="text-base text-[#234285]">Presented by Ilaana & Alex</p>
-                                        </div>
-                                    </div>
-                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
-                                    <div className="md:w-1/2 md:pl-8" />
-                                </div>
-
-                                {/* Event 2 - Right */}
-                                <div className="flex flex-col md:flex-row items-center gap-4">
-                                    <div className="md:w-1/2 md:pr-8" />
-                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
-                                    <div className="md:w-1/2 md:pl-8">
-                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
-                                            <h3 className="text-xl font-bold text-[#234285] mb-2">9:15 AM – 10:15 AM</h3>
-                                            <p className="text-lg text-[#234285] font-semibold mb-1">Motivation Lecture</p>
-                                            <p className="text-base text-[#234285]">By: Dr. Rosa Di Felice</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Event 3 - Left */}
-                                <div className="flex flex-col md:flex-row items-center gap-4">
-                                    <div className="md:w-1/2 md:pr-8">
-                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
-                                            <h3 className="text-xl font-bold text-[#234285] mb-2">10:15 AM – 11:15 PM</h3>
-                                            <p className="text-lg text-[#234285] font-semibold mb-1">Quantum Kernel Methods</p>
-                                            <p className="text-base text-[#234285]">By: Dr. William Munizzi, UCLA Post Doc</p>
-                                        </div>
-                                    </div>
-                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
-                                    <div className="md:w-1/2 md:pl-8" />
-                                </div>
-
-                                {/* Event 4 - Right */}
-                                <div className="flex flex-col md:flex-row items-center gap-4">
-                                    <div className="md:w-1/2 md:pr-8" />
-                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
-                                    <div className="md:w-1/2 md:pl-8">
-                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
-                                            <h3 className="text-xl font-bold text-[#234285] mb-2">11:15 AM - 12:15 PM</h3>
-                                            <p className="text-lg text-[#234285] font-semibold mb-1">Research Lecture</p>
-                                            <p className="text-base text-[#234285]">By: Sara Capponi, IBM</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Event 5 - Left */}
-                                <div className="flex flex-col md:flex-row items-center gap-4">
-                                    <div className="md:w-1/2 md:pr-8">
-                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
-                                            <h3 className="text-xl font-bold text-[#234285] mb-2">12:15 PM – 1:15 PM</h3>
-                                            <p className="text-lg text-[#234285] font-semibold">Lunch Break</p>
-                                        </div>
-                                    </div>
-                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
-                                    <div className="md:w-1/2 md:pl-8" />
-                                </div>
-
-                                {/* Event 6 - Right */}
-                                <div className="flex flex-col md:flex-row items-center gap-4">
-                                    <div className="md:w-1/2 md:pr-8" />
-                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
-                                    <div className="md:w-1/2 md:pl-8">
-                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
-                                            <h3 className="text-xl font-bold text-[#234285] mb-2">1:15 PM – 3:15 PM</h3>
-                                            <p className="text-lg text-[#234285] font-semibold mb-1">Tutorial on Projected Quantum Kernel</p>
-                                            <p className="text-base text-[#234285]">By: Meltem Tolunay, IBM</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Event 7 - Left */}
-                                <div className="flex flex-col md:flex-row items-center gap-4">
-                                    <div className="md:w-1/2 md:pr-8">
-                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
-                                            <h3 className="text-xl font-bold text-[#234285] mb-2">3:15 PM – 4:30 PM</h3>
-                                            <p className="text-lg text-[#234285] font-semibold">Open Reception & Networking</p>
-                                        </div>
-                                    </div>
-                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
-                                    <div className="md:w-1/2 md:pl-8" />
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* RSVP Form Section - Clickable to Open Modal */}
-                    <section className="py-8 md:py-16">
-                        <div className="max-w-4xl mx-auto">
-                            <button
-                                onClick={() => setIsFormModalOpen(true)}
-                                className="w-full bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100 hover:shadow-2xl hover:border-blue-300 transition-all duration-300 cursor-pointer group"
-                            >
-                                <div className="bg-gradient-to-r from-blue-900 to-blue-800 px-6 py-4 group-hover:from-blue-800 group-hover:to-blue-700 transition-all duration-300">
-                                    <div className="flex items-center justify-center gap-3">
-                                        <h3 className="text-xl md:text-2xl font-bold text-white text-center font-kantumruy">
-                                            Google Form
-                                        </h3>
-                                        <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                        </svg>
-                                    </div>
-                                    <p className="text-white text-sm text-center mt-2 opacity-90 group-hover:opacity-100 transition-opacity">
-                                        Click to open form
-                                    </p>
-                                </div>
-                                
-                                <div className="p-8 md:p-12 text-center">
-                                    <div className="flex flex-col items-center gap-4">
-                                        <svg className="w-16 h-16 md:w-20 md:h-20 text-blue-900 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                        </svg>
-                                        <p className="text-lg md:text-xl text-[#234285] font-semibold font-kantumruy">
-                                            Click here to fill out the RSVP form
-                                        </p>
-                                        <p className="text-sm text-gray-600">
-                                            Opens in a modal window
-                                        </p>
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </section>
-
-                    {/* Form Modal */}
-                    {isFormModalOpen && (
-                        <div 
+                      {isFormModalOpen && (
+                        <motion.div 
                             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60" 
                             onClick={() => setIsFormModalOpen(false)} 
                             style={{ backdropFilter: 'blur(4px)'}}
                             role="dialog"
                             aria-modal="true"
                             aria-labelledby="form-modal-title"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
                         >
-                            <div 
+                            <motion.div 
                                 className="bg-white rounded-xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl" 
                                 onClick={(e) => e.stopPropagation()}
+                                initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                                animate={{ scale: 1, opacity: 1, y: 0 }}
+                                exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                                transition={{ duration: 0.3, ease: "easeOut" }}
                             >
                                 <div className="bg-gradient-to-r from-blue-900 to-blue-800 px-6 py-4 flex items-center justify-between">
                                     <h3 id="form-modal-title" className="text-xl md:text-2xl font-bold text-white font-kantumruy">
@@ -276,9 +135,212 @@ export default function Page() {
                                         </Link>
                                     </div>
                                 </div>
+                            </motion.div>
+                        </motion.div>
+                    )}
+
+                     {/* RSVP Form Section - Clickable to Open Modal */}
+                    <section className="py-8 md:py-16">
+                        <motion.div 
+                            className="max-w-4xl mx-auto"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <motion.button
+                                onClick={() => setIsFormModalOpen(true)}
+                                className="w-full bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100 hover:shadow-2xl hover:border-blue-300 transition-all duration-300 cursor-pointer group"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                            >
+                                <div className="bg-gradient-to-r from-blue-900 to-blue-800 px-6 py-4 group-hover:from-blue-800 group-hover:to-blue-700 transition-all duration-300">
+                                    <div className="flex items-center justify-center gap-3">
+                                        <h3 className="text-xl md:text-2xl font-bold text-white text-center font-kantumruy">
+                                            Google Form
+                                        </h3>
+                                        <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </div>
+                                    <p className="text-white text-sm text-center mt-2 opacity-90 group-hover:opacity-100 transition-opacity">
+                                        Click to open form
+                                    </p>
+                                </div>
+                                
+                                <div className="p-8 md:p-12 text-center">
+                                    <div className="flex flex-col items-center gap-4">
+                                        <svg className="w-16 h-16 md:w-20 md:h-20 text-blue-900 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                        </svg>
+                                        <p className="text-lg md:text-xl text-[#234285] font-semibold font-kantumruy">
+                                            Click here to fill out the RSVP form
+                                        </p>
+                                        <p className="text-sm text-gray-600">
+                                            Opens in a modal window
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.button>
+                        </motion.div>
+                    </section>
+
+                    {/* Event Schedule Section */}
+                    <section className="py-12 md:py-16">
+                        <motion.h2 
+                            className="text-center text-3xl md:text-4xl font-bold text-[#234285] mb-12 font-kantumruy"
+                            initial={{ opacity: 0, y: -20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            Event Schedule
+                        </motion.h2>
+                        
+                        <div className="max-w-4xl mx-auto relative">
+                            {/* Timeline line */}
+                            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-[#234285] transform -translate-x-1/2 hidden md:block" />
+                            
+                            <div className="space-y-8 md:space-y-12">
+                                {/* Event 1 - Left */}
+                                <motion.div 
+                                    className="flex flex-col md:flex-row items-center gap-4"
+                                    initial={{ opacity: 0, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.1, duration: 0.5 }}
+                                >
+                                    <div className="md:w-1/2 md:pr-8">
+                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
+                                            <h3 className="text-xl font-bold text-[#234285] mb-2">9:00 AM – 9:15 AM</h3>
+                                            <p className="text-lg text-[#234285] font-semibold mb-1">Welcome and Introduction</p>
+                                            <p className="text-base text-[#234285]">Presented by Ilaana & Alex</p>
+                                        </div>
+                                    </div>
+                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
+                                    <div className="md:w-1/2 md:pl-8" />
+                                </motion.div>
+
+                                {/* Event 2 - Right */}
+                                <motion.div 
+                                    className="flex flex-col md:flex-row items-center gap-4"
+                                    initial={{ opacity: 0, x: 50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2, duration: 0.5 }}
+                                >
+                                    <div className="md:w-1/2 md:pr-8" />
+                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
+                                    <div className="md:w-1/2 md:pl-8">
+                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
+                                            <h3 className="text-xl font-bold text-[#234285] mb-2">9:15 AM – 10:15 AM</h3>
+                                            <p className="text-lg text-[#234285] font-semibold mb-1">Motivation Lecture</p>
+                                            <p className="text-base text-[#234285]">By: Dr. Rosa Di Felice</p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+
+                                {/* Event 3 - Left */}
+                                <motion.div 
+                                    className="flex flex-col md:flex-row items-center gap-4"
+                                    initial={{ opacity: 0, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.3, duration: 0.5 }}
+                                >
+                                    <div className="md:w-1/2 md:pr-8">
+                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
+                                            <h3 className="text-xl font-bold text-[#234285] mb-2">10:15 AM – 11:15 PM</h3>
+                                            <p className="text-lg text-[#234285] font-semibold mb-1">Quantum Kernel Methods</p>
+                                            <p className="text-base text-[#234285]">By: Dr. William Munizzi, UCLA Post Doc</p>
+                                        </div>
+                                    </div>
+                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
+                                    <div className="md:w-1/2 md:pl-8" />
+                                </motion.div>
+
+                                {/* Event 4 - Right */}
+                                <motion.div 
+                                    className="flex flex-col md:flex-row items-center gap-4"
+                                    initial={{ opacity: 0, x: 50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.4, duration: 0.5 }}
+                                >
+                                    <div className="md:w-1/2 md:pr-8" />
+                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
+                                    <div className="md:w-1/2 md:pl-8">
+                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
+                                            <h3 className="text-xl font-bold text-[#234285] mb-2">11:15 AM - 12:15 PM</h3>
+                                            <p className="text-lg text-[#234285] font-semibold mb-1">Research Lecture</p>
+                                            <p className="text-base text-[#234285]">By: Sara Capponi, IBM</p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+
+                                {/* Event 5 - Left */}
+                                <motion.div 
+                                    className="flex flex-col md:flex-row items-center gap-4"
+                                    initial={{ opacity: 0, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.5, duration: 0.5 }}
+                                >
+                                    <div className="md:w-1/2 md:pr-8">
+                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
+                                            <h3 className="text-xl font-bold text-[#234285] mb-2">12:15 PM – 1:15 PM</h3>
+                                            <p className="text-lg text-[#234285] font-semibold">Lunch Break</p>
+                                        </div>
+                                    </div>
+                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
+                                    <div className="md:w-1/2 md:pl-8" />
+                                </motion.div>
+
+                                {/* Event 6 - Right */}
+                                <motion.div 
+                                    className="flex flex-col md:flex-row items-center gap-4"
+                                    initial={{ opacity: 0, x: 50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.6, duration: 0.5 }}
+                                >
+                                    <div className="md:w-1/2 md:pr-8" />
+                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
+                                    <div className="md:w-1/2 md:pl-8">
+                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
+                                            <h3 className="text-xl font-bold text-[#234285] mb-2">1:15 PM – 3:15 PM</h3>
+                                            <p className="text-lg text-[#234285] font-semibold mb-1">Tutorial on Projected Quantum Kernel</p>
+                                            <p className="text-base text-[#234285]">By: Meltem Tolunay, IBM</p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+
+                                {/* Event 7 - Left */}
+                                <motion.div 
+                                    className="flex flex-col md:flex-row items-center gap-4"
+                                    initial={{ opacity: 0, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.7, duration: 0.5 }}
+                                >
+                                    <div className="md:w-1/2 md:pr-8">
+                                        <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100 text-center">
+                                            <h3 className="text-xl font-bold text-[#234285] mb-2">3:15 PM – 4:30 PM</h3>
+                                            <p className="text-lg text-[#234285] font-semibold">Open Reception & Networking</p>
+                                        </div>
+                                    </div>
+                                    <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-[#234285] border-4 border-white shadow-lg z-10 flex-shrink-0" />
+                                    <div className="md:w-1/2 md:pl-8" />
+                                </motion.div>
                             </div>
                         </div>
-                    )}
+                    </section>
+
+                   
+
+                    {/* Form Modal */}
+                  
 
                     {/* QuBE Poster Section */}
                     <section className="py-8 md:py-16">
