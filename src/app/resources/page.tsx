@@ -18,9 +18,48 @@ export default function ResourcesPage() {
 					transition={{ duration: 0.6 }}
 				>
 					Resources
-				</motion.h1>		
-				{/* Mentorship Card */}
-				
+			</motion.h1>		
+			{/* Mentorship Card */}
+			<motion.div 
+				className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-12"
+				initial={{ opacity: 0, y: 30 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ delay: 0.2, duration: 0.6 }}
+				whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+			>
+				<section className="bg-white rounded-lg p-10 shadow-[0_18px_40px_rgba(35,66,133,0.08)] ring-4 ring-[rgba(35,66,133,0.04)]">
+					<div className="flex flex-col lg:flex-row items-center gap-8">
+					{/* Left: Text block */}
+					<div className="lg:w-2/3">
+						<h2 className="text-3xl text-[#234285] font-kantumruy mb-4">Mentorship Program</h2>
+						<p className="text-[#234285] text-base mb-8">
+							Connect with experienced mentors in quantum computing and get guidance on your quantum journey. Join our mentorship program to accelerate your learning and career development.
+						</p>
+						<div>
+							<a 
+								href="https://forms.gle/2bJkAoVvj2Gb2Sub7"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-block bg-[#234285] text-white px-8 py-3 rounded-md text-lg font-kantumruy shadow-md hover:shadow-lg hover:bg-[#1f3f75] transition"
+							>
+								Apply Now
+							</a>
+						</div>
+					</div>
+
+				{/* Right: Image / gradient card */}
+				<div className="lg:w-1/3 flex justify-center lg:justify-end">
+					<div className="w-full max-w-sm h-100 rounded-md p-6 flex items-center justify-center">
+						<Image src="/images/qisca.png" alt="Mentorship Program" width={350} height={300} className="object-contain w-full h-full" />
+					</div>
+				</div>
+				</div>
+				</section>
+
+			</motion.div>
+			
+
+
 
 
 				{/* QCSA Membership Form - Featured at the top */}
@@ -62,14 +101,14 @@ export default function ResourcesPage() {
 					</section>
 				</div> */}
 
-				{/* wrapper adds a subtle light-blue neon aura around the card without changing its size */}
-				<motion.div 
-					className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24"
-					initial={{ opacity: 0, y: 30 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 0.2, duration: 0.6 }}
-					whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-				>
+			{/* wrapper adds a subtle light-blue neon aura around the card without changing its size */}
+			<motion.div 
+				className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24"
+				initial={{ opacity: 0, y: 30 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ delay: 0.4, duration: 0.6 }}
+				whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+			>
 					<section className="bg-white rounded-lg p-10 shadow-[0_18px_40px_rgba(35,66,133,0.08)] ring-4 ring-[rgba(35,66,133,0.04)]">
 						<div className="flex flex-col lg:flex-row items-center gap-8">
 						{/* Left: Text block */}
@@ -98,18 +137,18 @@ export default function ResourcesPage() {
 				</motion.div>
 
 
-				<motion.div 
-					className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24"
-					initial={{ opacity: 0, y: 30 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 0.4, duration: 0.6 }}
-					whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-				>
-					<section className="bg-white rounded-lg p-10 shadow-[0_18px_40px_rgba(35,66,133,0.08)] ring-4 ring-[rgba(35,66,133,0.04)]">
-						<div className="flex flex-col lg:flex-row items-center gap-8">
-						{/* Left: Text block */}
-						<div className="lg:w-2/3">
-							<h2 className="text-3xl text-[#234285] font-kantumruy mb-4">Quantum Classes at UCLA</h2>
+			<motion.div 
+				className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24"
+				initial={{ opacity: 0, y: 30 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ delay: 0.8, duration: 0.6 }}
+				whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+			>
+				<section className="bg-white rounded-lg p-10 shadow-[0_18px_40px_rgba(35,66,133,0.08)] ring-4 ring-[rgba(35,66,133,0.04)]">
+					<div className="flex flex-col lg:flex-row items-center gap-8">
+					{/* Left: Text block */}
+					<div className="lg:w-2/3">
+						<h2 className="text-3xl text-[#234285] font-kantumruy mb-4">Past Newsletters</h2>
 							<p className="text-[#234285] text-base mb-8">
 								Useful courses for UCLA students passionate about pursuing quantum.
 							</p>
