@@ -9,13 +9,13 @@ import { motion } from 'framer-motion';
 
 const eventsData = [
 	{
-		datePrimary: "10-12",
+		datePrimary: "14",
 		dateSecondary: "November",
-		title: "QuARC 2025",
-		location: "James West Alumni Center, UCLA",
-		time: "Multi-Day Conference",
-		description: "The Quantum Architecture Conference (QuARC) 2025 brings together researchers, students, and industry professionals to explore the latest advances in quantum computing architecture. The conference includes keynote presentations, technical sessions, poster presentations, and networking events. Don't miss this premier gathering of the quantum computing community!",
-		link: "https://quarc.squarespace.com/",
+		title: "Mentorship Program with QISCA",
+		location: "Zoom",
+		time: "7:00 PM (PST)",
+		description: "Mentorship Program joint with QISCA, the Korean Quantum Computing Club, to connect with experienced mentors in quantum computing and get guidance on your quantum journey!",
+		link: "https://docs.google.com/forms/d/e/1FAIpQLScYwmQ5A6_YCOM-jSDCUD1zY7WP900A4CWpnd9FTVCPw_qzFg/viewform?usp=send_form",
 	},
 	{
 		datePrimary: "20",
@@ -43,6 +43,13 @@ export default function EventsPage() {
 	const [selectedPast, setSelectedPast] = useState<PastEvent | null>(null);
 
 	const pastEvents: PastEvent[] = [
+		{
+			title: 'QuARC 2025',
+			date: '11/10-12/2025',
+			excerpt: 'The Quantum Architecture Conference (QuARC) 2025 brought together researchers, students, and industry professionals to explore the latest advances in quantum computing architecture.',
+			href: 'https://quarc.squarespace.com/',
+			content: `The Quantum Architecture Conference (QuARC) 2025 brought together researchers, students, and industry professionals to explore the latest advances in quantum computing architecture. The conference featured keynote presentations, technical sessions, poster presentations, and networking events. It was a premier gathering of the quantum computing community at the James West Alumni Center, UCLA.`,
+		},
 		{
 			title: 'Qiskit Fall Fest',
 			date: '10/18-19/2025',
