@@ -9,20 +9,11 @@ import { motion } from 'framer-motion';
 
 const eventsData = [
 	{
-		datePrimary: "14",
-		dateSecondary: "November",
-		title: "Mentorship Program with QISCA",
-		location: "Zoom",
-		time: "7:00 PM (PST)",
-		description: "Mentorship Program joint with QISCA, the Korean Quantum Computing Club, to connect with experienced mentors in quantum computing and get guidance on your quantum journey!",
-		link: "https://docs.google.com/forms/d/e/1FAIpQLScYwmQ5A6_YCOM-jSDCUD1zY7WP900A4CWpnd9FTVCPw_qzFg/viewform?usp=send_form",
-	},
-	{
 		datePrimary: "20",
 		dateSecondary: "November",
 		title: "QuBE: Quantum Bio",
 		location: "CNSI, UCLA",
-		time: "All Day Event",
+		time: "All Day Event (8:00 AM - 4:30 PM)",
 		description: "Explore the intersection of quantum computing and bioengineering at our QuBE seminar! Featuring speakers from USC and IBM, this event will showcase how quantum algorithms are revolutionizing biochemistry research. Following the talks, join us for a hands-on Qiskit workshop focused on modeling molecular solubility and other bio applications.",
 		link: "/qube",
 	},
@@ -43,6 +34,13 @@ export default function EventsPage() {
 	const [selectedPast, setSelectedPast] = useState<PastEvent | null>(null);
 
 	const pastEvents: PastEvent[] = [
+		{
+			title: 'Mentorship Program with QISCA',
+			date: '11/14/2025',
+			excerpt: 'Mentorship Program joint with QISCA, the Korean Quantum Computing Club, to connect with experienced mentors in quantum computing and get guidance on your quantum journey!',
+			href: 'https://docs.google.com/forms/d/e/1FAIpQLScYwmQ5A6_YCOM-jSDCUD1zY7WP900A4CWpnd9FTVCPw_qzFg/viewform?usp=send_form',
+			content: `Mentorship Program joint with QISCA, the Korean Quantum Computing Club, to connect with experienced mentors in quantum computing and get guidance on your quantum journey! This collaborative program was held on Zoom at 7:00 PM (PST) and provided valuable opportunities for students to receive personalized guidance from experienced professionals in the quantum computing field.`,
+		},
 		{
 			title: 'QuARC 2025',
 			date: '11/10-12/2025',

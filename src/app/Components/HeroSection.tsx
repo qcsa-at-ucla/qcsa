@@ -23,7 +23,7 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              November 10-12 (James West Alumni Center)
+              November 20 (CNSI, UCLA)
             </motion.div>
             <motion.h2 
               className="text-2xl md:text-3xl font-kantumruy font-bold" 
@@ -32,7 +32,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              QuARC - Quantum Architecture Conference
+              QuBE - Quantum Computing Applications in BioChemistry
             </motion.h2>
             <motion.p 
               className="text-base md:text-lg font-kantumruy max-w-2xl" 
@@ -41,12 +41,10 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              Explore a hands-on workshop on quantum compilation & transpilation in quantum computing architecture and connect with leading researchers, industry professionals, and UCLA Professors!
+              Seminar and workshop on quantum computing applications in biochemistry. Features speakers from IBM, USC, and UCLA and includes lectures as well as a workshop and project. Hosted at CNSI with online participation as an option!
             </motion.p>
             <motion.a 
-              href="https://quarc.squarespace.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="/qube" 
               className="mt-2 px-8 py-3 font-kantumruy font-semibold text-base rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{
                 backgroundColor: '#F3F8FF',
