@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Kantumruy_Pro } from "next/font/google";
 
 import "./globals.css";
@@ -8,6 +8,13 @@ const kantumruy = Kantumruy_Pro({
   weight: ["400", "700"], // choose what you need
   variable: "--font-kantumruy",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 
 export const metadata: Metadata = {
