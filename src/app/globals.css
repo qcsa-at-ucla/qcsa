@@ -40,6 +40,13 @@ html, body {
   font-family: var(--font-kantumruy);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+html {
+  touch-action: pan-x pan-y;
+  -ms-touch-action: pan-x pan-y;
 }
 
 /* Ensure any element without an explicit font uses the global font */
