@@ -58,7 +58,7 @@ This repository contains the **official QCSA website**, a modern, full-stack Nex
 | **Animations** | Framer Motion 12.x |
 | **Fonts** | Kantumruy Pro (Google Fonts) |
 | **APIs** | Google Sheets API, Mailchimp Marketing API |
-| **Backend Services** | Node.js 20+, googleapis, @mailchimp/mailchimp_marketing |
+| **Backend Services** | Node.js 18+, googleapis, @mailchimp/mailchimp_marketing |
 | **Development** | Turbopack (Next.js bundler), ESLint, cross-env |
 | **Deployment** | Vercel (production), Local dev server |
 
