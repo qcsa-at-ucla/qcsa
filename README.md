@@ -10,17 +10,17 @@
 
 ## 📚 Table of Contents
 
-- [Overview](#overview)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Development Guide](#development-guide)
-- [API Documentation](#api-documentation)
-- [Deployment](#deployment)
-- [Code Standards](#code-standards)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [Team & Contact](#team--contact)
+- [Overview](#-overview)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Development Guide](#-development-guide)
+- [API Documentation](#-api-documentation)
+- [Deployment](#-deployment)
+- [Code Standards](#-code-standards)
+- [Troubleshooting](#-troubleshooting)
+- [Contributing](#-contributing)
+- [Team & Contact](#-team--contact)
 
 ---
 
@@ -969,7 +969,7 @@ We welcome contributions from the community! Here's how to get involved:
 
 ## 👥 Team & Contact
 
-### Current Tech Team (2024-2025)
+### Current Tech Team (2025-2026)
 
 **Leadership:**
 - Victor Yu - President
@@ -987,7 +987,7 @@ We welcome contributions from the community! Here's how to get involved:
 ### Contact Information
 
 - **Email**: [quantum.ucla@gmail.com](mailto:quantum.ucla@gmail.com)
-- **Website**: [qcsa.vercel.app](https://qcsa.vercel.app)
+- **Website**: [qcsa.vercel.app](https://qcsa-ucla.org)
 - **LinkedIn**: [QCSA at UCLA](https://www.linkedin.com/company/quantum-computing-student-association-ucla)
 - **Instagram**: [@uclaqcsa](https://www.instagram.com/uclaqcsa/)
 
@@ -1049,7 +1049,7 @@ For permission to use or modify this code, please contact [quantum.ucla@gmail.co
 
 ## 🗺️ Roadmap
 
-### Current Focus (2024-2025)
+### Current Focus (2025-2026)
 
 - [x] Launch new website with Next.js 15
 - [x] Implement Google Sheets integration
