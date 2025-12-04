@@ -979,6 +979,8 @@ We welcome contributions from the community! Here's how to get involved:
 - Harshita Kukreja - Head of Digital Infrastructure/Tech Lead
 - Clyde Villacrusis - Web Developer
 - Emma Zhang - Web Developer
+- Saloni Parida - Web Developer
+- Dibyesh Ganguly - Web Developer
 
 **Design Team:**
 - Kimberley Wu - Designer
