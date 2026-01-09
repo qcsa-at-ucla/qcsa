@@ -40,8 +40,12 @@ html {
   font-family: var(--font-kantumruy);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  width: 100vw;
+  max-width: 100vw;
 }
 
 body {
@@ -49,8 +53,10 @@ body {
   color: var(--foreground);
   font-family: var(--font-kantumruy);
   min-height: 100%;
+  overflow: visible;
+  width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* Ensure any element without an explicit font uses the global font */
