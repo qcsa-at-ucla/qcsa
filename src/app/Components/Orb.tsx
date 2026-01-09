@@ -217,6 +217,8 @@ export default function Orb({ hue = 240, hoverIntensity = 0.2, rotateOnHover = t
     const rotationSpeed = 0.3;
 
     const handleMouseMove = (e: MouseEvent) => {
+      // Only track hover if pointer-events are enabled (desktop only)
+      if (!container) return;
       const rect = container.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -239,8 +241,9 @@ export default function Orb({ hue = 240, hoverIntensity = 0.2, rotateOnHover = t
       targetHover = 0;
     };
 
-    container.addEventListener('mousemove', handleMouseMove);
-    container.addEventListener('mouseleave', handleMouseLeave);
+    // Add event listeners to the document instead to allow scroll-through
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
 
     let rafId: number;
     const update = (t: number) => {
@@ -266,8 +269,8 @@ export default function Orb({ hue = 240, hoverIntensity = 0.2, rotateOnHover = t
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener('resize', resize);
-      container.removeEventListener('mousemove', handleMouseMove);
-      container.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
       if (container.contains(gl.canvas)) {
         container.removeChild(gl.canvas);
       }

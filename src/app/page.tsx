@@ -10,7 +10,7 @@ import MainWebsiteHeader from "./Components/mainWebsiteHeader";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden">
+    <div>
       <MainWebsiteHeader />
       <main id="main-content">
         <HeroSection />

@@ -34,20 +34,30 @@
 
 
 
-html, body {
+html {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-kantumruy);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  max-width: 100vw;
+  overflow-y: auto;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-kantumruy);
+  min-height: 100%;
+  overflow: visible;
 }
 
 /* Ensure any element without an explicit font uses the global font */
-* { font-family: inherit; }
-
-/* QCSA: layered logo aura + soft card shadow used on About page */
+* {
+  font-family: inherit;
+}/* QCSA: layered logo aura + soft card shadow used on About page */
 .qcsa-aura {
   /* deep soft drop + mid shadow + colored outer glow */
   box-shadow:

@@ -65,9 +65,7 @@ export default function RootLayout({
           `
         }} />
       </head>
-      <body
-        className={kantumruy.variable}
-      >
+      <body className={kantumruy.variable}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <a href="#footer" className="skip-link">Skip to footer</a>
         {children}

@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#F3F8FF'}}>
+    <div className="relative min-h-screen" style={{backgroundColor: '#F3F8FF'}}>
       {/* Event Announcement Banner */}
-      <motion.div 
+      {/* <motion.div 
         className="relative z-20 w-full py-6 px-6" 
         style={{backgroundColor: 'rgba(35, 66, 133, 0.95)'}}
         initial={{ y: -100, opacity: 0 }}
@@ -60,19 +60,17 @@ const HeroSection = () => {
             </motion.a>
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Orb Background */}
-      <div className="absolute inset-0 z-0" style={{ width: '100%', height: '100%', position: 'relative' }}>
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <Orb
           hoverIntensity={0.5}
           rotateOnHover={true}
           hue={220}
           forceHoverState={false}
-          // Make it dimmer
-          
         />
-      
+      </div>
       
       {/* Content */}
       <motion.div 
@@ -105,7 +103,6 @@ const HeroSection = () => {
           </motion.p>
         </div>
       </motion.div>
-      </div>
     </div>
   );
 };
