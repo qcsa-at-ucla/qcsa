@@ -148,7 +148,7 @@ export default function ResourcesPage() {
 					<div className="flex flex-col lg:flex-row items-center gap-8">
 					{/* Left: Text block */}
 					<div className="lg:w-2/3">
-						<h2 className="text-3xl text-[#234285] font-kantumruy mb-4">Past Newsletters</h2>
+						<h2 className="text-3xl text-[#234285] font-kantumruy mb-4">Quantum Courses</h2>
 							<p className="text-[#234285] text-base mb-8">
 								Useful courses for UCLA students passionate about pursuing quantum.
 							</p>
