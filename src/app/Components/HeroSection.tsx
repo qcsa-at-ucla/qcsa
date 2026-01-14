@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <div className="relative min-h-screen" style={{backgroundColor: '#F3F8FF'}}>
       {/* Event Announcement Banner */}
-      {/* <motion.div 
+      <motion.div 
         className="relative z-20 w-full py-6 px-6" 
         style={{backgroundColor: 'rgba(35, 66, 133, 0.95)'}}
         initial={{ y: -100, opacity: 0 }}
@@ -23,7 +23,7 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              November 20 (CNSI, UCLA)
+              February 20th, 1-5 PM
             </motion.div>
             <motion.h2 
               className="text-2xl md:text-3xl font-kantumruy font-bold" 
@@ -32,7 +32,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              QuBE - Quantum Computing Applications in BioChemistry
+              Quantum Career Fair
             </motion.h2>
             <motion.p 
               className="text-base md:text-lg font-kantumruy max-w-2xl" 
@@ -41,26 +41,11 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              Seminar and workshop on quantum computing applications in biochemistry. Features speakers from IBM, USC, and UCLA and includes lectures as well as a workshop and project. Hosted at CNSI with online participation as an option!
+              Multiple quantum companies will be there so stay tuned!!!
             </motion.p>
-            <motion.a 
-              href="/qube" 
-              className="mt-2 px-8 py-3 font-kantumruy font-semibold text-base rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              style={{
-                backgroundColor: '#F3F8FF',
-                color: '#234285',
-              }}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6, duration: 0.5, type: "spring", stiffness: 200 }}
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(0,0,0,0.2)" }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Learn More →
-            </motion.a>
           </div>
         </div>
-      </motion.div> */}
+      </motion.div>
 
       {/* Orb Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">

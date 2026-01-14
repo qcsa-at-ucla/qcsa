@@ -27,9 +27,9 @@ export default function ResourcesPage() {
 				transition={{ delay: 0.2, duration: 0.6 }}
 				whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
 			>
-				<section className="bg-white rounded-lg p-10 shadow-[0_18px_40px_rgba(35,66,133,0.08)] ring-4 ring-[rgba(35,66,133,0.04)]">
+				{/* <section className="bg-white rounded-lg p-10 shadow-[0_18px_40px_rgba(35,66,133,0.08)] ring-4 ring-[rgba(35,66,133,0.04)]">
 					<div className="flex flex-col lg:flex-row items-center gap-8">
-					{/* Left: Text block */}
+					Left: Text block
 					<div className="lg:w-2/3">
 						<h2 className="text-3xl text-[#234285] font-kantumruy mb-4">Mentorship Program</h2>
 						<p className="text-[#234285] text-base mb-8">
@@ -48,13 +48,13 @@ export default function ResourcesPage() {
 					</div>
 
 				{/* Right: Image / gradient card */}
-				<div className="lg:w-1/3 flex justify-center lg:justify-end">
+				{/* <div className="lg:w-1/3 flex justify-center lg:justify-end">
 					<div className="w-full max-w-sm h-100 rounded-md p-6 flex items-center justify-center">
 						<Image src="/images/qisca.png" alt="Mentorship Program" width={350} height={300} className="object-contain w-full h-full" />
 					</div>
 				</div>
 				</div>
-				</section>
+				</section> */} 
 
 			</motion.div>
 			
