@@ -49,8 +49,18 @@ const boardMembers = [
     image: "/images/alexander Jurgens.png",
     linkedIn: "https://www.linkedin.com/in/alexander-jurgens/"
   },
-  {
+   {
     id: 3,
+    name: "Ilaana Khan",
+    role: "President",
+    major: "Physics",
+    year: "2nd Year",
+    bio: "Ilaana is an undergraduate at UCLA studying Biophysics and on the QCSA leadership board. She is involved in the research of computational fluid dynamics to model blood vessels, talent development via mixed-methods psychology, and modeling distant stars in the Milky Way galaxy. Ilaana has previously worked with the American Cancer Society, ACM, City of Austin Law Department, Society of Robotic Surgeons, and Ascension Seton Medical Center in Austin. At UCLA, Ilaana is an editor at the Society and Genetics Research Journal and co-manager of the Upsilon Lab CFD group. She is also a nationally registered Emergency Medical Technician. Outside of her academic involvements, Ilaana loves Roblox, Minecraft, and caffeine. ",
+    image: "/images/Ilaana.png",
+    linkedIn: "https://www.linkedin.com/in/ilaanak/"
+  },
+  {
+    id: 4,
     name: "Nicolas Dirnegger",
     role: "Quantum Devices",
     major: "Electrical Engineering",
@@ -59,9 +69,8 @@ const boardMembers = [
     image: "/images/Nicolas Dirnegger.png",
     linkedIn: "https://www.linkedin.com/in/nicolas-dirnegger-aa8442100/"
   },
-  // Add 9 more members following the same structure
   {
-    id: 4,
+    id: 5,
     name: "Cody Fan",
     role: "Quantum Devices",
     major: "EE & Physics",
@@ -71,7 +80,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/cody-fan-09717a167/"
   },
   {
-    id: 5,
+    id: 6,
     name: "Samuel Oh",
     role: "Finances",
     major: "Computer Science & Economics",
@@ -81,7 +90,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/samuel-oh-ucla/"
   },
   {
-    id: 6,
+    id: 7,
     name: "Sanskriti Shindadkar",
     role: "Research Lead",
     major: "Bioengineering",
@@ -90,18 +99,9 @@ const boardMembers = [
     image: "/images/sanskriti.png",
     linkedIn: "https://www.linkedin.com/in/sanskriti/"
   },
+
   {
-    id: 7,
-    name: "Ilaana Khan",
-    role: "Events & Advertisement",
-    major: "Physics",
-    year: "2nd Year",
-    bio: "Ilaana is an undergraduate at UCLA studying Biophysics and on the QCSA leadership board. She is involved in the research of computational fluid dynamics to model blood vessels, talent development via mixed-methods psychology, and modeling distant stars in the Milky Way galaxy. Ilaana has previously worked with the American Cancer Society, ACM, City of Austin Law Department, Society of Robotic Surgeons, and Ascension Seton Medical Center in Austin. At UCLA, Ilaana is an editor at the Society and Genetics Research Journal and co-manager of the Upsilon Lab CFD group. She is also a nationally registered Emergency Medical Technician. Outside of her academic involvements, Ilaana loves Roblox, Minecraft, and caffeine. ",
-    image: "/images/Ilaana.png",
-    linkedIn: "https://www.linkedin.com/in/ilaanak/"
-  },
-  {
-    id: 8,
+    id: 9,
     name: "Shreya Shirsathe",
     role: "Events & Advertisement",
     major: "Computer Engineering",
@@ -111,7 +111,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/shreya-shirsathe-b90256288/"
   }, 
   {
-    id: 9,
+    id: 10,
     name: "Connor Engel",
     role: "Events & Advertisement",
     major: "Physics",
@@ -121,7 +121,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/connor-engel-492216254/"
   },
   {
-    id: 10,
+    id: 11,
     name: "Harshita Kukreja",
     role: "Head of Digital Infrastructure/Tech Lead",
     major: "Computer Science and Engineering",
@@ -131,7 +131,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/harshita-kukreja-28h/"
   },
   {
-    id: 11,
+    id: 12,
     name: "Clyde Villacrusis",
     role: "Web Developer",
     major: "Computer Science",
@@ -141,7 +141,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/clydevillacrusis/"
   },
   {
-    id: 12,
+    id: 13,
     name: "Emma Zhang",
     role: "Web Developer",
     major: "Computer Science",
@@ -151,7 +151,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/emma-zhang-511838245/"
   },
   {
-    id: 13,
+    id: 14,
     name: "Kimberley Wu",
     role: "Designer",
     major: "Design Media Arts and Psychology",
@@ -161,7 +161,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/kimberleywu/"
   },
   {
-    id: 14,
+    id: 15,
     name: "Gina Namkung",
     role: "Designer",
     major: "Cognitive Science and Architecture",
@@ -171,7 +171,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/gina-namkung/"
   },
   {
-    id: 15,
+    id: 16,
     name: "Sameer Kumar",
     role: "Corporate Relations",
     major: "Electrical Engineering",
@@ -182,14 +182,24 @@ const boardMembers = [
   },
   
   {
-    id: 16,
-    name: "Naren Sathishkumar",
-    role: "Outreach",
+    id: 17,
+    name: "Matt Guibord",
+    role: "Events & Advertisement",
+    major: "Electrical Engineering",
+    year: "PhD",
+    bio: "Matt is an Electrical Engineering PhD student at UCLA researching quantum-limited cavity optomechanics in the Mesoscopic Optics and Quantum Electronics Laboratory. Before joining UCLA, he received his B.S. in Electrical and Computer Engineering from UIUC, where he explored the intersection of NV centers and plasmonics. Matt has previously studied distributed computing at Northrop Grumman and superconducting qubit packaging at Applied Materials. Outside of the lab, he loves to cycle, produce music, and jam on his sax",
+    image: "/images/matt.JPG",
+    linkedIn: "https://www.linkedin.com/in/matthew-guibord/"
+  },
+  {
+    id: 18,
+    name: "John Ye",
+    role: "Tech Maintainer",
     major: "Computer Science",
-    year: "2nd Year",
-    bio: "Naren is a 2nd-year undergraduate computer science major. He's interested quantum optimization algorithms and building the latest in quantum software. He's currently researching heuristics to solve the qubit mapping problem. Outside of programming, he enjoys mountain biking and skiing in the mountains..",
-    image: "/images/Naren.png",
-    linkedIn: "https://www.linkedin.com/in/naren-sathishkumar/"
+    year: "PhD",
+    bio: "John Ye is currently a first-year CS PHD student in UCLA. I’m fortunate to be advised by professor Jens Palsberg. Before starting Phd, he completed his master’s degree in quantum science and technology MQST in the UCLA department of physics. He was an undergraduate at Shanghai Jiaotong University majoring in Computer Science before he joined UCLA.",
+    image: "/images/john_ye.png",
+    linkedIn: "https://www.linkedin.com/in/john%EF%BC%88zhuoyang%EF%BC%89-ye-a36514225/",
   },
  
 ];
