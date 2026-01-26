@@ -43,7 +43,14 @@ export default function Page() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <Image src="/images/workshop_template_2.png" alt="QCSA ACM Workshop" width={820} height={360} className="w-full h-[220px] md:h-[360px] object-cover" />
+                        <div className="w-full h-[220px] md:h-[360px] flex items-center justify-center gap-6 md:gap-10 px-6">
+                            <div className="relative w-[140px] md:w-[220px] h-[80px] md:h-[120px]">
+                                <Image src="/images/acm_q.png" alt="ACM Quantum" fill className="object-contain" />
+                            </div>
+                            <div className="relative w-[140px] md:w-[220px] h-[80px] md:h-[120px]">
+                                <Image src="/images/qbraid.png" alt="qBraid Logo" fill className="object-contain" />
+                            </div>
+                        </div>
                     </motion.div>
 
                     <motion.div 
@@ -53,16 +60,19 @@ export default function Page() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.2, duration: 0.6 }}
                     >
-                        <h2 className="text-4xl font-kantumruy ">QCSA x ACM Introductory Workshop</h2>
-                        <p className="text-1/2xl mt-4 gap-25">New to quantum? Join our seminar series in collaboration with ACM (Association for Computer Machinery)!
+                        <h2 className="text-4xl font-kantumruy ">QCSA x ACM Presents: ACM Quantum</h2>
+                        <p className="text-1/2xl mt-4 gap-25">New to quantum? Join our quarterly seminar series in collaboration with ACM (Association for Computer Machinery)!
 The series focuses on quantum information science, including quantum computers, sensors, and algorithms. This collaboration brings you an accessible introduction to this revolutionary field. No prior experience needed—our approach emphasizes intuitive understanding with hands-on projects throughout the series.What you’ll explore:</p>
                         <ul className="mt-4 list-disc pl-6 text-sm md:text-base">
                             <li>The fundamentals and capabilities of quantum computing</li>
-                            <li>Essential mathematical foundations</li>
-                            <li>Understanding the quantum circuit model</li>
-                            <li>Practical quantum algorithms with Qiskit implementation</li>
-                            <li>Current landscape of cutting-edge quantum technologies</li>
+                            <li>Essential mathematical foundations and the quantum circuit model</li>
+                            <li>Understand Grover's Algorithm and implement it on real quantum hardware from scratch!</li>
                         </ul>
+                        <p className="text-1/2xl mt-4 gap-25">Winter 2026 Meetings @ Math. Sci. 5147 on Tuesdays from 6 - 8pm</p>
+
+                        <h3 className="text-2xl font-kantumruy mt-6">Projects Track.</h3>
+                        <p className="text-1/2xl mt-4 gap-25">Gain experience contributing to open-source code! Learn how to use Git and QASM by implementing algorithms (decided by you!) with the ACM Quantum team to the qbraid-algorithms repo.</p>
+                        <p className="text-1/2xl mt-4 gap-25">Winter 2026 Meetings @ Ackerman Union, Meeting Room 3508 on even-week Thursdays from 6 - 8pm.</p>
                     </motion.div>
                 </section>
 
