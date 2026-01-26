@@ -66,7 +66,7 @@ The series focuses on quantum information science, including quantum computers, 
                         <ul className="mt-4 list-disc pl-6 text-sm md:text-base">
                             <li>The fundamentals and capabilities of quantum computing</li>
                             <li>Essential mathematical foundations and the quantum circuit model</li>
-                            <li>Understand Grover's Algorithm and implement it on real quantum hardware from scratch!</li>
+                            <li>Understand Grover&apos;s Algorithm and implement it on real quantum hardware from scratch!</li>
                         </ul>
                         <p className="text-1/2xl mt-4 gap-25">Winter 2026 Meetings @ Math. Sci. 5147 on Tuesdays from 6 - 8pm</p>
 
