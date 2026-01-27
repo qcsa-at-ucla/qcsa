@@ -146,7 +146,7 @@ const boardMembers = [
     major: "Computer Science and Engineering",
     year: "2nd Year",
     bio: "Dibyesh is a sophomore at UCLA, majoring in Computer Science and Engineering and Pure Mathematics, where he primarily conducts research in High-energy QCD analyses at the Kang Research Group, with additional interests in quantum simulation and physics-driven machine learning for large-scale scientific modelling. Outside of the lab, he competes on UCLA’s Archery team, is active in IEEE at UCLA, and is a big coaster and aviation enthusiast!",
-    image: "/images/dibyesh.png",
+    image: "/images/dibyesh.jpg",
     linkedIn: "https://www.linkedin.com/in/dibyeshganguly/",
   },
   {
