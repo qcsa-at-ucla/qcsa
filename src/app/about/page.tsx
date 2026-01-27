@@ -133,12 +133,21 @@ const boardMembers = [
   {
     id: 12,
     name: "Clyde Villacrusis",
-    role: "Web Developer",
+    role: "Web Developer Tech Lead",
     major: "Computer Science",
     year: "4th Year",
     bio: "Helloo!! Clyde Villacrusis is an undergraduate 4th year Computer Science and Linguistics double major. He is apart of the QCSA's tech team and working on making an interactive and accessible website for all. He is extremely excited to learn more about Quantum Computing while also developing his tech skills. Besides QCSA. he also interned under UCLA Health to make their AI-powered application (still in progress) and he is also in fetch.ai x qcsa x bruin.ai research group to research more about predicting binding affinities using hybrid CNNs, traditional Machine learning modes, and quantum circuits! He also likes to play Valorant, Minecraft, nature, and caffeine. Hit him up anytime to learn or just to chat about anything!",
     image: "/images/clyde.png",
     linkedIn: "https://www.linkedin.com/in/clydevillacrusis/"
+  },
+  { id: 13,
+    name: "Dibyesh Ganguly",
+    role: "Web Developer Tech Lead",
+    major: "Computer Science and Engineering",
+    year: "2nd Year",
+    bio: "Dibyesh is a sophomore at UCLA, majoring in Computer Science and Engineering and Pure Mathematics, where he primarily conducts research in High-energy QCD analyses at the Kang Research Group, with additional interests in quantum simulation and physics-driven machine learning for large-scale scientific modelling. Outside of the lab, he competes on UCLA’s Archery team, is active in IEEE at UCLA, and is a big coaster and aviation enthusiast!",
+    image: "/images/dibyesh.png",
+    linkedIn: "https://www.linkedin.com/in/dibyeshganguly/",
   },
   {
     id: 13,
