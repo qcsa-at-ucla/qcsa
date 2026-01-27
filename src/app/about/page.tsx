@@ -150,7 +150,7 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/dibyeshganguly/",
   },
   {
-    id: 13,
+    id: 19,
     name: "Emma Zhang",
     role: "Web Developer",
     major: "Computer Science",
@@ -505,7 +505,7 @@ export default function AboutPage() {
             {boardMembers.map((member, index) => (
               <motion.div
                 key={member.id} 
-                className="relative group cursor-pointer"
+                className={`relative group cursor-pointer ${hoveredMember === member.id ? 'z-50' : 'z-0'}`}
                 onMouseEnter={() => !isMobile && setHoveredMember(member.id)}
                 onMouseLeave={() => !isMobile && setHoveredMember(null)}
                 onClick={() => handleMemberClick(member)}
@@ -600,7 +600,7 @@ export default function AboutPage() {
                 {facultyLeadership.map((faculty) => (
                   <motion.div
                     key={faculty.id}
-                    className="relative group cursor-pointer w-full max-w-sm"
+                    className={`relative group cursor-pointer w-full max-w-sm ${hoveredMember === faculty.id ? 'z-50' : 'z-0'}`}
                     onMouseEnter={() => !isMobile && setHoveredMember(faculty.id)}
                     onMouseLeave={() => !isMobile && setHoveredMember(null)}
                     onClick={() => handleMemberClick(faculty)}
@@ -677,7 +677,7 @@ export default function AboutPage() {
                 {facultyLeadership.map((faculty, index) => (
                   <motion.div
                     key={faculty.id}
-                    className="relative group cursor-pointer w-full max-w-sm"
+                    className={`relative group cursor-pointer w-full max-w-sm ${hoveredMember === faculty.id ? 'z-50' : 'z-0'}`}
                     onMouseEnter={() => !isMobile && setHoveredMember(faculty.id)}
                     onMouseLeave={() => !isMobile && setHoveredMember(null)}
                     onClick={() => handleMemberClick(faculty)}
