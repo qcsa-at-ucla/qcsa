@@ -33,7 +33,7 @@ const boardMembers = [
     id: 1,
     name: "Victor Yu",
     role: "President",
-    major: "Physics",
+    major: "Electrical Engineering",
     year: "2nd Year",
     bio: "Victor is a second year at UCLA studying Electrical Engineering with a minor in Mathematics. He works in the Petta Group to model the effects of cosmic rays on semiconductor spin qubits and to perform automated tune-up of quantum dot systems. He enjoys teaching others about quantum science, such as through QCSA's involvement in ACM Quantum. In his free time, he enjoys playing the piano, reading fantasy & science fiction, eating good food, and calisthenics. ",
     image: "/images/Victor Yu.png",
