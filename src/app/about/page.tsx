@@ -211,6 +211,16 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/matthew-guibord/"
   },
   {
+    id: 20,
+    name: "Charles Victorio",
+    role: "Video Producer and Social Media Manager",
+    major: "Physics",
+    year: "3rd Year",
+    bio: "Charles is a third-year undergraduate Physics student at UCLA. He runs the QCSA YouTube channel and social media accounts, leads the muon detector research project under Upsilon Lab, and works as an administrative assistant and data analyst in the Division of Physical Sciences at UCLA.",
+    image: "/images/charles.png",
+    linkedIn: "https://www.linkedin.com/in/charles-victorio/",
+  },
+  {
     id: 18,
     name: "John Ye",
     role: "Tech Maintainer",
