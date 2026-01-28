@@ -59,6 +59,14 @@ export default function MainWebsiteHeader() {
             >
               Join us
             </Link>
+            <a 
+              href="https://qdc-qcsa.org" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#234285] text-white px-6 py-2 rounded-md text-[#234285] font-kantumruy text-2xl hover:bg-blue-700 transition-colors duration-200 shadow-md"
+            >
+              Go to QDC
+            </a>
           </nav>
 
           {/* Mobile menu button */}
@@ -121,6 +129,15 @@ export default function MainWebsiteHeader() {
               >
                 Join us
               </Link>
+              <a 
+                href="https://qdc-qcsa.org" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#234285] text-white px-6 py-3 rounded-md text-[#234285] font-kantumruy font-bold text-2xl hover:bg-blue-700 transition-colors duration-200 shadow-md inline-block text-center mt-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Go to QDC
+              </a>
             </div>
           </div>
         </nav>
