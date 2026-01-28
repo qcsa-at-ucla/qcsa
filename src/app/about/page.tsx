@@ -160,6 +160,16 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/emma-zhang-511838245/"
   },
   {
+    id: 20,
+    name: "Dhruv Saran",
+    role: "Web Developer",
+    major: "Computer Science",
+    year: "3rd Year",
+    bio: "Dhruv is a junior Computer Science student at UCLA with interests in software engineering, machine learning, and systems, and is actively involved in physics research, tutoring through Upsilon Pi Epsilon @ UCLA, and building impactful full-stack and AI projects.",
+    image: "/images/dhruv.png",
+    linkedIn: "https://www.linkedin.com/in/dhruv-saran/"
+  },
+  {
     id: 14,
     name: "Kimberley Wu",
     role: "Designer",
