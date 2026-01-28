@@ -10,12 +10,12 @@ import { motion } from 'framer-motion';
 const eventsData = [
 	{
 		datePrimary: "20",
-		dateSecondary: "November",
-		title: "QuBE: Quantum Bio",
-		location: "CNSI, UCLA",
-		time: "All Day Event (8:00 AM - 4:30 PM)",
-		description: "Explore the intersection of quantum computing and bioengineering at our QuBE seminar! Featuring speakers from USC and IBM, this event will showcase how quantum algorithms are revolutionizing biochemistry research. Following the talks, join us for a hands-on Qiskit workshop focused on modeling molecular solubility and other bio applications.",
-		link: "/qube",
+		dateSecondary: "February",
+		title: "Quantum Career Fair",
+		location: "UCLA",
+		time: "1-5 PM PST",
+		description: "Explore different quantum computing companies and research labs, network with professionals, and discover internship and job opportunities in the quantum industry.",
+		link: "/",
 	},
 ];
 
