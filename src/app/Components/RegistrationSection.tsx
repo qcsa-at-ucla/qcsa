@@ -17,7 +17,10 @@ const ENTRY = {
   linkedin: "entry.1504672551",
 };
 
-function setOtherAware(params, entryId, value, otherText) {
+function setOtherAware(  params: URLSearchParams,
+  entryId: string,
+  value: string,
+  otherText?: string) {
   if (value === "__other__") {
     params.set(entryId, "__other_option__");
     params.set(`${entryId}.other_option_response`, otherText || "");
@@ -26,7 +29,7 @@ function setOtherAware(params, entryId, value, otherText) {
   }
 }
 
-function isValidEmail(email) {
+function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
@@ -72,7 +75,7 @@ export default function RegistrationSection() {
     []
   );
 
-  function update(key, value) {
+  function update(key: string, value: string) {
     setForm((prev) => ({ ...prev, [key]: value }));
   }
 
@@ -96,7 +99,7 @@ export default function RegistrationSection() {
     return `${GOOGLE_FORM_BASE}?${params.toString()}`;
   }
 
-  function onContinue(e) {
+  function onContinue(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError("");
 
