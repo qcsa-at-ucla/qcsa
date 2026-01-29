@@ -15,7 +15,7 @@ const eventsData = [
 		location: "UCLA",
 		time: "1-5 PM PST",
 		description: "Explore different quantum computing companies and research labs, network with professionals, and discover internship and job opportunities in the quantum industry.",
-		link: "/",
+		link: "/qcf",
 	},
 ];
 
@@ -421,7 +421,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 							sub: 'Are you curious about quantum computing but not sure where to start? Join our workshops every Wednesday from 6pm-8pm in Boelter 2444!',
 						},
 						{
-							img: '/images/qube.png',
+							img: '/images/Qube.png',
 							title: 'Quantum Computing Application in BioChemistry',
 							sub: 'Seminar and workshop on quantum computing applications in biochemistry. Featuring speakers from USC and IBM at CNSI + a Qiskit workshop on modeling solubility.',
 						},
@@ -481,7 +481,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 														? '/ucla_caltech'
 														: s.img.includes('ucla_usc.png')
 														? '/ucla_usc'
-														: s.img.includes('qube.png')
+														: s.img.includes('Qube.png')
 														? '/qube'
 														: '/ucla_acm'
 												}
