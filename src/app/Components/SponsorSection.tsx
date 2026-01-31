@@ -11,13 +11,11 @@ interface Sponsor {
 
 interface SponsorSectionProps {
   title?: string;
-  direction?: 'left' | 'right';
   sponsors?: Sponsor[];
 }
 
 export default function SponsorSection({ 
   title = "Our Sponsors",
-  direction = "left",
   sponsors
 }: SponsorSectionProps) {
   return (
@@ -43,7 +41,7 @@ export default function SponsorSection({
         viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 0.6 }}
       >
-        <CurrentSponsors direction={direction} sponsors={sponsors} />
+        <CurrentSponsors sponsors={sponsors} />
       </motion.div>
     </motion.div>
   );
