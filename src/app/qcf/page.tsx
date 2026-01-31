@@ -1,6 +1,16 @@
-import MainWebsiteFooter from "../Components/mainWebsiteFooter"
-import MainWebsiteHeader from "../Components/mainWebsiteHeader"
-import SponsorSection from "../Components/SponsorSection"
+"use client";
+
+import { useEffect, useState } from "react";
+import MainWebsiteFooter from "../Components/mainWebsiteFooter";
+import MainWebsiteHeader from "../Components/mainWebsiteHeader";
+import SponsorSection from "../Components/SponsorSection";
+import RegistrationSection from "../Components/RegistrationSection";
+
+function useHydrated() {
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => setHydrated(true), []);
+  return hydrated;
+}
 
 const qcfSponsors = [
   { name: 'BQP', logo: '/images/qcf-sponsors/bqp.png', url: 'https://www.bqp.io/' },
