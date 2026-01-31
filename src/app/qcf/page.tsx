@@ -39,7 +39,6 @@ export default function QCF(){
 
         <SponsorSection
           title="Our Sponsors"
-          direction="left"
           sponsors={qcfSponsors}
         />
         
