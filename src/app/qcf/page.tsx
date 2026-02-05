@@ -13,7 +13,7 @@ function useHydrated() {
 }
 
 const qcfSponsors = [
-  { name: 'BQP', logo: '/images/qcf-sponsors/bqp.png', url: 'https://www.bqp.io/' },
+  { name: 'BQP', logo: '/images/qcf-sponsors/bqp.png', url: 'https://www.bqpsim.com/' },
   { name: 'JPL', logo: '/images/qcf-sponsors/JPL.png', url: 'https://www.jpl.nasa.gov/' },
   { name: 'Keysight', logo: '/images/qcf-sponsors/keysight.jpg', url: 'https://www.keysight.com' },
   { name: 'Microsoft', logo: '/images/qcf-sponsors/Microsoft.png', url: 'https://www.microsoft.com'},
