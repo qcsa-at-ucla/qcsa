@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import MainWebsiteHeader from "../Components/mainWebsiteHeader";
 import SponsorSection from "../Components/SponsorSection";
@@ -13,21 +14,52 @@ const qcfSponsors = [
 ];
 
 export default function QCF() {
-  async function goToCheckout(tier: "silver" | "gold") {
-    const res = await fetch("/api/checkout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ tier }),
-    });
+  const [showModal, setShowModal] = useState(false);
+  const [selectedTier, setSelectedTier] = useState<"silver" | "gold" | null>(null);
+  const [companyName, setCompanyName] = useState("");
+  const [contactName, setContactName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-    const data = await res.json();
+  function openSponsorModal(tier: "silver" | "gold") {
+    setSelectedTier(tier);
+    setShowModal(true);
+  }
 
-    if (!res.ok) {
-      alert(data?.error ?? "Payment error");
-      return;
+  async function handleCheckout() {
+    if (!selectedTier || !companyName.trim()) return;
+
+    setIsLoading(true);
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          tier: selectedTier,
+          company_name: companyName.trim(),
+          contact_name: contactName.trim(),
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data?.error ?? "Payment error");
+        return;
+      }
+
+      window.location.href = data.url;
+    } catch {
+      alert("An error occurred. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
+  }
 
-    window.location.href = data.url;
+  function closeModal() {
+    setShowModal(false);
+    setSelectedTier(null);
+    setCompanyName("");
+    setContactName("");
   }
 
   return (
@@ -78,7 +110,7 @@ export default function QCF() {
                 <p className="text-3xl font-bold mb-6">$500</p>
 
                 <button
-                  onClick={() => goToCheckout("silver")}
+                  onClick={() => openSponsorModal("silver")}
                   className="border-2 border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
                 >
                   Sponsor as Silver
@@ -93,7 +125,7 @@ export default function QCF() {
                 <p className="text-3xl font-bold mb-6">$750</p>
 
                 <button
-                  onClick={() => goToCheckout("gold")}
+                  onClick={() => openSponsorModal("gold")}
                   className="border-2 border-yellow-500 text-yellow-600 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-50 transition"
                 >
                   Sponsor as Gold
@@ -113,6 +145,68 @@ export default function QCF() {
       </main>
 
       <MainWebsiteFooter />
+
+      {/* Sponsor Info Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8">
+            <h3 className="text-2xl font-bold text-blue-900 mb-6">
+              {selectedTier === "gold" ? "Gold" : "Silver"} Sponsorship
+            </h3>
+
+            <div className="space-y-4">
+              <div>
+                <label htmlFor="companyName" className="block text-sm font-medium text-gray-700 mb-1">
+                  Company Name <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="companyName"
+                  value={companyName}
+                  onChange={(e) => setCompanyName(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Enter company name"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="contactName" className="block text-sm font-medium text-gray-700 mb-1">
+                  Contact Name
+                </label>
+                <input
+                  type="text"
+                  id="contactName"
+                  value={contactName}
+                  onChange={(e) => setContactName(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Enter contact person's name"
+                />
+              </div>
+            </div>
+
+            <div className="mt-8 flex gap-4">
+              <button
+                onClick={closeModal}
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleCheckout}
+                disabled={isLoading || !companyName.trim()}
+                className={`flex-1 px-4 py-2 rounded-lg font-semibold text-white transition ${
+                  selectedTier === "gold"
+                    ? "bg-yellow-500 hover:bg-yellow-600"
+                    : "bg-gray-600 hover:bg-gray-700"
+                } disabled:opacity-50 disabled:cursor-not-allowed`}
+              >
+                {isLoading ? "Processing..." : "Continue to Payment"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

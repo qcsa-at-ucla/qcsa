@@ -33,14 +33,20 @@ const stripe = secretKey ? new Stripe(secretKey, { apiVersion: "2026-01-28.clove
 
 type Tier = "silver" | "gold";
 
+type CheckoutBody = {
+  tier?: Tier;
+  company_name?: string;
+  contact_name?: string;
+};
+
 export async function POST(req: Request) {
   try {
     if (!stripe) {
       return NextResponse.json({ error: "Missing STRIPE_SECRET_KEY" }, { status: 500 });
     }
 
-    const body: unknown = await req.json();
-    const tier = (body as { tier?: Tier }).tier;
+    const body = (await req.json()) as CheckoutBody;
+    const { tier, company_name, contact_name } = body;
 
     if (tier !== "silver" && tier !== "gold") {
       return NextResponse.json({ error: "Invalid tier" }, { status: 400 });
@@ -62,7 +68,11 @@ export async function POST(req: Request) {
       cancel_url: `${siteUrl}/sponsor/cancel`,
       customer_creation: "always",
       billing_address_collection: "auto",
-      metadata: { tier },
+      metadata: {
+        tier,
+        company_name: company_name || "",
+        contact_name: contact_name || "",
+      },
     });
 
     return NextResponse.json({ url: session.url }, { status: 200 });
