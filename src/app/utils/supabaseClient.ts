@@ -7,9 +7,14 @@ if (!supabaseUrl || !supabaseServiceKey) {
   console.warn("Missing SUPABASE_URL or SUPABASE_SERVICE_KEY environment variables");
 }
 
-// Use service role key for server-side operations (bypasses RLS)
+// Use service role key for server-side operations 
 export const supabase = supabaseUrl && supabaseServiceKey
-  ? createClient(supabaseUrl, supabaseServiceKey)
+  ? createClient(supabaseUrl, supabaseServiceKey, {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    })
   : null;
 
 export type SponsorRecord = {
