@@ -29,7 +29,7 @@ loadEnvExample();
 const secretKey = process.env.STRIPE_SECRET_KEY;
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
-const stripe = secretKey ? new Stripe(secretKey, { apiVersion: "2024-06-20" }) : null;
+const stripe = secretKey ? new Stripe(secretKey, { apiVersion: "2026-01-28.clover" }) : null;
 
 type Tier = "silver" | "gold";
 
