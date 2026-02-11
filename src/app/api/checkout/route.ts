@@ -26,20 +26,26 @@ function loadEnvExample() {
 
 loadEnvExample();
 
-const secretKey = process.env.STRIPE_SECRET_KEY || "";
-const stripe = new Stripe(secretKey, { apiVersion: "2026-01-28.clover" });
+const secretKey = process.env.STRIPE_SECRET_KEY;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+const stripe = secretKey ? new Stripe(secretKey, { apiVersion: "2024-06-20" }) : null;
 
 type Tier = "silver" | "gold";
 
 export async function POST(req: Request) {
   try {
-    if (!process.env.STRIPE_SECRET_KEY) {
+    if (!stripe) {
       return NextResponse.json({ error: "Missing STRIPE_SECRET_KEY" }, { status: 500 });
     }
-    const { tier } = (await req.json()) as { tier?: Tier };
+
+    const body: unknown = await req.json();
+    const tier = (body as { tier?: Tier }).tier;
+
     if (tier !== "silver" && tier !== "gold") {
       return NextResponse.json({ error: "Invalid tier" }, { status: 400 });
     }
+
     const priceId =
       tier === "silver"
         ? process.env.STRIPE_SILVER_PRICE_ID
@@ -48,8 +54,6 @@ export async function POST(req: Request) {
     if (!priceId) {
       return NextResponse.json({ error: "Missing price id" }, { status: 500 });
     }
-
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
@@ -62,7 +66,8 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ url: session.url }, { status: 200 });
-  } catch (err: any) {
-    return NextResponse.json({ error: err?.message ?? "Checkout error" }, { status: 500 });
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Checkout error";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
