@@ -89,7 +89,7 @@ export default function QCF() {
           </div>
         </section>
 
-        <section className="py-16 px-4 bg-gray-50">
+        {/* <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-5xl mx-auto text-center">
 
             <h3 className="text-3xl font-bold text-blue-900 mb-4">
@@ -135,7 +135,7 @@ export default function QCF() {
             </div>
 
           </div>
-        </section>
+        </section> */}
 
         <SponsorSection
           title="Our Sponsors"
