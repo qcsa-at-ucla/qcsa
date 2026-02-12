@@ -55,6 +55,9 @@ export async function POST(req: Request) {
       // Get customer email from session
       const customerEmail = session.customer_details?.email || session.customer_email || "unknown@email.com";
 
+      // Convert amount from cents to dollars (Stripe returns amounts in cents)
+      const amountInDollars = session.amount_total ? session.amount_total / 100 : 0;
+
       // Insert sponsor record into Supabase
       await insertSponsor({
         stripe_session_id: session.id,
@@ -64,7 +67,7 @@ export async function POST(req: Request) {
         contact_email: customerEmail,
         contact_name: contactName,
         tier: tier,
-        amount_paid: session.amount_total || 0,
+        amount_paid: amountInDollars,
         currency: session.currency || "usd",
         payment_status: session.payment_status || "paid",
       });
