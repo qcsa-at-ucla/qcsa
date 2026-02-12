@@ -17,7 +17,7 @@ const InfiniteCarousel = ({ direction = 'left' }: { direction?: 'left' | 'right'
   }, []);
 
   const sponsors = [
-    { name: 'Türeci Group | Quantum Engineering', logo: '/Turechi.png', url: 'https://turecigroup.princeton.edu/' },
+    { name: 'Türeci Group | Quantum Engineering', logo: '/images/Turechi.png', url: 'https://turecigroup.princeton.edu/' },
     { name: 'Engineering Quantum Systems (EQuS)', logo: '/images/Equs.png', url: 'https://equs.mit.edu/' },
     { name: 'Quantum Device Lab', logo: '/images/QuantumDevice.png', url: 'https://qudev.phys.ethz.ch/' },
     { name: 'NarangLab', logo: '/images/Narang.png', url: 'https://naranglab.ucla.edu/' },
