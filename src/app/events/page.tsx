@@ -17,6 +17,15 @@ const eventsData = [
 		description: "Explore different quantum computing companies and research labs, network with professionals, and discover internship and job opportunities in the quantum industry.",
 		link: "/qcf",
 	},
+	{
+		datePrimary: "23",
+		dateSecondary: "February",
+		title: "DataX Center for Quantum Data Sciences Kickoff & CQSE Annual Meeting",
+		location: "UCLA",
+		time: "1:30-4 PM PST",
+		description: "A showcase of UCLA's quantum ecosystem including our research centers, workshops, and educational programs.",
+		image: "/images/dataX.png",
+	},
 ];
 
 export default function EventsPage() {
@@ -24,7 +33,7 @@ export default function EventsPage() {
     const [modalOpen, setModalOpen] = useState(false);
 
 	// State for upcoming events modal
-	type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string };
+	type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string; image?: string };
 	const [selectedEvent, setSelectedEvent] = useState<UpcomingEvent | null>(null);
 
 	// past events carousel ref and data
@@ -307,10 +316,10 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 											</div>
 
 											<div>
-												<h3 className="text-4xl mb-2 font-kantumruy text-[#234285] " style={{width: '285px', height: '65px'}}>
+												<h3 className="text-4xl mb-4 font-kantumruy text-[#234285] line-clamp-3" style={{width: '285px'}}>
 													{e.title}
 												</h3>
-												<p className="text-slate-600 font-semibold font-kantumruy text-[#234285] text-2xl mt-14" style={{width: '285px', height: '43px'}}>{e.location}</p>
+												<p className="text-slate-600 font-semibold font-kantumruy text-[#234285] text-2xl mt-4" style={{width: '285px', height: '43px'}}>{e.location}</p>
 											</div>
 										</div>
 									</article>
@@ -341,7 +350,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 					aria-labelledby="upcoming-modal-title"
 					aria-describedby="upcoming-modal-content"
 				>
-					<div className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-auto p-8" onClick={(e) => e.stopPropagation()}>
+					<div className={`bg-white rounded-lg ${selectedEvent.image ? 'max-w-5xl' : 'max-w-3xl'} w-full max-h-[90vh] overflow-auto p-8`} onClick={(e) => e.stopPropagation()}>
 						<div className="flex items-start justify-between gap-4">
 							<div className="flex-grow">
 								{/* Date badge */}
@@ -350,7 +359,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 									<span className="text-2xl font-semibold font-kantumruy text-[#234285]">{selectedEvent.dateSecondary}</span>
 								</div>
 								
-								<h3 id="upcoming-modal-title" className="text-3xl font-bold mb-3 font-kantumruy text-[#234285]">{selectedEvent.title}</h3>
+								<h3 id="upcoming-modal-title" className="text-3xl font-bold mb-4 font-kantumruy text-[#234285] break-words">{selectedEvent.title}</h3>
 								
 								<div className="space-y-2 mb-4">
 									<p className="text-lg text-slate-700 font-kantumruy flex items-center gap-2">
@@ -364,6 +373,17 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 								<div id="upcoming-modal-content" className="prose max-w-none text-slate-700 font-kantumruy leading-relaxed text-lg">
 									{selectedEvent.description}
 								</div>
+
+								{/* Show image if available */}
+								{selectedEvent.image && (
+									<div className="mt-6">
+										<img
+											src={selectedEvent.image}
+											alt={selectedEvent.title}
+											className="w-full max-w-full rounded-lg shadow-lg"
+										/>
+									</div>
+								)}
 
 								{/* Event link button if available */}
 								{selectedEvent.link && (
