@@ -52,10 +52,9 @@ const CurrentSponsors = ({
               href={sponsor.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-full h-24 sm:h-28 md:h-32 lg:h-36 bg-white rounded-lg transition-all duration-300 cursor-pointer hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 p-4 sm:p-6"
+              className="flex items-center justify-center w-full min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[180px] bg-white rounded-lg transition-all duration-300 cursor-pointer hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 p-3 sm:p-4 md:p-6"
               style={{
                 boxShadow: '0 10px 15px -3px rgba(51, 102, 255, 0.1), 0 4px 6px -2px rgba(51, 102, 255, 0.05)',
-                aspectRatio: '2.5 / 1',
                 maxWidth: '100%',
               }}
               onMouseEnter={(e) => {
