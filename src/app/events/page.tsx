@@ -25,6 +25,7 @@ const eventsData = [
 		time: "1:30-4 PM PST",
 		description: "A showcase of UCLA's quantum ecosystem including our research centers, workshops, and educational programs.",
 		image: "/images/datax.png",
+		link: "https://forms.gle/dtKjyX2o6BWMuRQN6",
 	},
 ];
 
@@ -377,11 +378,27 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 								{/* Show image if available */}
 								{selectedEvent.image && (
 									<div className="mt-6">
-										<img
-											src={selectedEvent.image}
-											alt={selectedEvent.title}
-											className="w-full max-w-full rounded-lg shadow-lg"
-										/>
+										{selectedEvent.link ? (
+											<a
+												href={selectedEvent.link}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="block cursor-pointer transition-opacity hover:opacity-90"
+												title="Click to register"
+											>
+												<img
+													src={selectedEvent.image}
+													alt={selectedEvent.title}
+													className="w-full max-w-full rounded-lg shadow-lg"
+												/>
+											</a>
+										) : (
+											<img
+												src={selectedEvent.image}
+												alt={selectedEvent.title}
+												className="w-full max-w-full rounded-lg shadow-lg"
+											/>
+										)}
 									</div>
 								)}
 
