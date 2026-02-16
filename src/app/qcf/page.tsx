@@ -11,6 +11,8 @@ const qcfSponsors = [
   { name: "Keysight", logo: "/images/qcf-sponsors/keysight.jpg", url: "https://www.keysight.com" },
   { name: "Microsoft", logo: "/images/qcf-sponsors/Microsoft.png", url: "https://www.microsoft.com" },
   { name: "PsiQuantum", logo: "/images/qcf-sponsors/psiquantum.png", url: "https://www.psiquantum.com/" },
+  { name: "IonQ", logo: "/images/qcf-sponsors/ionq.png", url: "https://www.ionq.com/" },
+  { name: "Q-CTRL", logo: "/images/qcf-sponsors/q-ctrl.png", url: "https://www.q-ctrl.com/" },
 ];
 
 export default function QCF() {
