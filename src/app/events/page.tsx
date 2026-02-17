@@ -24,7 +24,7 @@ const eventsData = [
 		location: "UCLA",
 		time: "1:30-4 PM PST",
 		description: "A showcase of UCLA's quantum ecosystem including our research centers, workshops, and educational programs.",
-		image: "/images/datax.png",
+		image: "/images/dataX.png",
 		link: "https://forms.gle/dtKjyX2o6BWMuRQN6",
 	},
 ];
