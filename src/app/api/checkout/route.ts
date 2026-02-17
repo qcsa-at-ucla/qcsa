@@ -68,6 +68,7 @@ export async function POST(req: Request) {
       cancel_url: `${siteUrl}/sponsor/cancel`,
       customer_creation: "always",
       billing_address_collection: "auto",
+      allow_promotion_codes: true,
       metadata: {
         tier,
         company_name: company_name || "",
