@@ -7,9 +7,10 @@ import Link from 'next/link';
 import MainWebsiteHeader from "../Components/mainWebsiteHeader";
 import { motion } from 'framer-motion';
 
-const eventsData = [
+type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string; image?: string };
+
+const eventsData: UpcomingEvent[] = [
 	// No upcoming events at this time
-	{},
 ];
 
 export default function EventsPage() {
@@ -17,7 +18,6 @@ export default function EventsPage() {
     const [modalOpen, setModalOpen] = useState(false);
 
 	// State for upcoming events modal
-	type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string; image?: string };
 	const [selectedEvent, setSelectedEvent] = useState<UpcomingEvent | null>(null);
 
 	// past events carousel ref and data
@@ -251,6 +251,18 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 					Upcoming Events
 				</motion.h2>
 
+				{eventsData.length === 0 ? (
+					<motion.div 
+						className="text-center py-16"
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6, delay: 0.2 }}
+					>
+						<p className="text-xl text-slate-600 font-kantumruy">
+							No upcoming events at this time. Check back soon!
+						</p>
+					</motion.div>
+				) : (
 				<div className="relative overflow-visible ">
 					{/* Left arrow placed outside the cards */}
 					<button
@@ -335,6 +347,7 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 						<span className="text-6xl">›</span>
 					</button>
 				</div>
+				)}
 			</main>
 
 			{/* Upcoming event details modal */}
