@@ -8,25 +8,8 @@ import MainWebsiteHeader from "../Components/mainWebsiteHeader";
 import { motion } from 'framer-motion';
 
 const eventsData = [
-	{
-		datePrimary: "20",
-		dateSecondary: "February",
-		title: "Quantum Career Fair",
-		location: "UCLA",
-		time: "1-5 PM PST",
-		description: "Explore different quantum computing companies and research labs, network with professionals, and discover internship and job opportunities in the quantum industry.",
-		link: "/qcf",
-	},
-	{
-		datePrimary: "23",
-		dateSecondary: "February",
-		title: "DataX Center for Quantum Data Sciences Kickoff & CQSE Annual Meeting",
-		location: "UCLA",
-		time: "1:30-4 PM PST",
-		description: "A showcase of UCLA's quantum ecosystem including our research centers, workshops, and educational programs.",
-		image: "/images/datax.png",
-		link: "https://forms.gle/dtKjyX2o6BWMuRQN6",
-	},
+	// No upcoming events at this time
+	{},
 ];
 
 export default function EventsPage() {
@@ -44,6 +27,20 @@ export default function EventsPage() {
 	const [selectedPast, setSelectedPast] = useState<PastEvent | null>(null);
 
 	const pastEvents: PastEvent[] = [
+		{
+			title: 'DataX Center for Quantum Data Sciences Kickoff & CQSE Annual Meeting',
+			date: '02/23/2026',
+			excerpt: 'A showcase of UCLA\'s quantum ecosystem including our research centers, workshops, and educational programs.',
+			href: 'https://forms.gle/dtKjyX2o6BWMuRQN6',
+			content: `The DataX Center for Quantum Data Sciences Kickoff & CQSE Annual Meeting was held at UCLA from 1:30-4 PM PST. This event showcased UCLA's thriving quantum ecosystem, featuring presentations on our research centers, hands-on workshops, and innovative educational programs. Attendees had the opportunity to learn about cutting-edge quantum research and connect with faculty, researchers, and students passionate about quantum computing and data sciences.`,
+		},
+		{
+			title: 'Quantum Career Fair',
+			date: '02/20/2026',
+			excerpt: 'Explore different quantum computing companies and research labs, network with professionals, and discover internship and job opportunities in the quantum industry.',
+			href: '/qcf',
+			content: `The Quantum Career Fair was held at UCLA from 1-5 PM PST, bringing together leading quantum computing companies and research labs with students and professionals. Attendees explored exciting career opportunities, networked with industry professionals, and discovered internships and full-time positions in the rapidly growing quantum industry. This event provided invaluable connections between the quantum workforce and the next generation of quantum talent.`,
+		},
 		{
 			title: 'Mentorship Program with QISCA',
 			date: '11/14/2025',

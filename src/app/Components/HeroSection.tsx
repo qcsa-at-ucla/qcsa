@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <div className="relative min-h-screen" style={{backgroundColor: '#F3F8FF'}}>
       {/* Event Announcement Banner */}
-      <Link href="/qcf" className="block">
+      {/* <Link href="/qcf" className="block">
         <motion.div 
           className="relative z-20 w-full py-6 px-6 cursor-pointer" 
           style={{backgroundColor: 'rgba(35, 66, 133, 0.95)'}}
@@ -49,7 +49,7 @@ const HeroSection = () => {
             </div>
           </div>
         </motion.div>
-      </Link>
+      </Link> */}
 
       {/* Orb Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
