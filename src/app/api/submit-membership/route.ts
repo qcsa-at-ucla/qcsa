@@ -56,6 +56,7 @@ export async function POST(request: NextRequest) {
       spreadsheetId,
       range: 'B:G', // Starting from column B to exclude timestamp
       valueInputOption: 'RAW',
+      insertDataOption: 'INSERT_ROWS',
       requestBody: {
         values
       }
