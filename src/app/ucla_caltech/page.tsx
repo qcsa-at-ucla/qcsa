@@ -21,6 +21,13 @@ const PAST_SPEAKERS = [
     alt: 'William Munizzi',
     url: 'https://naranglab.ucla.edu/people/dr-william-munizzi/',
     },
+    {
+        name: "Dolev Bluvstein",
+        affiliation: 'Caltech',
+    img: '/images/Dolev_Bluvstein.jpg',
+    alt: 'Dolev Bluvstein',
+    url: 'https://scholar.google.com/citations?user=zBweh4UAAAAJ&hl=en',
+    },
 ];
 
 export default function Page() {
