@@ -7,7 +7,7 @@ import Link from 'next/link';
 import MainWebsiteHeader from "../Components/mainWebsiteHeader";
 import { motion } from 'framer-motion';
 
-type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string; image?: string };
+type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string; image?: string; transportationLink?: string };
 
 const eventsData: UpcomingEvent[] = [
 	// No upcoming events at this time
@@ -19,6 +19,7 @@ const eventsData: UpcomingEvent[] = [
 		time: 'March 2, 4–5 pm PT',
 		description: "Abstract: Quantum computers open new scientific avenues, from exploring complex quantum mechanical systems to new computational paradigms, but face the fundamental challenge of decoherence. Remarkably, decoherence can be prevented by creating highly entangled states of physical qubits that encode an error-corrected logical qubit. Here we will describe the development of quantum computing with reconfigurable arrays of neutral atoms and their use for quantum processing with logical qubits. Quantum processing in this approach is based on the coherent transport of atoms shuttled by optical tweezers, enabling any-to-any connectivity, high-fidelity programmable logic, and mid-circuit processing within a zoned architecture. Logical qubit processing is greatly facilitated by parallel control and transversal operations, and is used for experiments ranging from entangling logical qubits to their use for precise simulation of quantum scrambling. Core physical mechanisms for achieving deep-circuit, universal algorithms with logical qubits are identified, and these are leveraged into new techniques that greatly reduce overheads for large-scale computation. These results, alongside other recent advances, herald a transition to error-corrected quantum processing, establishing foundations that can enable future large-scale quantum computers and their useful applications.\n\nBio: Dolev Bluvstein did his PhD in Physics at Harvard University. During his PhD he developed an approach to quantum computing based on reconfigurable atom arrays and used this for the world's first error-corrected algorithms. He came to Caltech as a faculty where he is working with other faculty members to build the world's first useful quantum computer.\n\nEveryone is welcome: minimal technical background is required. Come learn and ask questions. And yes, snacks will be provided.\n\nBring in the gates!\n\nShuhul Mujoo\nPresident of QCSA @ Caltech",
 		link: "https://luma.com/fksa8rvm",
+		transportationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdyD5jnjY3KVtEt9r5PzCiZhSnYlBYxfOcfWiApPvGssHg21A/viewform?usp=dialog",
 	}
 ];
 
@@ -421,17 +422,29 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 									</div>
 								)}
 
-								{/* Event link button if available */}
-								{selectedEvent.link && (
-									<div className="mt-6">
-										<a
-											href={selectedEvent.link}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="inline-block bg-[#234285] text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-900 text-lg font-semibold transition-colors font-kantumruy"
-										>
-											Visit Event Website →
-										</a>
+								{/* Event link buttons if available */}
+								{(selectedEvent.link || selectedEvent.transportationLink) && (
+									<div className="mt-6 flex flex-col sm:flex-row gap-3">
+										{selectedEvent.link && (
+											<a
+												href={selectedEvent.link}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="inline-block bg-[#234285] text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-900 text-lg font-semibold transition-colors font-kantumruy text-center"
+											>
+												Visit Event Website →
+											</a>
+										)}
+										{selectedEvent.transportationLink && (
+											<a
+												href={selectedEvent.transportationLink}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="inline-block bg-[#234285] text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-900 text-lg font-semibold transition-colors font-kantumruy text-center"
+											>
+												Transportation Form →
+											</a>
+										)}
 									</div>
 								)}
 							</div>
