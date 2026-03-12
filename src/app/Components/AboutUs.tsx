@@ -126,7 +126,7 @@ export default function AboutUs() {
                 href="/thank-you-page"
                 className="inline-block bg-[#234285] text-gray-100 px-8 py-4 text-2xl font-kantumruy rounded-lg hover:bg-[#234285]-500 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
               >
-                View QDW 2026 & Registration
+                Get Involved with QCSA
                 <span className="ml-2">→</span>
               </Link>
             </motion.div>

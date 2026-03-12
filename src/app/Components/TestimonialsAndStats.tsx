@@ -68,8 +68,18 @@ export default function TestimonialsAndStats(){
 
             <footer className="mt-12 sm:mt-16 md:mt-24">
                 <h2 className='text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0078d4] max-w-4xl mx-auto leading-tight'>
-                    See you at QDW2026!!
+                    Join us at our next event!
                 </h2>
+                <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a
+                        href="https://qdc-qcsa.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#234285] hover:bg-blue-700 text-white font-kantumruy text-lg font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                    >
+                        Visit QDC Website →
+                    </a>
+                </div>
             </footer>
         </section>
     );
