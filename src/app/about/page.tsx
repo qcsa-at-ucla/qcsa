@@ -39,16 +39,16 @@ const boardMembers = [
     image: "/images/Victor Yu.png",
     linkedIn: "https://www.linkedin.com/in/victoryu0/"
   },
-  // {
-  //   id: 2,
-  //   name: "Alexander Jürgens",
-  //   role: "President",
-  //   major: "EECS",
-  //   year: "PhD Student",
-  //   bio: "Alex is an EECS PhD student at the Narang Lab. He completed his BSc in Physics and MSc in Quantum Engineering at ETH Zürich in Switzerland and worked at IBM and the German Aerospace Center before joining UCLA in 2024. In his research, Alexander focuses on Quantum Algorithms and Learning Theory as well as optimization techniques and Machine Learning. On the rare occasion that he quantum tunnels outside the office he enjoys water sports, Brazilian Jiu Jitsu and all things Italian in nature.",
-  //   image: "/images/alexander Jurgens.png",
-  //   linkedIn: "https://www.linkedin.com/in/alexander-jurgens/"
-  // },
+  {
+    id: 2,
+    name: "Alexander Jürgens",
+    role: "President",
+    major: "EECS",
+    year: "PhD Student",
+    bio: "Alex is an EECS PhD student at the Narang Lab. He completed his BSc in Physics and MSc in Quantum Engineering at ETH Zürich in Switzerland and worked at IBM and the German Aerospace Center before joining UCLA in 2024. In his research, Alexander focuses on Quantum Algorithms and Learning Theory as well as optimization techniques and Machine Learning. On the rare occasion that he quantum tunnels outside the office he enjoys water sports, Brazilian Jiu Jitsu and all things Italian in nature.",
+    image: "/images/alexander Jurgens.png",
+    linkedIn: "https://www.linkedin.com/in/alexander-jurgens/"
+  },
    {
     id: 3,
     name: "Ilaana Khan",
