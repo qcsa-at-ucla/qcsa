@@ -10,17 +10,14 @@ import { motion } from 'framer-motion';
 type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string; image?: string; transportationLink?: string };
 
 const eventsData: UpcomingEvent[] = [
-	// No upcoming events at this time
 	{
-		datePrimary: '2',
-		dateSecondary: 'March',
-		title: 'Talk by Dolev Bluvstein: Atomic quantum processors and the error-correction frontier',
-		location: 'Lauritsen 269, Caltech',
-		time: 'March 2, 4–5 pm PT',
-		description: "Abstract: Quantum computers open new scientific avenues, from exploring complex quantum mechanical systems to new computational paradigms, but face the fundamental challenge of decoherence. Remarkably, decoherence can be prevented by creating highly entangled states of physical qubits that encode an error-corrected logical qubit. Here we will describe the development of quantum computing with reconfigurable arrays of neutral atoms and their use for quantum processing with logical qubits. Quantum processing in this approach is based on the coherent transport of atoms shuttled by optical tweezers, enabling any-to-any connectivity, high-fidelity programmable logic, and mid-circuit processing within a zoned architecture. Logical qubit processing is greatly facilitated by parallel control and transversal operations, and is used for experiments ranging from entangling logical qubits to their use for precise simulation of quantum scrambling. Core physical mechanisms for achieving deep-circuit, universal algorithms with logical qubits are identified, and these are leveraged into new techniques that greatly reduce overheads for large-scale computation. These results, alongside other recent advances, herald a transition to error-corrected quantum processing, establishing foundations that can enable future large-scale quantum computers and their useful applications.\n\nBio: Dolev Bluvstein did his PhD in Physics at Harvard University. During his PhD he developed an approach to quantum computing based on reconfigurable atom arrays and used this for the world's first error-corrected algorithms. He came to Caltech as a faculty where he is working with other faculty members to build the world's first useful quantum computer.\n\nEveryone is welcome: minimal technical background is required. Come learn and ask questions. And yes, snacks will be provided.\n\nBring in the gates!\n\nShuhul Mujoo\nPresident of QCSA @ Caltech",
-		link: "https://luma.com/fksa8rvm",
-		transportationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdyD5jnjY3KVtEt9r5PzCiZhSnYlBYxfOcfWiApPvGssHg21A/viewform?usp=dialog",
-		image: '/images/QCSA_Flyer_Dolev_Bluvstein.jpg',
+		datePrimary: '30',
+		dateSecondary: 'April',
+		title: 'Entangle Talks - Dr. Kai-Chi Chang',
+		location: 'E-IV Maxwell Room #57-124',
+		time: 'April 30, 2026, 2:30PM – 3:30PM',
+		description: `Explore the synergy of quantum optical physics and applications of photonic qudit on quantum information processing and quantum communication tasks.\n\nLearn about:\n• How high-dimensional entanglement in the energy-time degree of freedom offers unique advantages over binary qubit systems\n• Telecom photons for quantum measurements\n• Testing the uncertainty principle in the time-frequency domain\n• Verification of 648-dimensional Hilbert space entanglement with frequency-time entangled photons\n• Applications in quantum communication\n• Entanglement distribution and quantum key distribution with quantum frequency combs\n\nPizza and refreshments will be served!`,
+		image: '/images/Dr.Kai-Chi-Entangle-Talks.png',
 	}
 ];
 
@@ -38,6 +35,13 @@ export default function EventsPage() {
 	const [selectedPast, setSelectedPast] = useState<PastEvent | null>(null);
 
 	const pastEvents: PastEvent[] = [
+		{
+			title: 'Talk by Dolev Bluvstein: Atomic quantum processors and the error-correction frontier',
+			date: '03/02/2026',
+			excerpt: 'Dolev Bluvstein presented on the development of quantum computing with reconfigurable arrays of neutral atoms and their use for quantum processing with logical qubits, heralding a transition to error-corrected quantum processing.',
+			href: 'https://luma.com/fksa8rvm',
+			content: `Abstract: Quantum computers open new scientific avenues, from exploring complex quantum mechanical systems to new computational paradigms, but face the fundamental challenge of decoherence. Remarkably, decoherence can be prevented by creating highly entangled states of physical qubits that encode an error-corrected logical qubit. Here we will describe the development of quantum computing with reconfigurable arrays of neutral atoms and their use for quantum processing with logical qubits. Quantum processing in this approach is based on the coherent transport of atoms shuttled by optical tweezers, enabling any-to-any connectivity, high-fidelity programmable logic, and mid-circuit processing within a zoned architecture. Logical qubit processing is greatly facilitated by parallel control and transversal operations, and is used for experiments ranging from entangling logical qubits to their use for precise simulation of quantum scrambling. Core physical mechanisms for achieving deep-circuit, universal algorithms with logical qubits are identified, and these are leveraged into new techniques that greatly reduce overheads for large-scale computation. These results, alongside other recent advances, herald a transition to error-corrected quantum processing, establishing foundations that can enable future large-scale quantum computers and their useful applications.\n\nBio: Dolev Bluvstein did his PhD in Physics at Harvard University. During his PhD he developed an approach to quantum computing based on reconfigurable atom arrays and used this for the world's first error-corrected algorithms. He came to Caltech as a faculty where he is working with other faculty members to build the world's first useful quantum computer.`,
+		},
 		{
 			title: 'DataX Center for Quantum Data Sciences Kickoff & CQSE Annual Meeting',
 			date: '02/23/2026',
