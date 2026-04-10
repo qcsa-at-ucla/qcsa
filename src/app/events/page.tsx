@@ -18,6 +18,7 @@ const eventsData: UpcomingEvent[] = [
 		time: 'April 30, 2026, 2:30PM – 3:30PM',
 		description: `Explore the synergy of quantum optical physics and applications of photonic qudit on quantum information processing and quantum communication tasks.\n\nLearn about:\n• How high-dimensional entanglement in the energy-time degree of freedom offers unique advantages over binary qubit systems\n• Telecom photons for quantum measurements\n• Testing the uncertainty principle in the time-frequency domain\n• Verification of 648-dimensional Hilbert space entanglement with frequency-time entangled photons\n• Applications in quantum communication\n• Entanglement distribution and quantum key distribution with quantum frequency combs\n\nPizza and refreshments will be served!`,
 		image: '/images/Dr.Kai-Chi-Entangle-Talks.png',
+		link: 'https://docs.google.com/forms/d/e/1FAIpQLScjNbKx6COi9hRuzU1oqDmETTdGeB_Ok5gmFMzYpOXGSVuMow/viewform?usp=dialog'
 	}
 ];
 
