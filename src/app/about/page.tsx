@@ -99,17 +99,6 @@ const boardMembers = [
     image: "/images/sanskriti.png",
     linkedIn: "https://www.linkedin.com/in/sanskriti/"
   },
-
-  {
-    id: 9,
-    name: "Shreya Shirsathe",
-    role: "Events & Advertisement",
-    major: "Computer Engineering",
-    year: "3rd Year",
-    bio: "Shreya is a 3rd-year undergraduate Computer Engineering student. She is interested in quantum algorithms and hybrid quantum-classical systems. She enjoys connecting with others who share a passion for quantum computing and exploring how classical and quantum systems can work together. Outside of school, she enjoys snowboarding, dancing, and playing the guitar.",
-    image: "/images/Shreya.png",
-    linkedIn: "https://www.linkedin.com/in/shreya-shirsathe-b90256288/"
-  }, 
   {
     id: 10,
     name: "Connor Engel",
@@ -120,16 +109,7 @@ const boardMembers = [
     image: "/images/Connor.png",
     linkedIn: "https://www.linkedin.com/in/connor-engel-492216254/"
   },
-  {
-    id: 11,
-    name: "Harshita Kukreja",
-    role: "Head of Digital Infrastructure/Tech Lead",
-    major: "Computer Science and Engineering",
-    year: "2nd Year",
-    bio: "Harshita is a second-year Computer Science and Engineering student at UCLA, minoring in Disability Studies. She is passionate about digital accessibility and inclusive design, and recently launched NextA11y, a web accessibility bootcamp for middle and high school students in India. Outside of coding, Harshita enjoys 3D modeling in SOLIDWORKS, sketching, and exploring campus.",
-    image: "/images/harshita.png",
-    linkedIn: "https://www.linkedin.com/in/harshita-kukreja-28h/"
-  },
+
   {
     id: 12,
     name: "Clyde Villacrusis",
@@ -220,17 +200,7 @@ const boardMembers = [
     image: "/images/charles.png",
     linkedIn: "https://www.linkedin.com/in/charles-victorio/",
   },
-  {
-    id: 18,
-    name: "John Ye",
-    role: "Tech Maintainer",
-    major: "Computer Science",
-    year: "PhD",
-    bio: "John Ye is currently a first-year CS PHD student in UCLA. I’m fortunate to be advised by professor Jens Palsberg. Before starting Phd, he completed his master’s degree in quantum science and technology MQST in the UCLA department of physics. He was an undergraduate at Shanghai Jiaotong University majoring in Computer Science before he joined UCLA.",
-    image: "/images/john_ye.png",
-    linkedIn: "https://www.linkedin.com/in/john%EF%BC%88zhuoyang%EF%BC%89-ye-a36514225/",
-  },
- 
+
 ];
 
 const facultyLeadership = [

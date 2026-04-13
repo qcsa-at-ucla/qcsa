@@ -3,10 +3,6 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    quote: `QCSA has taught me so much about the quantum field!`,
-    author: `Harshita Kukreja`,
-  },
-  {
     quote: `QCSA has a lot of great career and networking opportunities.`,
     author: `Kimberly Wu`,
   },
