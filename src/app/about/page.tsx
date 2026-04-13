@@ -129,16 +129,16 @@ const boardMembers = [
     image: "/images/dibyesh.jpg",
     linkedIn: "https://www.linkedin.com/in/dibyeshganguly/",
   },
-  {
-    id: 19,
-    name: "Emma Zhang",
-    role: "Web Developer",
-    major: "Computer Science",
-    year: "2nd Year",
-    bio: "Emma is a second year undergraduate Computer Science student at UCLA with an interest in software development and AI. In her free time, she enjoys playing volleyball, visiting cafes, and learning Japanese.",
-    image: "/images/emma.png",
-    linkedIn: "https://www.linkedin.com/in/emma-zhang-511838245/"
-  },
+  // {
+  //   id: 19,
+  //   name: "Emma Zhang",
+  //   role: "Web Developer",
+  //   major: "Computer Science",
+  //   year: "2nd Year",
+  //   bio: "Emma is a second year undergraduate Computer Science student at UCLA with an interest in software development and AI. In her free time, she enjoys playing volleyball, visiting cafes, and learning Japanese.",
+  //   image: "/images/emma.png",
+  //   linkedIn: "https://www.linkedin.com/in/emma-zhang-511838245/"
+  // },
   {
     id: 20,
     name: "Dhruv Saran",
