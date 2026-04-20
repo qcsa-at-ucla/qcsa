@@ -18,7 +18,7 @@ function SuccessContent() {
   }, []);
 
   return (
-    <div className="min-h-[70vh] flex items-center justify-center px-4">
+    <div className="min-h-[70vh] flex items-center justify-center px-4 pb-16">
       <div className="text-center max-w-lg">
         {/* Animated check */}
         <div className="relative mx-auto w-28 h-28 mb-8">

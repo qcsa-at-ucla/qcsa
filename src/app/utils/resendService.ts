@@ -121,7 +121,7 @@ function buildOrderConfirmationHtml(payload: OrderConfirmationPayload): string {
                 Quantum Computing Student Association
               </p>
               <h1 style="margin: 0 0 8px; font-size: 30px; font-weight: 800; color: #ffffff; letter-spacing: -0.5px;">
-                Order Confirmed! 🎉
+                Order Confirmed
               </h1>
               <p style="margin: 0; font-size: 15px; color: rgba(255,255,255,0.80);">
                 Hey ${payload.customerName.split(" ")[0]}, your merch is on its way to being printed.
@@ -204,10 +204,12 @@ function buildOrderConfirmationHtml(payload: OrderConfirmationPayload): string {
                         .map(
                           ([n, text]) => `
                       <tr>
-                        <td style="width: 32px; padding-bottom: 12px; vertical-align: top;">
-                          <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: #234285; color: #fff; font-size: 12px; font-weight: 700; border-radius: 50%;">${n}</span>
+                        <td style="width: 36px; padding-bottom: 14px; vertical-align: top; padding-top: 1px;">
+                          <table cellpadding="0" cellspacing="0" border="0" style="width: 28px; height: 28px;">
+                            <tr><td style="width: 28px; height: 28px; background: #234285; border-radius: 50%; text-align: center; vertical-align: middle; font-size: 12px; font-weight: 700; color: #ffffff; line-height: 28px;">${n}</td></tr>
+                          </table>
                         </td>
-                        <td style="padding-bottom: 12px; padding-left: 10px; font-size: 14px; color: #475569; line-height: 1.5; vertical-align: top;">${text}</td>
+                        <td style="padding-bottom: 14px; padding-left: 12px; font-size: 14px; color: #475569; line-height: 1.6; vertical-align: middle;">${text}</td>
                       </tr>`
                         )
                         .join("")}

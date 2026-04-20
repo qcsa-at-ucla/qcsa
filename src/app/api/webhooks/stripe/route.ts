@@ -54,15 +54,25 @@ export async function POST(req: Request) {
           quantity: number;
         }[];
 
-        // Stripe uses `shipping` on the session (not shipping_details)
-        const shipping = (session as unknown as Record<string, unknown>).shipping as
-          | { name?: string; address?: Record<string, string | null> }
-          | null;
+        // Newer Stripe API versions surface shipping under collected_information.shipping_details;
+        // older versions used the top-level shipping field. Support both.
+        type ShippingShape = { name?: string; address?: Record<string, string | null> } | null;
+        const raw = session as unknown as Record<string, unknown>;
+        const collectedInfo = raw.collected_information as Record<string, unknown> | undefined;
+        const shipping: ShippingShape =
+          (collectedInfo?.shipping_details as ShippingShape) ??
+          (raw.shipping as ShippingShape) ??
+          null;
 
-        if (!shipping?.address) throw new Error("No shipping address in session");
-
-        const addr = shipping.address;
-        const name = (shipping.name as string | undefined) ?? "Customer";
+        // Final fallback: customer_details has address + name too
+        const addr: Record<string, string | null> =
+          shipping?.address ??
+          (session.customer_details?.address as Record<string, string | null> | undefined) ??
+          {};
+        const name =
+          shipping?.name ??
+          session.customer_details?.name ??
+          "Customer";
         const [firstName, ...rest] = name.split(" ");
         const lastName = rest.join(" ") || firstName;
 
