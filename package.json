@@ -19,6 +19,7 @@
     "ogl": "^1.0.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "resend": "^6.12.0",
     "stripe": "^20.3.1"
   },
   "devDependencies": {
