@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Kantumruy_Pro } from "next/font/google";
 
 import "./globals.css";
+import { CartProvider } from "./Components/CartContext";
+import CartUI from "./Components/CartUI";
 
 const kantumruy = Kantumruy_Pro({
   subsets: ["latin"],
@@ -70,7 +72,10 @@ export default function RootLayout({
       <body className={kantumruy.variable}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <a href="#footer" className="skip-link">Skip to footer</a>
-        {children}
+        <CartProvider>
+          <CartUI />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

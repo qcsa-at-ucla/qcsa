@@ -1,36 +1,11 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import MainWebsiteHeader from "@/app/Components/mainWebsiteHeader";
 import MainWebsiteFooter from "@/app/Components/mainWebsiteFooter";
 import type { PrintifyProduct } from "@/app/utils/printifyService";
-
-// ─── Cart types ───────────────────────────────────────────────────────────────
-
-export interface CartItem {
-  product_id: string;
-  variant_id: number;
-  quantity: number;
-  price: number;
-  title: string;
-  variant_title: string;
-  image_src: string;
-}
-
-function getCart(): CartItem[] {
-  if (typeof window === "undefined") return [];
-  try {
-    return JSON.parse(localStorage.getItem("qcsa_merch_cart") ?? "[]");
-  } catch {
-    return [];
-  }
-}
-
-function saveCart(items: CartItem[]) {
-  localStorage.setItem("qcsa_merch_cart", JSON.stringify(items));
-}
 
 // ─── Price helpers ────────────────────────────────────────────────────────────
 
@@ -115,162 +90,12 @@ function ProductCard({ product }: { product: PrintifyProduct }) {
   );
 }
 
-// ─── Cart Sidebar ─────────────────────────────────────────────────────────────
-
-function CartSidebar({
-  open,
-  onClose,
-  cart,
-  onRemove,
-  onUpdateQty,
-}: {
-  open: boolean;
-  onClose: () => void;
-  cart: CartItem[];
-  onRemove: (variantId: number) => void;
-  onUpdateQty: (variantId: number, qty: number) => void;
-}) {
-  const total = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  async function handleCheckout() {
-    setLoading(true);
-    setError(null);
-    try {
-      const res = await fetch("/api/merch/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ items: cart }),
-      });
-      const data = await res.json();
-      if (!res.ok || !data.url) throw new Error(data.error ?? "Checkout failed");
-      window.location.href = data.url;
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong");
-      setLoading(false);
-    }
-  }
-
-  return (
-    <>
-      {/* Backdrop */}
-      <div
-        className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0 pointer-events-none"}`}
-        onClick={onClose}
-      />
-
-      {/* Sidebar */}
-      <div
-        className={`fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl flex flex-col transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}
-      >
-        {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-100">
-          <h2 className="font-kantumruy font-bold text-[#234285] text-2xl">Your Cart</h2>
-          <button
-            onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-            aria-label="Close cart"
-          >
-            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        {/* Items */}
-        <div className="flex-1 overflow-y-auto p-6 space-y-4">
-          {cart.length === 0 ? (
-            <div className="text-center py-16">
-              <div className="text-5xl mb-4">🛒</div>
-              <p className="font-kantumruy text-gray-500 text-lg">Your cart is empty</p>
-              <button onClick={onClose} className="mt-6 text-[#234285] font-kantumruy font-bold hover:underline">
-                Continue Shopping →
-              </button>
-            </div>
-          ) : (
-            cart.map((item) => (
-              <div key={item.variant_id} className="flex gap-4 p-3 bg-gray-50 rounded-xl">
-                <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-white">
-                  {item.image_src && (
-                    <Image src={item.image_src} alt={item.title} fill className="object-cover" unoptimized />
-                  )}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-kantumruy font-bold text-[#234285] text-sm leading-tight truncate">
-                    {item.title}
-                  </p>
-                  <p className="font-kantumruy text-gray-500 text-xs mt-0.5">{item.variant_title}</p>
-                  <div className="flex items-center gap-3 mt-2">
-                    <div className="flex items-center gap-2 bg-white rounded-lg border border-gray-200 px-2 py-1">
-                      <button
-                        onClick={() => onUpdateQty(item.variant_id, item.quantity - 1)}
-                        className="text-gray-500 hover:text-[#234285] w-5 h-5 flex items-center justify-center"
-                      >
-                        −
-                      </button>
-                      <span className="font-kantumruy text-sm w-4 text-center">{item.quantity}</span>
-                      <button
-                        onClick={() => onUpdateQty(item.variant_id, item.quantity + 1)}
-                        className="text-gray-500 hover:text-[#234285] w-5 h-5 flex items-center justify-center"
-                      >
-                        +
-                      </button>
-                    </div>
-                    <span className="font-kantumruy font-bold text-[#234285] text-sm">
-                      {formatPrice(item.price * item.quantity)}
-                    </span>
-                  </div>
-                </div>
-                <button
-                  onClick={() => onRemove(item.variant_id)}
-                  className="text-gray-400 hover:text-red-500 transition-colors self-start mt-1"
-                  aria-label="Remove item"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-            ))
-          )}
-        </div>
-
-        {/* Footer */}
-        {cart.length > 0 && (
-          <div className="p-6 border-t border-gray-100">
-            <div className="flex justify-between items-center mb-4">
-              <span className="font-kantumruy text-gray-600">Subtotal</span>
-              <span className="font-kantumruy font-bold text-[#234285] text-xl">{formatPrice(total)}</span>
-            </div>
-            <p className="text-xs text-gray-400 font-kantumruy mb-4 text-center">
-              Shipping calculated at checkout
-            </p>
-            {error && (
-              <p className="text-red-500 text-sm font-kantumruy mb-3 text-center">{error}</p>
-            )}
-            <button
-              onClick={handleCheckout}
-              disabled={loading}
-              className="w-full bg-[#234285] text-white font-kantumruy font-bold py-4 rounded-xl hover:bg-blue-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed text-lg"
-            >
-              {loading ? "Redirecting…" : "Checkout →"}
-            </button>
-          </div>
-        )}
-      </div>
-    </>
-  );
-}
-
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function MerchPage() {
   const [products, setProducts] = useState<PrintifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [cart, setCart] = useState<CartItem[]>([]);
-  const [cartOpen, setCartOpen] = useState(false);
 
   // Load products
   useEffect(() => {
@@ -283,33 +108,6 @@ export default function MerchPage() {
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, []);
-
-  // Load cart from localStorage
-  useEffect(() => {
-    setCart(getCart());
-  }, []);
-
-  const removeFromCart = useCallback((variantId: number) => {
-    setCart((prev) => {
-      const next = prev.filter((i) => i.variant_id !== variantId);
-      saveCart(next);
-      return next;
-    });
-  }, []);
-
-  const updateQty = useCallback((variantId: number, qty: number) => {
-    if (qty <= 0) {
-      removeFromCart(variantId);
-      return;
-    }
-    setCart((prev) => {
-      const next = prev.map((i) => (i.variant_id === variantId ? { ...i, quantity: qty } : i));
-      saveCart(next);
-      return next;
-    });
-  }, [removeFromCart]);
-
-  const cartCount = cart.reduce((n, i) => n + i.quantity, 0);
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F3F8FF" }}>
@@ -368,31 +166,6 @@ export default function MerchPage() {
           </div>
         </div>
       </section>
-
-      {/* Floating Cart Button */}
-      <button
-        onClick={() => setCartOpen(true)}
-        className="fixed bottom-8 right-8 z-30 bg-[#234285] text-white rounded-full p-4 shadow-xl hover:bg-blue-700 transition-all hover:scale-110 flex items-center gap-2"
-        aria-label="Open cart"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-        {cartCount > 0 && (
-          <span className="bg-white text-[#234285] font-bold text-xs rounded-full w-5 h-5 flex items-center justify-center">
-            {cartCount}
-          </span>
-        )}
-      </button>
-
-      {/* Cart Sidebar */}
-      <CartSidebar
-        open={cartOpen}
-        onClose={() => setCartOpen(false)}
-        cart={cart}
-        onRemove={removeFromCart}
-        onUpdateQty={updateQty}
-      />
 
       {/* Products */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -459,7 +232,6 @@ export default function MerchPage() {
               { title: "Secure Payment", desc: "Payments processed safely through Stripe with full buyer protection." },
             ].map((item) => (
               <div key={item.title} className="p-6 rounded-2xl" style={{ backgroundColor: "#F3F8FF" }}>
-                <div className="text-4xl mb-4">{item.icon}</div>
                 <h3 className="font-kantumruy font-bold text-[#234285] text-xl mb-2">{item.title}</h3>
                 <p className="font-kantumruy text-gray-600">{item.desc}</p>
               </div>

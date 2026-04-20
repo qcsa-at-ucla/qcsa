@@ -6,50 +6,13 @@ import Link from "next/link";
 import MainWebsiteHeader from "@/app/Components/mainWebsiteHeader";
 import MainWebsiteFooter from "@/app/Components/mainWebsiteFooter";
 import type { PrintifyProduct, PrintifyVariant } from "@/app/utils/printifyService";
-import type { CartItem } from "../page";
-
-// ─── Cart helpers ─────────────────────────────────────────────────────────────
-
-function getCart(): CartItem[] {
-  if (typeof window === "undefined") return [];
-  try {
-    return JSON.parse(localStorage.getItem("qcsa_merch_cart") ?? "[]");
-  } catch {
-    return [];
-  }
-}
-
-function saveCart(items: CartItem[]) {
-  localStorage.setItem("qcsa_merch_cart", JSON.stringify(items));
-}
-
-function addToCart(item: CartItem) {
-  const cart = getCart();
-  const existing = cart.findIndex((i) => i.variant_id === item.variant_id);
-  if (existing >= 0) {
-    cart[existing].quantity += item.quantity;
-  } else {
-    cart.push(item);
-  }
-  saveCart(cart);
-}
+import { useCart } from "@/app/Components/CartContext";
 
 function formatPrice(cents: number): string {
   return `$${(cents / 100).toFixed(2)}`;
 }
 
 // ─── Swatch helper ────────────────────────────────────────────────────────────
-
-function ColorSwatch({ color, selected, onClick }: { color: string; selected: boolean; onClick: () => void }) {
-  return (
-    <button
-      onClick={onClick}
-      title={color}
-      style={{ backgroundColor: color }}
-      className={`w-8 h-8 rounded-full border-2 transition-all ${selected ? "border-[#234285] scale-110 shadow-md" : "border-transparent hover:border-gray-300"}`}
-    />
-  );
-}
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
@@ -64,6 +27,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   const [quantity, setQuantity] = useState(1);
   const [activeImageIdx, setActiveImageIdx] = useState(0);
   const [addedToCart, setAddedToCart] = useState(false);
+  const { addToCart } = useCart();
 
   // Load product
   useEffect(() => {
@@ -375,18 +339,6 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             )}
 
             {/* Trust badges */}
-            <div className="mt-6 grid grid-cols-3 gap-3">
-              {[
-                // { label: "Secure Checkout" },
-                // // { icon: "🚚", label: "Ships Worldwide" },
-                // { label: "Supports QCSA" },
-              ].map((b) => (
-                <div key={b.label} className="text-center p-3 rounded-xl" style={{ backgroundColor: "#F3F8FF" }}>
-                  <div className="text-2xl mb-1">{b.icon}</div>
-                  <p className="font-kantumruy text-xs text-gray-600">{b.label}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </main>

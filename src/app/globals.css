@@ -1,6 +1,21 @@
 @import "tailwindcss";
 @tailwind utilities;
 
+@keyframes cartToastIn {
+  from {
+    transform: translateX(calc(100% + 2rem));
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.cart-toast-enter {
+  animation: cartToastIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 /* Add explicit weights so Tailwind/utility classes map correctly */
 
 

@@ -258,7 +258,7 @@ export async function sendOrderConfirmation(payload: OrderConfirmationPayload): 
 
   const { error } = await resend.emails.send({
     from: fromAddress(),
-    reply_to: replyTo(),
+    replyTo: replyTo(),
     to: payload.to,
     subject: `Order Confirmed – QCSA Merch #${payload.orderId}`,
     html: buildOrderConfirmationHtml(payload),
