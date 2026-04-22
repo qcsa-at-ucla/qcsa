@@ -54,6 +54,12 @@ export default function MainWebsiteHeader() {
               Resources
             </Link>
             <Link 
+              href="/merch" 
+              className=" hover:text-[#234285] text-[#234285] font-kantumruy font-bold text-2xl transition-colors duration-200"
+            >
+              Merch
+            </Link>
+            <Link 
               href="/join-us" 
               className="bg-[#234285] text-white px-6 py-2 rounded-md text-[#234285] font-kantumruy text-2xl hover:bg-blue-700 transition-colors duration-200 shadow-md"
             >
@@ -121,6 +127,13 @@ export default function MainWebsiteHeader() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Resources
+              </Link>
+              <Link 
+                href="/merch" 
+                className="hover:text-[#234285] text-[#234285] font-kantumruy font-bold text-2xl transition-colors duration-200 py-2 px-2 hover:bg-blue-50 rounded-md"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Merch
               </Link>
               <Link 
                 href="/join-us" 
