@@ -90,7 +90,9 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
   // ─── Variant resolution ─────────────────────────────────────────────────────
 
-  const enabledVariants = product.variants.filter((v) => v.is_enabled && v.is_available);
+  // is_enabled = merchant has this variant listed for sale
+  // is_available = print provider stock flag (unreliable in real-time; Printify handles errors at order time)
+  const enabledVariants = product.variants.filter((v) => v.is_enabled);
 
   function findSelectedVariant(): PrintifyVariant | undefined {
     return enabledVariants.find((v) => {
