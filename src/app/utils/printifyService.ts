@@ -116,7 +116,7 @@ export async function getProduct(productId: string): Promise<PrintifyProduct> {
   const url = `${PRINTIFY_BASE}/shops/${shopId}/products/${productId}.json`;
   const res = await fetch(url, {
     headers: headers(),
-    next: { revalidate: 300 },
+    cache: "no-store",
   });
   if (!res.ok) throw new Error(`Printify product error: ${res.status}`);
   return res.json();

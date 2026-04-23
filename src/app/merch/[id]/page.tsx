@@ -36,10 +36,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
       .then((data) => {
         if (data.error) throw new Error(data.error);
         setProduct(data as PrintifyProduct);
-        // Default to first enabled variant options
-        const firstEnabled = (data as PrintifyProduct).variants.find(
-          (v: PrintifyVariant) => v.is_enabled && v.is_available
-        );
+        // Default to first variant (is_enabled is unreliable when product is in Publishing state)
+        const firstEnabled = (data as PrintifyProduct).variants[0];
         if (firstEnabled) {
           const opts: Record<string, number> = {};
           (data as PrintifyProduct).options.forEach((opt, idx) => {
@@ -90,9 +88,9 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
   // ─── Variant resolution ─────────────────────────────────────────────────────
 
-  // is_enabled = merchant has this variant listed for sale
-  // is_available = print provider stock flag (unreliable in real-time; Printify handles errors at order time)
-  const enabledVariants = product.variants.filter((v) => v.is_enabled);
+  // Use all variants — is_enabled is false when a product is in "Publishing" state in Printify
+  // (publishing to an external channel like Etsy). Printify handles fulfillment errors at order time.
+  const enabledVariants = product.variants;
 
   function findSelectedVariant(): PrintifyVariant | undefined {
     return enabledVariants.find((v) => {
@@ -105,11 +103,12 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
   const selectedVariant = findSelectedVariant();
 
-  // Get available option values for current selection
+  // Derive available values from actual variant entries (cross-filtered by other selections).
+  // We don't use is_enabled/is_available flags since Printify sets them unreliably for
+  // custom storefronts (e.g. "Publishing" state sets is_enabled=false).
   function getAvailableOptionValues(optionIndex: number): Set<number> {
     const available = new Set<number>();
     for (const variant of enabledVariants) {
-      // Check all OTHER options match
       const otherMatch = product!.options.every((opt, idx) => {
         if (idx === optionIndex) return true;
         const sel = selectedOptions[opt.name];
@@ -122,6 +121,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
   function handleOptionChange(optionName: string, valueId: number) {
     setSelectedOptions((prev) => ({ ...prev, [optionName]: valueId }));
+    setActiveImageIdx(0); // reset to first image for the new selection
   }
 
   // ─── Images ─────────────────────────────────────────────────────────────────
@@ -237,16 +237,14 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
                   {isColor ? (
                     <div className="flex flex-wrap gap-2">
-                      {option.values.map((val) => {
-                        const isAvail = available.has(val.id);
+                      {option.values.filter((val) => available.has(val.id)).map((val) => {
                         const isSelected = selectedOptions[option.name] === val.id;
                         const hexColor = val.colors?.[0] ?? "#888";
                         return (
                           <div key={val.id} className="relative group">
                             <button
-                              onClick={() => isAvail && handleOptionChange(option.name, val.id)}
-                              disabled={!isAvail}
-                              className={`w-9 h-9 rounded-full border-2 transition-all ${isSelected ? "border-[#234285] scale-110 shadow-md" : "border-transparent hover:border-gray-300"} ${!isAvail ? "opacity-30 cursor-not-allowed" : ""}`}
+                              onClick={() => handleOptionChange(option.name, val.id)}
+                              className={`w-9 h-9 rounded-full border-2 transition-all ${isSelected ? "border-[#234285] scale-110 shadow-md" : "border-transparent hover:border-gray-300"}`}
                               style={{ backgroundColor: hexColor }}
                               title={val.title}
                             />
