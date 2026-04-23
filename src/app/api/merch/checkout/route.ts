@@ -90,18 +90,17 @@ export async function POST(req: Request) {
       phone_number_collection: { enabled: true },
       metadata: {
         order_type: "merch",
-        // Printify fulfillment items (product_id, variant_id, quantity)
-        items_json: JSON.stringify(printifyItems).slice(0, 500),
-        // Richer cart data for order confirmation email (title, variant, price, image)
+        // Printify fulfillment items — kept minimal to stay well within Stripe's 500-char metadata limit
+        items_json: JSON.stringify(printifyItems),
+        // Cart data for confirmation email — titles/variants only (no images)
         cart_items_json: JSON.stringify(
           items.map((i) => ({
-            title: i.title,
-            variant_title: i.variant_title,
-            quantity: i.quantity,
-            price: i.price,
-            image_src: i.image_src,
+            t: i.title,
+            v: i.variant_title,
+            q: i.quantity,
+            p: i.price,
           }))
-        ).slice(0, 500),
+        ),
       },
     });
 

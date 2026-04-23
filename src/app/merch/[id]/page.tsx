@@ -36,12 +36,19 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
       .then((data) => {
         if (data.error) throw new Error(data.error);
         setProduct(data as PrintifyProduct);
-        // Default to first variant (is_enabled is unreliable when product is in Publishing state)
-        const firstEnabled = (data as PrintifyProduct).variants[0];
+        // Default to first enabled (merchant-configured) variant
+        const firstEnabled = (data as PrintifyProduct).variants.find(
+          (v: PrintifyVariant) => v.is_enabled
+        );
         if (firstEnabled) {
           const opts: Record<string, number> = {};
-          (data as PrintifyProduct).options.forEach((opt, idx) => {
-            opts[opt.name] = firstEnabled.options[idx];
+          // variant.options is an unordered set of value IDs — map each back to its option
+          firstEnabled.options.forEach((valueId: number) => {
+            (data as PrintifyProduct).options.forEach((opt) => {
+              if (opt.values.some((v) => v.id === valueId)) {
+                opts[opt.name] = valueId;
+              }
+            });
           });
           setSelectedOptions(opts);
         }
@@ -88,40 +95,53 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
   // ─── Variant resolution ─────────────────────────────────────────────────────
 
-  // Use all variants — is_enabled is false when a product is in "Publishing" state in Printify
-  // (publishing to an external channel like Etsy). Printify handles fulfillment errors at order time.
-  const enabledVariants = product.variants;
+  // Printify returns ALL blueprint variants (can be 400-1000+).
+  // Only is_enabled=true variants are the ones the merchant actually configured.
+  const enabledVariants = product.variants.filter((v) => v.is_enabled);
 
+  // Build a lookup: value ID → option name (variant.options is an unordered set of IDs,
+  // NOT indexed to match product.options array order)
+  const valueIdToOptionName = new Map<number, string>();
+  product.options.forEach((opt) => {
+    opt.values.forEach((val) => valueIdToOptionName.set(val.id, opt.name));
+  });
+
+  // Find the variant that has ALL currently selected option value IDs
   function findSelectedVariant(): PrintifyVariant | undefined {
-    return enabledVariants.find((v) => {
-      return product!.options.every((opt, idx) => {
-        const optionId = selectedOptions[opt.name];
-        return optionId === undefined || v.options[idx] === optionId;
-      });
-    });
+    const selectedIds = Object.values(selectedOptions);
+    if (selectedIds.length < product!.options.length) return undefined;
+    return enabledVariants.find((v) =>
+      selectedIds.every((id) => v.options.includes(id))
+    );
   }
 
   const selectedVariant = findSelectedVariant();
 
-  // Derive available values from actual variant entries (cross-filtered by other selections).
-  // We don't use is_enabled/is_available flags since Printify sets them unreliably for
-  // custom storefronts (e.g. "Publishing" state sets is_enabled=false).
-  function getAvailableOptionValues(optionIndex: number): Set<number> {
+  // Get available option values for one option given other current selections
+  function getAvailableOptionValues(optionName: string): Set<number> {
     const available = new Set<number>();
+    const thisOptionValueIds = new Set(
+      product!.options.find((o) => o.name === optionName)?.values.map((v) => v.id) ?? []
+    );
     for (const variant of enabledVariants) {
-      const otherMatch = product!.options.every((opt, idx) => {
-        if (idx === optionIndex) return true;
-        const sel = selectedOptions[opt.name];
-        return sel === undefined || variant.options[idx] === sel;
+      // Check all OTHER selected options are present in this variant
+      const otherMatch = Object.entries(selectedOptions).every(([name, id]) => {
+        if (name === optionName) return true;
+        return variant.options.includes(id);
       });
-      if (otherMatch) available.add(variant.options[optionIndex]);
+      if (otherMatch) {
+        // Add whichever value ID this variant has for this option
+        for (const id of variant.options) {
+          if (thisOptionValueIds.has(id)) available.add(id);
+        }
+      }
     }
     return available;
   }
 
   function handleOptionChange(optionName: string, valueId: number) {
     setSelectedOptions((prev) => ({ ...prev, [optionName]: valueId }));
-    setActiveImageIdx(0); // reset to first image for the new selection
+    setActiveImageIdx(0);
   }
 
   // ─── Images ─────────────────────────────────────────────────────────────────
@@ -222,9 +242,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             </div>
 
             {/* Options */}
-            {product.options.map((option, optIdx) => {
-              const available = getAvailableOptionValues(optIdx);
+            {product.options.map((option) => {
+              const available = getAvailableOptionValues(option.name);
               const isColor = option.type === "color";
+              const availableValues = option.values.filter((val) => available.has(val.id));
 
               return (
                 <div key={option.name} className="mb-6">
@@ -236,41 +257,50 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   </div>
 
                   {isColor ? (
-                    <div className="flex flex-wrap gap-2">
-                      {option.values.filter((val) => available.has(val.id)).map((val) => {
-                        const isSelected = selectedOptions[option.name] === val.id;
-                        const hexColor = val.colors?.[0] ?? "#888";
-                        return (
-                          <div key={val.id} className="relative group">
-                            <button
-                              onClick={() => handleOptionChange(option.name, val.id)}
-                              className={`w-9 h-9 rounded-full border-2 transition-all ${isSelected ? "border-[#234285] scale-110 shadow-md" : "border-transparent hover:border-gray-300"}`}
-                              style={{ backgroundColor: hexColor }}
-                              title={val.title}
-                            />
-                            <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
-                              {val.title}
+                    availableValues.length === 1 ? (
+                      // Single color — show as a non-interactive indicator
+                      <div className="flex items-center gap-2">
+                        <div
+                          className="w-9 h-9 rounded-full border-2 border-[#234285] shadow-md"
+                          style={{ backgroundColor: availableValues[0].colors?.[0] ?? "#888" }}
+                          title={availableValues[0].title}
+                        />
+                        <span className="font-kantumruy text-sm text-gray-500">{availableValues[0].title}</span>
+                      </div>
+                    ) : (
+                      // Multiple colors — show picker
+                      <div className="flex flex-wrap gap-2">
+                        {availableValues.map((val) => {
+                          const isSelected = selectedOptions[option.name] === val.id;
+                          const hexColor = val.colors?.[0] ?? "#888";
+                          return (
+                            <div key={val.id} className="relative group">
+                              <button
+                                onClick={() => handleOptionChange(option.name, val.id)}
+                                className={`w-9 h-9 rounded-full border-2 transition-all ${isSelected ? "border-[#234285] scale-110 shadow-md" : "border-transparent hover:border-gray-300"}`}
+                                style={{ backgroundColor: hexColor }}
+                                title={val.title}
+                              />
+                              <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                                {val.title}
+                              </div>
                             </div>
-                          </div>
-                        );
-                      })}
-                    </div>
+                          );
+                        })}
+                      </div>
+                    )
                   ) : (
                     <div className="flex flex-wrap gap-2">
-                      {option.values.map((val) => {
-                        const isAvail = available.has(val.id);
+                      {availableValues.map((val) => {
                         const isSelected = selectedOptions[option.name] === val.id;
                         return (
                           <button
                             key={val.id}
-                            onClick={() => isAvail && handleOptionChange(option.name, val.id)}
-                            disabled={!isAvail}
+                            onClick={() => handleOptionChange(option.name, val.id)}
                             className={`px-4 py-2 rounded-lg border-2 font-kantumruy text-sm font-bold transition-all ${
                               isSelected
                                 ? "border-[#234285] bg-[#234285] text-white"
-                                : isAvail
-                                ? "border-gray-200 text-gray-700 hover:border-[#234285] hover:text-[#234285]"
-                                : "border-gray-100 text-gray-300 cursor-not-allowed line-through"
+                                : "border-gray-200 text-gray-700 hover:border-[#234285] hover:text-[#234285]"
                             }`}
                           >
                             {val.title}

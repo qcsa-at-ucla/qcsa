@@ -44,49 +44,104 @@ export async function POST(req: Request) {
 
     // ── Merch order fulfillment ───────────────────────────────────────────────
     if (session.metadata?.order_type === "merch") {
+      // Parse shared data used by both email and Printify
+      const itemsJson = session.metadata?.items_json;
+      let printifyItems: { product_id: string; variant_id: number; quantity: number }[] = [];
       try {
-        const itemsJson = session.metadata?.items_json;
+        if (itemsJson) printifyItems = JSON.parse(itemsJson);
+      } catch {
+        console.error("Failed to parse items_json:", itemsJson);
+      }
+
+      type ShippingShape = { name?: string; address?: Record<string, string | null> } | null;
+      const raw = session as unknown as Record<string, unknown>;
+      const collectedInfo = raw.collected_information as Record<string, unknown> | undefined;
+      const shipping: ShippingShape =
+        (collectedInfo?.shipping_details as ShippingShape) ??
+        (raw.shipping as ShippingShape) ??
+        null;
+
+      const addr: Record<string, string | null> =
+        shipping?.address ??
+        (session.customer_details?.address as Record<string, string | null> | undefined) ??
+        {};
+      const name =
+        shipping?.name ?? session.customer_details?.name ?? "Customer";
+      const [firstName, ...rest] = name.split(" ");
+      const lastName = rest.join(" ") || firstName;
+
+      const customerEmail = session.customer_details?.email ?? "";
+      const shippingMethodName =
+        session.metadata?.shipping_method_name ?? "Standard Shipping";
+
+      // ── Send order confirmation email (non-fatal, always runs) ────────────
+      if (customerEmail) {
+        try {
+          const cartItemsJson = session.metadata?.cart_items_json;
+          let emailItems: OrderConfirmationItem[] = [];
+
+          if (cartItemsJson) {
+            const cartItems = JSON.parse(cartItemsJson) as {
+              t: string; v: string; q: number; p: number;
+            }[];
+            emailItems = cartItems.map((c) => ({
+              title: c.t,
+              variant_title: c.v,
+              quantity: c.q,
+              price: c.p,
+            }));
+          } else {
+            emailItems = printifyItems.map((i) => ({
+              title: `Product ${i.product_id.slice(-6)}`,
+              variant_title: `Variant ${i.variant_id}`,
+              quantity: i.quantity,
+              price: 0,
+            }));
+          }
+
+          const subtotal = emailItems.reduce((sum, i) => sum + i.price * i.quantity, 0);
+          const shippingAmount = session.total_details?.amount_shipping ?? 0;
+          const total = session.amount_total ?? subtotal + shippingAmount;
+
+          await sendOrderConfirmation({
+            to: customerEmail,
+            customerName: name,
+            orderId: session.id.slice(-12).toUpperCase(),
+            items: emailItems,
+            shippingAddress: {
+              name,
+              line1: (addr.line1 as string | null) ?? "",
+              line2: addr.line2 as string | null,
+              city: (addr.city as string | null) ?? "",
+              state: (addr.state as string | null) ?? "",
+              postal_code: (addr.postal_code as string | null) ?? "",
+              country: (addr.country as string | null) ?? "US",
+            },
+            shippingMethod: shippingMethodName,
+            subtotal,
+            shipping: shippingAmount,
+            total,
+          });
+
+          console.log(`Order confirmation email sent to ${customerEmail}`);
+        } catch (emailErr) {
+          console.error(
+            "Failed to send order confirmation email:",
+            emailErr instanceof Error ? emailErr.message : emailErr
+          );
+        }
+      }
+
+      // ── Submit Printify order (non-fatal) ─────────────────────────────────
+      try {
         if (!itemsJson) throw new Error("No items_json in merch session metadata");
 
-        const printifyItems = JSON.parse(itemsJson) as {
-          product_id: string;
-          variant_id: number;
-          quantity: number;
-        }[];
-
-        // Newer Stripe API versions surface shipping under collected_information.shipping_details;
-        // older versions used the top-level shipping field. Support both.
-        type ShippingShape = { name?: string; address?: Record<string, string | null> } | null;
-        const raw = session as unknown as Record<string, unknown>;
-        const collectedInfo = raw.collected_information as Record<string, unknown> | undefined;
-        const shipping: ShippingShape =
-          (collectedInfo?.shipping_details as ShippingShape) ??
-          (raw.shipping as ShippingShape) ??
-          null;
-
-        // Final fallback: customer_details has address + name too
-        const addr: Record<string, string | null> =
-          shipping?.address ??
-          (session.customer_details?.address as Record<string, string | null> | undefined) ??
-          {};
-        const name =
-          shipping?.name ??
-          session.customer_details?.name ??
-          "Customer";
-        const [firstName, ...rest] = name.split(" ");
-        const lastName = rest.join(" ") || firstName;
-
-        await getShopId(); // ensure shop is resolved
-
-        const customerEmail = session.customer_details?.email ?? "";
-        const shippingMethodName =
-          session.metadata?.shipping_method_name ?? "Standard Shipping";
-
+        await getShopId();
         await submitOrder({
           external_id: session.id,
           label: `QCSA-${session.id.slice(-8).toUpperCase()}`,
           line_items: printifyItems,
-          shipping_method: 1, // standard
+          shipping_method: 1,
           send_shipping_notification: true,
           address_to: {
             first_name: firstName,
@@ -101,83 +156,15 @@ export async function POST(req: Request) {
             zip: (addr.postal_code as string | null) ?? "",
           },
         });
-
-        // ── Send order confirmation email ─────────────────────────────────────
-        if (customerEmail) {
-          try {
-            // Parse full cart items from metadata (includes price, title, image)
-            const cartItemsJson = session.metadata?.cart_items_json;
-            let emailItems: OrderConfirmationItem[] = [];
-
-            if (cartItemsJson) {
-              const cartItems = JSON.parse(cartItemsJson) as {
-                title: string;
-                variant_title: string;
-                quantity: number;
-                price: number;
-                image_src?: string;
-              }[];
-              emailItems = cartItems.map((c) => ({
-                title: c.title,
-                variant_title: c.variant_title,
-                quantity: c.quantity,
-                price: c.price,
-                image_src: c.image_src,
-              }));
-            } else {
-              // Fallback: use printify items without images/titles
-              emailItems = printifyItems.map((i) => ({
-                title: `Product ${i.product_id.slice(-6)}`,
-                variant_title: `Variant ${i.variant_id}`,
-                quantity: i.quantity,
-                price: 0,
-              }));
-            }
-
-            const subtotal = emailItems.reduce(
-              (sum, i) => sum + i.price * i.quantity,
-              0
-            );
-            const shippingAmount = session.total_details?.amount_shipping ?? 0;
-            const total = session.amount_total ?? subtotal + shippingAmount;
-
-            await sendOrderConfirmation({
-              to: customerEmail,
-              customerName: name,
-              orderId: session.id.slice(-12).toUpperCase(),
-              items: emailItems,
-              shippingAddress: {
-                name,
-                line1: (addr.line1 as string | null) ?? "",
-                line2: addr.line2 as string | null,
-                city: (addr.city as string | null) ?? "",
-                state: (addr.state as string | null) ?? "",
-                postal_code: (addr.postal_code as string | null) ?? "",
-                country: (addr.country as string | null) ?? "US",
-              },
-              shippingMethod: shippingMethodName,
-              subtotal,
-              shipping: shippingAmount,
-              total,
-            });
-
-            console.log(`Order confirmation email sent to ${customerEmail}`);
-          } catch (emailErr) {
-            // Non-fatal — log but don't fail the webhook
-            console.error(
-              "Failed to send order confirmation email:",
-              emailErr instanceof Error ? emailErr.message : emailErr
-            );
-          }
-        }
-
         console.log(`Printify merch order submitted for session ${session.id}`);
-        return NextResponse.json({ received: true });
-      } catch (err) {
-        const message = err instanceof Error ? err.message : "Printify order failed";
-        console.error("Merch fulfillment error:", message);
-        return NextResponse.json({ error: message }, { status: 500 });
+      } catch (printifyErr) {
+        console.error(
+          "Printify order submission failed:",
+          printifyErr instanceof Error ? printifyErr.message : printifyErr
+        );
       }
+
+      return NextResponse.json({ received: true });
     }
 
     // ── Sponsor payment ───────────────────────────────────────────────────────

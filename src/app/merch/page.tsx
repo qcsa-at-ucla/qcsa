@@ -35,7 +35,11 @@ function ProductCard({ product }: { product: PrintifyProduct }) {
 
   const minPrice = getMinPrice(product);
   const colorOption = product.options.find((o) => o.type === "color");
-  const colorCount = colorOption?.values.length ?? 0;
+  const enabledVariants = product.variants.filter((v) => v.is_enabled);
+  const enabledColorIds = colorOption
+    ? new Set(enabledVariants.flatMap((v) => v.options.filter((id) => colorOption.values.some((cv) => cv.id === id))))
+    : new Set();
+  const colorCount = enabledColorIds.size;
 
   return (
     <Link href={`/merch/${product.id}`} className="group block">
