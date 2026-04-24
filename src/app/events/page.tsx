@@ -14,7 +14,7 @@ const eventsData: UpcomingEvent[] = [
 		datePrimary: '28',
 		dateSecondary: 'April',
 		title: 'The Road to Quantum Advantage',
-		location: 'Noyes Lab 147',
+		location: 'Lauristen 269',
 		time: 'April 28, 2026, 4:00PM – 5:00PM',
 		description: `I will review recent advances in quantum computing across hardware, algorithms, and fault-tolerant architectures, and assess the progress toward realizing useful applications.`,
 		image: '/images/john-preskill.png',
