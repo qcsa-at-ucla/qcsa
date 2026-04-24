@@ -15,7 +15,7 @@ const eventsData: UpcomingEvent[] = [
 		dateSecondary: 'April',
 		title: 'The Road to Quantum Advantage',
 		location: 'Lauristen 269',
-		time: 'April 28, 2026, 4:00PM – 5:00PM',
+		time: 'April 28, 2026, 4:15PM – 5:15PM',
 		description: `I will review recent advances in quantum computing across hardware, algorithms, and fault-tolerant architectures, and assess the progress toward realizing useful applications.`,
 		image: '/images/john-preskill.png',
 		speakerImage: '/images/jp-head-ann.jpg',
