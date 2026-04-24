@@ -7,9 +7,19 @@ import Link from 'next/link';
 import MainWebsiteHeader from "../Components/mainWebsiteHeader";
 import { motion } from 'framer-motion';
 
-type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string; image?: string; transportationLink?: string };
+type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string; image?: string; speakerImage?: string; transportationLink?: string };
 
 const eventsData: UpcomingEvent[] = [
+	{
+		datePrimary: '28',
+		dateSecondary: 'April',
+		title: 'The Road to Quantum Advantage',
+		location: 'Noyes Lab 147',
+		time: 'April 28, 2026, 4:00PM – 5:00PM',
+		description: `I will review recent advances in quantum computing across hardware, algorithms, and fault-tolerant architectures, and assess the progress toward realizing useful applications.`,
+		image: '/images/john-preskill.png',
+		speakerImage: '/images/jp-head-ann.jpg',
+	},
 	{
 		datePrimary: '30',
 		dateSecondary: 'April',
@@ -385,19 +395,31 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 									<span className="text-5xl font-bold font-kantumruy text-[#234285]">{selectedEvent.datePrimary}</span>
 									<span className="text-2xl font-semibold font-kantumruy text-[#234285]">{selectedEvent.dateSecondary}</span>
 								</div>
-								
-								<h3 id="upcoming-modal-title" className="text-3xl font-bold mb-4 font-kantumruy text-[#234285] break-words">{selectedEvent.title}</h3>
-								
-								<div className="space-y-2 mb-4">
-									<p className="text-lg text-slate-700 font-kantumruy flex items-center gap-2">
-										<span className="font-semibold">📍 Location:</span> {selectedEvent.location}
-									</p>
-									<p className="text-lg text-slate-700 font-kantumruy flex items-center gap-2">
-										<span className="font-semibold">🕐 Time:</span> {selectedEvent.time}
-									</p>
+
+								{/* Speaker headshot + title row */}
+							{selectedEvent.speakerImage ? (
+								<div className="flex items-center gap-5 mb-4">
+									<img
+										src={selectedEvent.speakerImage}
+										alt="Speaker"
+										className="w-20 h-20 rounded-full object-cover flex-shrink-0 shadow-md border-2 border-blue-100"
+									/>
+									<h3 id="upcoming-modal-title" className="text-3xl font-bold font-kantumruy text-[#234285] break-words">{selectedEvent.title}</h3>
 								</div>
-								
-								<div id="upcoming-modal-content" className="prose max-w-none text-slate-700 font-kantumruy leading-relaxed text-lg whitespace-pre-line">
+							) : (
+								<h3 id="upcoming-modal-title" className="text-3xl font-bold mb-4 font-kantumruy text-[#234285] break-words">{selectedEvent.title}</h3>
+							)}
+							
+							<div className="space-y-2 mb-4">
+								<p className="text-lg text-slate-700 font-kantumruy flex items-center gap-2">
+									<span className="font-semibold">📍 Location:</span> {selectedEvent.location}
+								</p>
+								<p className="text-lg text-slate-700 font-kantumruy flex items-center gap-2">
+									<span className="font-semibold">🕐 Time:</span> {selectedEvent.time}
+								</p>
+							</div>
+							
+							<div id="upcoming-modal-content" className="prose max-w-none text-slate-700 font-kantumruy leading-relaxed text-lg whitespace-pre-line">
 									{selectedEvent.description}
 								</div>
 
