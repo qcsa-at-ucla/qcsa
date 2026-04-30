@@ -10,26 +10,6 @@ import { motion } from 'framer-motion';
 type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string; image?: string; speakerImage?: string; transportationLink?: string };
 
 const eventsData: UpcomingEvent[] = [
-	{
-		datePrimary: '28',
-		dateSecondary: 'April',
-		title: 'The Road to Quantum Advantage',
-		location: 'Lauristen 269',
-		time: 'April 28, 2026, 4:15PM – 5:15PM',
-		description: `I will review recent advances in quantum computing across hardware, algorithms, and fault-tolerant architectures, and assess the progress toward realizing useful applications.`,
-		image: '/images/john-preskill.png',
-		speakerImage: '/images/jp-head-ann.jpg',
-	},
-	{
-		datePrimary: '30',
-		dateSecondary: 'April',
-		title: 'Entangle Talks - Dr. Kai-Chi Chang',
-		location: 'E-IV Maxwell Room #57-124',
-		time: 'April 30, 2026, 2:30PM – 3:30PM',
-		description: `Explore the synergy of quantum optical physics and applications of photonic qudit on quantum information processing and quantum communication tasks.\n\nLearn about:\n• How high-dimensional entanglement in the energy-time degree of freedom offers unique advantages over binary qubit systems\n• Telecom photons for quantum measurements\n• Testing the uncertainty principle in the time-frequency domain\n• Verification of 648-dimensional Hilbert space entanglement with frequency-time entangled photons\n• Applications in quantum communication\n• Entanglement distribution and quantum key distribution with quantum frequency combs\n\nPizza and refreshments will be served!`,
-		image: '/images/Dr.Kai-Chi-Entangle-Talks.png',
-		link: 'https://docs.google.com/forms/d/e/1FAIpQLScjNbKx6COi9hRuzU1oqDmETTdGeB_Ok5gmFMzYpOXGSVuMow/viewform?usp=dialog'
-	}
 ];
 
 export default function EventsPage() {
@@ -46,6 +26,20 @@ export default function EventsPage() {
 	const [selectedPast, setSelectedPast] = useState<PastEvent | null>(null);
 
 	const pastEvents: PastEvent[] = [
+		{
+			title: 'Entangle Talks - Dr. Kai-Chi Chang',
+			date: '04/30/2026',
+			excerpt: 'Dr. Kai-Chi Chang explored the synergy of quantum optical physics and applications of photonic qudit on quantum information processing and quantum communication tasks, including high-dimensional entanglement and quantum key distribution.',
+			href: '#',
+			content: `Explore the synergy of quantum optical physics and applications of photonic qudit on quantum information processing and quantum communication tasks.\n\nTopics covered:\n• How high-dimensional entanglement in the energy-time degree of freedom offers unique advantages over binary qubit systems\n• Telecom photons for quantum measurements\n• Testing the uncertainty principle in the time-frequency domain\n• Verification of 648-dimensional Hilbert space entanglement with frequency-time entangled photons\n• Applications in quantum communication\n• Entanglement distribution and quantum key distribution with quantum frequency combs`,
+		},
+		{
+			title: 'The Road to Quantum Advantage',
+			date: '04/28/2026',
+			excerpt: 'Prof. John Preskill reviewed recent advances in quantum computing across hardware, algorithms, and fault-tolerant architectures, and assessed the progress toward realizing useful applications.',
+			href: '#',
+			content: `Prof. John Preskill reviewed recent advances in quantum computing across hardware, algorithms, and fault-tolerant architectures, and assessed the progress toward realizing useful applications. The talk was held at Lauristen 269 on April 28, 2026.`,
+		},
 		{
 			title: 'Talk by Dolev Bluvstein: Atomic quantum processors and the error-correction frontier',
 			date: '03/02/2026',
