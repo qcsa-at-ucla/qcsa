@@ -150,6 +150,16 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/dhruv-saran/"
   },
   {
+    id: 22,
+    name: "Ivan Fang",
+    role: "Web Developer",
+    major: "Computer Science",
+    year: "1st Year",
+    bio: "Ivan is a Computer Science student at UCLA, originally from Singapore. As part of QCSA's tech team, he works on building and maintaining the club's various websites. Outside of QCSA, he's also a developer on UCLA's ACM Dev Team and on UCLA MentorSEAS, where he supports incoming engineering students. On the quantum side, he's more of a \"curious observer\" than researcher. When he's not writing code, he's probably eating in the dining halls.",
+    image: "/images/ivan.jpg",
+    linkedIn: "https://www.linkedin.com/in/ivan-fang-dev/"
+  },
+  {
     id: 14,
     name: "Kimberley Wu",
     role: "Designer",
@@ -169,6 +179,7 @@ const boardMembers = [
     image: "/images/gina.png",
     linkedIn: "https://www.linkedin.com/in/gina-namkung/"
   },
+  /*
   {
     id: 16,
     name: "Sameer Kumar",
@@ -179,7 +190,7 @@ const boardMembers = [
     image: "/images/sameer.jpg",
     linkedIn: "https://www.linkedin.com/in/sameer-kumar-aa981b32a/"
   },
-  
+  */
   {
     id: 17,
     name: "Matt Guibord",
