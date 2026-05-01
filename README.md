@@ -3,12 +3,14 @@
 > **Quantum Computing Student Association at UCLA**  
 > Building the quantum future through education, innovation, and community engagement.
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.3.4-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-15.x-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.0.0-blue?style=flat&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.x-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
+[![Stripe](https://img.shields.io/badge/Stripe-payments-635BFF?style=flat&logo=stripe)](https://stripe.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-database-3ECF8E?style=flat&logo=supabase)](https://supabase.com/)
 
-## 📚 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Tech Stack](#-tech-stack)
@@ -24,17 +26,21 @@
 
 ---
 
-## 🎯 Overview
+---
+
+## Overview
 
 The **Quantum Computing Student Association (QCSA)** is UCLA's premier quantum science and technology organization, operating under the Center for Quantum Science and Engineering (CQSE).
 
 This repository contains the **official QCSA website**, a modern, full-stack Next.js application that serves as the central hub for:
 
-- 🌐 **Community Building** - Connecting students, researchers, and industry professionals
-- 📖 **Education** - Workshops, seminars, and resources making quantum computing accessible
-- 🎓 **Events & Collaborations** - UCLA x USC seminars, UCLA x Caltech EntangleTalks, hackathons
-- 👥 **Membership Management** - Integrated Google Sheets & Mailchimp automation
-- 🔬 **Research Showcase** - Highlighting cutting-edge quantum research and student projects
+- **Community Building** - Connecting students, researchers, and industry professionals
+- **Education** - Workshops, seminars, and resources making quantum computing accessible
+- **Events & Collaborations** - UCLA x USC seminars, UCLA x Caltech EntangleTalks, hackathons
+- **Membership Management** - Integrated Google Sheets & Mailchimp automation
+- **Merch Store** - Print-on-demand store powered by Printify and Stripe
+- **Sponsorship Portal** - Tiered sponsor checkout (Silver/Gold) via Stripe
+- **Research Showcase** - Highlighting cutting-edge quantum research and student projects
 
 ### Key Features
 
@@ -42,6 +48,11 @@ This repository contains the **official QCSA website**, a modern, full-stack Nex
 - **Responsive Design** using Tailwind CSS 4 and custom Kantumruy Pro font
 - **Framer Motion Animations** for smooth, engaging user interactions
 - **Automated Member Sync** between Google Sheets and Mailchimp
+- **Print-on-Demand Merch Store** with Printify integration, persistent cart, and Stripe checkout
+- **Sponsor Checkout** with tiered Silver/Gold pricing via Stripe
+- **Stripe Webhook Handler** for automated post-payment order fulfillment
+- **Transactional Emails** via Resend (order confirmations, etc.)
+- **Supabase Database** for persistent application data
 - **Admin Dashboard** for managing integrations and monitoring sync status
 - **Accessible & SEO-Optimized** with semantic HTML and proper metadata
 
@@ -51,16 +62,20 @@ This repository contains the **official QCSA website**, a modern, full-stack Nex
 
 | Category | Technologies |
 |----------|-------------|
-| **Framework** | Next.js 15.3.4 (App Router) |
+| **Framework** | Next.js 15.x (App Router) |
 | **UI Library** | React 19.0.0 |
 | **Language** | TypeScript 5.x |
 | **Styling** | Tailwind CSS 4.x, Custom CSS |
 | **Animations** | Framer Motion 12.x |
 | **Fonts** | Kantumruy Pro (Google Fonts) |
-| **APIs** | Google Sheets API, Mailchimp Marketing API |
+| **Payments** | Stripe (sponsor tiers + merch checkout) |
+| **Merch Fulfillment** | Printify (print-on-demand) |
+| **Email** | Resend (transactional emails) |
+| **Database** | Supabase (PostgreSQL) |
+| **Member Sync** | Google Sheets API → Mailchimp |
 | **Backend Services** | Node.js 18+, googleapis, @mailchimp/mailchimp_marketing |
 | **Development** | Turbopack (Next.js bundler), ESLint, cross-env |
-| **Deployment** | Vercel (production), Local dev server |
+| **Deployment** | Vercel (production) |
 
 ### Why These Technologies?
 
@@ -69,6 +84,10 @@ This repository contains the **official QCSA website**, a modern, full-stack Nex
 - **TypeScript**: Type safety prevents runtime errors and improves developer experience
 - **Tailwind CSS 4**: Utility-first CSS for rapid, consistent UI development
 - **Framer Motion**: Declarative animations that enhance user engagement
+- **Stripe**: Industry-standard payments for sponsorships and merch orders
+- **Printify**: Print-on-demand fulfillment — no inventory required
+- **Resend**: Reliable transactional email delivery (order confirmations)
+- **Supabase**: Managed PostgreSQL database with a generous free tier
 - **Google Sheets API**: Simple, accessible data storage for membership information
 - **Mailchimp**: Professional email marketing and audience management
 
@@ -91,7 +110,7 @@ qcsa/
 │   │   ├── layout.tsx              # Root layout (metadata, fonts, HTML structure)
 │   │   ├── page.tsx                # Homepage with HeroSection, AboutUs, Testimonials
 │   │   ├── globals.css             # Global styles, CSS variables, Tailwind imports
-│   │   ├── head.tsx                # Custom head component (if needed)
+│   │   ├── head.tsx                # Custom head component
 │   │   │
 │   │   ├── Components/             # Reusable React components
 │   │   │   ├── mainWebsiteHeader.tsx    # Navigation header with logo & links
@@ -104,44 +123,75 @@ qcsa/
 │   │   │   ├── TeamCard.tsx             # Team member card component
 │   │   │   ├── HackathonCard.tsx        # Event card component
 │   │   │   ├── NewsletterCard.tsx       # Newsletter preview card
-│   │   │   ├── Orb.tsx / Orb.css        # Quantum-themed visual effects
+│   │   │   ├── CartContext.tsx          # Global shopping cart state (React Context)
+│   │   │   ├── CartUI.tsx               # Slide-out cart drawer
+│   │   │   ├── SponsorSection.tsx       # Sponsorship tier display
+│   │   │   ├── CurrentSponsors.tsx      # Current sponsor logo grid
+│   │   │   ├── PastSponsors.tsx         # Past sponsor logo grid
+│   │   │   ├── between-page.tsx         # Transition/separator component
+│   │   │   ├── Orb.tsx / Orb.css        # Quantum-themed visual effect
 │   │   │   └── ...                      # Other UI components
 │   │   │
-│   │   ├── about/                  # About page - team directory, mission
-│   │   ├── events/                 # Events page - upcoming/past events, calendar
+│   │   ├── about/                  # About page — team directory, mission
+│   │   ├── events/                 # Events page — upcoming/past events
 │   │   ├── resources/              # Educational resources hub
 │   │   ├── join-us/                # Membership registration page
 │   │   ├── admin/                  # Admin dashboard for data management
 │   │   ├── gallery/                # Photo gallery from events
 │   │   ├── newsletters/            # Newsletter archives
-│   │   ├── qhackathon/            # Quantum hackathon information
+│   │   ├── qhackathon/             # Quantum hackathon information
 │   │   ├── quantum_classes/        # UCLA quantum courses directory
 │   │   ├── qube/                   # QuBE event details
-│   │   ├── ucla_acm/              # ACM collaboration info
-│   │   ├── ucla_caltech/          # Caltech collaboration (EntangleTalks LA)
-│   │   ├── ucla_usc/              # USC collaboration info
+│   │   ├── qcf/                    # Quantum Computing Festival page
+│   │   ├── ucla_acm/               # ACM collaboration info
+│   │   ├── ucla_caltech/           # Caltech collaboration (EntangleTalks LA)
+│   │   ├── ucla_usc/               # USC collaboration info
 │   │   │
-│   │   ├── api/                   # Next.js API routes
-│   │   │   ├── submit-membership/      # POST: Handle form submissions to Google Sheets
+│   │   ├── merch/                  # Merch store (Printify + Stripe)
+│   │   │   ├── page.tsx            # Product listing page
+│   │   │   ├── [id]/page.tsx       # Individual product detail page
+│   │   │   └── success/page.tsx    # Post-checkout success page
+│   │   │
+│   │   ├── sponsor/                # Sponsorship portal (Stripe)
+│   │   │   ├── success/page.tsx    # Post-checkout success page
+│   │   │   └── cancel/page.tsx     # Checkout cancelled page
+│   │   │
+│   │   ├── thank-you-page/         # Generic thank-you landing page
+│   │   │
+│   │   ├── api/                    # Next.js API routes (server-side only)
+│   │   │   ├── submit-membership/      # POST: Handle membership form → Google Sheets
 │   │   │   │   └── route.ts
 │   │   │   ├── sync-to-mailchimp/      # POST/GET: Sync Google Sheets → Mailchimp
 │   │   │   │   └── route.ts
-│   │   │   └── test-connection/        # GET: Verify API credentials
-│   │   │       └── route.ts
+│   │   │   ├── test-connection/        # GET: Verify API credentials
+│   │   │   │   └── route.ts
+│   │   │   ├── checkout/               # POST: Create Stripe session (sponsorship)
+│   │   │   │   └── route.ts
+│   │   │   ├── merch/
+│   │   │   │   └── checkout/           # POST: Create Stripe session (merch cart)
+│   │   │   │       └── route.ts
+│   │   │   ├── printify/
+│   │   │   │   └── products/           # GET: List products; GET /[id]: Single product
+│   │   │   │       ├── route.ts
+│   │   │   │       └── [id]/route.ts
+│   │   │   └── webhooks/
+│   │   │       └── stripe/             # POST: Handle Stripe webhook events
+│   │   │           └── route.ts
 │   │   │
-│   │   └── utils/                 # Utility functions & services
+│   │   └── utils/                  # Utility functions & services
 │   │       ├── googleSheetsService.ts   # Google Sheets API wrapper
 │   │       ├── mailchimpService.ts      # Mailchimp API wrapper
 │   │       ├── syncTracker.ts           # Track processed emails (avoid duplicates)
-│   │       └── googleFormSubmission.ts  # Google Forms submission helper
+│   │       ├── googleFormSubmission.ts  # Google Forms submission helper
+│   │       ├── printifyService.ts       # Printify API wrapper (products + orders)
+│   │       ├── resendService.ts         # Transactional email via Resend
+│   │       └── supabaseClient.ts        # Supabase client initialization
 │   │
 │   └── types/                     # TypeScript type definitions
 │       └── mailchimp.d.ts         # Mailchimp type declarations
 │
-├── docs/                          # Documentation
-│   ├── GOOGLE_SHEETS_SETUP.md    # Step-by-step Google Sheets API setup
-│   └── Going-to-admin.md          # Admin dashboard guide
-│
+├── GOOGLE_SHEETS_SETUP.md         # Step-by-step Google Sheets API setup
+├── Going-to-admin.md              # Admin dashboard guide
 ├── .env.example                   # Environment variables template
 ├── .env.local                     # Local environment variables (gitignored)
 ├── package.json                   # Dependencies and scripts
@@ -150,14 +200,14 @@ qcsa/
 ├── tailwind.config.js             # Tailwind CSS configuration
 ├── postcss.config.js              # PostCSS configuration
 ├── eslint.config.mjs              # ESLint rules
-└── sync-log.json                  # Mailchimp sync tracking log (auto-generated)
+└── vercel.json                    # Vercel deployment configuration
 ```
 
 ### Key Directories Explained
 
 - **`src/app/`**: Next.js App Router structure. Each folder represents a route.
 - **`src/app/Components/`**: Shared, reusable React components used across pages.
-- **`src/app/api/`**: Server-side API endpoints for form submission, data sync, and health checks.
+- **`src/app/api/`**: Server-side API endpoints. Never exposed to the client directly.
 - **`src/app/utils/`**: Business logic and external service integrations.
 - **`public/images/`**: All static images. Use Next.js `<Image>` component for optimization.
 
@@ -256,6 +306,52 @@ NEXT_PUBLIC_GOOGLE_FORM_REASON=entry.321654987
 2. Right-click → "Inspect Element" (F12)
 3. Search (Ctrl+F) for `entry.` in the HTML
 4. Copy the `entry.XXXXXXXXX` values from input fields
+
+#### Stripe (Payments)
+
+```env
+# Get from Stripe Dashboard → Developers → API Keys
+STRIPE_SECRET_KEY=sk_live_...          # or sk_test_... for development
+STRIPE_WEBHOOK_SECRET=whsec_...        # From Stripe Dashboard → Webhooks
+
+# Sponsorship tier price IDs (created in Stripe Dashboard → Products)
+STRIPE_SILVER_PRICE_ID=price_...
+STRIPE_GOLD_PRICE_ID=price_...
+
+# Public site URL used to build redirect URLs in Stripe sessions
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
+**Webhook setup**: Register `https://your-domain.com/api/webhooks/stripe` in Stripe Dashboard → Webhooks. Listen for `checkout.session.completed`.
+
+#### Printify (Merch Fulfillment)
+
+```env
+# Get from Printify Dashboard → My Profile → Connections → API Access
+PRINTIFY_API=your_printify_api_token
+
+# Optional: pin to a specific shop (auto-detected otherwise)
+PRINTIFY_SHOP_ID=your_shop_id
+```
+
+#### Resend (Transactional Email)
+
+```env
+# Get from Resend Dashboard → API Keys
+RESEND_API_KEY=re_...
+
+# Optional: override defaults
+RESEND_FROM_EMAIL="Quantum Computing Student Association <quantum.ucla@gmail.com>"
+RESEND_REPLY_TO_EMAIL=quantum.ucla@gmail.com
+```
+
+#### Supabase (Database)
+
+```env
+# Get from Supabase Dashboard → Project Settings → API
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_KEY=your_service_role_key   # Never expose this client-side
+```
 
 ---
 
@@ -420,7 +516,7 @@ Example:
 
 ---
 
-## 📡 API Documentation
+## API Documentation
 
 ### Overview
 
@@ -519,70 +615,117 @@ Tests Google Sheets and Mailchimp API connections.
   "success": true,
   "message": "All connections successful",
   "results": {
-    "googleSheets": {
-      "connected": true,
-      "error": "",
-      "entries": 15
-    },
-    "mailchimp": {
-      "connected": true,
-      "error": "",
-      "listName": "QCSA Members"
-    }
+    "googleSheets": { "connected": true, "error": "", "entries": 15 },
+    "mailchimp": { "connected": true, "error": "", "listName": "QCSA Members" }
   }
 }
 ```
 
 ---
 
-### Service Classes
+#### 5. **POST `/api/checkout`**
 
-#### GoogleSheetsService
+Creates a Stripe Checkout session for a sponsorship tier.
 
-Located in `src/app/utils/googleSheetsService.ts`
+**Request Body:**
+```json
+{
+  "tier": "silver",
+  "company_name": "Acme Corp",
+  "contact_name": "Jane Smith"
+}
+```
+
+**Response (Success):**
+```json
+{ "url": "https://checkout.stripe.com/pay/cs_..." }
+```
+
+Redirects to `NEXT_PUBLIC_SITE_URL/sponsor/success` on completion and `/sponsor/cancel` on cancellation.
+
+**Implementation**: `src/app/api/checkout/route.ts`
+
+---
+
+#### 6. **POST `/api/merch/checkout`**
+
+Creates a Stripe Checkout session for a merch cart. Collects shipping address and creates a Printify order on payment completion (handled by the webhook).
+
+**Request Body:**
+```json
+{
+  "items": [
+    {
+      "product_id": "abc123",
+      "variant_id": 12345,
+      "quantity": 1,
+      "price": 2500,
+      "title": "QCSA T-Shirt",
+      "variant_title": "Blue / M",
+      "image_src": "https://..."
+    }
+  ]
+}
+```
+
+**Response (Success):**
+```json
+{ "url": "https://checkout.stripe.com/pay/cs_..." }
+```
+
+**Implementation**: `src/app/api/merch/checkout/route.ts`
+
+---
+
+#### 7. **GET `/api/printify/products`**
+
+Returns all published products from the Printify store (server-side proxy to avoid CORS).
+
+**Response:**
+```json
+[
+  { "id": "abc123", "title": "QCSA T-Shirt", "variants": [...], "images": [...] }
+]
+```
+
+#### 7b. **GET `/api/printify/products/[id]`**
+
+Returns a single Printify product by ID.
+
+---
+
+#### 8. **POST `/api/webhooks/stripe`**
+
+Handles Stripe webhook events. Verifies the `Stripe-Signature` header and processes `checkout.session.completed` to:
+1. Create a Printify order for merch purchases
+2. Send an order confirmation email via Resend
+
+**Implementation**: `src/app/api/webhooks/stripe/route.ts`
+
+---
+
+### Service Utilities
+
+#### GoogleSheetsService (`src/app/utils/googleSheetsService.ts`)
 
 **Methods:**
 - `getSpreadsheetData()`: Fetches all rows from the configured spreadsheet
 - `getNewEntries(lastTimestamp)`: Filters for entries newer than a timestamp
 
-**Usage:**
-```typescript
-import { GoogleSheetsService } from '@/app/utils/googleSheetsService';
-
-const service = new GoogleSheetsService();
-const data = await service.getSpreadsheetData();
-```
-
 ---
 
-#### MailchimpService
-
-Located in `src/app/utils/mailchimpService.ts`
+#### MailchimpService (`src/app/utils/mailchimpService.ts`)
 
 **Methods:**
 - `addContact(contact)`: Adds a single contact to Mailchimp
 - `addMultipleContacts(contacts)`: Batch add with rate limiting
 - `updateContact(contact)`: Updates existing contact information
 
-**Usage:**
-```typescript
-import { MailchimpService } from '@/app/utils/mailchimpService';
-
-const service = new MailchimpService();
-const result = await service.addContact({
-  firstName: "John",
-  lastName: "Doe",
-  email: "john@example.com"
-});
-```
-
 ---
 
-#### SyncTracker
+#### SyncTracker (`src/app/utils/syncTracker.ts`)
 
-Located in `src/app/utils/syncTracker.ts`
-
-Tracks processed emails to prevent duplicate syncs. Stores data in `sync-log.json`.
+Tracks processed emails to prevent duplicate syncs.
 
 **Methods:**
 - `getProcessedEmails()`: Returns Set of processed email addresses
@@ -590,13 +733,32 @@ Tracks processed emails to prevent duplicate syncs. Stores data in `sync-log.jso
 - `getStats()`: Returns sync statistics
 - `clearAllRecords()`: Resets sync log for full re-sync
 
-**Usage:**
-```typescript
-import { SyncTracker } from '@/app/utils/syncTracker';
+---
 
-const tracker = new SyncTracker();
-const processed = tracker.getProcessedEmails(); // Set<string>
-```
+#### PrintifyService (`src/app/utils/printifyService.ts`)
+
+Server-side proxy for the Printify API (Printify does not support browser CORS).
+
+**Key functions:**
+- `getShops()` / `getShopId()`: Retrieve the connected Printify shop
+- `getProducts(shopId)`: List all published products
+- `getProduct(shopId, productId)`: Fetch a single product with variants
+- `createOrder(shopId, order)`: Submit a new fulfillment order
+
+---
+
+#### ResendService (`src/app/utils/resendService.ts`)
+
+Sends transactional emails. Used for merch order confirmations.
+
+**Key exports:**
+- `sendOrderConfirmationEmail(payload)`: Sends a styled order confirmation to the customer
+
+---
+
+#### SupabaseClient (`src/app/utils/supabaseClient.ts`)
+
+Initializes and exports the Supabase client using `SUPABASE_URL` and `SUPABASE_SERVICE_KEY`.
 
 ---
 
@@ -612,7 +774,7 @@ Access at `/admin` to manage integrations.
 
 ---
 
-## 🚢 Deployment
+## Deployment
 
 ### Production Deployment (Vercel)
 
@@ -653,17 +815,48 @@ The QCSA website is deployed on **Vercel**, which provides:
 
 #### Environment Variables in Vercel
 
-Make sure to add these in Vercel Dashboard:
+Make sure to add **all** of these in Vercel Dashboard → Settings → Environment Variables:
 
 ```
+# Google Sheets
 GOOGLE_SHEETS_SPREADSHEET_ID
 GOOGLE_SHEETS_SPREADSHEET_ID_1
 GOOGLE_SHEETS_RANGE
 GOOGLE_SERVICE_ACCOUNT_EMAIL
 GOOGLE_PRIVATE_KEY
+
+# Mailchimp
 MAILCHIMP_API_KEY
 MAILCHIMP_LIST_ID
 MAILCHIMP_DATA_CENTER
+
+# Stripe
+STRIPE_SECRET_KEY
+STRIPE_WEBHOOK_SECRET
+STRIPE_SILVER_PRICE_ID
+STRIPE_GOLD_PRICE_ID
+NEXT_PUBLIC_SITE_URL
+
+# Printify
+PRINTIFY_API
+PRINTIFY_SHOP_ID
+
+# Resend
+RESEND_API_KEY
+RESEND_FROM_EMAIL
+RESEND_REPLY_TO_EMAIL
+
+# Supabase
+SUPABASE_URL
+SUPABASE_SERVICE_KEY
+
+# Google Forms (optional)
+NEXT_PUBLIC_GOOGLE_FORM_URL
+NEXT_PUBLIC_GOOGLE_FORM_FIRST_NAME
+NEXT_PUBLIC_GOOGLE_FORM_LAST_NAME
+NEXT_PUBLIC_GOOGLE_FORM_EMAIL
+NEXT_PUBLIC_GOOGLE_FORM_EDUCATION
+NEXT_PUBLIC_GOOGLE_FORM_REASON
 ```
 
 **Note**: For `GOOGLE_PRIVATE_KEY`, paste the entire key including the `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----` markers, with `\n` preserved for line breaks.
@@ -673,9 +866,12 @@ MAILCHIMP_DATA_CENTER
 - [ ] All environment variables set in Vercel
 - [ ] Build passes locally (`npm run build`)
 - [ ] No ESLint errors (`npm run lint`)
+- [ ] Stripe webhook registered pointing to `https://your-domain.com/api/webhooks/stripe`
 - [ ] Test API endpoints in production
 - [ ] Verify Google Sheets integration
 - [ ] Verify Mailchimp integration
+- [ ] Verify Stripe checkout (use test mode first)
+- [ ] Verify Printify order creation via webhook
 - [ ] Check all pages load correctly
 - [ ] Test mobile responsiveness
 
@@ -857,13 +1053,44 @@ git commit -m "docs: update API documentation"
 - Reduce `initial` animation complexity on large pages
 - Use `whileInView={{ once: true }}` for performance
 
+#### 7. **Stripe Checkout Not Working**
+
+**Problem**: Stripe session creation fails or redirects break
+
+**Solutions:**
+- Verify `STRIPE_SECRET_KEY` is correct (use `sk_test_...` for dev)
+- Ensure `NEXT_PUBLIC_SITE_URL` is set and matches the redirect URLs
+- Check that `STRIPE_SILVER_PRICE_ID` / `STRIPE_GOLD_PRICE_ID` exist in your Stripe Dashboard
+- For webhook issues, verify `STRIPE_WEBHOOK_SECRET` matches the secret from the Stripe webhook endpoint
+
+#### 8. **Printify Products Not Loading**
+
+**Problem**: `/merch` page shows no products or throws an error
+
+**Solutions:**
+- Verify `PRINTIFY_API` token is valid (test in Printify Dashboard)
+- Check that `PRINTIFY_SHOP_ID` (if set) matches a real shop
+- Printify has rate limits — avoid rapid successive requests in development
+- All Printify calls must be server-side; never call the Printify API directly from the browser
+
+#### 9. **Order Confirmation Emails Not Sending**
+
+**Problem**: Customers don't receive confirmation emails after checkout
+
+**Solutions:**
+- Verify `RESEND_API_KEY` is valid
+- Confirm `RESEND_FROM_EMAIL` is a verified sender domain in Resend Dashboard
+- Check that the Stripe webhook is properly registered and `STRIPE_WEBHOOK_SECRET` is correct
+- Review webhook logs in the Stripe Dashboard for `checkout.session.completed` events
+
 ### Debugging Tips
 
 1. **Check browser console** for JavaScript errors
 2. **Use React DevTools** to inspect component state
 3. **Check Network tab** for failed API requests
 4. **Review Next.js logs** in terminal
-5. **Test in incognito mode** to rule out caching issues
+5. **Use Stripe CLI** (`stripe listen --forward-to localhost:3000/api/webhooks/stripe`) to test webhooks locally
+6. **Test in incognito mode** to rule out caching issues
 
 ### Getting Help
 
@@ -1035,7 +1262,11 @@ For permission to use or modify this code, please contact [quantum.ucla@gmail.co
 - [Next.js](https://nextjs.org/) - React framework
 - [Tailwind CSS](https://tailwindcss.com/) - CSS framework
 - [Framer Motion](https://www.framer.com/motion/) - Animation library
-- [Google Sheets API](https://developers.google.com/sheets/api) - Data storage
+- [Stripe](https://stripe.com/) - Payment processing
+- [Printify](https://printify.com/) - Print-on-demand merch fulfillment
+- [Resend](https://resend.com/) - Transactional email
+- [Supabase](https://supabase.com/) - Database
+- [Google Sheets API](https://developers.google.com/sheets/api) - Member data storage
 - [Mailchimp](https://mailchimp.com/) - Email marketing
 - [Vercel](https://vercel.com/) - Deployment platform
 
@@ -1045,31 +1276,32 @@ For permission to use or modify this code, please contact [quantum.ucla@gmail.co
 
 - **[GOOGLE_SHEETS_SETUP.md](./GOOGLE_SHEETS_SETUP.md)** - Detailed Google Sheets API setup
 - **[Going-to-admin.md](./Going-to-admin.md)** - Admin dashboard usage guide
-- **[Contributing Guidelines]** - (To be added) Extended contribution guidelines
 
 ---
 
 ## 🗺️ Roadmap
 
-### Current Focus (2025-2026)
+### Completed (2025-2026)
 
 - [x] Launch new website with Next.js 15
 - [x] Implement Google Sheets integration
 - [x] Add Mailchimp automation
 - [x] Create admin dashboard
-- [ ] Add event search/filtering
-- [ ] Implement member portal
-- [ ] Add dark mode
-- [ ] Optimize performance (Lighthouse 95+)
+- [x] Merch store (Printify + Stripe)
+- [x] Sponsorship checkout (Stripe)
+- [x] Stripe webhook + Printify order fulfillment
+- [x] Order confirmation emails (Resend)
+- [x] Supabase integration
+- [x] QCF, QuBE, QHackathon, Quantum Classes pages
 
 ### Future Plans
 
-- **Member Portal**: Login system for members with personalized content
-- **Event RSVP System**: Integrated event registration
-- **Blog/News Section**: Regular updates on quantum computing developments
-- **Resource Library**: Searchable database of quantum learning materials
-- **Interactive Demos**: Quantum circuit visualizations and simulations
-- **Mobile App**: Native mobile experience
+- [ ] Add event search/filtering
+- [ ] Implement member portal with login
+- [ ] Add dark mode
+- [ ] Optimize performance (Lighthouse 95+)
+- [ ] Blog/News section for quantum computing updates
+- [ ] Interactive quantum circuit visualizations
 
 ---
 
@@ -1079,6 +1311,6 @@ For permission to use or modify this code, please contact [quantum.ucla@gmail.co
 
 ---
 
-**Last Updated**: December 2025  
-**Version**: 0.1.0  
+**Last Updated**: May 2026  
+**Version**: 0.1.0
 **Maintainer**: QCSA Tech Team
