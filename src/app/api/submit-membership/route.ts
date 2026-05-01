@@ -6,8 +6,8 @@ interface MembershipFormData {
   lastName: string;
   email: string;
   educationalBackground: string;
+  year: string;
   reasonToJoin: string;
-  // institutionName: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     const formData: MembershipFormData = await request.json();
 
     // Validate required fields
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.educationalBackground || !formData.reasonToJoin) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.educationalBackground || !formData.year || !formData.reasonToJoin) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -38,23 +38,25 @@ export async function POST(request: NextRequest) {
       throw new Error('Google Sheets Spreadsheet ID not configured');
     }
 
-    // Prepare the data for range B:G (excluding timestamp column A)
-    // B = First Name, C = Last Name, D = Email, E = Educational Background, F = Reason to Join, G = Institution Name
+    // Prepare the data for range A:G
+    // A = Timestamp, B = First Name, C = Last Name, D = Email, E = Educational Background, F = Year, G = Reason to Join
+    const timestamp = new Date().toISOString();
     const values = [
       [
+        timestamp,
         formData.firstName,
         formData.lastName,
         formData.email,
         formData.educationalBackground,
+        formData.year,
         formData.reasonToJoin,
-        // formData.institutionName || ''
       ]
     ];
 
     // Append the data to the sheet
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: 'B:G', // Starting from column B to exclude timestamp
+      range: 'A:G',
       valueInputOption: 'RAW',
       insertDataOption: 'INSERT_ROWS',
       requestBody: {

@@ -35,8 +35,8 @@ export default function MembershipForm() {
       lastName: formData.get('lastName') as string,
       email: formData.get('email') as string,
       educationalBackground: formData.get('educationalBackground') as string,
+      year: formData.get('year') as string,
       reasonToJoin: formData.get('reasonToJoin') as string,
-      institutionName: formData.get('institutionName') as string,
     };
 
     try {
@@ -141,6 +141,20 @@ export default function MembershipForm() {
                     <option value="PhD">PhD</option>
                     <option value="Other">Other</option>
                   </select>
+                </div>
+
+                <div className="mb-8">
+                  <label htmlFor="year" className="block font-bold text-[#234285] mb-2">
+                    Year <span className="font-normal">(required)</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="year"
+                    name="year"
+                    required
+                    placeholder="e.g. 2025"
+                    className="w-full rounded-sm border-3 border-main/40 bg-background px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
+                  />
                 </div>
 
                 <div className="mb-8">
