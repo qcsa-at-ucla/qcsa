@@ -145,13 +145,12 @@ export default function MembershipForm() {
 
                 <div className="mb-8">
                   <label htmlFor="year" className="block font-bold text-[#234285] mb-2">
-                    Year in Education <span className="font-normal">(required)</span>
+                    Year in Education <span className="font-normal">(optional)</span>
                   </label>
                   <input
                     type="text"
                     id="year"
                     name="year"
-                    required
                     placeholder="e.g. 1st year, 2nd year, Senior, Graduate..."
                     className="w-full rounded-sm border-3 border-main/40 bg-background px-3 py-2 outline-none font-normal focus:border-main/60 focus:shadow-[0_0_8px_rgba(35,66,133,0.7)] transition"
                   />

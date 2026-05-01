@@ -6,7 +6,7 @@ interface MembershipFormData {
   lastName: string;
   email: string;
   educationalBackground: string;
-  year: string;
+  year?: string;
   reasonToJoin: string;
 }
 
@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     const formData: MembershipFormData = await request.json();
 
     // Validate required fields
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.educationalBackground || !formData.year || !formData.reasonToJoin) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.educationalBackground || !formData.reasonToJoin) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
         formData.lastName,
         formData.email,
         formData.educationalBackground,
-        formData.year,
+        formData.year || '',
         formData.reasonToJoin,
       ]
     ];
