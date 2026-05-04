@@ -10,6 +10,23 @@ import { motion } from 'framer-motion';
 type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string; image?: string; speakerImage?: string; transportationLink?: string };
 
 const eventsData: UpcomingEvent[] = [
+	{
+		datePrimary: 'May',
+		dateSecondary: 'TBA',
+		title: 'Oratomic Talk',
+		location: 'TBA',
+		time: 'Week of May 11 — TBA',
+		description: `An industry talk hosted by Oratomic. Tentatively scheduled for the week of May 11 — exact date, time, and location coming soon. Check back soon for full details!`,
+	},
+	{
+		datePrimary: 'Jun',
+		dateSecondary: '15–18',
+		title: 'Quantum Device Workshop (QDW) 2026',
+		location: 'Cohen Room & Mong Auditorium, UCLA',
+		time: 'All Day',
+		description: `The Quantum Device Workshop (QDW) 2026 brings together students, researchers, and industry professionals for four days of talks, workshops, and networking centered on quantum hardware and devices. Hosted by the Quantum Device Consortium in collaboration with QCSA at UCLA.\n\nVisit the official site for the full agenda, speaker list, and registration details.`,
+		link: 'https://qdc-qcsa.org/qdw/2026/info',
+	},
 ];
 
 export default function EventsPage() {
@@ -497,19 +514,14 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 				<div className="space-y-8 font-kantumruy text-[#234285]">
 					{[
 						{
-							img: '/images/ucla_usc.png',
-							title: 'UCLA x USC',
-							sub: 'Monthly seminar series between UCLA and USC on novel quantum science and engineering research. More information can be found on link below!',
+							img: '/images/acmquantum.svg',
+							title: 'QCSA x ACM Introductory Workshop',
+							sub: 'Are you curious about quantum computing but not sure where to start? Join our workshops every Tuesday from 6pm-7pm in Mathematical Sciences 6201!',
 						},
 						{
 							img: '/images/ucla_caltech.png',
 							title: 'EntangleTalks LA',
 							sub: 'Monthly seminar and networking series between UCLA and Caltech on quantum information theory and computing.',
-						},
-						{
-							img: '/images/acmquantum.svg',
-							title: 'QCSA x ACM Introductory Workshop',
-							sub: 'Are you curious about quantum computing but not sure where to start? Join our workshops every Wednesday from 6pm-8pm in Boelter 2444!',
 						},
 						{
 							img: '/images/Qube.png',
@@ -570,8 +582,6 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 												href={
 													s.img.includes('ucla_caltech.png')
 														? '/ucla_caltech'
-														: s.img.includes('ucla_usc.png')
-														? '/ucla_usc'
 														: s.img.includes('Qube.png')
 														? '/qube'
 														: '/ucla_acm'
