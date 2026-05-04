@@ -26,8 +26,6 @@
 
 ---
 
----
-
 ## Overview
 
 The **Quantum Computing Student Association (QCSA)** is UCLA's premier quantum science and technology organization, operating under the Center for Quantum Science and Engineering (CQSE).
@@ -1216,7 +1214,7 @@ We welcome contributions from the community! Here's how to get involved:
 ### Contact Information
 
 - **Email**: [quantum.ucla@gmail.com](mailto:quantum.ucla@gmail.com)
-- **Website**: [qcsa.vercel.app](https://qcsa-ucla.org)
+- **Website**: [QCSA-UCLA.org](https://qcsa-ucla.org)
 - **LinkedIn**: [QCSA at UCLA](https://www.linkedin.com/company/quantum-computing-student-association-ucla)
 - **Instagram**: [@uclaqcsa](https://www.instagram.com/uclaqcsa/)
 
