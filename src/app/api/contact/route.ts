@@ -124,6 +124,7 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: fromAddress(),
       to: email,
+      replyTo: replyTo(),
       subject: `We received your message — QCSA`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #1a2f5a;">
