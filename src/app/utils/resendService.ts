@@ -238,7 +238,7 @@ function buildOrderConfirmationHtml(payload: OrderConfirmationPayload): string {
               </p>
               <p style="margin: 0 0 6px; font-size: 13px; color: #94a3b8;">
                 Questions? Reply to this email or contact us at
-                <a href="mailto:quantum.ucla@gmail.com" style="color: #234285; text-decoration: none;">quantum.ucla@gmail.com</a>
+                <a href="mailto:quantum.ucla@gmail.com" style="color: #234285; text-decoration: none;">quantum dot ucla at gmail dot com</a>
               </p>
               <p style="margin: 0; font-size: 12px; color: #cbd5e1;">
                 You're receiving this because you placed an order at the QCSA Merch Store.

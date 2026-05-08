@@ -95,44 +95,6 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Footer with navigation to thank you page */}
-      <motion.footer 
-        className="bg-[#F3F8FF] border-t border-gray-200 py-8 px-4 sm:px-6 lg:px-8"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="space-y-4">
-            <motion.p 
-              className="text-[#234285] text-2xl font-kantumruy"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              Interested in our Quantum Device Workshop?
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link 
-                href="/thank-you-page"
-                className="inline-block bg-[#234285] text-gray-100 px-8 py-4 text-2xl font-kantumruy rounded-lg hover:bg-[#234285]-500 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
-              >
-                Get Involved with QCSA
-                <span className="ml-2">→</span>
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </motion.footer>
     </div>
   );
 }
