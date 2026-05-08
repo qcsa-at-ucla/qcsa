@@ -94,6 +94,7 @@ export async function POST(request: NextRequest) {
   try {
     const resend = getResend();
 
+    // 1. Internal notification → QCSA inbox
     await resend.emails.send({
       from: fromAddress(),
       to: replyTo(),
@@ -115,6 +116,24 @@ export async function POST(request: NextRequest) {
           <hr style="border: none; border-top: 1px solid #e8eef8; margin: 16px 0;" />
           <p style="margin: 0 0 8px; font-weight: 600;">Message:</p>
           <p style="margin: 0; white-space: pre-wrap; line-height: 1.6;">${message}</p>
+        </div>
+      `,
+    });
+
+    // 2. Confirmation receipt → the person who submitted the form
+    await resend.emails.send({
+      from: fromAddress(),
+      to: email,
+      subject: `We received your message — QCSA`,
+      html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #1a2f5a;">
+          <h2 style="margin: 0 0 8px; color: #234285;">Thanks for reaching out, ${name}!</h2>
+          <p style="margin: 0 0 16px; line-height: 1.6;">We received your message and will get back to you as soon as possible.</p>
+          <hr style="border: none; border-top: 1px solid #e8eef8; margin: 16px 0;" />
+          <p style="margin: 0 0 8px; font-weight: 600; font-size: 13px; color: #64748b;">Your message:</p>
+          <p style="margin: 0; white-space: pre-wrap; line-height: 1.6; font-size: 14px; color: #475569;">${message}</p>
+          <hr style="border: none; border-top: 1px solid #e8eef8; margin: 24px 0;" />
+          <p style="margin: 0; font-size: 12px; color: #94a3b8;">Quantum Computing Student Association @ UCLA</p>
         </div>
       `,
     });
