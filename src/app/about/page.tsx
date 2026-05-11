@@ -594,7 +594,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Faculty Leadership
+            Senior Leadership
           </motion.h2>
             {facultyLeadership.length === 1 ? (
               <div className="flex justify-center">
@@ -651,7 +651,7 @@ export default function AboutPage() {
 
                     {/* Hover Popup for Faculty */}
                     {hoveredMember === faculty.id && (
-                      <div className="absolute z-50 top-0 left-0 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-x-2 -translate-y-2 font-kantumruy">
+                      <div className="absolute z-50 top-0 left-0 w-full min-h-full bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-y-2 font-kantumruy">
                         <div className="flex items-start gap-4">
                           <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
                             <Image
@@ -728,7 +728,7 @@ export default function AboutPage() {
 
                     {/* Desktop Hover Popup for Faculty */}
                     {!isMobile && hoveredMember === faculty.id && (
-                      <div className="absolute z-50 top-0 left-0 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-x-2 -translate-y-2 font-kantumruy">
+                      <div className="absolute z-50 top-0 left-0 w-full min-h-full bg-white rounded-lg shadow-2xl border border-gray-200 p-6 transform -translate-y-2 font-kantumruy">
                         <div className="flex items-start gap-4">
                           <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
                             <Image

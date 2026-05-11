@@ -19,7 +19,7 @@ const eventsData: UpcomingEvent[] = [
 		description: `An industry talk hosted by Oratomic. Tentatively scheduled for the week of May 11 — exact date, time, and location coming soon. Check back soon for full details!`,
 	},
 	{
-		datePrimary: 'Jun',
+		datePrimary: 'June',
 		dateSecondary: '15–18',
 		title: 'Quantum Device Workshop (QDW) 2026',
 		location: 'Cohen Room & Mong Auditorium, UCLA',
