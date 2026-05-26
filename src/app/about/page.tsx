@@ -101,7 +101,7 @@ const boardMembers = [
   },
   {
     id: 18,
-    name: "Nachiket",
+    name: "Nachiket Joshi",
     role: "Research",
     major: "Physics and Materials Engineering",
     year: "2nd Year",
