@@ -100,6 +100,16 @@ const boardMembers = [
     linkedIn: "https://www.linkedin.com/in/sanskriti/"
   },
   {
+    id: 18,
+    name: "Nachiket",
+    role: "Research",
+    major: "Physics and Materials Engineering",
+    year: "2nd Year",
+    bio: "Nachiket is a second-year undergraduate student majoring in Physics and Materials Engineering. He currently works as a researcher in Device Research Laboratory under Prof. Kang L. Wang, where he contributes to research in condensed matter physics working towards developing topological qubits for scalable quantum computing. After graduation he hopes to pursue a PhD in Applied Physics and work in industry researching quantum hardware and devices. Apart from science, he is interested in weightlifting, rock-climbing, music, and poker.",
+    image: "/images/Nachiket.jpg",
+    linkedIn: "https://www.linkedin.com/in/nachjs/"
+  },
+  {
     id: 10,
     name: "Connor Engel",
     role: "Events & Advertisement",

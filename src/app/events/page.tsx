@@ -11,14 +11,6 @@ type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string
 
 const eventsData: UpcomingEvent[] = [
 	{
-		datePrimary: 'May',
-		dateSecondary: 'TBA',
-		title: 'Oratomic Talk',
-		location: 'TBA',
-		time: 'Week of May 11 — TBA',
-		description: `An industry talk hosted by Oratomic. Tentatively scheduled for the week of May 11 — exact date, time, and location coming soon. Check back soon for full details!`,
-	},
-	{
 		datePrimary: 'June',
 		dateSecondary: '15–18',
 		title: 'Quantum Device Workshop (QDW) 2026',
@@ -77,6 +69,13 @@ export default function EventsPage() {
 			excerpt: 'Explore different quantum computing companies and research labs, network with professionals, and discover internship and job opportunities in the quantum industry.',
 			href: '/qcf',
 			content: `The Quantum Career Fair was held at UCLA from 1-5 PM PST, bringing together leading quantum computing companies and research labs with students and professionals. Attendees explored exciting career opportunities, networked with industry professionals, and discovered internships and full-time positions in the rapidly growing quantum industry. This event provided invaluable connections between the quantum workforce and the next generation of quantum talent.`,
+		},
+		{
+			title: 'QUBE: Quantum Computing Applications in Biochemistry',
+			date: '11/20/2025',
+			excerpt: 'Seminar and workshop on quantum computing applications in biochemistry. Featuring speakers from USC and IBM at CNSI, alongside a Qiskit workshop on modeling solubility.',
+			href: '/qube',
+			content: `QUBE brought together students and researchers for a day exploring how quantum computing is being applied to biochemistry. The event was held at CNSI on November 20, 2025, and featured talks from speakers at USC and IBM, followed by a hands-on Qiskit workshop on modeling molecular solubility.`,
 		},
 		{
 			title: 'Mentorship Program with QISCA',
@@ -522,11 +521,6 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 							img: '/images/ucla_caltech.png',
 							title: 'EntangleTalks LA',
 							sub: 'Monthly seminar and networking series between UCLA and Caltech on quantum information theory and computing.',
-						},
-						{
-							img: '/images/Qube.png',
-							title: 'Quantum Computing Application in BioChemistry',
-							sub: 'Seminar and workshop on quantum computing applications in biochemistry. Featuring speakers from USC and IBM at CNSI + a Qiskit workshop on modeling solubility.',
 						},
 					].map((s, idx) => (
 						<motion.article 
