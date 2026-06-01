@@ -79,16 +79,16 @@ const boardMembers = [
     image: "/images/Cody Fan.png",
     linkedIn: "https://www.linkedin.com/in/cody-fan-09717a167/"
   },
-  {
-    id: 6,
-    name: "Samuel Oh",
-    role: "Finances",
-    major: "Computer Science & Economics",
-    year: "3rd Year",
-    bio: "Samuel is a 3rd-year Computer Science and Economics student at UCLA. He serves as Sector Head at Bruin Capital Management and is actively involved in multiple finance organizations on campus. Samuel previously served 18 months in the Republic of Korea Army, where he worked in Korean-English interpretation and military logistics. His past experiences also include internships in corporate finance and consulting. After graduation, he hopes to pursue a career in the finance industry.",
-    image: "/images/Samuel.png",
-    linkedIn: "https://www.linkedin.com/in/samuel-oh-ucla/"
-  },
+  // {
+  //   id: 6,
+  //   name: "Samuel Oh",
+  //   role: "Finances",
+  //   major: "Computer Science & Economics",
+  //   year: "3rd Year",
+  //   bio: "Samuel is a 3rd-year Computer Science and Economics student at UCLA. He serves as Sector Head at Bruin Capital Management and is actively involved in multiple finance organizations on campus. Samuel previously served 18 months in the Republic of Korea Army, where he worked in Korean-English interpretation and military logistics. His past experiences also include internships in corporate finance and consulting. After graduation, he hopes to pursue a career in the finance industry.",
+  //   image: "/images/Samuel.png",
+  //   linkedIn: "https://www.linkedin.com/in/samuel-oh-ucla/"
+  // },
   {
     id: 7,
     name: "Sanskriti Shindadkar",
