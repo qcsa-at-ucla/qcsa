@@ -11,6 +11,16 @@ type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string
 
 const eventsData: UpcomingEvent[] = [
 	{
+    datePrimary: 'March',
+    dateSecondary: 'TBA',
+    title: 'ML in QEC Workshop 2027',
+    location: 'University of Southern California',
+    time: 'TBA',
+    description: `QEC-ML 2027 is an upcoming workshop at USC investigating Machine Learning in Quantum Error Correction. Programme, speakers, registration, and venue details will be announced soon.`,
+    link: '/qecml',
+	},
+
+	{
 		datePrimary: 'June',
 		dateSecondary: '15–18',
 		title: 'Quantum Device Workshop (QDW) 2026',

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "./CartContext";
 import type { CartItem } from "./CartContext";
+import { usePathname } from "next/navigation";
 
 function formatPrice(cents: number): string {
   return `$${(cents / 100).toFixed(2)}`;
@@ -287,6 +288,13 @@ function FloatingCartButton() {
 // ─── CartUI export ────────────────────────────────────────────────────────────
 
 export default function CartUI() {
+  const pathname = usePathname();
+
+  if (pathname === "/qecml" || pathname.startsWith("/qecml/")) 
+  {
+    return null;
+  }
+  
   return (
     <>
       <FloatingCartButton />
