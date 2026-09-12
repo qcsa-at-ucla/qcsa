@@ -171,6 +171,40 @@ export default function ResourcesPage() {
 
 				</motion.div>
 
+			{/* Research Card */}
+			<motion.div 
+				className="rounded-lg w-full p-1 shadow-[0_0_40px_rgba(99,179,255,0.20)] mt-24"
+				initial={{ opacity: 0, y: 30 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ delay: 1.0, duration: 0.6 }}
+				whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+			>
+				<section className="bg-white rounded-lg p-10 shadow-[0_18px_40px_rgba(35,66,133,0.08)] ring-4 ring-[rgba(35,66,133,0.04)]">
+					<div className="flex flex-col lg:flex-row items-center gap-8">
+					{/* Left: Text block */}
+					<div className="lg:w-2/3">
+						<h2 className="text-3xl text-[#234285] font-kantumruy mb-4">Research</h2>
+						<p className="text-[#234285] text-base mb-8">
+							Explore recent publications from the QCSA Research team, spanning quantum computing theory and applications.
+						</p>
+						<div>
+							<Link href="/research" className="inline-block bg-[#234285] text-white px-8 py-3 rounded-md text-lg font-kantumruy shadow-md hover:shadow-lg hover:bg-[#1f3f75] transition">
+								Learn More
+							</Link>
+						</div>
+					</div>
+
+						{/* Right: Image / gradient card */}
+						<div className="lg:w-1/3 flex justify-center lg:justify-end">
+							<div className="w-96 h-64 rounded-md p-6 flex items-center justify-center ">
+								<Image src="/images/quantum_chip.png" alt="Research graphic" width={350} height={300} className="object-contain max-w-none" />
+							</div>
+						</div>
+					</div>
+					</section>
+
+				</motion.div>
+
                 
 			</main>
 			{/* spacer to add extra space before the footer */}

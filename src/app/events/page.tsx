@@ -21,13 +21,13 @@ const eventsData: UpcomingEvent[] = [
 	},
 
 	{
-		datePrimary: 'June',
-		dateSecondary: '15–18',
-		title: 'Quantum Device Workshop (QDW) 2026',
+		datePrimary: 'TBD',
+		dateSecondary: '',
+		title: 'QCSA Fall GM',
 		location: 'Cohen Room & Mong Auditorium, UCLA',
 		time: 'All Day',
-		description: `The Quantum Device Workshop (QDW) 2026 brings together students, researchers, and industry professionals for four days of talks, workshops, and networking centered on quantum hardware and devices. Hosted by the Quantum Device Consortium in collaboration with QCSA at UCLA.\n\nVisit the official site for the full agenda, speaker list, and registration details.`,
-		link: 'https://qdc-qcsa.org/qdw/2026/info',
+		description: `The QCSA Fall GM 2026 is the annual general meeting for the Quantum Computing Student Association at UCLA. Members will gather to discuss the past year's achievements, upcoming events, and organizational matters.\n\nVisit the official site for the full agenda, speaker list, and registration details.`,
+		link: 'https://qcsa-ucla.org',
 	},
 ];
 
