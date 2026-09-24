@@ -29,12 +29,15 @@ function MemberCard({ member }: { member: CommitteeMember }) {
   return (
     <article className="overflow-hidden rounded-xl border border-white/15 bg-[#990000]/60">
       {member.headshot ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={member.headshot}
-          alt={`Portrait of ${member.name}`}
-          className="aspect-[4/3] w-full object-cover"
-        />
+        <div className="aspect-[4/3] w-full overflow-hidden bg-white/5">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={member.headshot}
+            alt={`Portrait of ${member.name}`}
+            className="h-full w-full object-cover"
+            style={{ objectPosition: `center ${member.headshotPositionY ?? 0}%` }}
+          />
+        </div>
       ) : (
         <div
           aria-hidden="true"

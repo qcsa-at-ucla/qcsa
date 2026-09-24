@@ -5,6 +5,8 @@ export type CommitteeMember = {
   affiliation?: string;
   bio: string;
   headshot?: string;
+  /** Vertical crop position: 0 is top, 50 is center, and 100 is bottom. */
+  headshotPositionY?: number;
 };
 
 export const organizingCommittee: CommitteeMember[] = [
@@ -14,7 +16,8 @@ export const organizingCommittee: CommitteeMember[] = [
     role: "Graduate student",
     affiliation: "University of Southern California",
     bio: "Saurav works on quantum error correction and machine learning.",
-    headshot: "/images/qecml/organizing-committee/jane-doe.jpg",
+    headshot: "/images/qecml/organizing-committee/ksaurav.jpeg",
+    headshotPositionY: 50,
   },
     {
     id: "joseph-barreto",
@@ -22,7 +25,8 @@ export const organizingCommittee: CommitteeMember[] = [
     role: "Graduate student",
     affiliation: "University of Southern California",
     bio: "Joey works on quantum error correction and machine learning.",
-    headshot: "/images/qecml/organizing-committee/jane-doe.jpg",
+    headshot: "/images/qecml/organizing-committee/jbarreto.jpeg",
+    headshotPositionY: 0,
   },
     {
     id: "emanuel-dallas",
@@ -30,7 +34,8 @@ export const organizingCommittee: CommitteeMember[] = [
     role: "Graduate student",
     affiliation: "University of Southern California",
     bio: "Manny works on quantum error correction and machine learning.",
-    headshot: "/images/qecml/organizing-committee/jane-doe.jpg",
+    headshot: "/images/qecml/organizing-committee/edallas.jpg",
+    headshotPositionY: 25,
   },
 ];
 
@@ -42,6 +47,7 @@ export const scientificCommittee: CommitteeMember[] = [
     affiliation: "University of Southern California",
     bio: "Daniel works on quantum error correction and machine learning.",
     headshot: "/images/qecml/organizing-committee/jane-doe.jpg",
+    headshotPositionY: 50,
   },
     {
     id: "todd-brun",
@@ -50,5 +56,6 @@ export const scientificCommittee: CommitteeMember[] = [
     affiliation: "University of Southern California",
     bio: "Todd works on quantum error correction and machine learning.",
     headshot: "/images/qecml/organizing-committee/jane-doe.jpg",
+    headshotPositionY: 50,
   },
 ];

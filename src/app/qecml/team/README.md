@@ -17,5 +17,9 @@ Example:
   affiliation: "University of Southern California",
   bio: "Jane works on quantum error correction and machine learning.",
   headshot: "/images/qecml/organizing-committee/jane-doe.jpg",
+  headshotPositionY: 15,
 }
 ```
+
+`headshotPositionY` is optional and ranges from `0` (top of the photo) to `100`
+(bottom). It defaults to `0` when omitted.
