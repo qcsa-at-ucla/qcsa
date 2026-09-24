@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "QEC-ML 2027 | USC",
+  title: "QECML 2027 | USC",
   description:
-    "QEC-ML 2027 — A 3 day workshop on Machine Learning in Quantum Error Correction at USC in March 2027",
+    "QECML 2027 — A 3 day workshop on Machine Learning in Quantum Error Correction at USC in March 2027",
 };
 
 export default function QECMLPage() {
@@ -33,8 +33,7 @@ export default function QECMLPage() {
           className="absolute -right-24 top-20 h-72 w-72 rounded-full border border-[#FFCC00]/20"
         />
 
-        {}
-        <nav className="relative z-10 flex items-center justify-between px-6 py-6 sm:px-10 lg:px-16">
+        <nav className="relative z-10 flex items-center justify-between py-6 pl-20 pr-6 sm:pl-24 sm:pr-10 lg:pl-28 lg:pr-16">
           <Link
             href="/events"
             className="text-sm font-bold uppercase tracking-[0.18em] text-white/85 transition hover:text-[#FFCC00]"
@@ -54,13 +53,13 @@ export default function QECMLPage() {
             </p>
 
             <h1 className="text-[clamp(5rem,18vw,13rem)] font-bold leading-[0.82] tracking-[-0.07em] text-white">
-              QEC-ML
+              QECML 2027
             </h1>
 
             <div className="mx-auto my-9 h-1 w-24 bg-[#FFCC00]" />
 
             <p className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
-              March 2027
+              March 10-12
             </p>
 
             <p className="mt-3 text-xl font-bold uppercase tracking-[0.24em] text-[#FFCC00] sm:text-2xl">
@@ -78,7 +77,7 @@ export default function QECMLPage() {
         id="footer"
         className="bg-[#990000] px-6 py-6 text-center text-sm font-bold uppercase tracking-[0.18em] text-[#FFCC00]"
       >
-        QEC-ML · March 2027 · USC
+        QECML · March 2027 · USC
       </footer>
     </>
   );
