@@ -21,11 +21,11 @@ const eventsData: UpcomingEvent[] = [
 	},
 
 	{
-		datePrimary: 'TBD',
-		dateSecondary: '',
-		title: 'QCSA Fall GM',
-		location: 'Cohen Room & Mong Auditorium, UCLA',
-		time: 'All Day',
+		datePrimary: 'September',
+		dateSecondary: '29th',
+		title: 'QCSA Fall 2026 GM',
+		location: 'Geology 3656',
+		time: '6-8PM',
 		description: `The QCSA Fall GM 2026 is the annual general meeting for the Quantum Computing Student Association at UCLA. Members will gather to discuss the past year's achievements, upcoming events, and organizational matters.\n\nVisit the official site for the full agenda, speaker list, and registration details.`,
 		link: 'https://qcsa-ucla.org',
 	},
