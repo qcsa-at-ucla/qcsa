@@ -29,6 +29,16 @@ const eventsData: UpcomingEvent[] = [
 		description: `The QCSA Fall GM 2026 is the annual general meeting for the Quantum Computing Student Association at UCLA. Members will gather to discuss the past year's achievements, upcoming events, and organizational matters.\n\nVisit the official site for the full agenda, speaker list, and registration details.`,
 		link: 'https://qcsa-ucla.org',
 	},
+
+	{
+		datePrimary: 'October',
+		dateSecondary: '9th - 11th',
+		title: 'Qollab Hackathon',
+		location: 'Virtual',
+		time: 'TBA',
+		description: `Full details for the Qollab Hackathon will be announced soon. Stay tuned for updates on registration, schedule, and challenges.`,
+		link: 'https://qcsa-ucla.org/events',
+	},
 ];
 
 export default function EventsPage() {
