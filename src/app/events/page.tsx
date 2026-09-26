@@ -10,15 +10,7 @@ import { motion } from 'framer-motion';
 type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string; image?: string; speakerImage?: string; transportationLink?: string };
 
 const eventsData: UpcomingEvent[] = [
-	{
-    datePrimary: 'March',
-    dateSecondary: 'TBA',
-    title: 'ML in QEC Workshop 2027',
-    location: 'University of Southern California',
-    time: 'TBA',
-    description: `QEC-ML 2027 is an upcoming workshop at USC investigating Machine Learning in Quantum Error Correction. Programme, speakers, registration, and venue details will be announced soon.`,
-    link: '/qecml',
-	},
+
 
 	{
 		datePrimary: 'September',
@@ -38,6 +30,16 @@ const eventsData: UpcomingEvent[] = [
 		time: 'TBA',
 		description: `Full details for the Qollab Hackathon will be announced soon. Stay tuned for updates on registration, schedule, and challenges.`,
 		link: 'https://qcsa-ucla.org/events',
+	},
+
+		{
+    datePrimary: 'March',
+    dateSecondary: 'TBA',
+    title: 'ML in QEC Workshop 2027',
+    location: 'University of Southern California',
+    time: 'TBA',
+    description: `QEC-ML 2027 is an upcoming workshop at USC investigating Machine Learning in Quantum Error Correction. Programme, speakers, registration, and venue details will be announced soon.`,
+    link: '/qecml',
 	},
 ];
 
