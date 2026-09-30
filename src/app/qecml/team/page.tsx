@@ -37,9 +37,9 @@ function MemberCard({ member }: { member: CommitteeMember }) {
   ) : null;
 
   return (
-    <article className="overflow-hidden rounded-xl border border-white/15 bg-[#990000]/60">
+    <article className="overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
       {member.headshot ? (
-        <div className="aspect-[4/3] w-full overflow-hidden bg-white/5">
+        <div className="aspect-[4/3] w-full overflow-hidden bg-neutral-100">
           {member.hyperlink ? (
             <a
               href={member.hyperlink}
@@ -57,19 +57,19 @@ function MemberCard({ member }: { member: CommitteeMember }) {
       ) : (
         <div
           aria-hidden="true"
-          className="flex aspect-[4/3] items-center justify-center bg-white/5 text-5xl font-bold text-white/55"
+          className="flex aspect-[4/3] items-center justify-center bg-neutral-100 text-5xl font-bold text-neutral-500"
         >
           {member.name.slice(0, 1)}
         </div>
       )}
       <div className="p-5">
-        <h3 className="text-xl font-bold text-white">{member.name}</h3>
+        <h3 className="text-xl font-bold text-neutral-900">{member.name}</h3>
         {(member.role || member.affiliation) && (
-          <p className="mt-1 text-sm text-white/70">
+          <p className="mt-1 text-sm text-neutral-600">
             {[member.role, member.affiliation].filter(Boolean).join(" · ")}
           </p>
         )}
-        <p className="mt-4 leading-7 text-white/85">{member.bio}</p>
+        <p className="mt-4 leading-7 text-neutral-700">{member.bio}</p>
       </div>
     </article>
   );
@@ -77,29 +77,29 @@ function MemberCard({ member }: { member: CommitteeMember }) {
 
 export default function QECMLTeamPage() {
   return (
-    <main className="min-h-screen bg-[#990000] px-5 pb-16 pt-24 text-white sm:px-8 lg:px-12">
+    <main className="min-h-screen bg-neutral-50 px-5 pb-16 pt-24 text-neutral-900 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-5xl">
-        <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-[#FFCC00]">
+        <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-[#990000]">
           QECML 2027 · USC
         </p>
-        <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl">Team</h1>
+        <h1 className="text-5xl font-bold tracking-tight text-neutral-900 sm:text-7xl">Team</h1>
 
         <div className="mt-12 space-y-10">
           {committees.map((committee) => (
             <section
               key={committee.title}
               aria-labelledby={committee.title.toLowerCase().replaceAll(" ", "-")}
-              className="rounded-xl border border-white/15 bg-[#700000]/60 p-6 sm:p-8"
+              className="rounded-xl border border-neutral-200 border-l-4 border-l-[#990000] bg-white p-6 shadow-sm sm:p-8"
             >
               <h2
                 id={committee.title.toLowerCase().replaceAll(" ", "-")}
-                className="text-2xl font-bold text-[#FFCC00] sm:text-3xl"
+                className="text-2xl font-bold text-[#990000] sm:text-3xl"
               >
                 {committee.title}
               </h2>
-              <p className="mt-4 leading-7 text-white/75">{committee.description}</p>
+              <p className="mt-4 leading-7 text-neutral-700">{committee.description}</p>
               {committee.members.length === 0 ? (
-                <p className="mt-8 text-sm font-semibold uppercase tracking-[0.12em] text-white/55">
+                <p className="mt-8 text-sm font-semibold uppercase tracking-[0.12em] text-neutral-600">
                   Members to be announced
                 </p>
               ) : (
@@ -109,7 +109,7 @@ export default function QECMLTeamPage() {
                   ))}
                 </div>
               )}
-              <p className="mt-6 text-xs text-white/50">
+              <p className="mt-6 text-xs text-neutral-500">
                 Headshots go in <code>public/images/qecml/{committee.imageFolder}/</code>.
               </p>
             </section>
@@ -118,7 +118,7 @@ export default function QECMLTeamPage() {
 
         <Link
           href="/qecml"
-          className="mt-10 inline-block text-sm font-bold uppercase tracking-[0.18em] text-white/80 transition hover:text-[#FFCC00]"
+          className="mt-10 inline-block text-sm font-bold uppercase tracking-[0.18em] text-[#990000] transition hover:text-[#790000]"
         >
           ← QECML Overview
         </Link>

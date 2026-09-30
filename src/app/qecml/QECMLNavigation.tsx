@@ -15,7 +15,7 @@ export default function QECMLNavigation({ children }: { children: ReactNode }) {
       <aside
         aria-label="QECML section navigation"
         aria-hidden={!isOpen}
-        className={`fixed inset-y-0 left-0 z-30 overflow-hidden bg-[#700000] text-white shadow-2xl transition-[width] duration-300 ease-in-out ${
+        className={`fixed inset-y-0 left-0 z-30 overflow-hidden bg-[#990000] text-white shadow-2xl transition-[width] duration-300 ease-in-out ${
           isOpen ? "w-72" : "w-0"
         }`}
       >
@@ -57,7 +57,7 @@ export default function QECMLNavigation({ children }: { children: ReactNode }) {
         aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
         aria-expanded={isOpen}
         onClick={() => setIsOpen((open) => !open)}
-        className={`fixed top-4 z-40 flex h-11 w-11 items-center justify-center rounded border border-white/25 bg-[#700000] text-white shadow-lg transition-all hover:bg-[#990000] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFCC00] ${
+        className={`fixed top-4 z-40 flex h-11 w-11 items-center justify-center rounded border border-white/25 bg-[#990000] text-white shadow-lg transition-all hover:bg-[#790000] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFCC00] ${
           isOpen ? "left-[17rem]" : "left-4"
         }`}
       >

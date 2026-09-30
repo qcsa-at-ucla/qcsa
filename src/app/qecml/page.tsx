@@ -76,16 +76,16 @@ export default function QECMLPage() {
 
       <section
         aria-labelledby="timeline-heading"
-        className="bg-[#850000] px-6 py-12 text-white sm:px-10 sm:py-16 lg:px-16"
+        className="bg-neutral-100 px-6 py-12 text-neutral-900 sm:px-10 sm:py-16 lg:px-16"
       >
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 sm:mb-10">
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#FFCC00]">
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#990000]">
               Timeline
             </p>
             <h2
               id="timeline-heading"
-              className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+              className="mt-2 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl"
             >
               Important dates
             </h2>
@@ -100,15 +100,15 @@ export default function QECMLPage() {
             ].map((milestone, index) => (
               <li
                 key={milestone.label}
-                className="relative rounded-2xl border border-[#FFCC00]/30 bg-[#720000]/70 p-5 sm:p-6"
+                className="relative rounded-2xl border border-neutral-200 border-t-4 border-t-[#990000] bg-white p-5 shadow-sm sm:p-6"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FFCC00] text-sm font-bold text-[#720000]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-5 min-h-14 text-lg font-bold leading-6 text-white">
+                <h3 className="mt-5 min-h-14 text-lg font-bold leading-6 text-neutral-900">
                   {milestone.label}
                 </h3>
-                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-white/65">
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-neutral-600">
                   {milestone.date}
                 </p>
               </li>
@@ -119,21 +119,21 @@ export default function QECMLPage() {
 
       <section
         aria-labelledby="venue-heading"
-        className="bg-[#720000] px-6 py-12 text-white sm:px-10 sm:py-16 lg:px-16"
+        className="bg-white px-6 py-12 text-neutral-900 sm:px-10 sm:py-16 lg:px-16"
       >
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl border border-[#FFCC00]/30 bg-[#850000] shadow-2xl">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-xl">
           <div className="grid md:grid-cols-2">
           <div className="flex flex-col justify-center p-6 sm:p-7 lg:p-8">
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#FFCC00]">
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#990000]">
               Venue
             </p>
             <h2
               id="venue-heading"
-              className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+              className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl"
             >
               Ginsburg Hall
             </h2>
-            <p className="mt-4 text-lg leading-7 text-white/85">
+            <p className="mt-4 text-lg leading-7 text-neutral-700">
               University of Southern California
               <br />
               Los Angeles, CA 90089
@@ -142,13 +142,13 @@ export default function QECMLPage() {
               href="https://www.google.com/maps/search/?api=1&query=Ginsburg+Hall%2C+Los+Angeles%2C+CA+90089"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-[#FFCC00]/70 px-5 py-3 font-bold text-[#FFCC00] transition hover:bg-[#FFCC00] hover:text-[#720000]"
+              className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-[#990000] px-5 py-3 font-bold text-white transition hover:bg-[#790000] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#990000]"
             >
               Get directions <span aria-hidden="true">↗</span>
             </a>
           </div>
 
-          <div className="min-h-[16rem] border-t border-[#FFCC00]/20 md:border-l md:border-t-0">
+          <div className="min-h-[16rem] border-t border-neutral-200 md:border-l md:border-t-0">
             <Image
               src="/images/qecml/misc/ginsburg.jpg"
               alt="Ginsburg Hall"
@@ -159,7 +159,7 @@ export default function QECMLPage() {
           </div>
           </div>
 
-          <div className="h-64 border-t border-[#FFCC00]/20 sm:h-80 md:h-96">
+          <div className="h-64 border-t border-neutral-200 sm:h-80 md:h-96">
             <iframe
               title="Map showing Ginsburg Hall at USC"
               src="https://maps.google.com/maps?q=Ginsburg%20Hall%2C%20Los%20Angeles%2C%20CA%2090089&output=embed"
@@ -174,7 +174,7 @@ export default function QECMLPage() {
 
       <footer
         id="footer"
-        className="bg-[#990000] px-6 py-6 text-center text-sm font-bold uppercase tracking-[0.18em] text-[#FFCC00]"
+        className="bg-neutral-900 px-6 py-6 text-center text-sm font-bold uppercase tracking-[0.18em] text-white"
       >
         QECML · March 2027 · USC
       </footer>

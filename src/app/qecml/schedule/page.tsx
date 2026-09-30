@@ -77,33 +77,33 @@ export default function QECMLSchedulePage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#990000] px-5 pb-16 pt-24 text-white sm:px-8 lg:px-12">
+    <main className="min-h-screen bg-neutral-50 px-5 pb-16 pt-24 text-neutral-900 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-7xl">
-        <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-[#FFCC00]">
+        <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-[#990000]">
           QECML 2027 · USC
         </p>
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl">Schedule</h1>
-            <p className="mt-3 text-white/75">March 10–12, 2027</p>
+            <h1 className="text-5xl font-bold tracking-tight text-neutral-900 sm:text-7xl">Schedule</h1>
+            <p className="mt-3 text-neutral-700">March 10–12, 2027</p>
           </div>
           {updatedAt && (
-            <p className="text-xs text-white/60" aria-live="polite">
+            <p className="text-xs text-neutral-600" aria-live="polite">
               Updated {new Date(updatedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}
             </p>
           )}
         </div>
 
         {error ? (
-          <div className="rounded-lg border border-white/20 bg-black/10 p-6 text-white/85" role="status">
+          <div className="rounded-lg border border-red-200 bg-red-50 p-6 text-[#790000]" role="status">
             {error}
           </div>
         ) : isLoading ? (
-          <p className="py-8 text-white/75" role="status">Loading schedule…</p>
+          <p className="py-8 text-neutral-700" role="status">Loading schedule…</p>
         ) : scheduleRows.length === 0 ? (
-          <p className="py-8 text-white/75">Schedule details will be announced soon.</p>
+          <p className="py-8 text-neutral-700">Schedule details will be announced soon.</p>
         ) : (
-          <div className="overflow-x-auto rounded-lg border border-white/20 bg-black/10">
+          <div className="overflow-x-auto rounded-lg border border-neutral-200 bg-white p-2 shadow-sm">
             <table className="w-full min-w-[760px] border-separate border-spacing-x-2 border-spacing-y-2 text-left">
               <thead>
                 <tr>
@@ -111,7 +111,7 @@ export default function QECMLSchedulePage() {
                     <th
                       key={`${header}-${index}`}
                       scope="col"
-                      className={`rounded-lg border border-white/15 bg-[#700000] px-4 py-4 text-xs font-bold uppercase tracking-[0.12em] text-[#FFCC00] sm:px-5 ${index === 0 ? "w-36" : "min-w-48"}`}
+                      className={`rounded-lg bg-[#990000] px-4 py-4 text-xs font-bold uppercase tracking-[0.12em] text-white sm:px-5 ${index === 0 ? "w-36" : "min-w-48"}`}
                     >
                       {header}
                     </th>
@@ -126,7 +126,7 @@ export default function QECMLSchedulePage() {
                         <td
                           key={columnIndex}
                           rowSpan={mergedStarts.get(`${rowIndex}:${columnIndex}`)}
-                          className={`align-top px-4 py-4 text-sm leading-6 sm:px-5 ${columnIndex === 0 ? "whitespace-nowrap font-semibold text-[#FFCC00]" : row[columnIndex]?.trim() ? "whitespace-pre-line rounded-lg border border-white/15 bg-[#700000]/70 text-white/90 shadow-sm" : "whitespace-pre-line text-white/70"}`}
+                          className={`align-top px-4 py-4 text-sm leading-6 sm:px-5 ${columnIndex === 0 ? "whitespace-nowrap font-bold text-[#990000]" : row[columnIndex]?.trim() ? "whitespace-pre-line rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-800" : "whitespace-pre-line text-neutral-500"}`}
                         >
                           {row[columnIndex]?.trim() || ""}
                         </td>
@@ -139,7 +139,7 @@ export default function QECMLSchedulePage() {
           </div>
         )}
 
-        <p className="mt-5 text-xs text-white/55">This schedule refreshes automatically every minute.</p>
+        <p className="mt-5 text-xs text-neutral-500">This schedule refreshes automatically every minute.</p>
       </div>
     </main>
   );

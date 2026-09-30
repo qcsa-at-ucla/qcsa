@@ -122,30 +122,30 @@ export default function QECMLWhitepaperPage() {
   }, [loadWhitepaper]);
 
   return (
-    <main className="min-h-screen bg-[#990000] px-5 pb-16 pt-24 text-white sm:px-8 lg:px-12">
+    <main className="min-h-screen bg-neutral-50 px-5 pb-16 pt-24 text-neutral-900 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-5xl">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-[#FFCC00]">
+            <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-[#990000]">
               QECML 2027 · USC
             </p>
-            <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl">Whitepaper</h1>
+            <h1 className="text-5xl font-bold tracking-tight text-neutral-900 sm:text-7xl">Whitepaper</h1>
           </div>
           {updatedAt && (
-            <p className="text-xs text-white/60" aria-live="polite">
+            <p className="text-xs text-neutral-600" aria-live="polite">
               Updated {new Date(updatedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}
             </p>
           )}
         </div>
 
         {error ? (
-          <div className="rounded-lg border border-white/20 bg-black/10 p-6 text-white/85" role="status">
+          <div className="rounded-lg border border-red-200 bg-red-50 p-6 text-[#790000]" role="status">
             {error}
           </div>
         ) : isLoading ? (
-          <p className="py-8 text-white/75" role="status">Loading Whitepaper…</p>
+          <p className="py-8 text-neutral-700" role="status">Loading Whitepaper…</p>
         ) : (
-          <article className="rounded-xl bg-[#fffdf8] px-6 py-8 text-neutral-900 shadow-xl sm:px-10 sm:py-12 lg:px-14">
+          <article className="rounded-xl border border-neutral-200 bg-white px-6 py-8 text-neutral-900 shadow-sm sm:px-10 sm:py-12 lg:px-14">
             {blocks.length === 0 ? (
               <p className="text-neutral-700">The document is empty.</p>
             ) : (
@@ -182,7 +182,7 @@ export default function QECMLWhitepaperPage() {
           </article>
         )}
 
-        <p className="mt-5 text-xs text-white/55">This document refreshes automatically every minute.</p>
+        <p className="mt-5 text-xs text-neutral-500">This document refreshes automatically every minute.</p>
       </div>
     </main>
   );
