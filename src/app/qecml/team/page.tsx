@@ -26,17 +26,33 @@ const committees = [
 ];
 
 function MemberCard({ member }: { member: CommitteeMember }) {
+  const headshot = member.headshot ? (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={member.headshot}
+      alt={`Portrait of ${member.name}`}
+      className="h-full w-full object-cover"
+      style={{ objectPosition: `center ${member.headshotPositionY ?? 0}%` }}
+    />
+  ) : null;
+
   return (
     <article className="overflow-hidden rounded-xl border border-white/15 bg-[#990000]/60">
       {member.headshot ? (
         <div className="aspect-[4/3] w-full overflow-hidden bg-white/5">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={member.headshot}
-            alt={`Portrait of ${member.name}`}
-            className="h-full w-full object-cover"
-            style={{ objectPosition: `center ${member.headshotPositionY ?? 0}%` }}
-          />
+          {member.hyperlink ? (
+            <a
+              href={member.hyperlink}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Visit ${member.name}'s profile`}
+              className="block h-full w-full"
+            >
+              {headshot}
+            </a>
+          ) : (
+            headshot
+          )}
         </div>
       ) : (
         <div

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -74,10 +75,54 @@ export default function QECMLPage() {
       </main>
 
       <section
+        aria-labelledby="timeline-heading"
+        className="bg-[#850000] px-6 py-12 text-white sm:px-10 sm:py-16 lg:px-16"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8 sm:mb-10">
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#FFCC00]">
+              Timeline
+            </p>
+            <h2
+              id="timeline-heading"
+              className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            >
+              Important dates
+            </h2>
+          </div>
+
+          <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { label: "Abstract submission deadline", date: "January 9, 2027" },
+              { label: "Accepted submissions notification", date: "January 27, 2027" },
+              { label: "Registration deadline", date: "February 10, 2027" },
+              { label: "Late registration deadline", date: "February 17, 2027" },
+            ].map((milestone, index) => (
+              <li
+                key={milestone.label}
+                className="relative rounded-2xl border border-[#FFCC00]/30 bg-[#720000]/70 p-5 sm:p-6"
+              >
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FFCC00] text-sm font-bold text-[#720000]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-5 min-h-14 text-lg font-bold leading-6 text-white">
+                  {milestone.label}
+                </h3>
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-white/65">
+                  {milestone.date}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section
         aria-labelledby="venue-heading"
         className="bg-[#720000] px-6 py-12 text-white sm:px-10 sm:py-16 lg:px-16"
       >
-        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-2xl border border-[#FFCC00]/30 bg-[#850000] shadow-2xl md:grid-cols-[minmax(16rem,0.8fr)_minmax(0,1.4fr]">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl border border-[#FFCC00]/30 bg-[#850000] shadow-2xl">
+          <div className="grid md:grid-cols-2">
           <div className="flex flex-col justify-center p-6 sm:p-7 lg:p-8">
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#FFCC00]">
               Venue
@@ -103,11 +148,22 @@ export default function QECMLPage() {
             </a>
           </div>
 
-          <div className="min-h-[12rem] border-t border-[#FFCC00]/20 md:min-h-[16rem] md:border-l md:border-t-0">
+          <div className="min-h-[16rem] border-t border-[#FFCC00]/20 md:border-l md:border-t-0">
+            <Image
+              src="/images/qecml/misc/ginsburg.jpg"
+              alt="Ginsburg Hall"
+              width={1200}
+              height={800}
+              className="h-full min-h-[16rem] w-full object-cover"
+            />
+          </div>
+          </div>
+
+          <div className="h-64 border-t border-[#FFCC00]/20 sm:h-80 md:h-96">
             <iframe
               title="Map showing Ginsburg Hall at USC"
               src="https://maps.google.com/maps?q=Ginsburg%20Hall%2C%20Los%20Angeles%2C%20CA%2090089&output=embed"
-              className="h-full min-h-[12rem] w-full md:min-h-[16rem]"
+              className="h-full w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen

@@ -17,9 +17,13 @@ Example:
   affiliation: "University of Southern California",
   bio: "Jane works on quantum error correction and machine learning.",
   headshot: "/images/qecml/organizing-committee/jane-doe.jpg",
+  hyperlink: "https://example.com/jane-doe",
   headshotPositionY: 15,
 }
 ```
+
+`hyperlink` is optional. When set, clicking the headshot opens that profile in a
+new tab.
 
 `headshotPositionY` is optional and ranges from `0` (top of the photo) to `100`
 (bottom). It defaults to `0` when omitted.
