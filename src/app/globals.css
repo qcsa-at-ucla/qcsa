@@ -74,6 +74,22 @@ body {
   overflow-x: hidden;
 }
 
+.committee-bio-scroll {
+  scrollbar-color: rgb(255 255 255 / 55%) transparent;
+  scrollbar-width: thin;
+}
+
+.committee-bio-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.committee-bio-scroll::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 9999px;
+  background: rgb(255 255 255 / 55%);
+  background-clip: padding-box;
+}
+
 /* Ensure any element without an explicit font uses the global font */
 * {
   font-family: inherit;
@@ -87,4 +103,3 @@ body {
   /* ensure the existing rounded corners remain consistent */
   border-radius: 0.75rem;
 }
-

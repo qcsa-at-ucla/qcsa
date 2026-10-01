@@ -3,8 +3,8 @@ import Link from "next/link";
 import {
   organizingCommittee,
   scientificCommittee,
-  type CommitteeMember,
 } from "./committee-members";
+import MemberCard from "./member-card";
 
 export const metadata: Metadata = {
   title: "Team | QECML 2027",
@@ -12,68 +12,18 @@ export const metadata: Metadata = {
 
 const committees = [
   {
-    title: "Organizing Committee",
-    description: "The people organizing QECML 2027.",
-    members: organizingCommittee,
-    imageFolder: "organizing-committee",
-  },
-  {
     title: "Scientific Committee",
     description: "The researchers advising the QECML 2027 scientific programme.",
     members: scientificCommittee,
     imageFolder: "scientific-committee",
   },
+  {
+    title: "Organizing Committee",
+    description: "The people organizing QECML 2027.",
+    members: organizingCommittee,
+    imageFolder: "organizing-committee",
+  },
 ];
-
-function MemberCard({ member }: { member: CommitteeMember }) {
-  const headshot = member.headshot ? (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={member.headshot}
-      alt={`Portrait of ${member.name}`}
-      className="h-full w-full object-cover"
-      style={{ objectPosition: `center ${member.headshotPositionY ?? 0}%` }}
-    />
-  ) : null;
-
-  return (
-    <article className="overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
-      {member.headshot ? (
-        <div className="aspect-[4/3] w-full overflow-hidden bg-neutral-100">
-          {member.hyperlink ? (
-            <a
-              href={member.hyperlink}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Visit ${member.name}'s profile`}
-              className="block h-full w-full"
-            >
-              {headshot}
-            </a>
-          ) : (
-            headshot
-          )}
-        </div>
-      ) : (
-        <div
-          aria-hidden="true"
-          className="flex aspect-[4/3] items-center justify-center bg-neutral-100 text-5xl font-bold text-neutral-500"
-        >
-          {member.name.slice(0, 1)}
-        </div>
-      )}
-      <div className="p-5">
-        <h3 className="text-xl font-bold text-neutral-900">{member.name}</h3>
-        {(member.role || member.affiliation) && (
-          <p className="mt-1 text-sm text-neutral-600">
-            {[member.role, member.affiliation].filter(Boolean).join(" · ")}
-          </p>
-        )}
-        <p className="mt-4 leading-7 text-neutral-700">{member.bio}</p>
-      </div>
-    </article>
-  );
-}
 
 export default function QECMLTeamPage() {
   return (

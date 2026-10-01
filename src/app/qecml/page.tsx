@@ -13,25 +13,20 @@ export default function QECMLPage() {
     <>
       <main
         id="main-content"
-        className="relative overflow-hidden bg-[#990000] text-white"
+        className="relative overflow-hidden text-white"
       >
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-30"
-          style={{
-            background:
-              "radial-gradient(circle at 15% 20%, rgba(255,204,0,0.28), transparent 28%), radial-gradient(circle at 85% 80%, rgba(255,204,0,0.18), transparent 30%)",
-          }}
+        <Image
+          src="/images/qecml/misc/landscape.jpeg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+          style={{ objectPosition: "center 15%" }}
         />
-
         <div
           aria-hidden="true"
-          className="absolute -left-40 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full border border-[#FFCC00]/30"
-        />
-
-        <div
-          aria-hidden="true"
-          className="absolute -right-24 top-20 h-72 w-72 rounded-full border border-[#FFCC00]/20"
+          className="absolute inset-0 bg-neutral-950/45"
         />
 
         <nav className="relative z-10 flex items-center justify-between py-4 pl-20 pr-6 sm:pl-24 sm:pr-10 lg:pl-28 lg:pr-16">
