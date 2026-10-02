@@ -15,13 +15,11 @@ const committees = [
     title: "Scientific Committee",
     description: "The researchers advising the QECML 2027 scientific programme.",
     members: scientificCommittee,
-    imageFolder: "scientific-committee",
   },
   {
     title: "Organizing Committee",
     description: "The people organizing QECML 2027.",
     members: organizingCommittee,
-    imageFolder: "organizing-committee",
   },
 ];
 
@@ -59,9 +57,6 @@ export default function QECMLTeamPage() {
                   ))}
                 </div>
               )}
-              <p className="mt-6 text-xs text-neutral-500">
-                Headshots go in <code>public/images/qecml/{committee.imageFolder}/</code>.
-              </p>
             </section>
           ))}
         </div>

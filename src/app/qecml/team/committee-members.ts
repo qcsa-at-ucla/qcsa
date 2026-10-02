@@ -36,7 +36,7 @@ export const organizingCommittee: CommitteeMember[] = [
     name: "Emanuel Dallas",
     role: "Graduate student",
     affiliation: "USC",
-    bio: "Manny works on quantum error correction and machine learning.",
+    bio: "Emanuel began his PhD in 2021 and works under the supervision of Prof. Paolo Zanardi. He graduated magna cum laude from Brown University in 2018 with an Sc.B. in physics. Prior to the PhD, Emanuel worked for several years as a trader at a financial derivatives market-making firm. His research has broadly focused on characterizing and quantifying quantum information scrambling in many-body systems. More recently, he has worked on experimentally measuring scrambling-induced phenomena on NISQ processors.",
     headshot: "/images/qecml/organizing-committee/edallas.jpg",
     hyperlink: "https://www.linkedin.com/in/emanuel-dallas-3a6a23138/",
     headshotPositionY: 25,

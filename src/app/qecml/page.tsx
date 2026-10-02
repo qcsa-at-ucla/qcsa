@@ -88,10 +88,10 @@ export default function QECMLPage() {
 
           <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { label: "Abstract submission deadline", date: "January 9, 2027" },
-              { label: "Accepted submissions notification", date: "January 27, 2027" },
-              { label: "Registration deadline", date: "February 10, 2027" },
-              { label: "Late registration deadline", date: "February 17, 2027" },
+              { label: "Abstract submission deadline", /* date: "January 9, 2027", */ date: "TBD" },
+              { label: "Accepted submissions notification", /* date: "January 27, 2027", */ date: "TBD" },
+              { label: "Registration deadline", /* date: "February 10, 2027", */ date: "TBD" },
+              { label: "Late registration deadline", /* date: "February 17, 2027", */ date: "TBD" },
             ].map((milestone, index) => (
               <li
                 key={milestone.label}
