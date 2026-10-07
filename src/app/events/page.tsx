@@ -29,7 +29,7 @@ const eventsData: UpcomingEvent[] = [
 		location: 'Virtual',
 		time: 'TBA',
 		description: `Full details for the Qollab Hackathon will be announced soon. Stay tuned for updates on registration, schedule, and challenges.`,
-		link: 'https://qcsa-ucla.org/events',
+		link: 'https://qollab.xyz/programs/hackathon/register',
 	},
 
 		{
