@@ -31,6 +31,7 @@ export default function QECMLTeamPage() {
           QECML 2027 · USC
         </p>
         <h1 className="text-5xl font-bold tracking-tight text-neutral-900 sm:text-7xl">Team</h1>
+        <div className="mt-8 h-1 w-20 bg-[#FFCC00]" />
 
         <div className="mt-12 space-y-10">
           {committees.map((committee) => (
@@ -65,7 +66,7 @@ export default function QECMLTeamPage() {
           href="/qecml"
           className="mt-10 inline-block text-sm font-bold uppercase tracking-[0.18em] text-[#990000] transition hover:text-[#790000]"
         >
-          ← QECML Overview
+          ← Overview
         </Link>
       </div>
     </main>

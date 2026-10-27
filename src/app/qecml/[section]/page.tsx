@@ -27,7 +27,7 @@ export default async function QECMLSectionPage({ params }: SectionPageProps) {
           href="/qecml"
           className="text-sm font-bold uppercase tracking-[0.18em] text-white/85 transition hover:text-[#FFCC00]"
         >
-          ← QECML Overview
+          ← Overview
         </Link>
         <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#FFCC00]">
           USC · 2027
@@ -35,8 +35,8 @@ export default async function QECMLSectionPage({ params }: SectionPageProps) {
       </header>
 
       <section className="flex flex-1 flex-col items-center justify-center px-6 pb-20 pt-10 text-center">
-        <p className="mb-5 text-sm font-bold uppercase tracking-[0.3em] text-[#990000]">
-          Quantum Error Correction × Machine Learning
+        <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-[#990000]">
+          QECML 2027 · USC
         </p>
         <h1 className="text-5xl font-bold tracking-tight text-neutral-900 sm:text-7xl">{page.label}</h1>
         <div className="my-8 h-1 w-20 bg-[#FFCC00]" />
