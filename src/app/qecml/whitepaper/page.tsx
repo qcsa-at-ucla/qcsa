@@ -130,6 +130,7 @@ export default function QECMLWhitepaperPage() {
               QECML 2027 · USC
             </p>
             <h1 className="text-5xl font-bold tracking-tight text-neutral-900 sm:text-7xl">Whitepaper</h1>
+            <div className="mt-8 h-1 w-20 bg-[#FFCC00]" />
           </div>
           {updatedAt && (
             <p className="text-xs text-neutral-600" aria-live="polite">

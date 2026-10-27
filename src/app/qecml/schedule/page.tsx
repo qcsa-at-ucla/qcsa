@@ -78,13 +78,14 @@ export default function QECMLSchedulePage() {
 
   return (
     <main className="min-h-screen bg-neutral-50 px-5 pb-16 pt-24 text-neutral-900 sm:px-8 lg:px-12">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-5xl">
         <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-[#990000]">
           QECML 2027 · USC
         </p>
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
           <div>
             <h1 className="text-5xl font-bold tracking-tight text-neutral-900 sm:text-7xl">Schedule</h1>
+            <div className="my-6 h-1 w-20 bg-[#FFCC00]" />
             <p className="mt-3 text-neutral-700">March 10–12, 2027</p>
           </div>
           {updatedAt && (
