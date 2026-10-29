@@ -8,10 +8,18 @@ export const speakers: Speaker[] = [
     id: "vsivak",
     name: "Volodymyr Sivak",
     role: "Research Scientist",
-    affiliation: "Google Quantum AI", // TODO: affiliation
-    bio: "Volodymyr Sivak is a Research Scientist at Google Quantum AI, where he works on the development of quantum algorithms and software.", // TODO: bio
+    affiliation: "Google Quantum AI",
+    bio: "",
     headshot: "/images/qecml/speakers/vsivak.jpg",
-    // hyperlink: "https://...",
+    headshotPositionY: 40,
+  },
+    {
+    id: "rking",
+    name: "Robbie King",
+    role: "Research Scientist",
+    affiliation: "Oratomic",
+    bio: "",
+    headshot: "/images/qecml/speakers/rking.jpg",
     headshotPositionY: 40,
   },
 ];
