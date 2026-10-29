@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import SponsorBanner from "./sponsors/sponsor-banner";
 
 export const metadata: Metadata = {
   title: "QECML 2027 | USC",
@@ -63,7 +64,7 @@ export default function QECMLPage() {
             </p>
 
             <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-white/75 sm:mt-6 sm:text-lg">
-              Programme, speakers, and registration details to be announced soon.
+              Program, speakers, and registration details to be announced soon.
             </p>
           </div>
         </section>
@@ -116,19 +117,19 @@ export default function QECMLPage() {
         aria-labelledby="venue-heading"
         className="bg-white px-6 py-12 text-neutral-900 sm:px-10 sm:py-16 lg:px-16"
       >
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-xl">
-          <div className="grid md:grid-cols-2">
-          <div className="flex flex-col justify-center p-6 sm:p-7 lg:p-8">
+        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-xl md:h-[30rem] md:grid-rows-2">
+          <div className="grid min-h-0 md:grid-cols-2">
+          <div className="flex flex-col justify-center p-4 sm:p-5 lg:p-6">
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#990000]">
               Venue
             </p>
             <h2
               id="venue-heading"
-              className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl"
+              className="mt-2 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl"
             >
               Ginsburg Hall
             </h2>
-            <p className="mt-4 text-lg leading-7 text-neutral-700">
+            <p className="mt-2 text-lg leading-7 text-neutral-700">
               University of Southern California
               <br />
               Los Angeles, CA 90089
@@ -137,24 +138,24 @@ export default function QECMLPage() {
               href="https://www.google.com/maps/search/?api=1&query=Ginsburg+Hall%2C+Los+Angeles%2C+CA+90089"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-[#990000] px-5 py-3 font-bold text-white transition hover:bg-[#790000] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#990000]"
+              className="mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-[#990000] px-5 py-3 font-bold text-white transition hover:bg-[#790000] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#990000]"
             >
               Get directions <span aria-hidden="true">↗</span>
             </a>
           </div>
 
-          <div className="min-h-[16rem] border-t border-neutral-200 md:border-l md:border-t-0">
+          <div className="h-[11.2rem] min-h-0 border-t border-neutral-200 md:h-auto md:border-l md:border-t-0">
             <Image
               src="/images/qecml/misc/ginsburg.jpg"
               alt="Ginsburg Hall"
               width={1200}
               height={800}
-              className="h-full min-h-[16rem] w-full object-cover"
+              className="h-full w-full object-cover"
             />
           </div>
           </div>
 
-          <div className="h-64 border-t border-neutral-200 sm:h-80 md:h-96">
+          <div className="h-[11.2rem] min-h-0 border-t border-neutral-200 sm:h-56 md:h-auto">
             <iframe
               title="Map showing Ginsburg Hall at USC"
               src="https://maps.google.com/maps?q=Ginsburg%20Hall%2C%20Los%20Angeles%2C%20CA%2090089&output=embed"
@@ -164,6 +165,21 @@ export default function QECMLPage() {
               allowFullScreen
             />
           </div>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="sponsors-heading"
+        className="bg-neutral-50 px-6 py-16 sm:px-8"
+      >
+        <div className="mx-auto max-w-7xl">
+          <h2
+            id="sponsors-heading"
+            className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl"
+          >
+            Our sponsors
+          </h2>
+          <SponsorBanner />
         </div>
       </section>
 

@@ -11,14 +11,18 @@ export default function MemberCard({ member }: { member: CommitteeMember }) {
     />
   ) : null;
 
+  const hasBio = Boolean(member.bio?.trim());
+
   return (
     <article className="overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
       {member.headshot ? (
         <div className="group/photo relative aspect-[4/3] w-full overflow-hidden bg-neutral-100">
           {headshot}
-          <div className="committee-bio-scroll pointer-events-none absolute inset-0 overflow-y-auto overscroll-contain bg-neutral-950/95 p-5 opacity-0 transition-opacity duration-200 group-hover/photo:pointer-events-auto group-hover/photo:opacity-100 motion-reduce:transition-none">
-            <p className="leading-7 text-white">{member.bio}</p>
-          </div>
+          {hasBio && (
+            <div className="committee-bio-scroll pointer-events-none absolute inset-0 overflow-y-auto overscroll-contain bg-neutral-950/95 p-5 opacity-0 transition-opacity duration-200 group-hover/photo:pointer-events-auto group-hover/photo:opacity-100 motion-reduce:transition-none">
+              <p className="leading-7 text-white">{member.bio}</p>
+            </div>
+          )}
         </div>
       ) : (
         <div
@@ -26,9 +30,11 @@ export default function MemberCard({ member }: { member: CommitteeMember }) {
           className="group/photo relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-neutral-100 text-5xl font-bold text-neutral-500"
         >
           {member.name.slice(0, 1)}
-          <div className="committee-bio-scroll pointer-events-none absolute inset-0 overflow-y-auto overscroll-contain bg-neutral-950/95 p-5 text-base font-normal opacity-0 transition-opacity duration-200 group-hover/photo:pointer-events-auto group-hover/photo:opacity-100 motion-reduce:transition-none">
-            <p className="leading-7 text-white">{member.bio}</p>
-          </div>
+          {hasBio && (
+            <div className="committee-bio-scroll pointer-events-none absolute inset-0 overflow-y-auto overscroll-contain bg-neutral-950/95 p-5 text-base font-normal opacity-0 transition-opacity duration-200 group-hover/photo:pointer-events-auto group-hover/photo:opacity-100 motion-reduce:transition-none">
+              <p className="leading-7 text-white">{member.bio}</p>
+            </div>
+          )}
         </div>
       )}
       <div className="p-5">
