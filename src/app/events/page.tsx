@@ -12,26 +12,6 @@ type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string
 const eventsData: UpcomingEvent[] = [
 
 
-	{
-		datePrimary: 'September',
-		dateSecondary: '29th',
-		title: 'QCSA Fall 2026 GM',
-		location: 'Geology 3656',
-		time: '6-8PM',
-		description: `The QCSA Fall GM 2026 is the annual general meeting for the Quantum Computing Student Association at UCLA. Members will gather to discuss the past year's achievements, upcoming events, and organizational matters.\n\nVisit the official site for the full agenda, speaker list, and registration details.`,
-		link: 'https://qcsa-ucla.org',
-	},
-
-	{
-		datePrimary: 'October',
-		dateSecondary: '9th - 11th',
-		title: 'Qollab Hackathon',
-		location: 'Virtual',
-		time: 'TBA',
-		description: `Full details for the Qollab Hackathon will be announced soon. Stay tuned for updates on registration, schedule, and challenges.`,
-		link: 'https://qollab.xyz/programs/hackathon/register',
-	},
-
 		{
     datePrimary: 'March',
     dateSecondary: '10th - 12th',
@@ -57,6 +37,20 @@ export default function EventsPage() {
 	const [selectedPast, setSelectedPast] = useState<PastEvent | null>(null);
 
 	const pastEvents: PastEvent[] = [
+		{
+			title: 'QCSA Fall 2026 GM',
+			date: '09/29/2026',
+			excerpt: 'QCSA members gathered for the annual general meeting to discuss the past year’s achievements, upcoming events, and organizational matters.',
+			href: 'https://qcsa-ucla.org',
+			content: `The QCSA Fall GM 2026 was the annual general meeting for the Quantum Computing Student Association at UCLA. Members gathered to discuss the past year's achievements, upcoming events, and organizational matters.`,
+		},
+		{
+			title: 'Qollab Hackathon',
+			date: '10/09/2026 - 10/11/2026',
+			excerpt: 'A virtual hackathon hosted by Qollab. Visit the event page for available information.',
+			href: 'https://qollab.xyz/programs/hackathon/register',
+			content: `The Qollab Hackathon was scheduled to take place virtually from October 9-11, 2026. Visit the event page for available information.`,
+		},
 		{
 			title: 'Entangle Talks - Dr. Kai-Chi Chang',
 			date: '04/30/2026',
@@ -879,4 +873,3 @@ We thank Prof. Di Luo for going in depth on his research at the intersection of 
 		</div>
 	);
 }
-
