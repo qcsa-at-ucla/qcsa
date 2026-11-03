@@ -34,7 +34,7 @@ const eventsData: UpcomingEvent[] = [
 
 		{
     datePrimary: 'March',
-    dateSecondary: 'TBA',
+    dateSecondary: '10th - 12th',
     title: 'QECML 2027',
     location: 'University of Southern California',
     time: 'TBA',
