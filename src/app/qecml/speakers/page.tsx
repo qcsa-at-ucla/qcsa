@@ -7,6 +7,10 @@ export const metadata: Metadata = {
 };
 
 export default function QECMLSpeakersPage() {
+  // Invited speakers first; sort is stable so original order is kept within each group.
+  const sortedSpeakers = [...speakers].sort(
+    (a, b) => Number(!!b.invited) - Number(!!a.invited),
+  );
   return (
     <main className="flex min-h-screen flex-col bg-neutral-50 text-neutral-900">
       <section className="flex-1 px-5 pb-16 pt-24 sm:px-8 lg:px-12">
@@ -22,7 +26,7 @@ export default function QECMLSpeakersPage() {
             </p>
           ) : (
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {speakers.map((speaker) => (
+              {sortedSpeakers.map((speaker) => (
                 <SpeakerCard key={speaker.id} speaker={speaker} />
               ))}
             </div>
