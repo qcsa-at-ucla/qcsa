@@ -31,7 +31,7 @@ export const speakers: Speaker[] = [
     bio: "",
     headshot: "/images/qecml/speakers/rking.jpg",
     headshotPositionY: 40,
-    invited: true,
+    invited: false,
   },
   {
     id: "syelin",
