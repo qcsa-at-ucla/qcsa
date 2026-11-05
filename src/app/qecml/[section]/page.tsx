@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { qecmlNavigation } from "../qecml-navigation";
 
@@ -22,19 +21,7 @@ export default async function QECMLSectionPage({ params }: SectionPageProps) {
 
   return (
     <main className="flex min-h-screen flex-col bg-neutral-50 text-neutral-900">
-      <header className="flex items-center justify-between bg-[#990000] py-6 pl-20 pr-6 text-white sm:pl-24 sm:pr-10 lg:pl-28 lg:pr-16">
-        <Link
-          href="/qecml"
-          className="text-sm font-bold uppercase tracking-[0.18em] text-white/85 transition hover:text-[#FFCC00]"
-        >
-          ← Overview
-        </Link>
-        <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#FFCC00]">
-          USC · 2027
-        </span>
-      </header>
-
-      <section className="flex flex-1 flex-col items-center justify-center px-6 pb-20 pt-10 text-center">
+      <section className="flex flex-1 flex-col items-center justify-center px-6 pb-20 pt-24 text-center">
         <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-[#990000]">
           QECML 2027 · USC
         </p>
