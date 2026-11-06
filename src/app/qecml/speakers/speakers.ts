@@ -21,7 +21,7 @@ export const speakers: Speaker[] = [
     bio: "",
     headshot: "/images/qecml/speakers/vsivak.jpg",
     headshotPositionY: 40,
-    invited: true,
+    invited: false,
   },
     {
     id: "rking",
@@ -41,6 +41,6 @@ export const speakers: Speaker[] = [
     bio: "",
     headshot: "/images/qecml/speakers/syelin.jpg",
     headshotPositionY: 40,
-    invited: true,
+    invited: false,
   },
 ];
