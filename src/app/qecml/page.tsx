@@ -37,10 +37,6 @@ export default function QECMLPage() {
           >
             ← QCSA Events
           </Link>
-
-          <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#FFCC00]">
-            USC · 2027
-          </span>
         </nav>
 
         <section className="relative z-10 flex min-h-[360px] items-center justify-center px-6 py-7 text-center sm:min-h-[390px] sm:py-8">
