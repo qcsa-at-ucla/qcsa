@@ -60,7 +60,7 @@ export default function QECMLPage() {
             </p>
 
             <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-white/75 sm:mt-6 sm:text-lg">
-              Program, speakers, and registration details to be announced soon.
+              Program, speakers, and application details to be announced soon.
             </p>
           </div>
         </section>
@@ -85,8 +85,8 @@ export default function QECMLPage() {
 
           <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { label: "Abstract submission deadline", /* date: "January 9, 2027", */ date: "TBD" },
-              { label: "Accepted submissions notification", /* date: "January 27, 2027", */ date: "TBD" },
+              { label: "Application deadline", /* date: "January 9, 2027", */ date: "TBD" },
+              { label: "Acceptance notification", /* date: "January 27, 2027", */ date: "TBD" },
               { label: "Registration deadline", /* date: "February 10, 2027", */ date: "TBD" },
               { label: "Late registration deadline", /* date: "February 17, 2027", */ date: "TBD" },
             ].map((milestone, index) => (

@@ -4,7 +4,7 @@ export const qecmlNavigation = [
   { label: "Speakers", slug: "speakers", href: "/qecml/speakers" },
   { label: "Posters", slug: "posters", href: "/qecml/posters" },
   { label: "Sponsors", slug: "sponsors", href: "/qecml/sponsors" },
-  { label: "Registration", slug: "registration", href: "/qecml/registration" },
+  { label: "Application", slug: "application", href: "/qecml/application" },
   { label: "Team", slug: "team", href: "/qecml/team" },
   {
     label: "Whitepaper",
