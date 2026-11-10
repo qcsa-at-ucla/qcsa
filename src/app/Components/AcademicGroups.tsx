@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const InfiniteCarousel = ({ direction = 'left' }: { direction?: 'left' | 'right' }) => {
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -135,9 +136,12 @@ const InfiniteCarousel = ({ direction = 'left' }: { direction?: 'left' | 'right'
                   aria-label={`Visit ${sponsor.name} website`}
                   tabIndex={0}
                 >
-                  <img
+                  <Image
                     src={sponsor.logo}
                     alt={`${sponsor.name} logo`}
+                    width={240}
+                    height={160}
+                    sizes="(max-width: 640px) 128px, 240px"
                     className="max-w-full max-h-full object-contain transition-all duration-300"
                     loading="lazy"
                   />
@@ -164,9 +168,12 @@ const InfiniteCarousel = ({ direction = 'left' }: { direction?: 'left' | 'right'
                   aria-hidden="true"
                   tabIndex={-1}
                 >
-                  <img
+                  <Image
                     src={sponsor.logo}
                     alt=""
+                    width={240}
+                    height={160}
+                    sizes="(max-width: 640px) 128px, 240px"
                     className="max-w-full max-h-full object-contain transition-all duration-300"
                     loading="lazy"
                   />

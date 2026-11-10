@@ -1,10 +1,23 @@
 "use client";
 import React from 'react';
-import Link from 'next/link';
-import Orb from './Orb';
-import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
+
+const Orb = dynamic(() => import('./Orb'), { ssr: false });
 
 const HeroSection = () => {
+  const [showOrb, setShowOrb] = React.useState(false);
+
+  React.useEffect(() => {
+    const mediaQuery = window.matchMedia(
+      '(min-width: 768px) and (hover: hover) and (prefers-reduced-motion: no-preference)'
+    );
+    const updateOrbVisibility = () => setShowOrb(mediaQuery.matches);
+
+    updateOrbVisibility();
+    mediaQuery.addEventListener('change', updateOrbVisibility);
+    return () => mediaQuery.removeEventListener('change', updateOrbVisibility);
+  }, []);
+
   return (
     <div className="relative min-h-screen" style={{backgroundColor: '#F3F8FF'}}>
       {/* Event Announcement Banner */}
@@ -53,45 +66,36 @@ const HeroSection = () => {
 
       {/* Orb Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <Orb
-          hoverIntensity={0.5}
-          rotateOnHover={true}
-          hue={220}
-          forceHoverState={false}
-        />
+        {showOrb && (
+          <Orb
+            hoverIntensity={0.5}
+            rotateOnHover={true}
+            hue={220}
+            forceHoverState={false}
+          />
+        )}
       </div>
       
       {/* Content */}
-      <motion.div 
-        className="relative z-10 flex items-center justify-center min-h-screen px-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8, duration: 1 }}
-      >
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
         <div className="text-center max-w-5xl mx-auto translate-y-5">
           {/* Main heading */}
-          <motion.h1 
+          <h1
             className=" text-4xl font-kantumruy mb-8 font-bold leading-tight uppercase" 
             style={{color: '#234285'}}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
           >
             The Future is Quantum. Start building it at QCSA.
-          </motion.h1>
+          </h1>
           
           {/* Description */}
-          <motion.p 
+          <p
             className=" mb-12 max-w-2xl text-4xl mx-auto leading-tight font-kantumruy" 
             style={{color: '#234285'}}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
           >
             UCLA&apos;s hub for students, by students
-          </motion.p>
+          </p>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { useState } from "react";
 import MainWebsiteFooter from "../Components/mainWebsiteFooter";
 import MainWebsiteHeader from "../Components/mainWebsiteHeader";
 import SponsorSection from "../Components/SponsorSection";
+import Image from "next/image";
 
 const qcfSponsors = [
   { name: "BQP", logo: "/images/qcf-sponsors/bqp.png", url: "https://www.bqpsim.com/" },
@@ -82,9 +83,13 @@ export default function QCF() {
               rel="noopener noreferrer"
               className="inline-block hover:opacity-90 transition"
             >
-              <img
+              <Image
                 src="/images/qcf-flyer-final.png"
                 alt="Quantum Career Fair Flyer"
+                width={2448}
+                height={3168}
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
                 className="w-full max-w-3xl mx-auto rounded-xl shadow-xl"
               />
             </a>
