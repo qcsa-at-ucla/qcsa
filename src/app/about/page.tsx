@@ -125,8 +125,8 @@ const boardMembers = [
     name: "Clyde Villacrusis",
     role: "Web Developer Tech Lead",
     major: "Computer Science",
-    year: "4th Year",
-    bio: "Helloo!! Clyde Villacrusis is an undergraduate 4th year Computer Science and Linguistics double major. He is apart of the QCSA's tech team and working on making an interactive and accessible website for all. He is extremely excited to learn more about Quantum Computing while also developing his tech skills. Besides QCSA. he also interned under UCLA Health to make their AI-powered application (still in progress) and he is also in fetch.ai x qcsa x bruin.ai research group to research more about predicting binding affinities using hybrid CNNs, traditional Machine learning modes, and quantum circuits! He also likes to play Valorant, Minecraft, nature, and caffeine. Hit him up anytime to learn or just to chat about anything!",
+    year: "1st Year Masters",
+    bio: "Helloo!! Clyde Villacrusis is a graduate 1st year of Computer Science at Georgia Tech. He graduated with a dual degrees in Computer Science and Linguistics. He is apart of the QCSA's tech team and its nonprofit and working on making an interactive and accessible website for all. He is extremely excited to learn more about Quantum Computing while also developing his tech skills. Besides QCSA. he also interned under UCLA Health to make their AI-powered application and he is also in fetch.ai x qcsa x bruin.ai research group to research more about predicting binding affinities using hybrid CNNs, traditional Machine learning modes, and quantum circuits! He also likes to play Valorant, Minecraft, nature, and caffeine. Hit him up anytime to learn or just to chat about anything!",
     image: "/images/clyde.png",
     linkedIn: "https://www.linkedin.com/in/clydevillacrusis/"
   },
