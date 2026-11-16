@@ -21,6 +21,15 @@ const eventsData: UpcomingEvent[] = [
     description: `QEC-ML 2027 is an upcoming workshop at USC investigating Machine Learning in Quantum Error Correction. Programme, speakers, registration, and venue details will be announced soon.`,
     link: '/qecml',
 	},
+	{
+	datePrimary: 'November',
+	dateSecondary: '18th',
+	title: 'Speaker Event',
+	location: 'E-IV Faraday Room',
+	time: '2PM',
+	description: 'Dr. Amartya Banerjee will present a talk on Machine-Learning Based Electronic Structure Prediction: From Chiral Nanostructures to Complex Alloys.',
+	link: 'https://forms.gle/wTfTTstueyKEJsRd8',
+	},
 ];
 
 export default function EventsPage() {
