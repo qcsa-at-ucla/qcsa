@@ -10,17 +10,6 @@ import { motion } from 'framer-motion';
 type UpcomingEvent = { datePrimary: string; dateSecondary: string; title: string; location: string; time: string; description: string; link?: string; image?: string; speakerImage?: string; transportationLink?: string };
 
 const eventsData: UpcomingEvent[] = [
-
-
-		{
-    datePrimary: 'March',
-    dateSecondary: '10th - 12th',
-    title: 'QECML 2027',
-    location: 'University of Southern California',
-    time: 'TBA',
-    description: `QEC-ML 2027 is an upcoming workshop at USC investigating Machine Learning in Quantum Error Correction. Programme, speakers, registration, and venue details will be announced soon.`,
-    link: '/qecml',
-	},
 	{
 	datePrimary: 'November',
 	dateSecondary: '18th',
@@ -29,6 +18,16 @@ const eventsData: UpcomingEvent[] = [
 	time: '2PM',
 	description: 'Dr. Amartya Banerjee will present a talk on Machine-Learning Based Electronic Structure Prediction: From Chiral Nanostructures to Complex Alloys.',
 	link: 'https://forms.gle/wTfTTstueyKEJsRd8',
+	},
+
+	{
+    datePrimary: 'March',
+    dateSecondary: '10th - 12th',
+    title: 'QECML 2027',
+    location: 'University of Southern California',
+    time: 'TBA',
+    description: `QEC-ML 2027 is an upcoming workshop at USC investigating Machine Learning in Quantum Error Correction. Programme, speakers, registration, and venue details will be announced soon.`,
+    link: '/qecml',
 	},
 ];
 
