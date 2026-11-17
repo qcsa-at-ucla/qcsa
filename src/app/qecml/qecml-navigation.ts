@@ -2,10 +2,11 @@ export const qecmlNavigation = [
   { label: "Overview", slug: "overview", href: "/qecml" },
   { label: "Schedule", slug: "schedule", href: "/qecml/schedule" },
   { label: "Speakers", slug: "speakers", href: "/qecml/speakers" },
-  { label: "Posters", slug: "posters", href: "/qecml/posters" },
+  // { label: "Posters", slug: "posters", href: "/qecml/posters" }, // hidden for now
   { label: "Sponsors", slug: "sponsors", href: "/qecml/sponsors" },
   { label: "Application", slug: "application", href: "/qecml/application" },
   { label: "Team", slug: "team", href: "/qecml/team" },
+  { label: "Contact", slug: "contact", href: "/qecml/contact" },
   {
     label: "Whitepaper",
     slug: "whitepaper",
