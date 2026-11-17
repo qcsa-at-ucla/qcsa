@@ -7,6 +7,26 @@ export const metadata: Metadata = {
   title: "QECML 2027 | USC",
   description:
     "QECML 2027 — A 3 day workshop on Machine Learning in Quantum Error Correction at USC in March 2027",
+  openGraph: {
+    title: "QECML 2027 | USC",
+    description:
+      "QECML 2027 — A 3 day workshop on Machine Learning in Quantum Error Correction at USC in March 2027",
+    images: [
+      {
+        url: "/images/qecml/misc/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "QECML 2027",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "QECML 2027 | USC",
+    description:
+      "QECML 2027 — A 3 day workshop on Machine Learning in Quantum Error Correction at USC in March 2027",
+    images: ["/images/qecml/misc/og-image.jpg"],
+  },
 };
 
 const APPLICATION_FORM_URL =
@@ -96,10 +116,10 @@ export default function QECMLPage() {
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FFCC00] text-sm font-bold text-[#720000]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-5 min-h-14 text-lg font-bold leading-6 text-neutral-900">
+                <h3 className="mt-5 min-h-12 text-lg font-bold leading-6 text-neutral-900">
                   {milestone.label}
                 </h3>
-                <div className="mt-2 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+                <div className="mt-1 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
                   <p className="text-sm font-semibold uppercase tracking-[0.12em] text-neutral-600">
                     {milestone.date}
                   </p>
