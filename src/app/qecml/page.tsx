@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     "QECML 2027 — A 3 day workshop on Machine Learning in Quantum Error Correction at USC in March 2027",
 };
 
+const APPLICATION_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfve37oO6OVm2bpsXOMiU8FsDmfHP3qZ_FtL7hcxI3tU6nGXQ/viewform";
+
 export default function QECMLPage() {
   return (
     <>
@@ -58,10 +61,6 @@ export default function QECMLPage() {
             <p className="mt-3 text-xl font-bold uppercase tracking-[0.24em] text-[#FFCC00] sm:text-2xl">
               USC
             </p>
-
-            <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-white/75 sm:mt-6 sm:text-lg">
-              Program, speakers, and application details to be announced soon.
-            </p>
           </div>
         </section>
       </main>
@@ -85,11 +84,11 @@ export default function QECMLPage() {
 
           <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { label: "Application deadline", /* date: "January 9, 2027", */ date: "January 9, 2027" },
+              { label: "Application deadline", /* date: "January 9, 2027", */ date: "Jan 9, 2027", href: APPLICATION_FORM_URL },
               { label: "Acceptance notification", /* date: "January 27, 2027", */ date: "TBD" },
               { label: "Registration deadline", /* date: "February 10, 2027", */ date: "TBD" },
               { label: "Late registration deadline", /* date: "February 17, 2027", */ date: "TBD" },
-            ].map((milestone, index) => (
+            ].map((milestone: { label: string; date: string; href?: string }, index) => (
               <li
                 key={milestone.label}
                 className="relative rounded-2xl border border-neutral-200 border-t-4 border-t-[#990000] bg-white p-5 shadow-sm sm:p-6"
@@ -100,9 +99,21 @@ export default function QECMLPage() {
                 <h3 className="mt-5 min-h-14 text-lg font-bold leading-6 text-neutral-900">
                   {milestone.label}
                 </h3>
-                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-neutral-600">
-                  {milestone.date}
-                </p>
+                <div className="mt-2 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+                  <p className="text-sm font-semibold uppercase tracking-[0.12em] text-neutral-600">
+                    {milestone.date}
+                  </p>
+                  {milestone.href && (
+                    <a
+                      href={milestone.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 rounded-full bg-[#990000] px-3 py-1 text-sm font-bold text-white transition hover:bg-[#790000]"
+                    >
+                      Apply now <span aria-hidden="true">↗</span>
+                    </a>
+                  )}
+                </div>
               </li>
             ))}
           </ol>

@@ -75,7 +75,7 @@ export default function ApplicationPage() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[#990000] px-6 py-3 font-bold text-white transition hover:bg-[#790000]"
             >
-              Open application form <span aria-hidden="true">↗</span>
+              Apply now <span aria-hidden="true">↗</span>
             </a>
             <p className="text-sm text-neutral-600">
               The form requires signing in with a Google account.
