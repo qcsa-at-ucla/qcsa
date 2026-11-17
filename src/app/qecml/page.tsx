@@ -85,7 +85,7 @@ export default function QECMLPage() {
 
           <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { label: "Application deadline", /* date: "January 9, 2027", */ date: "TBD" },
+              { label: "Application deadline", /* date: "January 9, 2027", */ date: "January 9, 2027" },
               { label: "Acceptance notification", /* date: "January 27, 2027", */ date: "TBD" },
               { label: "Registration deadline", /* date: "February 10, 2027", */ date: "TBD" },
               { label: "Late registration deadline", /* date: "February 17, 2027", */ date: "TBD" },
@@ -106,6 +106,21 @@ export default function QECMLPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="sponsors-heading"
+        className="bg-neutral-50 px-6 py-12 sm:px-10 sm:py-16 lg:px-16"
+      >
+        <div className="mx-auto max-w-7xl">
+          <h2
+            id="sponsors-heading"
+            className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl"
+          >
+            Our sponsors
+          </h2>
+          <SponsorBanner />
         </div>
       </section>
 
@@ -161,21 +176,6 @@ export default function QECMLPage() {
               allowFullScreen
             />
           </div>
-        </div>
-      </section>
-
-      <section
-        aria-labelledby="sponsors-heading"
-        className="bg-neutral-50 px-6 py-16 sm:px-8"
-      >
-        <div className="mx-auto max-w-7xl">
-          <h2
-            id="sponsors-heading"
-            className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl"
-          >
-            Our sponsors
-          </h2>
-          <SponsorBanner />
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import { readdirSync } from "node:fs";
+import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 const SPONSORS_DIR = path.join(process.cwd(), "public", "images", "qecml", "sponsors");
@@ -29,8 +30,23 @@ function getSponsors(): Sponsor[] {
     });
 }
 
-export default function SponsorBanner() {
-  const sponsors = getSponsors();
+// Crops transparent/white padding off a logo so every logo's artwork fills its box equally.
+// Falls back to the original file if sharp is unavailable or the image can't be processed (e.g. SVG).
+async function trimmedSrc(sponsor: Sponsor): Promise<string> {
+  try {
+    const { default: sharp } = await import("sharp");
+    const file = path.join(SPONSORS_DIR, decodeURIComponent(path.basename(sponsor.src)));
+    const buf = await sharp(await readFile(file)).trim({ threshold: 20 }).png().toBuffer();
+    return `data:image/png;base64,${buf.toString("base64")}`;
+  } catch {
+    return sponsor.src;
+  }
+}
+
+export default async function SponsorBanner() {
+  const sponsors = await Promise.all(
+    getSponsors().map(async (s) => ({ ...s, display: await trimmedSrc(s) })),
+  );
 
   if (sponsors.length === 0) {
     return (
@@ -43,12 +59,12 @@ export default function SponsorBanner() {
   return (
     <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 rounded-lg border border-neutral-200 bg-white px-6 py-8 sm:px-10">
       {sponsors.map((sponsor) => (
-        <li key={sponsor.src} className="flex items-center justify-center">
+        <li key={sponsor.src} className="flex h-16 w-40 items-center justify-center sm:h-20 sm:w-52">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={sponsor.src}
+            src={sponsor.display}
             alt={`${sponsor.name} logo`}
-            className="h-16 w-auto max-w-full object-contain sm:h-20"
+            className="max-h-full max-w-full object-contain"
           />
         </li>
       ))}

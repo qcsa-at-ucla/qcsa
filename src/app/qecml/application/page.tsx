@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Application | QECML 2027",
@@ -7,13 +6,14 @@ export const metadata: Metadata = {
     "Apply for QECML 2027 at USC through a Google Form with a Stripe payment link.",
 };
 
-// const FORM_URL = "https://forms.gle/REPLACE_ME";
+const FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfve37oO6OVm2bpsXOMiU8FsDmfHP3qZ_FtL7hcxI3tU6nGXQ/viewform";
 
 const steps = [
   {
     title: "Application",
     body: "Fill out the application form with your info by the application deadline.  Submitting an abstract for either a talk or a poster is encouraged but not required to apply.",
-    date: "TBD",
+    date: "January 9, 2027",
     dateLabel: "Deadline",
   },
   {
@@ -32,35 +32,22 @@ const steps = [
 
 export default function ApplicationPage() {
   return (
-    <main className="flex min-h-screen flex-col bg-neutral-100 text-neutral-900">
-      <header className="flex items-center justify-between bg-[#990000] py-6 pl-20 pr-6 text-white sm:pl-24 sm:pr-10 lg:pl-28 lg:pr-16">
-        <Link
-          href="/qecml"
-          className="text-sm font-bold uppercase tracking-[0.18em] text-white/85 transition hover:text-[#FFCC00]"
-        >
-          ← Overview
-        </Link>
-        <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#FFCC00]">
-          USC · 2027
-        </span>
-      </header>
-
+    <main className="flex min-h-screen flex-col bg-neutral-50 text-neutral-900">
       <section
         aria-labelledby="application-heading"
-        className="flex-1 px-6 py-12 sm:px-10 sm:py-16 lg:px-16"
+        className="flex-1 px-5 pb-16 pt-24 sm:px-8 lg:px-12"
       >
         <div className="mx-auto max-w-5xl">
-          <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#990000]">
+          <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-[#990000]">
             QECML 2027 · USC
           </p>
           <h1
             id="application-heading"
-            className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl"
+            className="text-5xl font-bold tracking-tight text-neutral-900 sm:text-7xl"
           >
             Application
           </h1>
-          <div className="my-6 h-1 w-20 bg-[#FFCC00]" />
-
+          <div className="my-8 h-1 w-20 bg-[#FFCC00]" />
           <ol className="mt-10 grid gap-4 sm:grid-cols-3">
             {steps.map((step, index) => (
               <li
@@ -82,11 +69,17 @@ export default function ApplicationPage() {
           </ol>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            {/* Application form link hidden until applications open.
-            <a href={FORM_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#990000] px-6 py-3 font-bold text-white transition hover:bg-[#790000]">
+            <a
+              href={FORM_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#990000] px-6 py-3 font-bold text-white transition hover:bg-[#790000]"
+            >
               Open application form <span aria-hidden="true">↗</span>
             </a>
-            */}
+            <p className="text-sm text-neutral-600">
+              The form requires signing in with a Google account.
+            </p>
           </div>
         </div>
       </section>

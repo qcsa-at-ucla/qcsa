@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const committees = [
   {
     title: "Scientific Committee",
-    description: "The researchers advising the QECML 2027 scientific programme.",
+    description: "The researchers advising the QECML 2027 scientific program.",
     members: scientificCommittee,
   },
   {
