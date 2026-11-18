@@ -7,8 +7,15 @@ export const metadata: Metadata = {
   title: "QECML 2027 | USC",
   description:
     "QECML 2027 — A 3 day workshop on Machine Learning in Quantum Error Correction at USC in March 2027",
+  icons: {
+    icon: [{ url: "/qecml/icon.png", type: "image/png", sizes: "256x256" }],
+    shortcut: "/qecml/icon.png",
+    apple: "/qecml/icon.png",
+  },
   openGraph: {
-    title: "QECML 2027 | USC",
+    siteName: "QECML 2027",
+    type: "website",
+    title: "QECML 2027",
     description:
       "QECML 2027 — A 3 day workshop on Machine Learning in Quantum Error Correction at USC in March 2027",
     images: [
@@ -22,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "QECML 2027 | USC",
+    title: "QECML 2027",
     description:
       "QECML 2027 — A 3 day workshop on Machine Learning in Quantum Error Correction at USC in March 2027",
     images: ["/images/qecml/misc/og-image.jpg"],
