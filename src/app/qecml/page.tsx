@@ -6,7 +6,7 @@ import SponsorBanner from "./sponsors/sponsor-banner";
 export const metadata: Metadata = {
   title: "QECML 2027 | USC",
   description:
-    "QECML 2027 — A 3 day workshop on Machine Learning in Quantum Error Correction at USC in March 2027",
+    "QECML 2027 — A 3 day workshop on Quantum Error Correction & Machine Learning at USC in March 2027",
   icons: {
     icon: [{ url: "/qecml/icon.png", type: "image/png", sizes: "256x256" }],
     shortcut: "/qecml/icon.png",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "QECML 2027",
     description:
-      "QECML 2027 — A 3 day workshop on Machine Learning in Quantum Error Correction at USC in March 2027",
+      "QECML 2027 — A 3 day workshop on Quantum Error Correction & Machine Learning at USC in March 2027",
     images: [
       {
         url: "/images/qecml/misc/og-image.jpg",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "QECML 2027",
     description:
-      "QECML 2027 — A 3 day workshop on Machine Learning in Quantum Error Correction at USC in March 2027",
+      "QECML 2027 — A 3 day workshop on Quantum Error Correction & Machine Learning at USC in March 2027",
     images: ["/images/qecml/misc/og-image.jpg"],
   },
 };
